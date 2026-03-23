@@ -1,0 +1,20 @@
+using System.Text.Json;
+using System.Threading.Tasks;
+using Apigen.InvoiceNinja.Models;
+
+#nullable enable
+
+namespace Apigen.InvoiceNinja.Client;
+
+/// <summary>
+/// Interface for ping operations
+/// </summary>
+public interface IPingClient
+{
+  /// <summary>
+  /// Attempts to ping the API
+  /// Operation: GET /api/v1/ping
+  /// </summary>
+  Task ListAsync();
+
+}

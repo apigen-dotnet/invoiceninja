@@ -1,0 +1,668 @@
+# ApiGenerator Configuration File
+# This file configures how C# models and API clients are generated from OpenAPI specifications
+
+input_path = "specs/invoiceninja.yaml"
+output_path = "src"
+target_framework = "net10.0"
+generate_nullable_reference_types = true
+generate_data_annotations = true
+
+# Global using statements added to all generated files
+global_usings = [
+    "System.Text.Json.Serialization"
+]
+
+# Models Generation Settings
+[models]
+namespace = "Apigen.InvoiceNinja.Models"
+project_name = "Apigen.InvoiceNinja.Models"
+
+# Model generation strategy
+[model_generation]
+strategy = "SeparateWithDeduplication"  # Options: "AlwaysSeparate", "SeparateWithDeduplication", "SingleModel"
+request_suffix = "Request"
+response_suffix = ""
+generate_to_request_extensions = true
+
+# Enum generation configuration
+[enum_generation]
+generation_mode = "Raw"  # Use simple, clean enum generation
+add_json_string_enum_converter = true  # Add JsonStringEnumConverter attribute to enums
+add_json_string_enum_member_name = true  # Add JsonStringEnumMemberName attributes for explicit mapping (.NET 9+)
+
+# JSON Serialization Settings
+[serialization]
+nullable_for_optional_properties = true  # Make optional value types nullable (e.g., int? instead of int)
+ignore_condition = "WhenWritingNull"  # Don't serialize null values
+
+# API Client Generation Settings
+[client]
+generate_client = true
+namespace = "Apigen.InvoiceNinja.Client"
+project_name = "Apigen.InvoiceNinja.Client"
+client_class_name = "InvoiceNinjaApiClient"
+use_async_suffix = true
+generate_interfaces = true
+use_ilogger = true  # Optional: Generate ILogger support for request/response logging (default: false)
+
+# Request class organization
+[client.request_organization]
+strategy = "individual_files"  # Options: "single_file", "individual_files", "by_resource"
+directory = "Requests"         # Directory name for request files (when not single_file)
+include_base_classes = true    # Whether to include ApiResponse, BaseRequest in shared file
+
+# Authentication settings (for default constructor only)
+[client.authentication]
+token_header = "X-API-TOKEN"
+required_headers = ["X-Requested-With"]
+
+# Operation overrides for adding fixed parameters and modifying behavior
+[[operation_overrides]]
+http_method_filter = "^POST$"
+path_filter = ".*"
+fixed_query_parameters = { "_method" = "POST" }
+description = "Add _method=POST for all POST operations"
+
+# Naming convention overrides
+[naming]
+
+# Specific operationId overrides for problematic names
+[naming.operation_id_overrides]
+"getTaskStatussCreate" = "getTaskStatusesCreate"
+"postLogin" = "login"
+# Fix missing operation IDs that get auto-generated incorrectly
+"getinvoicescreate" = "getInvoicesCreate"
+"getinvoicesdownload" = "downloadInvoice"
+# Fix malformed existing operation IDs
+"getinvoices" = "getInvoices"
+"postinvoices" = "postInvoices"
+
+# Path-based operation ID overrides for handling duplicate operation IDs
+[[naming.path_based_overrides]]
+operation_id = "Getinvoices"
+path_filter = ".*/invoices/create$"
+new_operation_id = "getBlankInvoice"
+description = "Blank invoice endpoint"
+
+[[naming.path_based_overrides]]
+operation_id = "Getinvoices"
+path_filter = ".*/invoice/.*/download$"
+new_operation_id = "downloadInvoice"
+description = "Download invoice PDF endpoint"
+
+[[naming.path_based_overrides]]
+operation_id = "Getinvoices"
+path_filter = ".*/invoices/.*/delivery_note$"
+new_operation_id = "getInvoiceDeliveryNote"
+description = "Download delivery note endpoint"
+
+# Code formatting preferences
+[formatting]
+use_spaces = true
+indent_width = 2
+
+# Auto-generated file headers
+[header]
+include_header = true
+include_timestamp = false
+include_source = true
+include_generator_info = true
+include_config_info = false
+custom_text = "Invoice Ninja API Models - Auto-generated from OpenAPI specification"
+
+# Type name overrides to avoid conflicts
+[[type_name_overrides]]
+original_name = "Task"
+new_name = "TaskItem"
+reason = "Conflicts with System.Threading.Task"
+
+[[type_name_overrides]]
+original_name = "TaskStatus"
+new_name = "TaskItemStatus"
+reason = "Conflicts with System.Threading.Tasks.TaskStatus"
+
+# Property type overrides with regex matching
+[[property_overrides]]
+property_filter = ".*_at$"           # Match any property ending with '_at' (regex)
+original_data_type = "number"         # Only if original type is 'number' in OpenAPI
+target_type = "DateTimeOffset?"       # Convert to nullable DateTimeOffset
+json_converter = "UnixTimestampConverter"
+
+[[property_overrides]]
+property_filter = "^created_at$"
+target_type = "DateTimeOffset?"
+json_converter = "UnixTimestampConverter"
+
+[[property_overrides]]
+property_filter = "^updated_at$"
+target_type = "DateTimeOffset?"
+json_converter = "UnixTimestampConverter"
+
+[[property_overrides]]
+property_filter = "^archived_at$"
+target_type = "DateTimeOffset?"
+json_converter = "UnixTimestampConverter"
+
+# Convert balance fields to decimal for better precision
+[[property_overrides]]
+property_filter = "^balance$"
+model_filter = ".*"                  # Apply to all models (regex)
+original_data_type = "number"
+target_type = "decimal?"
+json_converter = "EmptyStringToNullableDecimalConverter"
+
+# Convert financial/numeric fields from float to decimal with string converter
+[[property_overrides]]
+property_filter = "(amount|total|subtotal|price|rate|cost|discount|tax|paid|credit|fee|charge|quantity)$"
+model_filter = ".*"
+original_data_type = "number"
+target_type = "decimal?"
+json_converter = "EmptyStringToNullableDecimalConverter"
+
+# Response type overrides for operations that return arrays when spec says single object
+[[response_type_overrides]]
+operation_filter = ".*login.*"       # Match any operation containing 'login' (regex)
+original_type = "CompanyUser"         # Only if OpenAPI spec says CompanyUser
+target_type = "CompanyUser[]"         # Convert to array
+reason = "Login endpoint returns array of CompanyUser objects despite spec"
+
+[[response_type_overrides]]
+operation_filter = "^getClients$"    # Exact match for getClients operation
+original_type = "Client"              # Only if OpenAPI spec says Client
+target_type = "Client[]"              # Convert to array
+reason = "Clients list endpoint returns array of Client objects despite spec"
+
+# Handle properties that can be false or string values (API returns false when not set)
+[[property_overrides]]
+property_filter ="^google_2fa_secret$"
+model_filter =".*[Uu]ser.*"         # Apply to User-related models from OpenAPI (user, user_ref, etc.)
+target_type = "string?"
+json_converter = "BooleanFalseToNullStringConverter"
+
+# Handle account_sms_verified which is boolean (OpenAPI spec incorrectly says string)
+[[property_overrides]]
+property_filter ="^account_sms_verified$"
+model_filter =".*Account.*"         # Apply to Account models from OpenAPI
+original_data_type = "string"         # OpenAPI spec incorrectly says string
+target_type = "bool?"
+
+# Handle reset_counter_date which can be empty string but should be DateOnly
+[[property_overrides]]
+property_filter ="^reset_counter_date$"
+model_filter =".*Settings$"         # Apply to Settings models from OpenAPI
+target_type = "DateOnly?"
+json_converter = "EmptyStringToDateOnlyConverter"
+
+
+# Handle date fields in Invoice model
+[[property_overrides]]
+property_filter ="^(due_date|last_sent_date|next_send_date|partial_due_date)$"
+model_filter ="^Invoice$"
+target_type = "DateOnly?"
+json_converter = "EmptyStringToDateOnlyConverter"
+
+# Handle date fields in Quote model
+[[property_overrides]]
+property_filter ="^(due_date|last_sent_date|next_send_date|partial_due_date)$"
+model_filter ="^Quote$"
+target_type = "DateOnly?"
+json_converter = "EmptyStringToDateOnlyConverter"
+
+# Handle date fields in RecurringInvoice model
+[[property_overrides]]
+property_filter ="^(due_date|last_sent_date|next_send_date|partial_due_date)$"
+model_filter ="^RecurringInvoice$"
+target_type = "DateOnly?"
+json_converter = "EmptyStringToDateOnlyConverter"
+
+# Handle date fields in Credit model
+[[property_overrides]]
+property_filter ="^(due_date|last_sent_date|next_send_date|partial_due_date)$"
+model_filter ="^Credit$"
+target_type = "DateOnly?"
+json_converter = "EmptyStringToDateOnlyConverter"
+
+# Handle date fields in PurchaseOrder model
+[[property_overrides]]
+property_filter ="^(due_date|partial_due_date)$"
+model_filter ="^PurchaseOrder$"
+target_type = "DateOnly?"
+json_converter = "EmptyStringToDateOnlyConverter"
+
+# Handle sent/viewed/opened date fields in InvoiceInvitation model
+[[property_overrides]]
+property_filter ="^(sent_date|viewed_date|opened_date)$"
+model_filter ="^InvoiceInvitation$"
+target_type = "DateOnly?"
+json_converter = "EmptyStringToDateOnlyConverter"
+
+# Handle date fields in report request models
+[[property_overrides]]
+property_filter ="^(start_date|end_date)$"
+model_filter =".*ReportRequest$"
+target_type = "DateOnly?"
+json_converter = "EmptyStringToDateOnlyConverter"
+
+# Handle calculated_start_date in TaskItem model
+[[property_overrides]]
+property_filter ="^calculated_start_date$"
+model_filter ="^TaskItem$"
+target_type = "DateOnly?"
+json_converter = "EmptyStringToDateOnlyConverter"
+
+# Handle type_id which can be empty string but should be PaymentType enum
+[[property_overrides]]
+property_filter ="^type_id$"
+model_filter ="Payment$|.*PaymentRequest$|.*RefundRequest$"  # Apply to Payment and related models
+target_type = "PaymentType?"
+json_converter = "EmptyStringToNullableEnumConverter<PaymentType>"
+
+# Numeric ID fields that API returns as empty strings or numeric strings
+[[property_overrides]]
+property_filter ="^(industry_id|size_id|shipping_country_id)$"
+model_filter =".*"
+original_data_type = "number"
+target_type = "int?"
+json_converter = "StringToIntegerConverter"
+
+# Legacy enum definitions - much cleaner syntax!
+[[enums]]
+name = "CreditsPaymentMode"
+description = "When credits can be used for payments"
+simple_values = { always = "Always", option = "Option", off = "Off" }
+
+[[enums]]
+name = "TaskDisplayMode"
+description = "Which tasks to show in client portal"
+simple_values = { all = "All", invoiced = "Invoiced", uninvoiced = "Uninvoiced" }
+
+
+# Use enums for properties - much simpler!
+[[property_overrides]]
+property_filter ="^use_credits_payment$"
+model_filter =".*Settings$"
+original_data_type = "boolean"
+enum = "CreditsPaymentMode"
+
+[[property_overrides]]
+property_filter ="^show_all_tasks_client_portal$"
+model_filter =".*Settings$"
+original_data_type = "boolean"
+enum = "TaskDisplayMode"
+
+# Fix: API returns array but spec says single object
+[[property_overrides]]
+property_filter ="^paymentables$"
+model_filter ="^Payment.*$"
+target_type = "Paymentable[]?"
+
+# Handle Paymentable amount fields (spec says string, API sends stringified decimal)
+[[property_overrides]]
+property_filter = "^amount$"
+model_filter = ".*Paymentable$"
+original_data_type = "string"
+target_type = "decimal?"
+json_converter = "EmptyStringToNullableDecimalConverter"
+
+# Company logo can be null
+[[property_overrides]]
+property_filter = "^logo$"
+model_filter = "^Company$"
+target_type = "byte[]?"
+
+# Global fallback: All integer fields can be stringified by the API
+[[property_overrides]]
+property_filter =".*"               # Match any property name
+model_filter =".*"                  # Match any model
+original_data_type = "integer"        # Only if OpenAPI spec says integer
+target_type = "int?"                  # Convert to nullable int
+json_converter = "StringToIntegerConverter"
+
+# JSON converter configurations
+[[json_converters]]
+target_type = "DateTimeOffset?"
+converter_type = "UnixTimestampConverter"
+required_usings = [
+    "System.Text.Json",
+    "System.Text.Json.Serialization"
+]
+# External file approach (cleaner than inline code)
+converter_file_path = "converters/UnixTimestampConverter.cs"
+
+# JSON converter for handling boolean false as null string
+[[json_converters]]
+target_type = "string?"
+converter_type = "BooleanFalseToNullStringConverter"
+required_usings = [
+    "System.Text.Json",
+    "System.Text.Json.Serialization"
+]
+inline_converter_code = """
+/// <summary>
+/// Converts JSON boolean false to null string, otherwise tries to read as string
+/// </summary>
+public class BooleanFalseToNullStringConverter : JsonConverter<string?>
+{
+  public override string? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+  {
+    if (reader.TokenType == JsonTokenType.False)
+    {
+      return null;
+    }
+
+    if (reader.TokenType == JsonTokenType.String)
+    {
+      return reader.GetString();
+    }
+
+    if (reader.TokenType == JsonTokenType.Null)
+    {
+      return null;
+    }
+
+    // For any other type, try to convert to string
+    return reader.GetString();
+  }
+
+  public override void Write(Utf8JsonWriter writer, string? value, JsonSerializerOptions options)
+  {
+    if (value == null)
+    {
+      writer.WriteNullValue();
+    }
+    else
+    {
+      writer.WriteStringValue(value);
+    }
+  }
+}
+"""
+
+# JSON converter for parsing string numbers to integers
+[[json_converters]]
+target_type = "int?"
+converter_type = "StringToIntegerConverter"
+required_usings = [
+    "System.Text.Json",
+    "System.Text.Json.Serialization"
+]
+inline_converter_code = """
+/// <summary>
+/// Converts JSON string numbers to integers (e.g., "30" -> 30, "-1" -> -1)
+/// </summary>
+public class StringToIntegerConverter : JsonConverter<int?>
+{
+  public override int? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+  {
+    if (reader.TokenType == JsonTokenType.String)
+    {
+      var stringValue = reader.GetString();
+      if (string.IsNullOrEmpty(stringValue))
+      {
+        return null;
+      }
+
+      if (int.TryParse(stringValue, out var intValue))
+      {
+        return intValue;
+      }
+
+      // If parsing fails, return null or throw exception
+      return null;
+    }
+
+    if (reader.TokenType == JsonTokenType.Number)
+    {
+      return reader.GetInt32();
+    }
+
+    if (reader.TokenType == JsonTokenType.Null)
+    {
+      return null;
+    }
+
+    // For any other type, return null
+    return null;
+  }
+
+  public override void Write(Utf8JsonWriter writer, int? value, JsonSerializerOptions options)
+  {
+    if (value == null)
+    {
+      writer.WriteNullValue();
+    }
+    else
+    {
+      writer.WriteNumberValue(value.Value);
+    }
+  }
+}
+"""
+
+# JSON converter for handling empty strings in DateOnly fields
+[[json_converters]]
+target_type = "DateOnly?"
+converter_type = "EmptyStringToDateOnlyConverter"
+required_usings = [
+    "System.Text.Json",
+    "System.Text.Json.Serialization"
+]
+inline_converter_code = """
+/// <summary>
+/// Converts empty strings to null DateOnly, otherwise parses valid date strings
+/// </summary>
+public class EmptyStringToDateOnlyConverter : JsonConverter<DateOnly?>
+{
+  public override DateOnly? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+  {
+    if (reader.TokenType == JsonTokenType.String)
+    {
+      var stringValue = reader.GetString();
+
+      // Handle empty strings
+      if (string.IsNullOrEmpty(stringValue))
+      {
+        return null;
+      }
+
+      // Try to parse valid date strings
+      if (DateOnly.TryParse(stringValue, out var dateValue))
+      {
+        return dateValue;
+      }
+
+      // If parsing fails, return null
+      return null;
+    }
+
+    if (reader.TokenType == JsonTokenType.Null)
+    {
+      return null;
+    }
+
+    // For any other type, return null
+    return null;
+  }
+
+  public override void Write(Utf8JsonWriter writer, DateOnly? value, JsonSerializerOptions options)
+  {
+    if (value == null)
+    {
+      writer.WriteNullValue();
+    }
+    else
+    {
+      writer.WriteStringValue(value.Value.ToString("yyyy-MM-dd"));
+    }
+  }
+}
+"""
+
+# JSON converter for handling empty strings in nullable decimal fields
+[[json_converters]]
+target_type = "decimal?"
+converter_type = "EmptyStringToNullableDecimalConverter"
+required_usings = [
+    "System.Text.Json",
+    "System.Text.Json.Serialization"
+]
+inline_converter_code = """
+/// <summary>
+/// Converts empty strings to null decimal, otherwise parses valid decimal strings or numbers
+/// </summary>
+public class EmptyStringToNullableDecimalConverter : JsonConverter<decimal?>
+{
+  public override decimal? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+  {
+    if (reader.TokenType == JsonTokenType.String)
+    {
+      var stringValue = reader.GetString();
+
+      // Handle empty strings
+      if (string.IsNullOrEmpty(stringValue))
+      {
+        return null;
+      }
+
+      // Try to parse valid decimal strings
+      if (decimal.TryParse(stringValue, out var decimalValue))
+      {
+        return decimalValue;
+      }
+
+      // If parsing fails, return null
+      return null;
+    }
+
+    if (reader.TokenType == JsonTokenType.Number)
+    {
+      return reader.GetDecimal();
+    }
+
+    if (reader.TokenType == JsonTokenType.Null)
+    {
+      return null;
+    }
+
+    // For any other type, return null
+    return null;
+  }
+
+  public override void Write(Utf8JsonWriter writer, decimal? value, JsonSerializerOptions options)
+  {
+    if (value == null)
+    {
+      writer.WriteNullValue();
+    }
+    else
+    {
+      writer.WriteNumberValue(value.Value);
+    }
+  }
+}
+"""
+
+# JSON converter for handling empty strings in nullable enum fields
+[[json_converters]]
+target_type = "Enum?"
+converter_type = "EmptyStringToNullableEnumConverter"
+required_usings = [
+    "System.Text.Json",
+    "System.Text.Json.Serialization"
+]
+inline_converter_code = """
+/// <summary>
+/// Converts empty strings to null for nullable enum types
+/// </summary>
+public class EmptyStringToNullableEnumConverter<T> : JsonConverter<T?> where T : struct, Enum
+{
+  public override T? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+  {
+    if (reader.TokenType == JsonTokenType.String)
+    {
+      var stringValue = reader.GetString();
+
+      // Handle empty strings
+      if (string.IsNullOrEmpty(stringValue))
+      {
+        return null;
+      }
+
+      // Try to parse the enum value
+      if (Enum.TryParse<T>(stringValue, true, out var enumValue))
+      {
+        return enumValue;
+      }
+
+      // Handle numeric strings for enums (e.g., "1" -> EnumValue._1)
+      if (int.TryParse(stringValue, out var intValue))
+      {
+        // Try with underscore prefix for numeric enum values
+        var underscoreName = "_" + intValue;
+        if (Enum.TryParse<T>(underscoreName, true, out enumValue))
+        {
+          return enumValue;
+        }
+
+        // Try casting the integer directly
+        if (Enum.IsDefined(typeof(T), intValue))
+        {
+          return (T)(object)intValue;
+        }
+      }
+
+      // If we can't parse it, return null
+      return null;
+    }
+
+    if (reader.TokenType == JsonTokenType.Number)
+    {
+      var intValue = reader.GetInt32();
+
+      // Try with underscore prefix for numeric enum values
+      var underscoreName = "_" + intValue;
+      if (Enum.TryParse<T>(underscoreName, true, out var enumValue))
+      {
+        return enumValue;
+      }
+
+      // Try casting the integer directly
+      if (Enum.IsDefined(typeof(T), intValue))
+      {
+        return (T)(object)intValue;
+      }
+
+      return null;
+    }
+
+    if (reader.TokenType == JsonTokenType.Null)
+    {
+      return null;
+    }
+
+    return null;
+  }
+
+  public override void Write(Utf8JsonWriter writer, T? value, JsonSerializerOptions options)
+  {
+    if (value == null)
+    {
+      writer.WriteNullValue();
+    }
+    else
+    {
+      // Write the numeric value if the enum name starts with underscore
+      var enumName = value.ToString();
+      if (enumName?.StartsWith("_") == true && int.TryParse(enumName.Substring(1), out var numericValue))
+      {
+        writer.WriteStringValue(numericValue.ToString());
+      }
+      else
+      {
+        writer.WriteStringValue(value.ToString());
+      }
+    }
+  }
+}
+"""
+

@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Apigen.InvoiceNinja.Client/Apigen.InvoiceNinja.Client.csproj" />
+    <Project Path="src/Apigen.InvoiceNinja.Models/Apigen.InvoiceNinja.Models.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'Apigen.InvoiceNinja.Client'">
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);IncludeModelsInPackage</TargetsForTfmSpecificBuildOutput>
+  </PropertyGroup>
+  <Target Name="IncludeModelsInPackage">
+    <ItemGroup>
+      <BuildOutputInPackage Include="$(OutputPath)Apigen.InvoiceNinja.Models.dll" />
+    </ItemGroup>
+  </Target>
+</Project>

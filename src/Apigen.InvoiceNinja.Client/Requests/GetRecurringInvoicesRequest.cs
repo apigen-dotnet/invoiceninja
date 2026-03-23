@@ -1,0 +1,201 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.Json.Serialization;
+using System.Web;
+
+#nullable enable
+
+namespace Apigen.InvoiceNinja.Client;
+
+/// <summary>
+/// Request parameters for List recurring invoices
+/// Operation: GET /api/v1/recurring_invoices
+/// </summary>
+public class GetRecurringInvoicesRequest : BaseRequest
+{
+  /// <summary>
+  /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes
+  /// </summary>
+  [JsonPropertyName("include")]
+  public string? Include { get; set; }
+
+  /// <summary>
+  /// Filters the entity list by client_id. Suitable when you only want the entities of a specific client.
+  /// 
+  /// ```html
+  /// GET /api/v1/invoices?client_id=AxB7Hjk9
+  /// Returns only invoices for the specified client
+  /// ```
+  /// 
+  /// </summary>
+  [JsonPropertyName("client_id")]
+  public string? ClientId { get; set; }
+
+  /// <summary>
+  /// Filters the entity list by the created at timestamp. Parameter value can be a datetime string or unix timestamp
+  /// 
+  /// ```html
+  /// GET /api/v1/invoices?created_at=2022-01-10
+  /// Returns entities created on January 10th, 2022
+  /// ```
+  /// 
+  /// </summary>
+  [JsonPropertyName("created_at")]
+  public int? CreatedAt { get; set; }
+
+  /// <summary>
+  /// Filters the entity list by the updated at timestamp. Parameter value can be a datetime string or unix timestamp
+  /// 
+  /// ```html
+  /// GET /api/v1/invoices?updated_at=2022-01-10
+  /// Returns entities last updated on January 10th, 2022
+  /// ```
+  /// 
+  /// </summary>
+  [JsonPropertyName("updated_at")]
+  public int? UpdatedAt { get; set; }
+
+  /// <summary>
+  /// Filters the entity list by entities that have been deleted.
+  /// 
+  /// ```html
+  /// GET /api/v1/invoices?is_deleted=true
+  /// Returns only soft-deleted entities
+  /// ```
+  /// 
+  /// </summary>
+  [JsonPropertyName("is_deleted")]
+  public bool? IsDeleted { get; set; }
+
+  /// <summary>
+  /// Filters the entity list and only returns entities for clients that have not been deleted
+  /// 
+  /// ```html
+  /// GET /api/v1/invoices?filter_deleted_clients=true
+  /// Returns only invoices for active (non-deleted) clients
+  /// ```
+  /// 
+  /// </summary>
+  [JsonPropertyName("filter_deleted_clients")]
+  public string? FilterDeletedClients { get; set; }
+
+  /// <summary>
+  /// Filters the entity list by an associated vendor
+  /// 
+  /// ```html
+  /// GET /api/v1/purchases?vendor_id=AxB7Hjk9
+  /// Returns only purchases for the specified vendor
+  /// ```
+  /// 
+  /// </summary>
+  [JsonPropertyName("vendor_id")]
+  public string? VendorId { get; set; }
+
+  /// <summary>
+  /// The number of records to return for each request, default is 20
+  /// </summary>
+  [JsonPropertyName("per_page")]
+  public int? PerPage { get; set; }
+
+  /// <summary>
+  /// The page number to return for this request (when performing pagination), default is 1
+  /// </summary>
+  [JsonPropertyName("page")]
+  public int? Page { get; set; }
+
+  /// <summary>
+  /// Searches across a range of columns including:  
+  /// - custom_value1  
+  /// - custom_value2  
+  /// - custom_value3  
+  /// - custom_value4
+  /// 
+  /// </summary>
+  [JsonPropertyName("filter")]
+  public string? Filter { get; set; }
+
+  /// <summary>
+  /// A comma separated list of invoice status strings. Valid options include:  
+  /// - all
+  /// - active  
+  /// - paused  
+  /// - completed  
+  /// 
+  /// </summary>
+  [JsonPropertyName("client_status")]
+  public string? ClientStatus { get; set; }
+
+  /// <summary>
+  /// Returns the list sorted by column in ascending or descending order.
+  /// </summary>
+  [JsonPropertyName("sort")]
+  public string? Sort { get; set; }
+
+  /// <summary>
+  /// Filters the list by number.
+  /// 
+  /// </summary>
+  [JsonPropertyName("number")]
+  public string? Number { get; set; }
+
+  /// <summary>
+  /// Filters the list by product_key.
+  /// 
+  /// </summary>
+  [JsonPropertyName("product_key")]
+  public string? ProductKey { get; set; }
+
+  /// <summary>
+  /// Filters the list by next_send_between.
+  /// 
+  /// </summary>
+  [JsonPropertyName("next_send_between")]
+  public string? NextSendBetween { get; set; }
+
+  /// <summary>
+  /// Filters the list by frequency_id.
+  /// 
+  /// </summary>
+  [JsonPropertyName("frequency_id")]
+  public string? FrequencyId { get; set; }
+
+  public override string ToQueryString()
+  {
+    Dictionary<string, object> queryParams = new Dictionary<string, object>();
+
+    if (Include != null)
+      queryParams["include"] = Include;
+    if (ClientId != null)
+      queryParams["client_id"] = ClientId;
+    if (CreatedAt != null)
+      queryParams["created_at"] = CreatedAt;
+    if (UpdatedAt != null)
+      queryParams["updated_at"] = UpdatedAt;
+    if (IsDeleted != null)
+      queryParams["is_deleted"] = IsDeleted;
+    if (FilterDeletedClients != null)
+      queryParams["filter_deleted_clients"] = FilterDeletedClients;
+    if (VendorId != null)
+      queryParams["vendor_id"] = VendorId;
+    if (PerPage != null)
+      queryParams["per_page"] = PerPage;
+    if (Page != null)
+      queryParams["page"] = Page;
+    if (Filter != null)
+      queryParams["filter"] = Filter;
+    if (ClientStatus != null)
+      queryParams["client_status"] = ClientStatus;
+    if (Sort != null)
+      queryParams["sort"] = Sort;
+    if (Number != null)
+      queryParams["number"] = Number;
+    if (ProductKey != null)
+      queryParams["product_key"] = ProductKey;
+    if (NextSendBetween != null)
+      queryParams["next_send_between"] = NextSendBetween;
+    if (FrequencyId != null)
+      queryParams["frequency_id"] = FrequencyId;
+
+    return queryParams.ToQueryString();
+  }
+}
