@@ -17,10 +17,10 @@
     <Version>5.0.0</Version>
     <Description>Generated C# client for the Invoice Ninja v5 API</Description>
     <PackageTags>invoiceninja;api;client;openapi;apigen</PackageTags>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReadmeFile>NUGET.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(MSBuildProjectName)' == 'Apigen.InvoiceNinja.Client'">
-    <None Include="../../README.md" Pack="true" PackagePath="/" />
+    <None Include="../../NUGET.md" Pack="true" PackagePath="/" />
   </ItemGroup>
 </Project>
