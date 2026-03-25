@@ -290,6 +290,14 @@ model_filter =".*Settings$"
 original_data_type = "boolean"
 enum = "TaskDisplayMode"
 
+# Fix: Payment.date is string in spec but should be DateOnly (PaymentRequest has it correct with format: date)
+[[property_overrides]]
+property_filter ="^date$"
+model_filter ="^Payment$"
+original_data_type = "string"
+target_type = "DateOnly?"
+json_converter = "EmptyStringToDateOnlyConverter"
+
 # Fix: API returns array but spec says single object
 [[property_overrides]]
 property_filter ="^paymentables$"

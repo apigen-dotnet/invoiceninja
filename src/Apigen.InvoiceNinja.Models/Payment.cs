@@ -66,8 +66,9 @@ public class Payment
   /// <summary>
   /// The Payment date
   /// </summary>
+  [JsonConverter(typeof(EmptyStringToDateOnlyConverter))]
   [JsonPropertyName("date")]
-  public string? Date { get; set; }
+  public DateOnly? Date { get; set; }
 
   /// <summary>
   /// The transaction reference as defined by the payment gateway
