@@ -10,6 +10,11 @@ if [ ! -d "$GENERATOR_DIR" ]; then
   exit 1
 fi
 
+# Apply patches to upstream spec before regeneration
+if [ -f "$SCRIPT_DIR/specs/patch-spec.py" ]; then
+  python3 "$SCRIPT_DIR/specs/patch-spec.py" "$SCRIPT_DIR/specs/invoiceninja.yaml"
+fi
+
 echo "Regenerating from specs..."
 dotnet run --project "$GENERATOR_DIR/src/Apigen.Generator/Apigen.Generator.csproj" -- --config "$SCRIPT_DIR/specs/invoiceninja.toml"
 echo "Done!"

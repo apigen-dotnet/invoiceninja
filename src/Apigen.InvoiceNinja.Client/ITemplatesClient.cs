@@ -15,7 +15,7 @@ public interface ITemplatesClient
   /// Returns a entity template with the template variables replaced with the Entities
   /// Operation: POST /api/v1/templates
   /// </summary>
-  Task<ApiResponse<Template>> CreateAsync(Apigen.InvoiceNinja.Models.GetShowTemplateRequest getShowTemplateRequest);
+  Task<ApiResponse<Template>> CreateAsync(Apigen.InvoiceNinja.Models.GetShowTemplateRequest getShowTemplateRequest, GetShowTemplateRequest? request = null);
 
   /// <summary>
   /// Preview template by hash

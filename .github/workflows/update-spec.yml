@@ -43,6 +43,14 @@ jobs:
         run: |
           curl -fsSL "${{ steps.config.outputs.url }}" -o "${{ steps.config.outputs.target }}"
 
+      - name: Apply spec patches
+        if: steps.config.outputs.skip != 'true'
+        run: |
+          if [ -f specs/patch-spec.py ]; then
+            pip install ruamel.yaml --quiet
+            python3 specs/patch-spec.py "${{ steps.config.outputs.target }}"
+          fi
+
       - name: Check for changes
         if: steps.config.outputs.skip != 'true'
         id: diff
