@@ -62,13 +62,16 @@ public class TasksClient
   /// Create task
   /// Operation: POST /api/v1/tasks
   /// </summary>
-  public async Task<ApiResponse<TaskItem>> CreateAsync(StoreTaskRequest? request = null)
+  public async Task<ApiResponse<TaskItem>> CreateAsync(Apigen.InvoiceNinja.Models.TaskRequest taskRequest, StoreTaskRequest? request = null)
   {
     string url = "tasks".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
-    HttpResponseMessage response = await _httpClient.PostAsync(url, null);
+    string json = JsonSerializer.Serialize(taskRequest, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "POST", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
     HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
 
@@ -132,7 +135,7 @@ public class TasksClient
   /// Update task
   /// Operation: PUT /api/v1/tasks/{id}
   /// </summary>
-  public async Task<ApiResponse<TaskItem>> UpdateAsync(string id, UpdateTaskRequest? request = null)
+  public async Task<ApiResponse<TaskItem>> UpdateAsync(string id, Apigen.InvoiceNinja.Models.TaskRequest taskRequest, UpdateTaskRequest? request = null)
   {
     Dictionary<string, object> pathParams = new()
     {
@@ -142,7 +145,10 @@ public class TasksClient
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "PUT", url);
-    HttpResponseMessage response = await _httpClient.PutAsync(url, null);
+    string json = JsonSerializer.Serialize(taskRequest, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "PUT", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PutAsync(url, content);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
     HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "PUT", url, durationMs);
 
@@ -342,13 +348,16 @@ public class TasksClient
   /// Sort tasks on KanBan
   /// Operation: POST /api/v1/tasks/sort
   /// </summary>
-  public async Task SortTasksAsync(SortTasksRequest? request = null)
+  public async Task SortTasksAsync(Apigen.InvoiceNinja.Models.TaskSortRequest taskSortRequest, SortTasksRequest? request = null)
   {
     string url = "tasks/sort".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
-    HttpResponseMessage response = await _httpClient.PostAsync(url, null);
+    string json = JsonSerializer.Serialize(taskSortRequest, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "POST", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
     HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
 

@@ -17,4 +17,10 @@ public interface IUpdateClient
   /// </summary>
   Task SelfUpdateAsync(SelfUpdateRequest? request = null);
 
+  /// <summary>
+  /// Check for available update
+  /// Operation: POST /api/v1/self-update/check_version
+  /// </summary>
+  Task SelfUpdateCheckVersionAsync();
+
 }

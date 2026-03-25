@@ -51,7 +51,7 @@ public interface IInvoicesClient
   /// Blank invoice
   /// Operation: GET /api/v1/invoices/create
   /// </summary>
-  Task<ApiResponse<Invoice>> getBlankInvoiceAsync();
+  Task<ApiResponse<Invoice>> GetInvoiceCreateAsync();
 
   /// <summary>
   /// Bulk invoice actions
@@ -69,18 +69,18 @@ public interface IInvoicesClient
   /// Download invoice PDF
   /// Operation: GET /api/v1/invoice/{invitation_key}/download
   /// </summary>
-  Task downloadInvoiceAsync(string invitationKey, DownloadInvoiceRequest? request = null);
+  Task DownloadInvoiceByInvitationAsync(string invitationKey, DownloadInvoiceByInvitationRequest? request = null);
 
   /// <summary>
   /// Download delivery note
   /// Operation: GET /api/v1/invoices/{id}/delivery_note
   /// </summary>
-  Task getInvoiceDeliveryNoteAsync(string id, GetInvoiceDeliveryNoteRequest? request = null);
+  Task GetInvoiceDeliveryNoteAsync(string id, GetInvoiceDeliveryNoteRequest? request = null);
 
   /// <summary>
   /// Add invoice document
   /// Operation: POST /api/v1/invoices/{id}/upload
   /// </summary>
-  Task<ApiResponse<Invoice>> PostinvoicesAsync(string id, PostinvoicesRequest? request = null);
+  Task<ApiResponse<Invoice>> UploadInvoiceDocumentAsync(string id, Apigen.InvoiceNinja.Models.UploadInvoiceDocumentRequest uploadInvoiceDocumentRequest, UploadInvoiceDocumentRequest? request = null);
 
 }

@@ -267,12 +267,12 @@ public class BankTransactionRulesClient
 
 
   /// <summary>
-  /// Performs bulk actions on an array of bank_transation rules
-  /// Operation: POST /api/v1/bank_transation_rules/bulk
+  /// Performs bulk actions on an array of bank_transaction rules
+  /// Operation: POST /api/v1/bank_transaction_rules/bulk
   /// </summary>
   public async Task BulkAsync(BulkBankTransactionRulesRequest? request = null)
   {
-    string url = "bank_transation_rules/bulk".BuildUrl(request: request);
+    string url = "bank_transaction_rules/bulk".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);

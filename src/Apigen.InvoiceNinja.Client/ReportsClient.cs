@@ -29,9 +29,9 @@ public class ReportsClient
   /// Contact reports
   /// Operation: POST /api/v1/reports/contacts
   /// </summary>
-  public async Task GetContactReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetContactReportRequest? request = null)
+  public async Task GetContactReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
   {
-    string url = "reports/contacts".BuildUrl(request: request);
+    string url = "reports/contacts";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
@@ -59,9 +59,9 @@ public class ReportsClient
   /// Client reports
   /// Operation: POST /api/v1/reports/clients
   /// </summary>
-  public async Task GetClientReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetClientReportRequest? request = null)
+  public async Task GetClientReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
   {
-    string url = "reports/clients".BuildUrl(request: request);
+    string url = "reports/clients";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
@@ -87,11 +87,11 @@ public class ReportsClient
 
   /// <summary>
   /// Credit reports
-  /// Operation: POST /api/v1/reports/credit
+  /// Operation: POST /api/v1/reports/credits
   /// </summary>
-  public async Task GetCreditReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetCreditReportRequest? request = null)
+  public async Task GetCreditReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
   {
-    string url = "reports/credit".BuildUrl(request: request);
+    string url = "reports/credits";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
@@ -119,9 +119,9 @@ public class ReportsClient
   /// Document reports
   /// Operation: POST /api/v1/reports/documents
   /// </summary>
-  public async Task GetDocumentReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetDocumentReportRequest? request = null)
+  public async Task GetDocumentReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
   {
-    string url = "reports/documents".BuildUrl(request: request);
+    string url = "reports/documents";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
@@ -147,11 +147,11 @@ public class ReportsClient
 
   /// <summary>
   /// Expense reports
-  /// Operation: POST /api/v1/reports/expense
+  /// Operation: POST /api/v1/reports/expenses
   /// </summary>
-  public async Task GetExpenseReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetExpenseReportRequest? request = null)
+  public async Task GetExpenseReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
   {
-    string url = "reports/expense".BuildUrl(request: request);
+    string url = "reports/expenses";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
@@ -179,9 +179,9 @@ public class ReportsClient
   /// Invoice item reports
   /// Operation: POST /api/v1/reports/invoice_items
   /// </summary>
-  public async Task GetInvoiceItemReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetInvoiceItemReportRequest? request = null)
+  public async Task GetInvoiceItemReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
   {
-    string url = "reports/invoice_items".BuildUrl(request: request);
+    string url = "reports/invoice_items";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
@@ -209,9 +209,9 @@ public class ReportsClient
   /// Invoice reports
   /// Operation: POST /api/v1/reports/invoices
   /// </summary>
-  public async Task GetInvoiceReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetInvoiceReportRequest? request = null)
+  public async Task GetInvoiceReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
   {
-    string url = "reports/invoices".BuildUrl(request: request);
+    string url = "reports/invoices";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
@@ -239,9 +239,9 @@ public class ReportsClient
   /// Payment reports
   /// Operation: POST /api/v1/reports/payments
   /// </summary>
-  public async Task GetPaymentReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetPaymentReportRequest? request = null)
+  public async Task GetPaymentReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
   {
-    string url = "reports/payments".BuildUrl(request: request);
+    string url = "reports/payments";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
@@ -269,9 +269,9 @@ public class ReportsClient
   /// Product reports
   /// Operation: POST /api/v1/reports/products
   /// </summary>
-  public async Task GetProductReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetProductReportRequest? request = null)
+  public async Task GetProductReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
   {
-    string url = "reports/products".BuildUrl(request: request);
+    string url = "reports/products";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
@@ -299,9 +299,9 @@ public class ReportsClient
   /// Product Salesreports
   /// Operation: POST /api/v1/reports/product_sales
   /// </summary>
-  public async Task GetProductSalesReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetProductSalesReportRequest? request = null)
+  public async Task GetProductSalesReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
   {
-    string url = "reports/product_sales".BuildUrl(request: request);
+    string url = "reports/product_sales";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
@@ -329,9 +329,9 @@ public class ReportsClient
   /// Profit loss reports
   /// Operation: POST /api/v1/reports/profitloss
   /// </summary>
-  public async Task GetProfitLossReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetProfitLossReportRequest? request = null)
+  public async Task GetProfitLossReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
   {
-    string url = "reports/profitloss".BuildUrl(request: request);
+    string url = "reports/profitloss";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
@@ -359,9 +359,9 @@ public class ReportsClient
   /// Quote item reports
   /// Operation: POST /api/v1/reports/quote_items
   /// </summary>
-  public async Task GetQuoteItemReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetQuoteItemReportRequest? request = null)
+  public async Task GetQuoteItemReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
   {
-    string url = "reports/quote_items".BuildUrl(request: request);
+    string url = "reports/quote_items";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
@@ -389,9 +389,9 @@ public class ReportsClient
   /// Quote reports
   /// Operation: POST /api/v1/reports/quotes
   /// </summary>
-  public async Task GetQuoteReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetQuoteReportRequest? request = null)
+  public async Task GetQuoteReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
   {
-    string url = "reports/quotes".BuildUrl(request: request);
+    string url = "reports/quotes";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
@@ -419,9 +419,9 @@ public class ReportsClient
   /// Recurring Invoice reports
   /// Operation: POST /api/v1/reports/recurring_invoices
   /// </summary>
-  public async Task GetRecurringInvoiceReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetRecurringInvoiceReportRequest? request = null)
+  public async Task GetRecurringInvoiceReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
   {
-    string url = "reports/recurring_invoices".BuildUrl(request: request);
+    string url = "reports/recurring_invoices";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
@@ -449,9 +449,9 @@ public class ReportsClient
   /// Task reports
   /// Operation: POST /api/v1/reports/tasks
   /// </summary>
-  public async Task GetTaskReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetTaskReportRequest? request = null)
+  public async Task GetTaskReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
   {
-    string url = "reports/tasks".BuildUrl(request: request);
+    string url = "reports/tasks";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
@@ -459,6 +459,368 @@ public class ReportsClient
     HttpClientLog.RequestBody(_logger, "POST", json);
     StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
     HttpResponseMessage response = await _httpClient.PostAsync(url, content);
+    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+
+    try
+    {
+      response.EnsureSuccessStatusCode();
+    }
+    catch (HttpRequestException ex)
+    {
+      string responseContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      throw;
+    }
+  }
+
+
+  /// <summary>
+  /// Activity reports
+  /// Operation: POST /api/v1/reports/activities
+  /// </summary>
+  public async Task GetActivityReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  {
+    string url = "reports/activities";
+
+    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+    HttpClientLog.RequestStarted(_logger, "POST", url);
+    string json = JsonSerializer.Serialize(genericReportSchema, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "POST", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
+    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+
+    try
+    {
+      response.EnsureSuccessStatusCode();
+    }
+    catch (HttpRequestException ex)
+    {
+      string responseContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      throw;
+    }
+  }
+
+
+  /// <summary>
+  /// Client contact reports
+  /// Operation: POST /api/v1/reports/client_contacts
+  /// </summary>
+  public async Task GetClientContactReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  {
+    string url = "reports/client_contacts";
+
+    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+    HttpClientLog.RequestStarted(_logger, "POST", url);
+    string json = JsonSerializer.Serialize(genericReportSchema, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "POST", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
+    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+
+    try
+    {
+      response.EnsureSuccessStatusCode();
+    }
+    catch (HttpRequestException ex)
+    {
+      string responseContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      throw;
+    }
+  }
+
+
+  /// <summary>
+  /// AR detail report
+  /// Operation: POST /api/v1/reports/ar_detail_report
+  /// </summary>
+  public async Task GetARDetailReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  {
+    string url = "reports/ar_detail_report";
+
+    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+    HttpClientLog.RequestStarted(_logger, "POST", url);
+    string json = JsonSerializer.Serialize(genericReportSchema, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "POST", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
+    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+
+    try
+    {
+      response.EnsureSuccessStatusCode();
+    }
+    catch (HttpRequestException ex)
+    {
+      string responseContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      throw;
+    }
+  }
+
+
+  /// <summary>
+  /// AR summary report
+  /// Operation: POST /api/v1/reports/ar_summary_report
+  /// </summary>
+  public async Task GetARSummaryReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  {
+    string url = "reports/ar_summary_report";
+
+    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+    HttpClientLog.RequestStarted(_logger, "POST", url);
+    string json = JsonSerializer.Serialize(genericReportSchema, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "POST", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
+    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+
+    try
+    {
+      response.EnsureSuccessStatusCode();
+    }
+    catch (HttpRequestException ex)
+    {
+      string responseContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      throw;
+    }
+  }
+
+
+  /// <summary>
+  /// Client balance report
+  /// Operation: POST /api/v1/reports/client_balance_report
+  /// </summary>
+  public async Task GetClientBalanceReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  {
+    string url = "reports/client_balance_report";
+
+    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+    HttpClientLog.RequestStarted(_logger, "POST", url);
+    string json = JsonSerializer.Serialize(genericReportSchema, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "POST", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
+    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+
+    try
+    {
+      response.EnsureSuccessStatusCode();
+    }
+    catch (HttpRequestException ex)
+    {
+      string responseContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      throw;
+    }
+  }
+
+
+  /// <summary>
+  /// Client sales report
+  /// Operation: POST /api/v1/reports/client_sales_report
+  /// </summary>
+  public async Task GetClientSalesReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  {
+    string url = "reports/client_sales_report";
+
+    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+    HttpClientLog.RequestStarted(_logger, "POST", url);
+    string json = JsonSerializer.Serialize(genericReportSchema, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "POST", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
+    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+
+    try
+    {
+      response.EnsureSuccessStatusCode();
+    }
+    catch (HttpRequestException ex)
+    {
+      string responseContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      throw;
+    }
+  }
+
+
+  /// <summary>
+  /// Tax summary report
+  /// Operation: POST /api/v1/reports/tax_summary_report
+  /// </summary>
+  public async Task GetTaxSummaryReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  {
+    string url = "reports/tax_summary_report";
+
+    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+    HttpClientLog.RequestStarted(_logger, "POST", url);
+    string json = JsonSerializer.Serialize(genericReportSchema, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "POST", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
+    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+
+    try
+    {
+      response.EnsureSuccessStatusCode();
+    }
+    catch (HttpRequestException ex)
+    {
+      string responseContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      throw;
+    }
+  }
+
+
+  /// <summary>
+  /// Tax period report
+  /// Operation: POST /api/v1/reports/tax_period_report
+  /// </summary>
+  public async Task GetTaxPeriodReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  {
+    string url = "reports/tax_period_report";
+
+    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+    HttpClientLog.RequestStarted(_logger, "POST", url);
+    string json = JsonSerializer.Serialize(genericReportSchema, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "POST", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
+    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+
+    try
+    {
+      response.EnsureSuccessStatusCode();
+    }
+    catch (HttpRequestException ex)
+    {
+      string responseContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      throw;
+    }
+  }
+
+
+  /// <summary>
+  /// User sales report
+  /// Operation: POST /api/v1/reports/user_sales_report
+  /// </summary>
+  public async Task GetUserSalesReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  {
+    string url = "reports/user_sales_report";
+
+    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+    HttpClientLog.RequestStarted(_logger, "POST", url);
+    string json = JsonSerializer.Serialize(genericReportSchema, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "POST", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
+    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+
+    try
+    {
+      response.EnsureSuccessStatusCode();
+    }
+    catch (HttpRequestException ex)
+    {
+      string responseContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      throw;
+    }
+  }
+
+
+  /// <summary>
+  /// Project reports
+  /// Operation: POST /api/v1/reports/projects
+  /// </summary>
+  public async Task GetProjectReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  {
+    string url = "reports/projects";
+
+    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+    HttpClientLog.RequestStarted(_logger, "POST", url);
+    string json = JsonSerializer.Serialize(genericReportSchema, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "POST", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
+    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+
+    try
+    {
+      response.EnsureSuccessStatusCode();
+    }
+    catch (HttpRequestException ex)
+    {
+      string responseContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      throw;
+    }
+  }
+
+
+  /// <summary>
+  /// Report preview
+  /// Operation: POST /api/v1/reports/preview/{hash}
+  /// </summary>
+  public async Task GetReportPreviewAsync(string hash)
+  {
+    Dictionary<string, object> pathParams = new()
+    {
+      ["hash"] = hash
+    };
+    string url = "reports/preview/{hash}".BuildUrl(pathParams);
+
+    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+    HttpClientLog.RequestStarted(_logger, "POST", url);
+    HttpResponseMessage response = await _httpClient.PostAsync(url, null);
+    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+
+    try
+    {
+      response.EnsureSuccessStatusCode();
+    }
+    catch (HttpRequestException ex)
+    {
+      string responseContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      throw;
+    }
+  }
+
+
+  /// <summary>
+  /// Export preview
+  /// Operation: POST /api/v1/exports/preview/{hash}
+  /// </summary>
+  public async Task GetExportPreviewAsync(string hash)
+  {
+    Dictionary<string, object> pathParams = new()
+    {
+      ["hash"] = hash
+    };
+    string url = "exports/preview/{hash}".BuildUrl(pathParams);
+
+    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+    HttpClientLog.RequestStarted(_logger, "POST", url);
+    HttpResponseMessage response = await _httpClient.PostAsync(url, null);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
     HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
 

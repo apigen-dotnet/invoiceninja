@@ -57,6 +57,6 @@ public interface IExpensesClient
   /// Performs bulk actions on an array of expenses
   /// Operation: POST /api/v1/expenses/bulk
   /// </summary>
-  Task<ApiResponse<Expense>> BulkAsync(Apigen.InvoiceNinja.Models.BulkExpensesRequest bulkExpensesRequest, BulkExpensesRequest? request = null);
+  Task<ApiResponse<Expense>> BulkAsync(BulkExpensesRequest? request = null);
 
 }

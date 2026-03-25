@@ -57,7 +57,7 @@ public interface IBankIntegrationsClient
   /// Performs bulk actions on an array of bank_integrations
   /// Operation: POST /api/v1/bank_integrations/bulk
   /// </summary>
-  Task BulkAsync(Apigen.InvoiceNinja.Models.BulkBankIntegrationsRequest bulkBankIntegrationsRequest, BulkBankIntegrationsRequest? request = null);
+  Task BulkAsync(BulkBankIntegrationsRequest? request = null);
 
   /// <summary>
   /// Gets the list of accounts from the remote server

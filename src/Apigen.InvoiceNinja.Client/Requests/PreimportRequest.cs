@@ -8,7 +8,7 @@ using System.Web;
 namespace Apigen.InvoiceNinja.Client;
 
 /// <summary>
-/// Request parameters for Pre Import checks - returns a reference to the job and the headers of the CSV
+/// Request parameters for Pre Import CSV data
 /// Operation: POST /api/v1/preimport
 /// </summary>
 public class PreimportRequest : BaseRequest

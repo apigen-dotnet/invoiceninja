@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 
 /// <summary>
 /// Request parameters for Bulk actions
-/// Operation: POST /api/v1/bank_transations/bulk
+/// Operation: POST /api/v1/bank_transactions/bulk
 /// </summary>
 public class BulkBankTransactionsRequest : BaseRequest
 {
@@ -42,7 +42,7 @@ public class BulkBankTransactionsRequest : BaseRequest
 
     queryParams["_method"] = "POST";
 
-    // Fixed parameters added for POST /api/v1/bank_transations/bulk
+    // Fixed parameters added for POST /api/v1/bank_transactions/bulk
     if (Index != null)
       queryParams["index"] = Index;
 

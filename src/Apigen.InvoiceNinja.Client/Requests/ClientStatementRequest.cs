@@ -62,6 +62,12 @@ public class ClientStatementRequest : BaseRequest
   [JsonPropertyName("include")]
   public string? Include { get; set; }
 
+  /// <summary>
+  /// When set to true, the statement will also be sent via email to the client.
+  /// </summary>
+  [JsonPropertyName("send_email")]
+  public bool? SendEmail { get; set; }
+
   public override string ToQueryString()
   {
     Dictionary<string, object> queryParams = new Dictionary<string, object>();
@@ -73,6 +79,8 @@ public class ClientStatementRequest : BaseRequest
       queryParams["index"] = Index;
     if (Include != null)
       queryParams["include"] = Include;
+    if (SendEmail != null)
+      queryParams["send_email"] = SendEmail;
 
     return queryParams.ToQueryString();
   }

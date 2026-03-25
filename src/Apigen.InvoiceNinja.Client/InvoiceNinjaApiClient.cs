@@ -29,6 +29,11 @@ public class InvoiceNinjaApiClient
   public AuthClient Auth { get; }
 
   /// <summary>
+  /// Client for settings operations
+  /// </summary>
+  public SettingsClient Settings { get; }
+
+  /// <summary>
   /// Client for refresh operations
   /// </summary>
   public RefreshClient Refresh { get; }
@@ -224,6 +229,11 @@ public class InvoiceNinjaApiClient
   public SubscriptionsClient Subscriptions { get; }
 
   /// <summary>
+  /// Client for scheduler operations
+  /// </summary>
+  public SchedulerClient Scheduler { get; }
+
+  /// <summary>
   /// Client for support operations
   /// </summary>
   public SupportClient Support { get; }
@@ -259,6 +269,11 @@ public class InvoiceNinjaApiClient
   public TemplatesClient Templates { get; }
 
   /// <summary>
+  /// Client for search operations
+  /// </summary>
+  public SearchClient Search { get; }
+
+  /// <summary>
   /// Client for tokens operations
   /// </summary>
   public TokensClient Tokens { get; }
@@ -279,39 +294,19 @@ public class InvoiceNinjaApiClient
   public WebhooksClient Webhooks { get; }
 
   /// <summary>
-  /// Client for credits operations
-  /// </summary>
-  public CreditsClient Credits { get; }
-
-  /// <summary>
-  /// Client for quotes operations
-  /// </summary>
-  public QuotesClient Quotes { get; }
-
-  /// <summary>
-  /// Client for locations operations
-  /// </summary>
-  public LocationsClient Locations { get; }
-
-  /// <summary>
   /// Client for Recurring Invoices operations
   /// </summary>
   public RecurringInvoicesClient RecurringInvoices { get; }
 
   /// <summary>
-  /// Client for tasks operations
+  /// Client for products operations
   /// </summary>
-  public TasksClient Tasks { get; }
+  public ProductsClient Products { get; }
 
   /// <summary>
   /// Client for invoices operations
   /// </summary>
   public InvoicesClient Invoices { get; }
-
-  /// <summary>
-  /// Client for projects operations
-  /// </summary>
-  public ProjectsClient Projects { get; }
 
   /// <summary>
   /// Client for vendors operations
@@ -324,9 +319,24 @@ public class InvoiceNinjaApiClient
   public PaymentsClient Payments { get; }
 
   /// <summary>
-  /// Client for clients operations
+  /// Client for quotes operations
   /// </summary>
-  public ClientsClient Clients { get; }
+  public QuotesClient Quotes { get; }
+
+  /// <summary>
+  /// Client for tasks operations
+  /// </summary>
+  public TasksClient Tasks { get; }
+
+  /// <summary>
+  /// Client for credits operations
+  /// </summary>
+  public CreditsClient Credits { get; }
+
+  /// <summary>
+  /// Client for projects operations
+  /// </summary>
+  public ProjectsClient Projects { get; }
 
   /// <summary>
   /// Client for Purchase Orders operations
@@ -334,9 +344,14 @@ public class InvoiceNinjaApiClient
   public PurchaseOrdersClient PurchaseOrders { get; }
 
   /// <summary>
-  /// Client for products operations
+  /// Client for locations operations
   /// </summary>
-  public ProductsClient Products { get; }
+  public LocationsClient Locations { get; }
+
+  /// <summary>
+  /// Client for clients operations
+  /// </summary>
+  public ClientsClient Clients { get; }
 
   /// <summary>
   /// Initialize client with a pre-configured HttpClient
@@ -351,6 +366,7 @@ public class InvoiceNinjaApiClient
 
     Activities = new ActivitiesClient(_httpClient, _logger);
     Auth = new AuthClient(_httpClient, _logger);
+    Settings = new SettingsClient(_httpClient, _logger);
     Refresh = new RefreshClient(_httpClient, _logger);
     Yodlee = new YodleeClient(_httpClient, _logger);
     BankIntegrations = new BankIntegrationsClient(_httpClient, _logger);
@@ -390,6 +406,7 @@ public class InvoiceNinjaApiClient
     Update = new UpdateClient(_httpClient, _logger);
     Statics = new StaticsClient(_httpClient, _logger);
     Subscriptions = new SubscriptionsClient(_httpClient, _logger);
+    Scheduler = new SchedulerClient(_httpClient, _logger);
     Support = new SupportClient(_httpClient, _logger);
     SystemLogs = new SystemLogsClient(_httpClient, _logger);
     TaskSchedulers = new TaskSchedulersClient(_httpClient, _logger);
@@ -397,22 +414,23 @@ public class InvoiceNinjaApiClient
     TaskStatuss = new TaskStatussClient(_httpClient, _logger);
     TaxRates = new TaxRatesClient(_httpClient, _logger);
     Templates = new TemplatesClient(_httpClient, _logger);
+    Search = new SearchClient(_httpClient, _logger);
     Tokens = new TokensClient(_httpClient, _logger);
     Users = new UsersClient(_httpClient, _logger);
     Webcron = new WebcronClient(_httpClient, _logger);
     Webhooks = new WebhooksClient(_httpClient, _logger);
-    Credits = new CreditsClient(_httpClient, _logger);
-    Quotes = new QuotesClient(_httpClient, _logger);
-    Locations = new LocationsClient(_httpClient, _logger);
     RecurringInvoices = new RecurringInvoicesClient(_httpClient, _logger);
-    Tasks = new TasksClient(_httpClient, _logger);
+    Products = new ProductsClient(_httpClient, _logger);
     Invoices = new InvoicesClient(_httpClient, _logger);
-    Projects = new ProjectsClient(_httpClient, _logger);
     Vendors = new VendorsClient(_httpClient, _logger);
     Payments = new PaymentsClient(_httpClient, _logger);
-    Clients = new ClientsClient(_httpClient, _logger);
+    Quotes = new QuotesClient(_httpClient, _logger);
+    Tasks = new TasksClient(_httpClient, _logger);
+    Credits = new CreditsClient(_httpClient, _logger);
+    Projects = new ProjectsClient(_httpClient, _logger);
     PurchaseOrders = new PurchaseOrdersClient(_httpClient, _logger);
-    Products = new ProductsClient(_httpClient, _logger);
+    Locations = new LocationsClient(_httpClient, _logger);
+    Clients = new ClientsClient(_httpClient, _logger);
   }
 
   private InvoiceNinjaApiClient(HttpClient httpClient, bool disposeHttpClient, ILogger? logger)
@@ -423,6 +441,7 @@ public class InvoiceNinjaApiClient
 
     Activities = new ActivitiesClient(_httpClient, _logger);
     Auth = new AuthClient(_httpClient, _logger);
+    Settings = new SettingsClient(_httpClient, _logger);
     Refresh = new RefreshClient(_httpClient, _logger);
     Yodlee = new YodleeClient(_httpClient, _logger);
     BankIntegrations = new BankIntegrationsClient(_httpClient, _logger);
@@ -462,6 +481,7 @@ public class InvoiceNinjaApiClient
     Update = new UpdateClient(_httpClient, _logger);
     Statics = new StaticsClient(_httpClient, _logger);
     Subscriptions = new SubscriptionsClient(_httpClient, _logger);
+    Scheduler = new SchedulerClient(_httpClient, _logger);
     Support = new SupportClient(_httpClient, _logger);
     SystemLogs = new SystemLogsClient(_httpClient, _logger);
     TaskSchedulers = new TaskSchedulersClient(_httpClient, _logger);
@@ -469,22 +489,23 @@ public class InvoiceNinjaApiClient
     TaskStatuss = new TaskStatussClient(_httpClient, _logger);
     TaxRates = new TaxRatesClient(_httpClient, _logger);
     Templates = new TemplatesClient(_httpClient, _logger);
+    Search = new SearchClient(_httpClient, _logger);
     Tokens = new TokensClient(_httpClient, _logger);
     Users = new UsersClient(_httpClient, _logger);
     Webcron = new WebcronClient(_httpClient, _logger);
     Webhooks = new WebhooksClient(_httpClient, _logger);
-    Credits = new CreditsClient(_httpClient, _logger);
-    Quotes = new QuotesClient(_httpClient, _logger);
-    Locations = new LocationsClient(_httpClient, _logger);
     RecurringInvoices = new RecurringInvoicesClient(_httpClient, _logger);
-    Tasks = new TasksClient(_httpClient, _logger);
+    Products = new ProductsClient(_httpClient, _logger);
     Invoices = new InvoicesClient(_httpClient, _logger);
-    Projects = new ProjectsClient(_httpClient, _logger);
     Vendors = new VendorsClient(_httpClient, _logger);
     Payments = new PaymentsClient(_httpClient, _logger);
-    Clients = new ClientsClient(_httpClient, _logger);
+    Quotes = new QuotesClient(_httpClient, _logger);
+    Tasks = new TasksClient(_httpClient, _logger);
+    Credits = new CreditsClient(_httpClient, _logger);
+    Projects = new ProjectsClient(_httpClient, _logger);
     PurchaseOrders = new PurchaseOrdersClient(_httpClient, _logger);
-    Products = new ProductsClient(_httpClient, _logger);
+    Locations = new LocationsClient(_httpClient, _logger);
+    Clients = new ClientsClient(_httpClient, _logger);
   }
 
   /// <summary>

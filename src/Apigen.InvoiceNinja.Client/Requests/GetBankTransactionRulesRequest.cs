@@ -43,18 +43,6 @@ public class GetBankTransactionRulesRequest : BaseRequest
   public string? Index { get; set; }
 
   /// <summary>
-  /// The number of records to return for each request, default is 20
-  /// </summary>
-  [JsonPropertyName("per_page")]
-  public int? PerPage { get; set; }
-
-  /// <summary>
-  /// The page number to return for this request (when performing pagination), default is 1
-  /// </summary>
-  [JsonPropertyName("page")]
-  public int? Page { get; set; }
-
-  /// <summary>
   /// The number of bank integrations to return
   /// </summary>
   [JsonPropertyName("rows")]
@@ -68,10 +56,6 @@ public class GetBankTransactionRulesRequest : BaseRequest
       queryParams["include"] = Include;
     if (Index != null)
       queryParams["index"] = Index;
-    if (PerPage != null)
-      queryParams["per_page"] = PerPage;
-    if (Page != null)
-      queryParams["page"] = Page;
     if (Rows != null)
       queryParams["rows"] = Rows;
 

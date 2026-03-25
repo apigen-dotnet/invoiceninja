@@ -52,4 +52,85 @@ public class ChartsClient
   }
 
 
+  /// <summary>
+  /// Get chart data v2
+  /// Operation: POST /api/v1/charts/totals_v2
+  /// </summary>
+  public async Task GetChartTotalsV2Async()
+  {
+    string url = "charts/totals_v2";
+
+    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+    HttpClientLog.RequestStarted(_logger, "POST", url);
+    HttpResponseMessage response = await _httpClient.PostAsync(url, null);
+    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+
+    try
+    {
+      response.EnsureSuccessStatusCode();
+    }
+    catch (HttpRequestException ex)
+    {
+      string responseContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      throw;
+    }
+  }
+
+
+  /// <summary>
+  /// Get chart summary v2
+  /// Operation: POST /api/v1/charts/chart_summary_v2
+  /// </summary>
+  public async Task GetChartSummaryV2Async()
+  {
+    string url = "charts/chart_summary_v2";
+
+    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+    HttpClientLog.RequestStarted(_logger, "POST", url);
+    HttpResponseMessage response = await _httpClient.PostAsync(url, null);
+    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+
+    try
+    {
+      response.EnsureSuccessStatusCode();
+    }
+    catch (HttpRequestException ex)
+    {
+      string responseContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      throw;
+    }
+  }
+
+
+  /// <summary>
+  /// Get calculated fields
+  /// Operation: POST /api/v1/charts/calculated_fields
+  /// </summary>
+  public async Task GetChartCalculatedFieldsAsync()
+  {
+    string url = "charts/calculated_fields";
+
+    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+    HttpClientLog.RequestStarted(_logger, "POST", url);
+    HttpResponseMessage response = await _httpClient.PostAsync(url, null);
+    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+
+    try
+    {
+      response.EnsureSuccessStatusCode();
+    }
+    catch (HttpRequestException ex)
+    {
+      string responseContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      throw;
+    }
+  }
+
+
 }

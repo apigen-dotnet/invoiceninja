@@ -54,8 +54,8 @@ public interface IBankTransactionRulesClient
   Task<ApiResponse<BankTransactionRule>> GetBankTransactionRulesCreateAsync(GetBankTransactionRulesCreateRequest? request = null);
 
   /// <summary>
-  /// Performs bulk actions on an array of bank_transation rules
-  /// Operation: POST /api/v1/bank_transation_rules/bulk
+  /// Performs bulk actions on an array of bank_transaction rules
+  /// Operation: POST /api/v1/bank_transaction_rules/bulk
   /// </summary>
   Task BulkAsync(BulkBankTransactionRulesRequest? request = null);
 

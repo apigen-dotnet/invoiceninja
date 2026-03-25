@@ -62,13 +62,16 @@ public class VendorsClient
   /// Create vendor
   /// Operation: POST /api/v1/vendors
   /// </summary>
-  public async Task<ApiResponse<Vendor>> CreateAsync(StoreVendorRequest? request = null)
+  public async Task<ApiResponse<Vendor>> CreateAsync(Apigen.InvoiceNinja.Models.VendorRequest vendorRequest, StoreVendorRequest? request = null)
   {
     string url = "vendors".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
-    HttpResponseMessage response = await _httpClient.PostAsync(url, null);
+    string json = JsonSerializer.Serialize(vendorRequest, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "POST", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
     HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
 
@@ -132,7 +135,7 @@ public class VendorsClient
   /// Update vendor
   /// Operation: PUT /api/v1/vendors/{id}
   /// </summary>
-  public async Task<ApiResponse<Vendor>> UpdateAsync(string id, UpdateVendorRequest? request = null)
+  public async Task<ApiResponse<Vendor>> UpdateAsync(string id, Apigen.InvoiceNinja.Models.VendorRequest vendorRequest, UpdateVendorRequest? request = null)
   {
     Dictionary<string, object> pathParams = new()
     {
@@ -142,7 +145,10 @@ public class VendorsClient
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "PUT", url);
-    HttpResponseMessage response = await _httpClient.PutAsync(url, null);
+    string json = JsonSerializer.Serialize(vendorRequest, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "PUT", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PutAsync(url, content);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
     HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "PUT", url, durationMs);
 

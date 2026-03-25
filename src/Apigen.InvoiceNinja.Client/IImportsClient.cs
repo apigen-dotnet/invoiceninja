@@ -12,9 +12,15 @@ namespace Apigen.InvoiceNinja.Client;
 public interface IImportsClient
 {
   /// <summary>
-  /// Pre Import checks - returns a reference to the job and the headers of the CSV
+  /// Pre Import CSV data
   /// Operation: POST /api/v1/preimport
   /// </summary>
-  Task PreimportAsync(PreimportRequest? request = null);
+  Task<ApiResponse<JsonElement>> PreimportAsync(Apigen.InvoiceNinja.Models.PreimportRequest preimportRequest, PreimportRequest? request = null);
+
+  /// <summary>
+  /// Import CSV data
+  /// Operation: POST /api/v1/import
+  /// </summary>
+  Task<ApiResponse<JsonElement>> PostAsync(Apigen.InvoiceNinja.Models.PostImportRequest postImportRequest, PostImportRequest? request = null);
 
 }

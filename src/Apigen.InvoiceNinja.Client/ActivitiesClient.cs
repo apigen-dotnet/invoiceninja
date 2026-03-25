@@ -89,4 +89,58 @@ public class ActivitiesClient
   }
 
 
+  /// <summary>
+  /// Entity activity
+  /// Operation: POST /api/v1/activities/entity
+  /// </summary>
+  public async Task PostActivitiesEntityAsync()
+  {
+    string url = "activities/entity";
+
+    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+    HttpClientLog.RequestStarted(_logger, "POST", url);
+    HttpResponseMessage response = await _httpClient.PostAsync(url, null);
+    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+
+    try
+    {
+      response.EnsureSuccessStatusCode();
+    }
+    catch (HttpRequestException ex)
+    {
+      string responseContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      throw;
+    }
+  }
+
+
+  /// <summary>
+  /// Activity note
+  /// Operation: POST /api/v1/activities/notes
+  /// </summary>
+  public async Task PostActivitiesNotesAsync()
+  {
+    string url = "activities/notes";
+
+    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+    HttpClientLog.RequestStarted(_logger, "POST", url);
+    HttpResponseMessage response = await _httpClient.PostAsync(url, null);
+    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+
+    try
+    {
+      response.EnsureSuccessStatusCode();
+    }
+    catch (HttpRequestException ex)
+    {
+      string responseContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      throw;
+    }
+  }
+
+
 }

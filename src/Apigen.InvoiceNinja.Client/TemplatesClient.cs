@@ -29,9 +29,9 @@ public class TemplatesClient
   /// Returns a entity template with the template variables replaced with the Entities
   /// Operation: POST /api/v1/templates
   /// </summary>
-  public async Task<ApiResponse<Template>> CreateAsync(Apigen.InvoiceNinja.Models.GetShowTemplateRequest getShowTemplateRequest, GetShowTemplateRequest? request = null)
+  public async Task<ApiResponse<Template>> CreateAsync(Apigen.InvoiceNinja.Models.GetShowTemplateRequest getShowTemplateRequest)
   {
-    string url = "templates".BuildUrl(request: request);
+    string url = "templates";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
@@ -58,6 +58,37 @@ public class TemplatesClient
     HttpClientLog.ResponseBody(_logger, url, responseContent);
     ApiResponse<Template>? apiResponse = JsonSerializer.Deserialize<ApiResponse<Template>>(responseContent, JsonConfig.Default);
     return apiResponse ?? new ApiResponse<Template>();
+  }
+
+
+  /// <summary>
+  /// Preview template by hash
+  /// Operation: POST /api/v1/templates/preview/{hash}
+  /// </summary>
+  public async Task GetTemplatePreviewAsync(string hash)
+  {
+    Dictionary<string, object> pathParams = new()
+    {
+      ["hash"] = hash
+    };
+    string url = "templates/preview/{hash}".BuildUrl(pathParams);
+
+    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+    HttpClientLog.RequestStarted(_logger, "POST", url);
+    HttpResponseMessage response = await _httpClient.PostAsync(url, null);
+    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+
+    try
+    {
+      response.EnsureSuccessStatusCode();
+    }
+    catch (HttpRequestException ex)
+    {
+      string responseContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      throw;
+    }
   }
 
 

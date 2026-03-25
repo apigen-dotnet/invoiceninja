@@ -26,37 +26,6 @@ public class QuotesClient
   }
 
   /// <summary>
-  /// Download quote PDF
-  /// Operation: GET /api/v1/credit/{invitation_key}/download
-  /// </summary>
-  public async Task DownloadCreditAsync(string invitationKey, DownloadCreditRequest? request = null)
-  {
-    Dictionary<string, object> pathParams = new()
-    {
-      ["invitation_key"] = invitationKey
-    };
-    string url = "credit/{invitation_key}/download".BuildUrl(pathParams, request);
-
-    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
-    HttpClientLog.RequestStarted(_logger, "GET", url);
-    HttpResponseMessage response = await _httpClient.GetAsync(url);
-    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
-    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "GET", url, durationMs);
-
-    try
-    {
-      response.EnsureSuccessStatusCode();
-    }
-    catch (HttpRequestException ex)
-    {
-      string responseContent = await response.Content.ReadAsStringAsync();
-      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "GET", url, responseContent, ex);
-      throw;
-    }
-  }
-
-
-  /// <summary>
   /// List quotes
   /// Operation: GET /api/v1/quotes
   /// </summary>
@@ -93,13 +62,16 @@ public class QuotesClient
   /// Create quote
   /// Operation: POST /api/v1/quotes
   /// </summary>
-  public async Task<ApiResponse<Quote>> CreateAsync(StoreQuoteRequest? request = null)
+  public async Task<ApiResponse<Quote>> CreateAsync(Apigen.InvoiceNinja.Models.QuoteRequest quoteRequest, StoreQuoteRequest? request = null)
   {
     string url = "quotes".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
-    HttpResponseMessage response = await _httpClient.PostAsync(url, null);
+    string json = JsonSerializer.Serialize(quoteRequest, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "POST", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
     HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
 
@@ -163,7 +135,7 @@ public class QuotesClient
   /// Update quote
   /// Operation: PUT /api/v1/quotes/{id}
   /// </summary>
-  public async Task<ApiResponse<Quote>> UpdateAsync(string id, UpdateQuoteRequest? request = null)
+  public async Task<ApiResponse<Quote>> UpdateAsync(string id, Apigen.InvoiceNinja.Models.QuoteRequest quoteRequest, UpdateQuoteRequest? request = null)
   {
     Dictionary<string, object> pathParams = new()
     {
@@ -173,7 +145,10 @@ public class QuotesClient
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "PUT", url);
-    HttpResponseMessage response = await _httpClient.PutAsync(url, null);
+    string json = JsonSerializer.Serialize(quoteRequest, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "PUT", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PutAsync(url, content);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
     HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "PUT", url, durationMs);
 
@@ -438,6 +413,37 @@ public class QuotesClient
     HttpClientLog.ResponseBody(_logger, url, responseContent);
     ApiResponse<Quote>? apiResponse = JsonSerializer.Deserialize<ApiResponse<Quote>>(responseContent, JsonConfig.Default);
     return apiResponse ?? new ApiResponse<Quote>();
+  }
+
+
+  /// <summary>
+  /// Download quote PDF
+  /// Operation: GET /api/v1/credit/{invitation_key}/download
+  /// </summary>
+  public async Task DownloadCreditAsync(string invitationKey, DownloadCreditRequest? request = null)
+  {
+    Dictionary<string, object> pathParams = new()
+    {
+      ["invitation_key"] = invitationKey
+    };
+    string url = "credit/{invitation_key}/download".BuildUrl(pathParams, request);
+
+    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+    HttpClientLog.RequestStarted(_logger, "GET", url);
+    HttpResponseMessage response = await _httpClient.GetAsync(url);
+    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "GET", url, durationMs);
+
+    try
+    {
+      response.EnsureSuccessStatusCode();
+    }
+    catch (HttpRequestException ex)
+    {
+      string responseContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "GET", url, responseContent, ex);
+      throw;
+    }
   }
 
 

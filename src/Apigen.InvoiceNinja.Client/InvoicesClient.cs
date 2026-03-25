@@ -240,7 +240,7 @@ public class InvoicesClient
   /// Blank invoice
   /// Operation: GET /api/v1/invoices/create
   /// </summary>
-  public async Task<ApiResponse<Invoice>> getBlankInvoiceAsync()
+  public async Task<ApiResponse<Invoice>> GetInvoiceCreateAsync()
   {
     string url = "invoices/create";
 
@@ -341,7 +341,7 @@ public class InvoicesClient
   /// Download invoice PDF
   /// Operation: GET /api/v1/invoice/{invitation_key}/download
   /// </summary>
-  public async Task downloadInvoiceAsync(string invitationKey, DownloadInvoiceRequest? request = null)
+  public async Task DownloadInvoiceByInvitationAsync(string invitationKey, DownloadInvoiceByInvitationRequest? request = null)
   {
     Dictionary<string, object> pathParams = new()
     {
@@ -372,7 +372,7 @@ public class InvoicesClient
   /// Download delivery note
   /// Operation: GET /api/v1/invoices/{id}/delivery_note
   /// </summary>
-  public async Task getInvoiceDeliveryNoteAsync(string id, GetInvoiceDeliveryNoteRequest? request = null)
+  public async Task GetInvoiceDeliveryNoteAsync(string id, GetInvoiceDeliveryNoteRequest? request = null)
   {
     Dictionary<string, object> pathParams = new()
     {
@@ -403,7 +403,7 @@ public class InvoicesClient
   /// Add invoice document
   /// Operation: POST /api/v1/invoices/{id}/upload
   /// </summary>
-  public async Task<ApiResponse<Invoice>> PostinvoicesAsync(string id, PostinvoicesRequest? request = null)
+  public async Task<ApiResponse<Invoice>> UploadInvoiceDocumentAsync(string id, Apigen.InvoiceNinja.Models.UploadInvoiceDocumentRequest uploadInvoiceDocumentRequest, UploadInvoiceDocumentRequest? request = null)
   {
     Dictionary<string, object> pathParams = new()
     {
@@ -413,7 +413,9 @@ public class InvoicesClient
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
-    HttpResponseMessage response = await _httpClient.PostAsync(url, null);
+    MultipartFormDataContent content = uploadInvoiceDocumentRequest.ToMultipartContent();
+    HttpClientLog.RequestBody(_logger, "POST", "[multipart/form-data]");
+    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
     HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
 

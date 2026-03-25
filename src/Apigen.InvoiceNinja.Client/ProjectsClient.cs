@@ -62,13 +62,16 @@ public class ProjectsClient
   /// Create project
   /// Operation: POST /api/v1/projects
   /// </summary>
-  public async Task<ApiResponse<Project>> CreateAsync(StoreProjectRequest? request = null)
+  public async Task<ApiResponse<Project>> CreateAsync(Apigen.InvoiceNinja.Models.ProjectRequest projectRequest, StoreProjectRequest? request = null)
   {
     string url = "projects".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
-    HttpResponseMessage response = await _httpClient.PostAsync(url, null);
+    string json = JsonSerializer.Serialize(projectRequest, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "POST", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
     HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
 
@@ -132,7 +135,7 @@ public class ProjectsClient
   /// Update project
   /// Operation: PUT /api/v1/projects/{id}
   /// </summary>
-  public async Task<ApiResponse<Project>> UpdateAsync(string id, UpdateProjectRequest? request = null)
+  public async Task<ApiResponse<Project>> UpdateAsync(string id, Apigen.InvoiceNinja.Models.ProjectRequest projectRequest, UpdateProjectRequest? request = null)
   {
     Dictionary<string, object> pathParams = new()
     {
@@ -142,7 +145,10 @@ public class ProjectsClient
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "PUT", url);
-    HttpResponseMessage response = await _httpClient.PutAsync(url, null);
+    string json = JsonSerializer.Serialize(projectRequest, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "PUT", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PutAsync(url, content);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
     HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "PUT", url, durationMs);
 

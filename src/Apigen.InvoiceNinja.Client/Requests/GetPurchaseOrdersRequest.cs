@@ -20,6 +20,29 @@ public class GetPurchaseOrdersRequest : BaseRequest
   public string? Include { get; set; }
 
   /// <summary>
+  /// Replaces the default response index from data to a user specific string
+  /// 
+  /// ie.
+  /// 
+  /// ```html
+  ///   ?index=new_index
+  /// ```
+  /// 
+  /// response is wrapped
+  /// 
+  /// ```json
+  ///   {
+  ///     &apos;new_index&apos; : [
+  ///       .....  
+  ///     ]
+  ///   }
+  /// ```
+  /// 
+  /// </summary>
+  [JsonPropertyName("index")]
+  public string? Index { get; set; }
+
+  /// <summary>
   /// The number of records to return for each request, default is 20
   /// </summary>
   [JsonPropertyName("per_page")]
@@ -37,6 +60,8 @@ public class GetPurchaseOrdersRequest : BaseRequest
 
     if (Include != null)
       queryParams["include"] = Include;
+    if (Index != null)
+      queryParams["index"] = Index;
     if (PerPage != null)
       queryParams["per_page"] = PerPage;
     if (Page != null)

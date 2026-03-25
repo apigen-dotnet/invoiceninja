@@ -20,6 +20,41 @@ public class GetRecurringInvoicesRequest : BaseRequest
   public string? Include { get; set; }
 
   /// <summary>
+  /// Replaces the default response index from data to a user specific string
+  /// 
+  /// ie.
+  /// 
+  /// ```html
+  ///   ?index=new_index
+  /// ```
+  /// 
+  /// response is wrapped
+  /// 
+  /// ```json
+  ///   {
+  ///     &apos;new_index&apos; : [
+  ///       .....  
+  ///     ]
+  ///   }
+  /// ```
+  /// 
+  /// </summary>
+  [JsonPropertyName("index")]
+  public string? Index { get; set; }
+
+  /// <summary>
+  /// The number of records to return for each request, default is 20
+  /// </summary>
+  [JsonPropertyName("per_page")]
+  public int? PerPage { get; set; }
+
+  /// <summary>
+  /// The page number to return for this request (when performing pagination), default is 1
+  /// </summary>
+  [JsonPropertyName("page")]
+  public int? Page { get; set; }
+
+  /// <summary>
   /// Filters the entity list by client_id. Suitable when you only want the entities of a specific client.
   /// 
   /// ```html
@@ -92,18 +127,6 @@ public class GetRecurringInvoicesRequest : BaseRequest
   public string? VendorId { get; set; }
 
   /// <summary>
-  /// The number of records to return for each request, default is 20
-  /// </summary>
-  [JsonPropertyName("per_page")]
-  public int? PerPage { get; set; }
-
-  /// <summary>
-  /// The page number to return for this request (when performing pagination), default is 1
-  /// </summary>
-  [JsonPropertyName("page")]
-  public int? Page { get; set; }
-
-  /// <summary>
   /// Searches across a range of columns including:  
   /// - custom_value1  
   /// - custom_value2  
@@ -165,6 +188,12 @@ public class GetRecurringInvoicesRequest : BaseRequest
 
     if (Include != null)
       queryParams["include"] = Include;
+    if (Index != null)
+      queryParams["index"] = Index;
+    if (PerPage != null)
+      queryParams["per_page"] = PerPage;
+    if (Page != null)
+      queryParams["page"] = Page;
     if (ClientId != null)
       queryParams["client_id"] = ClientId;
     if (CreatedAt != null)
@@ -177,10 +206,6 @@ public class GetRecurringInvoicesRequest : BaseRequest
       queryParams["filter_deleted_clients"] = FilterDeletedClients;
     if (VendorId != null)
       queryParams["vendor_id"] = VendorId;
-    if (PerPage != null)
-      queryParams["per_page"] = PerPage;
-    if (Page != null)
-      queryParams["page"] = Page;
     if (Filter != null)
       queryParams["filter"] = Filter;
     if (ClientStatus != null)

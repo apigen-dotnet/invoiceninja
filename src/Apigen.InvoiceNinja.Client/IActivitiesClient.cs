@@ -23,4 +23,16 @@ public interface IActivitiesClient
   /// </summary>
   Task GetAsync(string activityId, GetActivityHistoricalEntityPdfRequest? request = null);
 
+  /// <summary>
+  /// Entity activity
+  /// Operation: POST /api/v1/activities/entity
+  /// </summary>
+  Task PostActivitiesEntityAsync();
+
+  /// <summary>
+  /// Activity note
+  /// Operation: POST /api/v1/activities/notes
+  /// </summary>
+  Task PostActivitiesNotesAsync();
+
 }

@@ -8,8 +8,8 @@ using System.Web;
 namespace Apigen.InvoiceNinja.Client;
 
 /// <summary>
-/// Request parameters for Performs bulk actions on an array of bank_transation rules
-/// Operation: POST /api/v1/bank_transation_rules/bulk
+/// Request parameters for Performs bulk actions on an array of bank_transaction rules
+/// Operation: POST /api/v1/bank_transaction_rules/bulk
 /// </summary>
 public class BulkBankTransactionRulesRequest : BaseRequest
 {
@@ -42,7 +42,7 @@ public class BulkBankTransactionRulesRequest : BaseRequest
 
     queryParams["_method"] = "POST";
 
-    // Fixed parameters added for POST /api/v1/bank_transation_rules/bulk
+    // Fixed parameters added for POST /api/v1/bank_transaction_rules/bulk
     if (Index != null)
       queryParams["index"] = Index;
 

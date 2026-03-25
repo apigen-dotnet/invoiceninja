@@ -17,4 +17,10 @@ public interface IPingClient
   /// </summary>
   Task ListAsync();
 
+  /// <summary>
+  /// Returns the last error
+  /// Operation: GET /api/v1/last_error
+  /// </summary>
+  Task GetLastErrorAsync();
+
 }

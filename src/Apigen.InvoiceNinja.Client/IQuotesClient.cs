@@ -12,12 +12,6 @@ namespace Apigen.InvoiceNinja.Client;
 public interface IQuotesClient
 {
   /// <summary>
-  /// Download quote PDF
-  /// Operation: GET /api/v1/credit/{invitation_key}/download
-  /// </summary>
-  Task DownloadCreditAsync(string invitationKey, DownloadCreditRequest? request = null);
-
-  /// <summary>
   /// List quotes
   /// Operation: GET /api/v1/quotes
   /// </summary>
@@ -27,7 +21,7 @@ public interface IQuotesClient
   /// Create quote
   /// Operation: POST /api/v1/quotes
   /// </summary>
-  Task<ApiResponse<Quote>> CreateAsync(StoreQuoteRequest? request = null);
+  Task<ApiResponse<Quote>> CreateAsync(Apigen.InvoiceNinja.Models.QuoteRequest quoteRequest, StoreQuoteRequest? request = null);
 
   /// <summary>
   /// Show quote
@@ -39,7 +33,7 @@ public interface IQuotesClient
   /// Update quote
   /// Operation: PUT /api/v1/quotes/{id}
   /// </summary>
-  Task<ApiResponse<Quote>> UpdateAsync(string id, UpdateQuoteRequest? request = null);
+  Task<ApiResponse<Quote>> UpdateAsync(string id, Apigen.InvoiceNinja.Models.QuoteRequest quoteRequest, UpdateQuoteRequest? request = null);
 
   /// <summary>
   /// Delete quote
@@ -82,5 +76,11 @@ public interface IQuotesClient
   /// Operation: POST /api/v1/quotes/{id}/upload
   /// </summary>
   Task<ApiResponse<Quote>> UploadQuoteAsync(string id, Apigen.InvoiceNinja.Models.UploadQuoteRequest uploadQuoteRequest, UploadQuoteRequest? request = null);
+
+  /// <summary>
+  /// Download quote PDF
+  /// Operation: GET /api/v1/credit/{invitation_key}/download
+  /// </summary>
+  Task DownloadCreditAsync(string invitationKey, DownloadCreditRequest? request = null);
 
 }

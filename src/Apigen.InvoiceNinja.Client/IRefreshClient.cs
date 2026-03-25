@@ -15,6 +15,6 @@ public interface IRefreshClient
   /// Refresh data by timestamp
   /// Operation: POST /api/v1/refresh
   /// </summary>
-  Task<ApiResponse<CompanyUser>> CreateAsync(RefreshRequest? request = null);
+  Task<ApiResponse<CompanyUser>> CreateAsync(PostRefreshRequest? request = null);
 
 }

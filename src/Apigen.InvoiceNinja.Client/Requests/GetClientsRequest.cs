@@ -64,6 +64,18 @@ public class GetClientsRequest : BaseRequest
   public string? Index { get; set; }
 
   /// <summary>
+  /// The number of records to return for each request, default is 20
+  /// </summary>
+  [JsonPropertyName("per_page")]
+  public int? PerPage { get; set; }
+
+  /// <summary>
+  /// The page number to return for this request (when performing pagination), default is 1
+  /// </summary>
+  [JsonPropertyName("page")]
+  public int? Page { get; set; }
+
+  /// <summary>
   /// Filter the entity based on their status. ie active / archived / deleted. Format is a comma separated string with any of the following options:  
   /// - active
   /// - archived
@@ -125,18 +137,6 @@ public class GetClientsRequest : BaseRequest
   /// </summary>
   [JsonPropertyName("filter_deleted_clients")]
   public string? FilterDeletedClients { get; set; }
-
-  /// <summary>
-  /// The number of records to return for each request, default is 20
-  /// </summary>
-  [JsonPropertyName("per_page")]
-  public int? PerPage { get; set; }
-
-  /// <summary>
-  /// The page number to return for this request (when performing pagination), default is 1
-  /// </summary>
-  [JsonPropertyName("page")]
-  public int? Page { get; set; }
 
   /// <summary>
   /// Filter by client name  
@@ -208,7 +208,7 @@ public class GetClientsRequest : BaseRequest
 
   /// <summary>
   /// Broad filter which targets multiple client columns:
-  /// 
+  ///   
   ///   ```html
   ///     name, 
   ///     id_number, 
@@ -273,6 +273,10 @@ public class GetClientsRequest : BaseRequest
       queryParams["include"] = Include;
     if (Index != null)
       queryParams["index"] = Index;
+    if (PerPage != null)
+      queryParams["per_page"] = PerPage;
+    if (Page != null)
+      queryParams["page"] = Page;
     if (Status != null)
       queryParams["status"] = Status;
     if (CreatedAt != null)
@@ -283,10 +287,6 @@ public class GetClientsRequest : BaseRequest
       queryParams["is_deleted"] = IsDeleted;
     if (FilterDeletedClients != null)
       queryParams["filter_deleted_clients"] = FilterDeletedClients;
-    if (PerPage != null)
-      queryParams["per_page"] = PerPage;
-    if (Page != null)
-      queryParams["page"] = Page;
     if (Name != null)
       queryParams["name"] = Name;
     if (Balance != null)

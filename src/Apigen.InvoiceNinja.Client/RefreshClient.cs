@@ -29,7 +29,7 @@ public class RefreshClient
   /// Refresh data by timestamp
   /// Operation: POST /api/v1/refresh
   /// </summary>
-  public async Task<ApiResponse<CompanyUser>> CreateAsync(RefreshRequest? request = null)
+  public async Task<ApiResponse<CompanyUser>> CreateAsync(PostRefreshRequest? request = null)
   {
     string url = "refresh".BuildUrl(request: request);
 

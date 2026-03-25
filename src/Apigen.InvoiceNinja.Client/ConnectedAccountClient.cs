@@ -29,7 +29,7 @@ public class ConnectedAccountClient
   /// Connect an oauth user to an existing user
   /// Operation: POST /api/v1/connected_account
   /// </summary>
-  public async Task<ApiResponse<User>> CreateAsync(ConnectedAccountRequest? request = null)
+  public async Task<ApiResponse<User>> CreateAsync(PostConnectedAccountRequest? request = null)
   {
     string url = "connected_account".BuildUrl(request: request);
 

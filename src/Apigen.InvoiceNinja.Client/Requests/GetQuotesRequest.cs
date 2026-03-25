@@ -20,6 +20,41 @@ public class GetQuotesRequest : BaseRequest
   public string? Include { get; set; }
 
   /// <summary>
+  /// Replaces the default response index from data to a user specific string
+  /// 
+  /// ie.
+  /// 
+  /// ```html
+  ///   ?index=new_index
+  /// ```
+  /// 
+  /// response is wrapped
+  /// 
+  /// ```json
+  ///   {
+  ///     &apos;new_index&apos; : [
+  ///       .....  
+  ///     ]
+  ///   }
+  /// ```
+  /// 
+  /// </summary>
+  [JsonPropertyName("index")]
+  public string? Index { get; set; }
+
+  /// <summary>
+  /// The number of records to return for each request, default is 20
+  /// </summary>
+  [JsonPropertyName("per_page")]
+  public int? PerPage { get; set; }
+
+  /// <summary>
+  /// The page number to return for this request (when performing pagination), default is 1
+  /// </summary>
+  [JsonPropertyName("page")]
+  public int? Page { get; set; }
+
+  /// <summary>
   /// Filter the entity based on their status. ie active / archived / deleted. Format is a comma separated string with any of the following options:  
   /// - active
   /// - archived
@@ -107,18 +142,6 @@ public class GetQuotesRequest : BaseRequest
   public string? VendorId { get; set; }
 
   /// <summary>
-  /// The number of records to return for each request, default is 20
-  /// </summary>
-  [JsonPropertyName("per_page")]
-  public int? PerPage { get; set; }
-
-  /// <summary>
-  /// The page number to return for this request (when performing pagination), default is 1
-  /// </summary>
-  [JsonPropertyName("page")]
-  public int? Page { get; set; }
-
-  /// <summary>
   /// Searches across a range of columns including:  
   /// - number  
   /// - custom_value1  
@@ -162,6 +185,12 @@ public class GetQuotesRequest : BaseRequest
 
     if (Include != null)
       queryParams["include"] = Include;
+    if (Index != null)
+      queryParams["index"] = Index;
+    if (PerPage != null)
+      queryParams["per_page"] = PerPage;
+    if (Page != null)
+      queryParams["page"] = Page;
     if (Status != null)
       queryParams["status"] = Status;
     if (ClientId != null)
@@ -176,10 +205,6 @@ public class GetQuotesRequest : BaseRequest
       queryParams["filter_deleted_clients"] = FilterDeletedClients;
     if (VendorId != null)
       queryParams["vendor_id"] = VendorId;
-    if (PerPage != null)
-      queryParams["per_page"] = PerPage;
-    if (Page != null)
-      queryParams["page"] = Page;
     if (Filter != null)
       queryParams["filter"] = Filter;
     if (ClientStatus != null)

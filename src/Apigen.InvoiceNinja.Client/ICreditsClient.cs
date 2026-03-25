@@ -51,7 +51,7 @@ public interface ICreditsClient
   /// Bulk credit actions
   /// Operation: POST /api/v1/credits/bulk
   /// </summary>
-  Task BulkAsync(Apigen.InvoiceNinja.Models.BulkCreditsRequest bulkCreditsRequest, BulkCreditsRequest? request = null);
+  Task BulkAsync(BulkCreditsRequest? request = null);
 
   /// <summary>
   /// Upload a credit document

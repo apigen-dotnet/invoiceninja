@@ -57,7 +57,7 @@ public interface IPaymentsClient
   /// Refund payment
   /// Operation: POST /api/v1/payments/refund
   /// </summary>
-  Task<ApiResponse<Payment>> StoreRefundAsync(Apigen.InvoiceNinja.Models.PaymentRequest payment, StoreRefundRequest? request = null);
+  Task<ApiResponse<Payment>> StoreRefundAsync(Apigen.InvoiceNinja.Models.Payment payment, StoreRefundRequest? request = null);
 
   /// <summary>
   /// Bulk payment actions

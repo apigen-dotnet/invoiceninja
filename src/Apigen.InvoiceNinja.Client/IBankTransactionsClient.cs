@@ -55,13 +55,13 @@ public interface IBankTransactionsClient
 
   /// <summary>
   /// Bulk actions
-  /// Operation: POST /api/v1/bank_transations/bulk
+  /// Operation: POST /api/v1/bank_transactions/bulk
   /// </summary>
   Task BulkAsync(BulkBankTransactionsRequest? request = null);
 
   /// <summary>
   /// Match transactions
-  /// Operation: POST /api/v1/bank_transations/match
+  /// Operation: POST /api/v1/bank_transactions/match
   /// </summary>
   Task MatchBankTransactionsAsync(MatchBankTransactionsRequest? request = null);
 

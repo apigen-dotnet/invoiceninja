@@ -21,7 +21,7 @@ public interface IPurchaseOrdersClient
   /// Create purchase order
   /// Operation: POST /api/v1/purchase_orders
   /// </summary>
-  Task<ApiResponse<PurchaseOrder>> StorePurchaseOrderAsync(StorePurchaseOrderRequest? request = null);
+  Task<ApiResponse<PurchaseOrder>> StorePurchaseOrderAsync(Apigen.InvoiceNinja.Models.PurchaseOrderRequest purchaseOrderRequest, StorePurchaseOrderRequest? request = null);
 
   /// <summary>
   /// Show purchase order
@@ -33,7 +33,7 @@ public interface IPurchaseOrdersClient
   /// Update purchase order
   /// Operation: PUT /api/v1/purchase_order/{id}
   /// </summary>
-  Task<ApiResponse<PurchaseOrder>> UpdateAsync(string id, UpdatePurchaseOrderRequest? request = null);
+  Task<ApiResponse<PurchaseOrder>> UpdateAsync(string id, Apigen.InvoiceNinja.Models.PurchaseOrderRequest purchaseOrderRequest, UpdatePurchaseOrderRequest? request = null);
 
   /// <summary>
   /// Delete purchase order

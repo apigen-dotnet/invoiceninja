@@ -12,6 +12,12 @@ namespace Apigen.InvoiceNinja.Client;
 public interface IAuthClient
 {
   /// <summary>
+  /// Passkey login options
+  /// Operation: POST /api/v1/passkeys/login/options
+  /// </summary>
+  Task PostPasskeyLoginOptionsAsync(Apigen.InvoiceNinja.Models.PostPasskeyLoginOptionsRequest postPasskeyLoginOptionsRequest);
+
+  /// <summary>
   /// Login
   /// Operation: POST /api/v1/login
   /// </summary>

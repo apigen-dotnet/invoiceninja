@@ -268,11 +268,11 @@ public class BankTransactionsClient
 
   /// <summary>
   /// Bulk actions
-  /// Operation: POST /api/v1/bank_transations/bulk
+  /// Operation: POST /api/v1/bank_transactions/bulk
   /// </summary>
   public async Task BulkAsync(BulkBankTransactionsRequest? request = null)
   {
-    string url = "bank_transations/bulk".BuildUrl(request: request);
+    string url = "bank_transactions/bulk".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
@@ -295,11 +295,11 @@ public class BankTransactionsClient
 
   /// <summary>
   /// Match transactions
-  /// Operation: POST /api/v1/bank_transations/match
+  /// Operation: POST /api/v1/bank_transactions/match
   /// </summary>
   public async Task MatchBankTransactionsAsync(MatchBankTransactionsRequest? request = null)
   {
-    string url = "bank_transations/match".BuildUrl(request: request);
+    string url = "bank_transactions/match".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);

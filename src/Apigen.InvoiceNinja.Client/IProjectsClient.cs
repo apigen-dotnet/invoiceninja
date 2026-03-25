@@ -21,7 +21,7 @@ public interface IProjectsClient
   /// Create project
   /// Operation: POST /api/v1/projects
   /// </summary>
-  Task<ApiResponse<Project>> CreateAsync(StoreProjectRequest? request = null);
+  Task<ApiResponse<Project>> CreateAsync(Apigen.InvoiceNinja.Models.ProjectRequest projectRequest, StoreProjectRequest? request = null);
 
   /// <summary>
   /// Show project
@@ -33,7 +33,7 @@ public interface IProjectsClient
   /// Update project
   /// Operation: PUT /api/v1/projects/{id}
   /// </summary>
-  Task<ApiResponse<Project>> UpdateAsync(string id, UpdateProjectRequest? request = null);
+  Task<ApiResponse<Project>> UpdateAsync(string id, Apigen.InvoiceNinja.Models.ProjectRequest projectRequest, UpdateProjectRequest? request = null);
 
   /// <summary>
   /// Delete project

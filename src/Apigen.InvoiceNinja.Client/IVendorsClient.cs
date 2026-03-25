@@ -21,7 +21,7 @@ public interface IVendorsClient
   /// Create vendor
   /// Operation: POST /api/v1/vendors
   /// </summary>
-  Task<ApiResponse<Vendor>> CreateAsync(StoreVendorRequest? request = null);
+  Task<ApiResponse<Vendor>> CreateAsync(Apigen.InvoiceNinja.Models.VendorRequest vendorRequest, StoreVendorRequest? request = null);
 
   /// <summary>
   /// Show vendor
@@ -33,7 +33,7 @@ public interface IVendorsClient
   /// Update vendor
   /// Operation: PUT /api/v1/vendors/{id}
   /// </summary>
-  Task<ApiResponse<Vendor>> UpdateAsync(string id, UpdateVendorRequest? request = null);
+  Task<ApiResponse<Vendor>> UpdateAsync(string id, Apigen.InvoiceNinja.Models.VendorRequest vendorRequest, UpdateVendorRequest? request = null);
 
   /// <summary>
   /// Delete vendor

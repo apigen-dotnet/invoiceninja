@@ -13,15 +13,15 @@ public interface ITaskSchedulersClient
 {
   /// <summary>
   /// Task Scheduler Index
-  /// Operation: GET /api/v1/task_schedulers/
+  /// Operation: GET /api/v1/task_schedulers
   /// </summary>
-  Task GetTaskSchedulersAsync(GetTaskSchedulersRequest? request = null);
+  Task ListAsync();
 
   /// <summary>
   /// Create task scheduler with job 
-  /// Operation: POST /api/v1/task_schedulers/
+  /// Operation: POST /api/v1/task_schedulers
   /// </summary>
-  Task CreateTaskSchedulerAsync(Apigen.InvoiceNinja.Models.TaskSchedulerSchema taskSchedulerSchema);
+  Task CreateAsync(Apigen.InvoiceNinja.Models.TaskSchedulerSchema taskSchedulerSchema);
 
   /// <summary>
   /// Gets a new blank scheduler object

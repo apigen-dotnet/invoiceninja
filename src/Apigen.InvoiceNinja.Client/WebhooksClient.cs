@@ -239,16 +239,13 @@ public class WebhooksClient
   /// Performs bulk actions on an array of Webhooks
   /// Operation: POST /api/v1/webhooks/bulk
   /// </summary>
-  public async Task<ApiResponse<Webhook>> BulkAsync(Apigen.InvoiceNinja.Models.BulkWebhooksRequest bulkWebhooksRequest, BulkWebhooksRequest? request = null)
+  public async Task<ApiResponse<Webhook>> BulkAsync(BulkWebhooksRequest? request = null)
   {
     string url = "webhooks/bulk".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
-    string json = JsonSerializer.Serialize(bulkWebhooksRequest, JsonConfig.Default);
-    HttpClientLog.RequestBody(_logger, "POST", json);
-    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
-    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
+    HttpResponseMessage response = await _httpClient.PostAsync(url, null);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
     HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
 

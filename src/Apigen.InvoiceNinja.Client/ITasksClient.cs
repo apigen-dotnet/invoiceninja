@@ -21,7 +21,7 @@ public interface ITasksClient
   /// Create task
   /// Operation: POST /api/v1/tasks
   /// </summary>
-  Task<ApiResponse<TaskItem>> CreateAsync(StoreTaskRequest? request = null);
+  Task<ApiResponse<TaskItem>> CreateAsync(Apigen.InvoiceNinja.Models.TaskRequest taskRequest, StoreTaskRequest? request = null);
 
   /// <summary>
   /// Show task
@@ -33,7 +33,7 @@ public interface ITasksClient
   /// Update task
   /// Operation: PUT /api/v1/tasks/{id}
   /// </summary>
-  Task<ApiResponse<TaskItem>> UpdateAsync(string id, UpdateTaskRequest? request = null);
+  Task<ApiResponse<TaskItem>> UpdateAsync(string id, Apigen.InvoiceNinja.Models.TaskRequest taskRequest, UpdateTaskRequest? request = null);
 
   /// <summary>
   /// Delete task
@@ -69,6 +69,6 @@ public interface ITasksClient
   /// Sort tasks on KanBan
   /// Operation: POST /api/v1/tasks/sort
   /// </summary>
-  Task SortTasksAsync(SortTasksRequest? request = null);
+  Task SortTasksAsync(Apigen.InvoiceNinja.Models.TaskSortRequest taskSortRequest, SortTasksRequest? request = null);
 
 }

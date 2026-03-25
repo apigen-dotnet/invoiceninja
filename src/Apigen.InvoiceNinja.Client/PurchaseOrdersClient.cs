@@ -62,13 +62,16 @@ public class PurchaseOrdersClient
   /// Create purchase order
   /// Operation: POST /api/v1/purchase_orders
   /// </summary>
-  public async Task<ApiResponse<PurchaseOrder>> StorePurchaseOrderAsync(StorePurchaseOrderRequest? request = null)
+  public async Task<ApiResponse<PurchaseOrder>> StorePurchaseOrderAsync(Apigen.InvoiceNinja.Models.PurchaseOrderRequest purchaseOrderRequest, StorePurchaseOrderRequest? request = null)
   {
     string url = "purchase_orders".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
-    HttpResponseMessage response = await _httpClient.PostAsync(url, null);
+    string json = JsonSerializer.Serialize(purchaseOrderRequest, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "POST", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
     HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
 
@@ -132,7 +135,7 @@ public class PurchaseOrdersClient
   /// Update purchase order
   /// Operation: PUT /api/v1/purchase_order/{id}
   /// </summary>
-  public async Task<ApiResponse<PurchaseOrder>> UpdateAsync(string id, UpdatePurchaseOrderRequest? request = null)
+  public async Task<ApiResponse<PurchaseOrder>> UpdateAsync(string id, Apigen.InvoiceNinja.Models.PurchaseOrderRequest purchaseOrderRequest, UpdatePurchaseOrderRequest? request = null)
   {
     Dictionary<string, object> pathParams = new()
     {
@@ -142,7 +145,10 @@ public class PurchaseOrdersClient
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "PUT", url);
-    HttpResponseMessage response = await _httpClient.PutAsync(url, null);
+    string json = JsonSerializer.Serialize(purchaseOrderRequest, JsonConfig.Default);
+    HttpClientLog.RequestBody(_logger, "PUT", json);
+    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+    HttpResponseMessage response = await _httpClient.PutAsync(url, content);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
     HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "PUT", url, durationMs);
 

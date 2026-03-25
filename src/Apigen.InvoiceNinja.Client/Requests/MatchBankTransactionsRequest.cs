@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 
 /// <summary>
 /// Request parameters for Match transactions
-/// Operation: POST /api/v1/bank_transations/match
+/// Operation: POST /api/v1/bank_transactions/match
 /// </summary>
 public class MatchBankTransactionsRequest : BaseRequest
 {
@@ -42,7 +42,7 @@ public class MatchBankTransactionsRequest : BaseRequest
 
     queryParams["_method"] = "POST";
 
-    // Fixed parameters added for POST /api/v1/bank_transations/match
+    // Fixed parameters added for POST /api/v1/bank_transactions/match
     if (Index != null)
       queryParams["index"] = Index;
 

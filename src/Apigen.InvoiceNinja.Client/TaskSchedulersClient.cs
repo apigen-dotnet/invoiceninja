@@ -27,11 +27,11 @@ public class TaskSchedulersClient
 
   /// <summary>
   /// Task Scheduler Index
-  /// Operation: GET /api/v1/task_schedulers/
+  /// Operation: GET /api/v1/task_schedulers
   /// </summary>
-  public async Task GetTaskSchedulersAsync(GetTaskSchedulersRequest? request = null)
+  public async Task ListAsync()
   {
-    string url = "task_schedulers/".BuildUrl(request: request);
+    string url = "task_schedulers";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "GET", url);
@@ -54,11 +54,11 @@ public class TaskSchedulersClient
 
   /// <summary>
   /// Create task scheduler with job 
-  /// Operation: POST /api/v1/task_schedulers/
+  /// Operation: POST /api/v1/task_schedulers
   /// </summary>
-  public async Task CreateTaskSchedulerAsync(Apigen.InvoiceNinja.Models.TaskSchedulerSchema taskSchedulerSchema)
+  public async Task CreateAsync(Apigen.InvoiceNinja.Models.TaskSchedulerSchema taskSchedulerSchema)
   {
-    string url = "task_schedulers/";
+    string url = "task_schedulers";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);

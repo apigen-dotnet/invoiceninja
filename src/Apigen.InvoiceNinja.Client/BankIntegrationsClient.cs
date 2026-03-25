@@ -270,16 +270,13 @@ public class BankIntegrationsClient
   /// Performs bulk actions on an array of bank_integrations
   /// Operation: POST /api/v1/bank_integrations/bulk
   /// </summary>
-  public async Task BulkAsync(Apigen.InvoiceNinja.Models.BulkBankIntegrationsRequest bulkBankIntegrationsRequest, BulkBankIntegrationsRequest? request = null)
+  public async Task BulkAsync(BulkBankIntegrationsRequest? request = null)
   {
     string url = "bank_integrations/bulk".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.RequestStarted(_logger, "POST", url);
-    string json = JsonSerializer.Serialize(bulkBankIntegrationsRequest, JsonConfig.Default);
-    HttpClientLog.RequestBody(_logger, "POST", json);
-    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
-    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
+    HttpResponseMessage response = await _httpClient.PostAsync(url, null);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
     HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
 

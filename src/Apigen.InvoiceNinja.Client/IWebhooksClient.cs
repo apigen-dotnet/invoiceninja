@@ -51,6 +51,6 @@ public interface IWebhooksClient
   /// Performs bulk actions on an array of Webhooks
   /// Operation: POST /api/v1/webhooks/bulk
   /// </summary>
-  Task<ApiResponse<Webhook>> BulkAsync(Apigen.InvoiceNinja.Models.BulkWebhooksRequest bulkWebhooksRequest, BulkWebhooksRequest? request = null);
+  Task<ApiResponse<Webhook>> BulkAsync(BulkWebhooksRequest? request = null);
 
 }
