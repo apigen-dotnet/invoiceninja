@@ -7,10 +7,7 @@ Uses ruamel.yaml to preserve formatting, comments, and key order.
 
 Patches applied:
   1. Add per_page_meta/page_meta params to list endpoints that are missing them
-
-Note: readOnly on id fields is intentionally omitted for now. Adding readOnly
-causes the generator to split schemas differently, which breaks ModelConversion.
-This should be revisited when the generator handles readOnly-based splits better.
+  2. Add readOnly: true to 'id' fields on all component schemas
 """
 
 import sys
@@ -141,9 +138,8 @@ def main():
     n = patch_pagination_params(spec)
     print(f"  Pagination params: added to {n} endpoints")
 
-    # readOnly patch disabled for now - causes generator split issues
-    # n = patch_readonly_ids(spec)
-    # print(f"  readOnly id fields: patched {n} schemas")
+    n = patch_readonly_ids(spec)
+    print(f"  readOnly id fields: patched {n} schemas")
 
     with open(spec_path, "w") as f:
         yaml.dump(spec, f)

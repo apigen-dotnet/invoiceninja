@@ -19037,6 +19037,7 @@ components:
           description: 'The group setting hashed id'
           type: string
           example: Opnel5aKBz
+          readOnly: true
         user_id:
           description: 'The user hashed id'
           type: string
@@ -19291,6 +19292,7 @@ components:
           description: 'The subscription hashed id'
           type: string
           example: AS3df3A
+          readOnly: true
         event_id:
           description: 'The subscription event id'
           type: string
@@ -19958,6 +19960,7 @@ components:
           description: 'The account hashed id'
           type: string
           example: AS3df3A
+          readOnly: true
         account_sms_verified:
           description: 'Boolean flag if the account has been verified by sms'
           type: string
@@ -19969,6 +19972,7 @@ components:
           description: 'The hashed id of the recurring quote'
           type: string
           example: Opnel5aKBz
+          readOnly: true
         user_id:
           description: 'The user hashed id'
           type: string
@@ -20319,6 +20323,7 @@ components:
           description: 'The bank integration hashed id'
           type: string
           example: AS3df3A
+          readOnly: true
         user_id:
           description: 'The user hashed id'
           type: string
@@ -20362,6 +20367,7 @@ components:
           description: "The unique hashed identifier for the company"
           type: string
           example: WJxbojagwO
+          readOnly: true
         size_id:
           description: "The unique identifier representing the company's size category"
           type: string
@@ -20825,6 +20831,7 @@ components:
           description: 'The expense hashed id'
           type: string
           example: 'Opnel5aKBz'
+          readOnly: true
         user_id:
           description: 'The user hashed id'
           type: string
@@ -21028,6 +21035,7 @@ components:
           description: 'The hashed id of the client gateway token'
           type: string
           example: Opnel5aKBz
+          readOnly: true
         client_id:
           description: 'The hashed_id of the client'
           type: string
@@ -21055,6 +21063,7 @@ components:
           description: 'The bank transaction rules hashed id'
           type: string
           example: AS3df3A
+          readOnly: true
         user_id:
           description: 'The user hashed id'
           type: string
@@ -21613,6 +21622,7 @@ components:
           description: 'The payment hashed id'
           type: string
           example: Opnel5aKBz
+          readOnly: true
         client_id:
           description: 'The client hashed id'
           type: string
@@ -21906,6 +21916,7 @@ components:
           description: 'The expense hashed id'
           type: string
           example: Opnel5aKBz
+          readOnly: true
         name:
           description: 'The expense category name'
           type: string
@@ -21933,6 +21944,7 @@ components:
           description: 'The unique hashed identifier for the quote'
           type: string
           example: Opnel5aKBz
+          readOnly: true
         user_id:
           description: 'The unique hashed identifier for the user who created the quote'
           type: string
@@ -22174,6 +22186,7 @@ components:
           description: 'The account hashed id'
           type: string
           example: AS3df3A
+          readOnly: true
         user_id:
           description: 'The user_id hashed id'
           type: string
@@ -22213,6 +22226,7 @@ components:
           description: 'The document hashed id'
           type: string
           example: AS3df3A
+          readOnly: true
         user_id:
           description: 'The user hashed id'
           type: string
@@ -23012,6 +23026,7 @@ components:
           description: 'The hashed id of the recurring invoice'
           type: string
           example: Opnel5aKBz
+          readOnly: true
         user_id:
           description: 'The user hashed id'
           type: string
@@ -23278,6 +23293,7 @@ components:
           description: 'The hashed id of the task'
           type: string
           example: Opnel5aKBz
+          readOnly: true
         user_id:
           description: 'The hashed id of the user who created the task'
           type: string
@@ -23526,6 +23542,7 @@ components:
           description: Unique identifier for the subscription
           type: string
           example: Opnel5aKBz
+          readOnly: true
         user_id:
           description: Unique identifier for the user associated with the subscription
           type: string
@@ -24027,6 +24044,7 @@ components:
           description: 'The unique hashed identifier for the purchase order'
           type: string
           example: Opnel5aKBz
+          readOnly: true
         user_id:
           description: 'The unique hashed identifier for the user who created the purchase order'
           type: string
@@ -24319,6 +24337,7 @@ components:
           description: 'The id field of the activity'
           type: string
           example: Opnel5aKBz
+          readOnly: true
         activity_type_id:
           description: 'The activity type id'
           type: string
@@ -25826,6 +25845,7 @@ components:
           description: 'The paymentable hashed id'
           type: string
           example: AS3df3A
+          readOnly: true
         invoice_id:
           description: 'The invoice hashed id'
           type: string
@@ -25861,6 +25881,7 @@ components:
           description: 'The location hashed id'
           type: string
           example: Kd5S2M
+          readOnly: true
         name:
           description: 'The location name'
           type: string
@@ -26817,6 +26838,7 @@ components:
           description: 'The project hashed id'
           type: string
           example: Opnel5aKBz
+          readOnly: true
         user_id:
           description: 'The user hashed id'
           type: string
@@ -27169,6 +27191,7 @@ components:
           description: "The unique hashed ID of the credit"
           type: string
           example: Opnel5aKBz
+          readOnly: true
         user_id:
           description: "The unique hashed ID of the user associated with the credit"
           type: string
@@ -27440,6 +27463,7 @@ components:
           description: 'The hashed id of the company gateway'
           type: string
           example: Opnel5aKBz
+          readOnly: true
         gateway_key:
           description: 'The gateway key (hash)'
           type: string
@@ -27478,6 +27502,7 @@ components:
           description: 'The hashed id of the recurring expense'
           type: string
           example: Opnel5aKBz
+          readOnly: true
         user_id:
           description: 'The hashed id of the user who created the recurring expense'
           type: string
@@ -27824,6 +27849,7 @@ components:
           description: 'The design hashed id'
           type: string
           example: AS3df3A
+          readOnly: true
         name:
           description: 'The design name'
           type: string
@@ -28121,6 +28147,7 @@ components:
           description: 'The bank integration hashed id'
           type: string
           example: AS3df3A
+          readOnly: true
         user_id:
           description: 'The user hashed id'
           type: string

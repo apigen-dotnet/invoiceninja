@@ -273,7 +273,7 @@ public class PaymentsClient
   /// Refund payment
   /// Operation: POST /api/v1/payments/refund
   /// </summary>
-  public async Task<ApiResponse<Payment>> StoreRefundAsync(Apigen.InvoiceNinja.Models.Payment payment, StoreRefundRequest? request = null)
+  public async Task<ApiResponse<Payment>> StoreRefundAsync(Apigen.InvoiceNinja.Models.PaymentRequest payment, StoreRefundRequest? request = null)
   {
     string url = "payments/refund".BuildUrl(request: request);
 
