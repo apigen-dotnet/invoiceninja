@@ -121,6 +121,30 @@ original_name = "TaskStatus"
 new_name = "TaskItemStatus"
 reason = "Conflicts with System.Threading.Tasks.TaskStatus"
 
+# Enum definitions
+[[enums]]
+name = "CreditsPaymentMode"
+description = "When credits can be used for payments"
+simple_values = { always = "Always", option = "Option", off = "Off" }
+
+[[enums]]
+name = "TaskDisplayMode"
+description = "Which tasks to show in client portal"
+simple_values = { all = "All", invoiced = "Invoiced", uninvoiced = "Uninvoiced" }
+
+# Response type overrides for operations that return arrays when spec says single object
+[[response_type_overrides]]
+operation_filter = ".*login.*"       # Match any operation containing 'login' (regex)
+original_type = "CompanyUser"         # Only if OpenAPI spec says CompanyUser
+target_type = "CompanyUser[]"         # Convert to array
+reason = "Login endpoint returns array of CompanyUser objects despite spec"
+
+[[response_type_overrides]]
+operation_filter = "^getClients$"    # Exact match for getClients operation
+original_type = "Client"              # Only if OpenAPI spec says Client
+target_type = "Client[]"              # Convert to array
+reason = "Clients list endpoint returns array of Client objects despite spec"
+
 # Property type overrides with regex matching
 [[property_overrides]]
 property_filter = ".*_at$"           # Match any property ending with '_at' (regex)
@@ -158,19 +182,6 @@ model_filter = ".*"
 original_data_type = "number"
 target_type = "decimal?"
 json_converter = "EmptyStringToNullableDecimalConverter"
-
-# Response type overrides for operations that return arrays when spec says single object
-[[response_type_overrides]]
-operation_filter = ".*login.*"       # Match any operation containing 'login' (regex)
-original_type = "CompanyUser"         # Only if OpenAPI spec says CompanyUser
-target_type = "CompanyUser[]"         # Convert to array
-reason = "Login endpoint returns array of CompanyUser objects despite spec"
-
-[[response_type_overrides]]
-operation_filter = "^getClients$"    # Exact match for getClients operation
-original_type = "Client"              # Only if OpenAPI spec says Client
-target_type = "Client[]"              # Convert to array
-reason = "Clients list endpoint returns array of Client objects despite spec"
 
 # Handle properties that can be false or string values (API returns false when not set)
 [[property_overrides]]
@@ -264,18 +275,6 @@ model_filter =".*"
 original_data_type = "number"
 target_type = "int?"
 json_converter = "StringToIntegerConverter"
-
-# Legacy enum definitions - much cleaner syntax!
-[[enums]]
-name = "CreditsPaymentMode"
-description = "When credits can be used for payments"
-simple_values = { always = "Always", option = "Option", off = "Off" }
-
-[[enums]]
-name = "TaskDisplayMode"
-description = "Which tasks to show in client portal"
-simple_values = { all = "All", invoiced = "Invoiced", uninvoiced = "Uninvoiced" }
-
 
 # Use enums for properties - much simpler!
 [[property_overrides]]
