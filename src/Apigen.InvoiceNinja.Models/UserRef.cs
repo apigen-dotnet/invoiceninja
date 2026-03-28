@@ -79,13 +79,13 @@ public class UserRef
   /// The provider id of the oauth entity
   /// </summary>
   [System.Text.Json.Serialization.JsonPropertyName("oauth_user_id")]
-  public string? OauthUserId { get; set; }
+  public string? OAuthUserId { get; set; }
 
   /// <summary>
   /// The oauth entity id
   /// </summary>
   [System.Text.Json.Serialization.JsonPropertyName("oauth_provider_id")]
-  public string? OauthProviderId { get; set; }
+  public string? OAuthProviderId { get; set; }
 
   /// <summary>
   /// The language id of the user
@@ -109,7 +109,7 @@ public class UserRef
   /// The expiry date of the oauth token
   /// </summary>
   [System.Text.Json.Serialization.JsonPropertyName("oauth_user_token_expiry")]
-  public string? OauthUserTokenExpiry { get; set; }
+  public string? OAuthUserTokenExpiry { get; set; }
 
   /// <summary>
   /// Boolean flag determining if the user has a password
@@ -177,13 +177,13 @@ public class UserRef
   /// OAuth refresh token for the user
   /// </summary>
   [System.Text.Json.Serialization.JsonPropertyName("oauth_user_refresh_token")]
-  public string? OauthUserRefreshToken { get; set; }
+  public string? OAuthUserRefreshToken { get; set; }
 
   /// <summary>
   /// OAuth access token data for the user
   /// </summary>
   [System.Text.Json.Serialization.JsonPropertyName("oauth_user_token")]
-  public object? OauthUserToken { get; set; }
+  public object? OAuthUserToken { get; set; }
 
   /// <summary>
   /// The unique identifier of the Shopify user

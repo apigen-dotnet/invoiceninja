@@ -79,13 +79,13 @@ public class User
   /// The provider id of the oauth entity
   /// </summary>
   [System.Text.Json.Serialization.JsonPropertyName("oauth_user_id")]
-  public string? OauthUserId { get; set; }
+  public string? OAuthUserId { get; set; }
 
   /// <summary>
   /// The oauth entity id
   /// </summary>
   [System.Text.Json.Serialization.JsonPropertyName("oauth_provider_id")]
-  public string? OauthProviderId { get; set; }
+  public string? OAuthProviderId { get; set; }
 
   /// <summary>
   /// The language id of the user
@@ -109,7 +109,7 @@ public class User
   /// The expiry date of the oauth token
   /// </summary>
   [System.Text.Json.Serialization.JsonPropertyName("oauth_user_token_expiry")]
-  public string? OauthUserTokenExpiry { get; set; }
+  public string? OAuthUserTokenExpiry { get; set; }
 
   /// <summary>
   /// Boolean flag determining if the user has a password
@@ -174,5 +174,5 @@ public class User
   public int? PasskeyCount { get; set; }
 
   [System.Text.Json.Serialization.JsonPropertyName("company_user")]
-  public CompanyUserRef? CompanyUser { get; set; }
+  public CompanyUser? CompanyUser { get; set; }
 }

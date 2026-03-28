@@ -365,7 +365,7 @@ public class Company
   /// A flag determining whether to require a password for dangerous actions when using OAuth
   /// </summary>
   [System.Text.Json.Serialization.JsonPropertyName("oauth_password_required")]
-  public bool? OauthPasswordRequired { get; set; }
+  public bool? OAuthPasswordRequired { get; set; }
 
   /// <summary>
   /// A flag determining whether to include task date logs on invoices by default

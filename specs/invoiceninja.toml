@@ -68,6 +68,7 @@ description = "Add _method=POST for all POST operations"
 
 # Naming convention overrides
 [naming]
+overrides = { "oauth_password_required" = "OAuthPasswordRequired", "oauth_user_id" = "OAuthUserId", "oauth_provider_id" = "OAuthProviderId", "oauth_user_token_expiry" = "OAuthUserTokenExpiry", "oauth_user_refresh_token" = "OAuthUserRefreshToken", "oauth_user_token" = "OAuthUserToken" }
 
 # Specific operationId overrides for problematic names
 [naming.operation_id_overrides]

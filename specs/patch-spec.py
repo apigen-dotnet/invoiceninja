@@ -8,6 +8,7 @@ Uses ruamel.yaml to preserve formatting, comments, and key order.
 Patches applied:
   1. Add per_page_meta/page_meta params to list endpoints that are missing them
   2. Add readOnly: true to 'id' fields on all component schemas
+  3. Remove duplicate Ref schemas that are identical to their non-Ref counterparts
 """
 
 import sys
@@ -127,6 +128,83 @@ def patch_readonly_ids(spec) -> int:
     return count
 
 
+def patch_remove_duplicate_ref_schemas(spec) -> int:
+    """Remove Ref schemas that are identical to their non-Ref counterparts.
+
+    The upstream spec contains duplicate schemas like CompanyUserRef that are
+    100% identical to CompanyUser. This removes the Ref variant and rewrites
+    all $ref pointers to use the canonical (non-Ref) schema instead.
+    """
+    import json
+
+    schemas = spec.get("components", {}).get("schemas", {})
+    removed = []
+
+    # Find all FooRef schemas that have a matching Foo schema
+    for name in list(schemas.keys()):
+        if not name.endswith("Ref"):
+            continue
+        canonical = name[:-3]  # "CompanyUserRef" -> "CompanyUser"
+        if canonical not in schemas:
+            continue
+
+        # Deep compare (convert to plain dicts for comparison)
+        ref_json = json.dumps(dict(schemas[name]), sort_keys=True)
+        canonical_json = json.dumps(dict(schemas[canonical]), sort_keys=True)
+
+        if ref_json == canonical_json:
+            removed.append((name, canonical))
+
+    if not removed:
+        return 0
+
+    # Rewrite all $ref pointers and remove duplicate schemas
+    spec_str = json.dumps(spec, default=str)
+    for ref_name, canonical_name in removed:
+        old_ref = f"#/components/schemas/{ref_name}"
+        new_ref = f"#/components/schemas/{canonical_name}"
+        spec_str = spec_str.replace(f'"{old_ref}"', f'"{new_ref}"')
+
+    # Parse back
+    import json as json_mod
+
+    patched = json_mod.loads(spec_str)
+
+    # Remove the duplicate schemas
+    for ref_name, _ in removed:
+        if ref_name in patched["components"]["schemas"]:
+            del patched["components"]["schemas"][ref_name]
+
+    # Update spec in-place by reloading through ruamel
+    # (We need to preserve ruamel's special types for the final write)
+    for ref_name, canonical_name in removed:
+        # Remove from ruamel-managed schemas
+        if ref_name in schemas:
+            del schemas[ref_name]
+
+    # Rewrite $ref strings in the ruamel tree
+    _rewrite_refs(spec, removed)
+
+    return len(removed)
+
+
+def _rewrite_refs(node, replacements):
+    """Recursively rewrite $ref strings in a ruamel.yaml tree."""
+    if isinstance(node, dict):
+        for key in list(node.keys()):
+            if key == "$ref" and isinstance(node[key], str):
+                for ref_name, canonical_name in replacements:
+                    old_ref = f"#/components/schemas/{ref_name}"
+                    new_ref = f"#/components/schemas/{canonical_name}"
+                    if node[key] == old_ref:
+                        node[key] = new_ref
+            else:
+                _rewrite_refs(node[key], replacements)
+    elif isinstance(node, list):
+        for item in node:
+            _rewrite_refs(item, replacements)
+
+
 def main():
     spec_path = sys.argv[1] if len(sys.argv) > 1 else "specs/invoiceninja.yaml"
 
@@ -140,6 +218,9 @@ def main():
 
     n = patch_readonly_ids(spec)
     print(f"  readOnly id fields: patched {n} schemas")
+
+    n = patch_remove_duplicate_ref_schemas(spec)
+    print(f"  Duplicate Ref schemas: removed {n}")
 
     with open(spec_path, "w") as f:
         yaml.dump(spec, f)
