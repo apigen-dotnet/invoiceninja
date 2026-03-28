@@ -34,10 +34,10 @@ public class ActivitiesClient
     string url = "activities".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
-    HttpClientLog.RequestStarted(_logger, "GET", url);
+    HttpClientLog.LogDebugRequestStarted(_logger, "GET", url);
     HttpResponseMessage response = await _httpClient.GetAsync(url);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
-    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "GET", url, durationMs);
+    HttpClientLog.LogDebugRequestCompleted(_logger, (int)response.StatusCode, "GET", url, durationMs);
 
     string responseContent;
     try
@@ -48,11 +48,11 @@ public class ActivitiesClient
     catch (HttpRequestException ex)
     {
       responseContent = await response.Content.ReadAsStringAsync();
-      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "GET", url, responseContent, ex);
+      HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "GET", url, responseContent, ex);
       throw;
     }
 
-    HttpClientLog.ResponseBody(_logger, url, responseContent);
+    HttpClientLog.LogTraceResponseBody(_logger, url, responseContent);
     ApiResponse<Activity[]>? apiResponse = JsonSerializer.Deserialize<ApiResponse<Activity[]>>(responseContent, JsonConfig.Default);
     return apiResponse ?? new ApiResponse<Activity[]>();
   }
@@ -71,10 +71,10 @@ public class ActivitiesClient
     string url = "activities/download_entity/{activity_id}".BuildUrl(pathParams, request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
-    HttpClientLog.RequestStarted(_logger, "GET", url);
+    HttpClientLog.LogDebugRequestStarted(_logger, "GET", url);
     HttpResponseMessage response = await _httpClient.GetAsync(url);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
-    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "GET", url, durationMs);
+    HttpClientLog.LogDebugRequestCompleted(_logger, (int)response.StatusCode, "GET", url, durationMs);
 
     try
     {
@@ -83,7 +83,7 @@ public class ActivitiesClient
     catch (HttpRequestException ex)
     {
       string responseContent = await response.Content.ReadAsStringAsync();
-      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "GET", url, responseContent, ex);
+      HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "GET", url, responseContent, ex);
       throw;
     }
   }
@@ -98,10 +98,10 @@ public class ActivitiesClient
     string url = "activities/entity";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
-    HttpClientLog.RequestStarted(_logger, "POST", url);
+    HttpClientLog.LogDebugRequestStarted(_logger, "POST", url);
     HttpResponseMessage response = await _httpClient.PostAsync(url, null);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
-    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+    HttpClientLog.LogDebugRequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
 
     try
     {
@@ -110,7 +110,7 @@ public class ActivitiesClient
     catch (HttpRequestException ex)
     {
       string responseContent = await response.Content.ReadAsStringAsync();
-      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
       throw;
     }
   }
@@ -125,10 +125,10 @@ public class ActivitiesClient
     string url = "activities/notes";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
-    HttpClientLog.RequestStarted(_logger, "POST", url);
+    HttpClientLog.LogDebugRequestStarted(_logger, "POST", url);
     HttpResponseMessage response = await _httpClient.PostAsync(url, null);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
-    HttpClientLog.RequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+    HttpClientLog.LogDebugRequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
 
     try
     {
@@ -137,7 +137,7 @@ public class ActivitiesClient
     catch (HttpRequestException ex)
     {
       string responseContent = await response.Content.ReadAsStringAsync();
-      HttpClientLog.RequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
       throw;
     }
   }

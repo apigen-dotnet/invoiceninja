@@ -158,7 +158,7 @@ public class User
   /// </summary>
   [JsonConverter(typeof(BooleanFalseToNullStringConverter))]
   [System.Text.Json.Serialization.JsonPropertyName("google_2fa_secret")]
-  public string? Google2faSecret { get; set; }
+  public string? Google2FaSecret { get; set; }
 
   /// <summary>
   /// Boolean flag if passkey auth is enabled for this user
