@@ -48,18 +48,6 @@ public class GetBankTransactionRulesRequest : BaseRequest
   [JsonPropertyName("rows")]
   public decimal? Rows { get; set; }
 
-  /// <summary>
-  /// The number of records to return for each request, default is 20
-  /// </summary>
-  [JsonPropertyName("per_page")]
-  public int? PerPage { get; set; }
-
-  /// <summary>
-  /// The page number to return for this request (when performing pagination), default is 1
-  /// </summary>
-  [JsonPropertyName("page")]
-  public int? Page { get; set; }
-
   public override string ToQueryString()
   {
     Dictionary<string, object> queryParams = new Dictionary<string, object>();
@@ -70,10 +58,6 @@ public class GetBankTransactionRulesRequest : BaseRequest
       queryParams["index"] = Index;
     if (Rows != null)
       queryParams["rows"] = Rows;
-    if (PerPage != null)
-      queryParams["per_page"] = PerPage;
-    if (Page != null)
-      queryParams["page"] = Page;
 
     return queryParams.ToQueryString();
   }

@@ -15,13 +15,13 @@ public interface IReportsClient
   /// Contact reports
   /// Operation: POST /api/v1/reports/contacts
   /// </summary>
-  Task GetContactReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetContactReportRequest? request = null);
+  Task GetContactReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema);
 
   /// <summary>
   /// Client reports
   /// Operation: POST /api/v1/reports/clients
   /// </summary>
-  Task GetClientReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetClientReportRequest? request = null);
+  Task GetClientReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema);
 
   /// <summary>
   /// Credit reports
@@ -33,7 +33,7 @@ public interface IReportsClient
   /// Document reports
   /// Operation: POST /api/v1/reports/documents
   /// </summary>
-  Task GetDocumentReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetDocumentReportRequest? request = null);
+  Task GetDocumentReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema);
 
   /// <summary>
   /// Expense reports
@@ -45,61 +45,61 @@ public interface IReportsClient
   /// Invoice item reports
   /// Operation: POST /api/v1/reports/invoice_items
   /// </summary>
-  Task GetInvoiceItemReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetInvoiceItemReportRequest? request = null);
+  Task GetInvoiceItemReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema);
 
   /// <summary>
   /// Invoice reports
   /// Operation: POST /api/v1/reports/invoices
   /// </summary>
-  Task GetInvoiceReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetInvoiceReportRequest? request = null);
+  Task GetInvoiceReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema);
 
   /// <summary>
   /// Payment reports
   /// Operation: POST /api/v1/reports/payments
   /// </summary>
-  Task GetPaymentReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetPaymentReportRequest? request = null);
+  Task GetPaymentReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema);
 
   /// <summary>
   /// Product reports
   /// Operation: POST /api/v1/reports/products
   /// </summary>
-  Task GetProductReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetProductReportRequest? request = null);
+  Task GetProductReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema);
 
   /// <summary>
   /// Product Salesreports
   /// Operation: POST /api/v1/reports/product_sales
   /// </summary>
-  Task GetProductSalesReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetProductSalesReportRequest? request = null);
+  Task GetProductSalesReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema);
 
   /// <summary>
   /// Profit loss reports
   /// Operation: POST /api/v1/reports/profitloss
   /// </summary>
-  Task GetProfitLossReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetProfitLossReportRequest? request = null);
+  Task GetProfitLossReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema);
 
   /// <summary>
   /// Quote item reports
   /// Operation: POST /api/v1/reports/quote_items
   /// </summary>
-  Task GetQuoteItemReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetQuoteItemReportRequest? request = null);
+  Task GetQuoteItemReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema);
 
   /// <summary>
   /// Quote reports
   /// Operation: POST /api/v1/reports/quotes
   /// </summary>
-  Task GetQuoteReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetQuoteReportRequest? request = null);
+  Task GetQuoteReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema);
 
   /// <summary>
   /// Recurring Invoice reports
   /// Operation: POST /api/v1/reports/recurring_invoices
   /// </summary>
-  Task GetRecurringInvoiceReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetRecurringInvoiceReportRequest? request = null);
+  Task GetRecurringInvoiceReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema);
 
   /// <summary>
   /// Task reports
   /// Operation: POST /api/v1/reports/tasks
   /// </summary>
-  Task GetTaskReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetTaskReportRequest? request = null);
+  Task GetTaskReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema);
 
   /// <summary>
   /// Activity reports

@@ -29,9 +29,9 @@ public class TemplatesClient
   /// Returns a entity template with the template variables replaced with the Entities
   /// Operation: POST /api/v1/templates
   /// </summary>
-  public async Task<ApiResponse<Template>> CreateAsync(Apigen.InvoiceNinja.Models.GetShowTemplateRequest getShowTemplateRequest, GetShowTemplateRequest? request = null)
+  public async Task<ApiResponse<Template>> CreateAsync(Apigen.InvoiceNinja.Models.GetShowTemplateRequest getShowTemplateRequest)
   {
-    string url = "templates".BuildUrl(request: request);
+    string url = "templates";
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.LogDebugRequestStarted(_logger, "POST", url);

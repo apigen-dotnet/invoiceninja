@@ -35,26 +35,4 @@ public static class ModelConversionExtensions
     };
   }
 
-  /// <summary>
-  /// Converts Payment to PaymentRequest
-  /// </summary>
-  public static PaymentRequest ToRequest(this Payment source)
-  {
-    return new PaymentRequest
-    {
-      ClientId = source.ClientId,
-      ClientContactId = source.ClientContactId,
-      UserId = source.UserId,
-      TypeId = source.TypeId,
-      Date = source.Date,
-      TransactionReference = source.TransactionReference,
-      AssignedUserId = source.AssignedUserId,
-      PrivateNotes = source.PrivateNotes,
-      Amount = source.Amount,
-      Invoices = source.Invoices,
-      Credits = source.Credits,
-      Number = source.Number
-    };
-  }
-
 }
