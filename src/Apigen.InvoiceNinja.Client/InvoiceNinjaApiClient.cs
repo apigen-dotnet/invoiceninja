@@ -509,7 +509,7 @@ public class InvoiceNinjaApiClient
   }
 
   /// <summary>
-  /// Create client with X-API-TOKEN authentication
+  /// Create client with API key authentication
   /// </summary>
   public static InvoiceNinjaApiClient WithApiKey(string apiKey, string baseUrl = "https://demo.invoiceninja.com", ILogger? logger = null)
   {
