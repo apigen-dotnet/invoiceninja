@@ -29,9 +29,9 @@ public class ReportsClient
   /// Contact reports
   /// Operation: POST /api/v1/reports/contacts
   /// </summary>
-  public async Task GetContactReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  public async Task GetContactReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetContactReportRequest? request = null)
   {
-    string url = "reports/contacts";
+    string url = "reports/contacts".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.LogDebugRequestStarted(_logger, "POST", url);
@@ -59,9 +59,9 @@ public class ReportsClient
   /// Client reports
   /// Operation: POST /api/v1/reports/clients
   /// </summary>
-  public async Task GetClientReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  public async Task GetClientReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetClientReportRequest? request = null)
   {
-    string url = "reports/clients";
+    string url = "reports/clients".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.LogDebugRequestStarted(_logger, "POST", url);
@@ -119,9 +119,9 @@ public class ReportsClient
   /// Document reports
   /// Operation: POST /api/v1/reports/documents
   /// </summary>
-  public async Task GetDocumentReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  public async Task GetDocumentReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetDocumentReportRequest? request = null)
   {
-    string url = "reports/documents";
+    string url = "reports/documents".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.LogDebugRequestStarted(_logger, "POST", url);
@@ -179,9 +179,9 @@ public class ReportsClient
   /// Invoice item reports
   /// Operation: POST /api/v1/reports/invoice_items
   /// </summary>
-  public async Task GetInvoiceItemReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  public async Task GetInvoiceItemReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetInvoiceItemReportRequest? request = null)
   {
-    string url = "reports/invoice_items";
+    string url = "reports/invoice_items".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.LogDebugRequestStarted(_logger, "POST", url);
@@ -209,9 +209,9 @@ public class ReportsClient
   /// Invoice reports
   /// Operation: POST /api/v1/reports/invoices
   /// </summary>
-  public async Task GetInvoiceReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  public async Task GetInvoiceReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetInvoiceReportRequest? request = null)
   {
-    string url = "reports/invoices";
+    string url = "reports/invoices".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.LogDebugRequestStarted(_logger, "POST", url);
@@ -239,9 +239,9 @@ public class ReportsClient
   /// Payment reports
   /// Operation: POST /api/v1/reports/payments
   /// </summary>
-  public async Task GetPaymentReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  public async Task GetPaymentReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetPaymentReportRequest? request = null)
   {
-    string url = "reports/payments";
+    string url = "reports/payments".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.LogDebugRequestStarted(_logger, "POST", url);
@@ -269,9 +269,9 @@ public class ReportsClient
   /// Product reports
   /// Operation: POST /api/v1/reports/products
   /// </summary>
-  public async Task GetProductReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  public async Task GetProductReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetProductReportRequest? request = null)
   {
-    string url = "reports/products";
+    string url = "reports/products".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.LogDebugRequestStarted(_logger, "POST", url);
@@ -299,9 +299,9 @@ public class ReportsClient
   /// Product Salesreports
   /// Operation: POST /api/v1/reports/product_sales
   /// </summary>
-  public async Task GetProductSalesReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  public async Task GetProductSalesReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetProductSalesReportRequest? request = null)
   {
-    string url = "reports/product_sales";
+    string url = "reports/product_sales".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.LogDebugRequestStarted(_logger, "POST", url);
@@ -329,9 +329,9 @@ public class ReportsClient
   /// Profit loss reports
   /// Operation: POST /api/v1/reports/profitloss
   /// </summary>
-  public async Task GetProfitLossReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  public async Task GetProfitLossReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetProfitLossReportRequest? request = null)
   {
-    string url = "reports/profitloss";
+    string url = "reports/profitloss".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.LogDebugRequestStarted(_logger, "POST", url);
@@ -359,9 +359,9 @@ public class ReportsClient
   /// Quote item reports
   /// Operation: POST /api/v1/reports/quote_items
   /// </summary>
-  public async Task GetQuoteItemReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  public async Task GetQuoteItemReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetQuoteItemReportRequest? request = null)
   {
-    string url = "reports/quote_items";
+    string url = "reports/quote_items".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.LogDebugRequestStarted(_logger, "POST", url);
@@ -389,9 +389,9 @@ public class ReportsClient
   /// Quote reports
   /// Operation: POST /api/v1/reports/quotes
   /// </summary>
-  public async Task GetQuoteReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  public async Task GetQuoteReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetQuoteReportRequest? request = null)
   {
-    string url = "reports/quotes";
+    string url = "reports/quotes".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.LogDebugRequestStarted(_logger, "POST", url);
@@ -419,9 +419,9 @@ public class ReportsClient
   /// Recurring Invoice reports
   /// Operation: POST /api/v1/reports/recurring_invoices
   /// </summary>
-  public async Task GetRecurringInvoiceReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  public async Task GetRecurringInvoiceReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetRecurringInvoiceReportRequest? request = null)
   {
-    string url = "reports/recurring_invoices";
+    string url = "reports/recurring_invoices".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.LogDebugRequestStarted(_logger, "POST", url);
@@ -449,9 +449,9 @@ public class ReportsClient
   /// Task reports
   /// Operation: POST /api/v1/reports/tasks
   /// </summary>
-  public async Task GetTaskReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema)
+  public async Task GetTaskReportAsync(Apigen.InvoiceNinja.Models.GenericReportSchema genericReportSchema, GetTaskReportRequest? request = null)
   {
-    string url = "reports/tasks";
+    string url = "reports/tasks".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.LogDebugRequestStarted(_logger, "POST", url);

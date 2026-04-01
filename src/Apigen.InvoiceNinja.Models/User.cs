@@ -174,5 +174,5 @@ public class User
   public int? PasskeyCount { get; set; }
 
   [System.Text.Json.Serialization.JsonPropertyName("company_user")]
-  public CompanyUserRef? CompanyUser { get; set; }
+  public CompanyUser? CompanyUser { get; set; }
 }
