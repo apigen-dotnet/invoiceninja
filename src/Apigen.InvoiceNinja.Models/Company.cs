@@ -193,9 +193,8 @@ public class Company
   /// <summary>
   /// A flag determining whether to apply taxes on custom surcharge amounts for the fourth custom
   /// </summary>
-  [JsonConverter(typeof(StringToIntegerConverter))]
   [System.Text.Json.Serialization.JsonPropertyName("custom_surcharge_taxes4")]
-  public int? CustomSurchargeTaxes4 { get; set; }
+  public object? CustomSurchargeTaxes4 { get; set; }
 
   /// <summary>
   /// The company logo file in binary format

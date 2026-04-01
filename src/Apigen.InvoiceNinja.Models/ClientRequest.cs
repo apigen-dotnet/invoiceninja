@@ -122,10 +122,8 @@ public class ClientRequest
   public string? Phone { get; set; }
 
   [Required]
-  [JsonConverter(typeof(StringToIntegerConverter))]
-  [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.Never)]
   [System.Text.Json.Serialization.JsonPropertyName("country_id")]
-  public int? CountryId { get; set; }
+  public required CountryType CountryId { get; set; }
 
   /// <summary>
   /// A custom field for storing additional information
