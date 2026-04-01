@@ -14,7 +14,7 @@
 
   <PropertyGroup Condition="'$(MSBuildProjectName)' == 'Apigen.InvoiceNinja.Client'">
     <PackageId>Apigen.InvoiceNinja.Client</PackageId>
-    <Version>5.12.2</Version>
+    <Version>5.12.3</Version>
     <Description>Generated C# client for the Invoice Ninja v5 API</Description>
     <PackageTags>invoiceninja;api;client;openapi;apigen</PackageTags>
     <PackageReadmeFile>NUGET.md</PackageReadmeFile>
