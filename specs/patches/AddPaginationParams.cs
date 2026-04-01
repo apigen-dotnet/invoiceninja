@@ -1,5 +1,6 @@
 using System.Collections.Generic;
-using Microsoft.OpenApi.Models;
+using System.Linq;
+using Microsoft.OpenApi;
 using Apigen.Generator;
 
 /// <summary>
@@ -9,47 +10,48 @@ public class AddPaginationParams : ISpecPatch
 {
   public string Name => "Add pagination params to list endpoints";
 
-  private static readonly List<(OperationType Method, string Path)> Endpoints = new()
+  // Use string method names to avoid dependency on System.Net.Http assembly
+  private static readonly List<(string Method, string Path)> Endpoints = new()
   {
-    (OperationType.Get, "/api/v1/bank_integrations"),
-    (OperationType.Get, "/api/v1/bank_transactions"),
-    (OperationType.Get, "/api/v1/bank_transaction_rules"),
-    (OperationType.Get, "/api/v1/client_gateway_tokens"),
-    (OperationType.Get, "/api/v1/companies"),
-    (OperationType.Get, "/api/v1/company_gateways"),
-    (OperationType.Get, "/api/v1/designs"),
-    (OperationType.Get, "/api/v1/documents"),
-    (OperationType.Get, "/api/v1/expense_categories"),
-    (OperationType.Get, "/api/v1/expenses"),
-    (OperationType.Get, "/api/v1/group_settings"),
-    (OperationType.Get, "/api/v1/payment_terms"),
-    (OperationType.Get, "/api/v1/recurring_expenses"),
-    (OperationType.Get, "/api/v1/recurring_quotes"),
-    (OperationType.Get, "/api/v1/subscriptions"),
-    (OperationType.Get, "/api/v1/system_logs"),
-    (OperationType.Get, "/api/v1/task_schedulers/"),
-    (OperationType.Get, "/api/v1/task_schedulers/create"),
-    (OperationType.Get, "/api/v1/task_statuses"),
-    (OperationType.Get, "/api/v1/tax_rates"),
-    (OperationType.Get, "/api/v1/tokens"),
-    (OperationType.Get, "/api/v1/users"),
-    (OperationType.Get, "/api/v1/webhooks"),
-    (OperationType.Post, "/api/v1/reports/clients"),
-    (OperationType.Post, "/api/v1/reports/contacts"),
-    (OperationType.Post, "/api/v1/reports/credit"),
-    (OperationType.Post, "/api/v1/reports/documents"),
-    (OperationType.Post, "/api/v1/reports/expense"),
-    (OperationType.Post, "/api/v1/reports/invoice_items"),
-    (OperationType.Post, "/api/v1/reports/invoices"),
-    (OperationType.Post, "/api/v1/reports/payments"),
-    (OperationType.Post, "/api/v1/reports/product_sales"),
-    (OperationType.Post, "/api/v1/reports/products"),
-    (OperationType.Post, "/api/v1/reports/profitloss"),
-    (OperationType.Post, "/api/v1/reports/quote_items"),
-    (OperationType.Post, "/api/v1/reports/quotes"),
-    (OperationType.Post, "/api/v1/reports/recurring_invoices"),
-    (OperationType.Post, "/api/v1/reports/tasks"),
-    (OperationType.Post, "/api/v1/templates"),
+    ("GET", "/api/v1/bank_integrations"),
+    ("GET", "/api/v1/bank_transactions"),
+    ("GET", "/api/v1/bank_transaction_rules"),
+    ("GET", "/api/v1/client_gateway_tokens"),
+    ("GET", "/api/v1/companies"),
+    ("GET", "/api/v1/company_gateways"),
+    ("GET", "/api/v1/designs"),
+    ("GET", "/api/v1/documents"),
+    ("GET", "/api/v1/expense_categories"),
+    ("GET", "/api/v1/expenses"),
+    ("GET", "/api/v1/group_settings"),
+    ("GET", "/api/v1/payment_terms"),
+    ("GET", "/api/v1/recurring_expenses"),
+    ("GET", "/api/v1/recurring_quotes"),
+    ("GET", "/api/v1/subscriptions"),
+    ("GET", "/api/v1/system_logs"),
+    ("GET", "/api/v1/task_schedulers/"),
+    ("GET", "/api/v1/task_schedulers/create"),
+    ("GET", "/api/v1/task_statuses"),
+    ("GET", "/api/v1/tax_rates"),
+    ("GET", "/api/v1/tokens"),
+    ("GET", "/api/v1/users"),
+    ("GET", "/api/v1/webhooks"),
+    ("POST", "/api/v1/reports/clients"),
+    ("POST", "/api/v1/reports/contacts"),
+    ("POST", "/api/v1/reports/credit"),
+    ("POST", "/api/v1/reports/documents"),
+    ("POST", "/api/v1/reports/expense"),
+    ("POST", "/api/v1/reports/invoice_items"),
+    ("POST", "/api/v1/reports/invoices"),
+    ("POST", "/api/v1/reports/payments"),
+    ("POST", "/api/v1/reports/product_sales"),
+    ("POST", "/api/v1/reports/products"),
+    ("POST", "/api/v1/reports/profitloss"),
+    ("POST", "/api/v1/reports/quote_items"),
+    ("POST", "/api/v1/reports/quotes"),
+    ("POST", "/api/v1/reports/recurring_invoices"),
+    ("POST", "/api/v1/reports/tasks"),
+    ("POST", "/api/v1/templates"),
   };
 
   public bool Apply(OpenApiDocument document)
@@ -57,19 +59,33 @@ public class AddPaginationParams : ISpecPatch
     if (document.Paths == null) return false;
 
     int count = 0;
-    foreach (var (method, path) in Endpoints)
+    foreach (var (methodStr, path) in Endpoints)
     {
-      if (!document.Paths.TryGetValue(path, out OpenApiPathItem? pathItem)) continue;
-      if (!pathItem.Operations.TryGetValue(method, out OpenApiOperation? operation)) continue;
+      if (!document.Paths.TryGetValue(path, out IOpenApiPathItem? iPathItem)) continue;
+      if (iPathItem is not OpenApiPathItem pathItem) continue;
+      if (pathItem.Operations == null) continue;
+
+      // In 3.x, Operations is keyed by System.Net.Http.HttpMethod
+      var httpMethod = new System.Net.Http.HttpMethod(methodStr);
+      if (!pathItem.Operations.TryGetValue(httpMethod, out OpenApiOperation? operation)) continue;
 
       // Check if already has per_page_meta
       bool hasMeta = false;
-      foreach (var param in operation.Parameters)
+      if (operation.Parameters != null)
       {
-        if (param.Reference?.Id == "per_page_meta")
+        foreach (var param in operation.Parameters)
         {
-          hasMeta = true;
-          break;
+          if (param is OpenApiParameterReference paramRef && paramRef.Reference?.Id == "per_page_meta")
+          {
+            hasMeta = true;
+            break;
+          }
+          // Also check by name for non-reference parameters
+          if (param.Name == "per_page_meta")
+          {
+            hasMeta = true;
+            break;
+          }
         }
       }
       if (hasMeta) continue;
@@ -78,13 +94,16 @@ public class AddPaginationParams : ISpecPatch
       var components = document.Components?.Parameters;
       if (components == null) continue;
 
-      if (components.TryGetValue("per_page_meta", out OpenApiParameter? perPageParam))
+      // In 3.x, add parameter references instead of resolved parameters
+      if (components.ContainsKey("per_page_meta"))
       {
-        operation.Parameters.Add(perPageParam);
+        operation.Parameters ??= new List<IOpenApiParameter>();
+        operation.Parameters.Add(new OpenApiParameterReference("per_page_meta", document));
       }
-      if (components.TryGetValue("page_meta", out OpenApiParameter? pageParam))
+      if (components.ContainsKey("page_meta"))
       {
-        operation.Parameters.Add(pageParam);
+        operation.Parameters ??= new List<IOpenApiParameter>();
+        operation.Parameters.Add(new OpenApiParameterReference("page_meta", document));
       }
       count++;
     }

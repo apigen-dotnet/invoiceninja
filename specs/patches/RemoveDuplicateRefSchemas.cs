@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using Apigen.Generator;
 
 /// <summary>
@@ -26,7 +26,10 @@ public class RemoveDuplicateRefSchemas : ISpecPatch
       if (!schemas.ContainsKey(canonical)) continue;
 
       // Compare structure: same properties, types, required fields
-      if (AreSchemasEqual(schemas[name], schemas[canonical]))
+      // In 3.x, schemas in the dictionary are IOpenApiSchema; resolve to concrete OpenApiSchema
+      OpenApiSchema aResolved = ResolveSchema(schemas[name]);
+      OpenApiSchema bResolved = ResolveSchema(schemas[canonical]);
+      if (AreSchemasEqual(aResolved, bResolved))
       {
         duplicates.Add((name, canonical));
       }
@@ -44,6 +47,15 @@ public class RemoveDuplicateRefSchemas : ISpecPatch
     return true;
   }
 
+  private static OpenApiSchema ResolveSchema(IOpenApiSchema schema)
+  {
+    if (schema is OpenApiSchema concrete) return concrete;
+    if (schema is OpenApiSchemaReference reference)
+      return reference.RecursiveTarget ?? throw new System.InvalidOperationException(
+        $"Unresolved schema reference: {reference.Reference?.Id ?? "(unknown)"}");
+    return (OpenApiSchema)schema;
+  }
+
   private static bool AreSchemasEqual(OpenApiSchema a, OpenApiSchema b)
   {
     // Compare property count
@@ -56,11 +68,17 @@ public class RemoveDuplicateRefSchemas : ISpecPatch
     // Compare each property
     foreach (var kvp in a.Properties)
     {
-      if (!b.Properties.TryGetValue(kvp.Key, out OpenApiSchema? bProp)) return false;
-      if (kvp.Value.Type != bProp.Type) return false;
-      if (kvp.Value.Format != bProp.Format) return false;
-      if (kvp.Value.Nullable != bProp.Nullable) return false;
-      if (kvp.Value.ReadOnly != bProp.ReadOnly) return false;
+      if (!b.Properties.TryGetValue(kvp.Key, out IOpenApiSchema? bPropI)) return false;
+      // Resolve both to concrete schemas for comparison
+      OpenApiSchema aProp = ResolveSchema(kvp.Value);
+      OpenApiSchema bProp = ResolveSchema(bPropI);
+      if (aProp.Type != bProp.Type) return false;
+      if (aProp.Format != bProp.Format) return false;
+      // In 3.x, Nullable is replaced by JsonSchemaType.Null flag
+      bool aNullable = aProp.Type.HasValue && aProp.Type.Value.HasFlag(JsonSchemaType.Null);
+      bool bNullable = bProp.Type.HasValue && bProp.Type.Value.HasFlag(JsonSchemaType.Null);
+      if (aNullable != bNullable) return false;
+      if (aProp.ReadOnly != bProp.ReadOnly) return false;
     }
 
     return true;
@@ -73,9 +91,10 @@ public class RemoveDuplicateRefSchemas : ISpecPatch
     {
       foreach (var path in document.Paths.Values)
       {
+        if (path.Operations == null) continue;
         foreach (var op in path.Operations.Values)
         {
-          RewriteInOperation(op, oldName, newName);
+          RewriteInOperation(document, op, oldName, newName);
         }
       }
     }
@@ -85,57 +104,123 @@ public class RemoveDuplicateRefSchemas : ISpecPatch
     {
       foreach (var schema in document.Components.Schemas.Values)
       {
-        RewriteInSchema(schema, oldName, newName);
+        RewriteInISchema(document, schema, oldName, newName);
       }
     }
   }
 
-  private static void RewriteInOperation(OpenApiOperation operation, string oldName, string newName)
+  private static void RewriteInOperation(OpenApiDocument document, OpenApiOperation operation, string oldName, string newName)
   {
     // Request body
     if (operation.RequestBody?.Content != null)
     {
       foreach (var content in operation.RequestBody.Content.Values)
       {
-        if (content.Schema != null) RewriteInSchema(content.Schema, oldName, newName);
+        if (content.Schema != null) RewriteContentSchema(document, content, oldName, newName);
       }
     }
 
     // Responses
-    foreach (var response in operation.Responses.Values)
+    if (operation.Responses != null)
     {
-      if (response.Content == null) continue;
-      foreach (var content in response.Content.Values)
+      foreach (var response in operation.Responses.Values)
       {
-        if (content.Schema != null) RewriteInSchema(content.Schema, oldName, newName);
+        if (response.Content == null) continue;
+        foreach (var content in response.Content.Values)
+        {
+          if (content.Schema != null) RewriteContentSchema(document, content, oldName, newName);
+        }
       }
     }
   }
 
-  private static void RewriteInSchema(OpenApiSchema schema, string oldName, string newName)
+  private static void RewriteContentSchema(OpenApiDocument document, IOpenApiMediaType iContent, string oldName, string newName)
   {
-    if (schema.Reference?.Id == oldName)
+    if (iContent is not OpenApiMediaType content) return;
+    // In 3.x, if content.Schema is an OpenApiSchemaReference, check Reference.Id
+    if (content.Schema is OpenApiSchemaReference schemaRef && schemaRef.Reference?.Id == oldName)
     {
-      schema.Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = newName };
+      content.Schema = new OpenApiSchemaReference(newName, document);
     }
+    else if (content.Schema != null)
+    {
+      RewriteInISchema(document, content.Schema, oldName, newName);
+    }
+  }
+
+  private static void RewriteInISchema(OpenApiDocument document, IOpenApiSchema iSchema, string oldName, string newName)
+  {
+    // If this is a schema reference, we can't rewrite it in-place from here;
+    // it should be handled by the caller (e.g., replacing dict entries).
+    // Focus on concrete schema properties.
+    OpenApiSchema schema;
+    if (iSchema is OpenApiSchema concrete)
+      schema = concrete;
+    else if (iSchema is OpenApiSchemaReference)
+      return; // References are handled at the collection level
+    else
+      return;
 
     if (schema.Properties != null)
     {
-      foreach (var prop in schema.Properties.Values)
+      // Check each property; if it's a $ref to oldName, replace it
+      var keys = schema.Properties.Keys.ToList();
+      foreach (var key in keys)
       {
-        RewriteInSchema(prop, oldName, newName);
+        var prop = schema.Properties[key];
+        if (prop is OpenApiSchemaReference propRef && propRef.Reference?.Id == oldName)
+        {
+          schema.Properties[key] = new OpenApiSchemaReference(newName, document);
+        }
+        else
+        {
+          RewriteInISchema(document, prop, oldName, newName);
+        }
       }
     }
 
-    if (schema.Items != null) RewriteInSchema(schema.Items, oldName, newName);
+    if (schema.Items != null)
+    {
+      if (schema.Items is OpenApiSchemaReference itemsRef && itemsRef.Reference?.Id == oldName)
+      {
+        schema.Items = new OpenApiSchemaReference(newName, document);
+      }
+      else
+      {
+        RewriteInISchema(document, schema.Items, oldName, newName);
+      }
+    }
 
-    if (schema.AllOf != null)
-      foreach (var s in schema.AllOf) RewriteInSchema(s, oldName, newName);
-    if (schema.OneOf != null)
-      foreach (var s in schema.OneOf) RewriteInSchema(s, oldName, newName);
-    if (schema.AnyOf != null)
-      foreach (var s in schema.AnyOf) RewriteInSchema(s, oldName, newName);
+    RewriteInSchemaList(document, schema.AllOf, oldName, newName);
+    RewriteInSchemaList(document, schema.OneOf, oldName, newName);
+    RewriteInSchemaList(document, schema.AnyOf, oldName, newName);
 
-    if (schema.AdditionalProperties != null) RewriteInSchema(schema.AdditionalProperties, oldName, newName);
+    if (schema.AdditionalProperties != null)
+    {
+      if (schema.AdditionalProperties is OpenApiSchemaReference addPropsRef && addPropsRef.Reference?.Id == oldName)
+      {
+        schema.AdditionalProperties = new OpenApiSchemaReference(newName, document);
+      }
+      else
+      {
+        RewriteInISchema(document, schema.AdditionalProperties, oldName, newName);
+      }
+    }
+  }
+
+  private static void RewriteInSchemaList(OpenApiDocument document, IList<IOpenApiSchema>? list, string oldName, string newName)
+  {
+    if (list == null) return;
+    for (int i = 0; i < list.Count; i++)
+    {
+      if (list[i] is OpenApiSchemaReference listRef && listRef.Reference?.Id == oldName)
+      {
+        list[i] = new OpenApiSchemaReference(newName, document);
+      }
+      else
+      {
+        RewriteInISchema(document, list[i], oldName, newName);
+      }
+    }
   }
 }
