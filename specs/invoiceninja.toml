@@ -116,6 +116,11 @@ custom_text = "Invoice Ninja API Models - Auto-generated from OpenAPI specificat
 
 # Type name overrides to avoid conflicts
 [[type_name_overrides]]
+original_name = "PreimportRequest"
+new_name = "PreImportRequest"
+reason = "Correct PascalCase casing for PreImport"
+
+[[type_name_overrides]]
 original_name = "Task"
 new_name = "TaskItem"
 reason = "Conflicts with System.Threading.Task"

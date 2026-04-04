@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// PreimportRequest from OpenAPI schema.
 /// Schema path: #/components/schemas/PreimportRequest
 /// </summary>
-public class PreimportRequest
+public class PreImportRequest
 {
   /// <summary>
   /// The type of import being performed

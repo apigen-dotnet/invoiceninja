@@ -29,13 +29,13 @@ public class ImportsClient
   /// Pre Import CSV data
   /// Operation: POST /api/v1/preimport
   /// </summary>
-  public async Task<ApiResponse<JsonElement>> PreimportAsync(Apigen.InvoiceNinja.Models.PreimportRequest preimportRequest, PreimportRequest? request = null)
+  public async Task<ApiResponse<JsonElement>> PreimportAsync(Apigen.InvoiceNinja.Models.PreImportRequest preImportRequest, PreimportRequest? request = null)
   {
     string url = "preimport".BuildUrl(request: request);
 
     long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
     HttpClientLog.LogDebugRequestStarted(_logger, "POST", url);
-    MultipartFormDataContent content = preimportRequest.ToMultipartContent();
+    MultipartFormDataContent content = preImportRequest.ToMultipartContent();
     HttpClientLog.LogTraceRequestBody(_logger, "POST", "multipart/form-data", "[binary content]");
     HttpResponseMessage response = await _httpClient.PostAsync(url, content);
     long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;

@@ -15,7 +15,7 @@ public interface IImportsClient
   /// Pre Import CSV data
   /// Operation: POST /api/v1/preimport
   /// </summary>
-  Task<ApiResponse<JsonElement>> PreimportAsync(Apigen.InvoiceNinja.Models.PreimportRequest preimportRequest, PreimportRequest? request = null);
+  Task<ApiResponse<JsonElement>> PreimportAsync(Apigen.InvoiceNinja.Models.PreImportRequest preImportRequest, PreimportRequest? request = null);
 
   /// <summary>
   /// Import CSV data
