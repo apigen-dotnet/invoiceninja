@@ -670,8 +670,9 @@ public class ClientSettings
   /// <summary>
   /// The country ID
   /// </summary>
+  [JsonConverter(typeof(EmptyStringToNullableEnumConverter<CountryType>))]
   [System.Text.Json.Serialization.JsonPropertyName("country_id")]
-  public string? CountryId { get; set; }
+  public CountryType? CountryId { get; set; }
 
   /// <summary>
   /// The company VAT/TAX ID number

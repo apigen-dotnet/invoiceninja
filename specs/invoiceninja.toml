@@ -285,6 +285,14 @@ original_data_type = "number"
 target_type = "int?"
 json_converter = "StringToIntegerConverter"
 
+# country_id uses $ref to CountryType (a oneOf integer enum schema);
+# API returns it as a string like "528", use the generated CountryType enum
+[[property_overrides]]
+property_filter ="^country_id$"
+model_filter =".*"
+target_type = "CountryType?"
+json_converter = "EmptyStringToNullableEnumConverter<CountryType>"
+
 # Use enums for properties - much simpler!
 [[property_overrides]]
 property_filter ="^use_credits_payment$"

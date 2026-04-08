@@ -12,9 +12,8 @@
 // </auto-generated>
 //
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
+using System.ComponentModel;
+using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 #nullable enable
@@ -22,9 +21,1757 @@ using System.Text.Json.Serialization;
 namespace Apigen.InvoiceNinja.Models;
 
 /// <summary>
-/// CountryType from OpenAPI schema.
-/// Schema path: #/components/schemas/CountryType
+/// Country Types
 /// </summary>
-public class CountryType
+public enum CountryType
 {
+    /// <summary>
+    /// Unknown or unrecognized value
+    /// </summary>
+    [EnumMember(Value = "unknown")]
+    [Description("Unknown")]
+    Unknown = -1,
+
+    /// <summary>
+    /// Afghanistan (AF/AFG)
+    /// </summary>
+    [EnumMember(Value = "4")]
+    [Description("Afghanistan (AF/AFG)")]
+    Afghanistan = 4,
+
+    /// <summary>
+    /// Albania (AL/ALB)
+    /// </summary>
+    [EnumMember(Value = "8")]
+    [Description("Albania (AL/ALB)")]
+    Albania = 8,
+
+    /// <summary>
+    /// Antarctica (AQ/ATA)
+    /// </summary>
+    [EnumMember(Value = "10")]
+    [Description("Antarctica (AQ/ATA)")]
+    Antarctica = 10,
+
+    /// <summary>
+    /// Algeria (DZ/DZA)
+    /// </summary>
+    [EnumMember(Value = "12")]
+    [Description("Algeria (DZ/DZA)")]
+    Algeria = 12,
+
+    /// <summary>
+    /// American Samoa (AS/ASM)
+    /// </summary>
+    [EnumMember(Value = "16")]
+    [Description("American Samoa (AS/ASM)")]
+    AmericanSamoa = 16,
+
+    /// <summary>
+    /// Andorra (AD/AND)
+    /// </summary>
+    [EnumMember(Value = "20")]
+    [Description("Andorra (AD/AND)")]
+    Andorra = 20,
+
+    /// <summary>
+    /// Angola (AO/AGO)
+    /// </summary>
+    [EnumMember(Value = "24")]
+    [Description("Angola (AO/AGO)")]
+    Angola = 24,
+
+    /// <summary>
+    /// Antigua and Barbuda (AG/ATG)
+    /// </summary>
+    [EnumMember(Value = "28")]
+    [Description("Antigua and Barbuda (AG/ATG)")]
+    AntiguaAndBarbuda = 28,
+
+    /// <summary>
+    /// Azerbaijan (AZ/AZE)
+    /// </summary>
+    [EnumMember(Value = "31")]
+    [Description("Azerbaijan (AZ/AZE)")]
+    Azerbaijan = 31,
+
+    /// <summary>
+    /// Argentina (AR/ARG)
+    /// </summary>
+    [EnumMember(Value = "32")]
+    [Description("Argentina (AR/ARG)")]
+    Argentina = 32,
+
+    /// <summary>
+    /// Australia (AU/AUS)
+    /// </summary>
+    [EnumMember(Value = "36")]
+    [Description("Australia (AU/AUS)")]
+    Australia = 36,
+
+    /// <summary>
+    /// Austria (AT/AUT)
+    /// </summary>
+    [EnumMember(Value = "40")]
+    [Description("Austria (AT/AUT)")]
+    Austria = 40,
+
+    /// <summary>
+    /// Bahamas (BS/BHS)
+    /// </summary>
+    [EnumMember(Value = "44")]
+    [Description("Bahamas (BS/BHS)")]
+    Bahamas = 44,
+
+    /// <summary>
+    /// Bahrain (BH/BHR)
+    /// </summary>
+    [EnumMember(Value = "48")]
+    [Description("Bahrain (BH/BHR)")]
+    Bahrain = 48,
+
+    /// <summary>
+    /// Bangladesh (BD/BGD)
+    /// </summary>
+    [EnumMember(Value = "50")]
+    [Description("Bangladesh (BD/BGD)")]
+    Bangladesh = 50,
+
+    /// <summary>
+    /// Armenia (AM/ARM)
+    /// </summary>
+    [EnumMember(Value = "51")]
+    [Description("Armenia (AM/ARM)")]
+    Armenia = 51,
+
+    /// <summary>
+    /// Barbados (BB/BRB)
+    /// </summary>
+    [EnumMember(Value = "52")]
+    [Description("Barbados (BB/BRB)")]
+    Barbados = 52,
+
+    /// <summary>
+    /// Belgium (BE/BEL)
+    /// </summary>
+    [EnumMember(Value = "56")]
+    [Description("Belgium (BE/BEL)")]
+    Belgium = 56,
+
+    /// <summary>
+    /// Bermuda (BM/BMU)
+    /// </summary>
+    [EnumMember(Value = "60")]
+    [Description("Bermuda (BM/BMU)")]
+    Bermuda = 60,
+
+    /// <summary>
+    /// Bhutan (BT/BTN)
+    /// </summary>
+    [EnumMember(Value = "64")]
+    [Description("Bhutan (BT/BTN)")]
+    Bhutan = 64,
+
+    /// <summary>
+    /// Bolivia, Plurinational State of (BO/BOL)
+    /// </summary>
+    [EnumMember(Value = "68")]
+    [Description("Bolivia, Plurinational State of (BO/BOL)")]
+    BoliviaPlurinationalStateOf = 68,
+
+    /// <summary>
+    /// Bosnia and Herzegovina (BA/BIH)
+    /// </summary>
+    [EnumMember(Value = "70")]
+    [Description("Bosnia and Herzegovina (BA/BIH)")]
+    BosniaAndHerzegovina = 70,
+
+    /// <summary>
+    /// Botswana (BW/BWA)
+    /// </summary>
+    [EnumMember(Value = "72")]
+    [Description("Botswana (BW/BWA)")]
+    Botswana = 72,
+
+    /// <summary>
+    /// Bouvet Island (BV/BVT)
+    /// </summary>
+    [EnumMember(Value = "74")]
+    [Description("Bouvet Island (BV/BVT)")]
+    BouvetIsland = 74,
+
+    /// <summary>
+    /// Brazil (BR/BRA)
+    /// </summary>
+    [EnumMember(Value = "76")]
+    [Description("Brazil (BR/BRA)")]
+    Brazil = 76,
+
+    /// <summary>
+    /// Belize (BZ/BLZ)
+    /// </summary>
+    [EnumMember(Value = "84")]
+    [Description("Belize (BZ/BLZ)")]
+    Belize = 84,
+
+    /// <summary>
+    /// British Indian Ocean Territory (IO/IOT)
+    /// </summary>
+    [EnumMember(Value = "86")]
+    [Description("British Indian Ocean Territory (IO/IOT)")]
+    BritishIndianOceanTerritory = 86,
+
+    /// <summary>
+    /// Solomon Islands (SB/SLB)
+    /// </summary>
+    [EnumMember(Value = "90")]
+    [Description("Solomon Islands (SB/SLB)")]
+    SolomonIslands = 90,
+
+    /// <summary>
+    /// Virgin Islands, British (VG/VGB)
+    /// </summary>
+    [EnumMember(Value = "92")]
+    [Description("Virgin Islands, British (VG/VGB)")]
+    VirginIslandsBritish = 92,
+
+    /// <summary>
+    /// Brunei Darussalam (BN/BRN)
+    /// </summary>
+    [EnumMember(Value = "96")]
+    [Description("Brunei Darussalam (BN/BRN)")]
+    BruneiDarussalam = 96,
+
+    /// <summary>
+    /// Bulgaria (BG/BGR)
+    /// </summary>
+    [EnumMember(Value = "100")]
+    [Description("Bulgaria (BG/BGR)")]
+    Bulgaria = 100,
+
+    /// <summary>
+    /// Myanmar (MM/MMR)
+    /// </summary>
+    [EnumMember(Value = "104")]
+    [Description("Myanmar (MM/MMR)")]
+    Myanmar = 104,
+
+    /// <summary>
+    /// Burundi (BI/BDI)
+    /// </summary>
+    [EnumMember(Value = "108")]
+    [Description("Burundi (BI/BDI)")]
+    Burundi = 108,
+
+    /// <summary>
+    /// Belarus (BY/BLR)
+    /// </summary>
+    [EnumMember(Value = "112")]
+    [Description("Belarus (BY/BLR)")]
+    Belarus = 112,
+
+    /// <summary>
+    /// Cambodia (KH/KHM)
+    /// </summary>
+    [EnumMember(Value = "116")]
+    [Description("Cambodia (KH/KHM)")]
+    Cambodia = 116,
+
+    /// <summary>
+    /// Cameroon (CM/CMR)
+    /// </summary>
+    [EnumMember(Value = "120")]
+    [Description("Cameroon (CM/CMR)")]
+    Cameroon = 120,
+
+    /// <summary>
+    /// Canada (CA/CAN)
+    /// </summary>
+    [EnumMember(Value = "124")]
+    [Description("Canada (CA/CAN)")]
+    Canada = 124,
+
+    /// <summary>
+    /// Cape Verde (CV/CPV)
+    /// </summary>
+    [EnumMember(Value = "132")]
+    [Description("Cape Verde (CV/CPV)")]
+    CapeVerde = 132,
+
+    /// <summary>
+    /// Cayman Islands (KY/CYM)
+    /// </summary>
+    [EnumMember(Value = "136")]
+    [Description("Cayman Islands (KY/CYM)")]
+    CaymanIslands = 136,
+
+    /// <summary>
+    /// Central African Republic (CF/CAF)
+    /// </summary>
+    [EnumMember(Value = "140")]
+    [Description("Central African Republic (CF/CAF)")]
+    CentralAfricanRepublic = 140,
+
+    /// <summary>
+    /// Sri Lanka (LK/LKA)
+    /// </summary>
+    [EnumMember(Value = "144")]
+    [Description("Sri Lanka (LK/LKA)")]
+    SriLanka = 144,
+
+    /// <summary>
+    /// Chad (TD/TCD)
+    /// </summary>
+    [EnumMember(Value = "148")]
+    [Description("Chad (TD/TCD)")]
+    Chad = 148,
+
+    /// <summary>
+    /// Chile (CL/CHL)
+    /// </summary>
+    [EnumMember(Value = "152")]
+    [Description("Chile (CL/CHL)")]
+    Chile = 152,
+
+    /// <summary>
+    /// China (CN/CHN)
+    /// </summary>
+    [EnumMember(Value = "156")]
+    [Description("China (CN/CHN)")]
+    China = 156,
+
+    /// <summary>
+    /// Taiwan (TW/TWN)
+    /// </summary>
+    [EnumMember(Value = "158")]
+    [Description("Taiwan (TW/TWN)")]
+    Taiwan = 158,
+
+    /// <summary>
+    /// Christmas Island (CX/CXR)
+    /// </summary>
+    [EnumMember(Value = "162")]
+    [Description("Christmas Island (CX/CXR)")]
+    ChristmasIsland = 162,
+
+    /// <summary>
+    /// Cocos (Keeling) Islands (CC/CCK)
+    /// </summary>
+    [EnumMember(Value = "166")]
+    [Description("Cocos (Keeling) Islands (CC/CCK)")]
+    CocosIslands = 166,
+
+    /// <summary>
+    /// Colombia (CO/COL)
+    /// </summary>
+    [EnumMember(Value = "170")]
+    [Description("Colombia (CO/COL)")]
+    Colombia = 170,
+
+    /// <summary>
+    /// Comoros (KM/COM)
+    /// </summary>
+    [EnumMember(Value = "174")]
+    [Description("Comoros (KM/COM)")]
+    Comoros = 174,
+
+    /// <summary>
+    /// Mayotte (YT/MYT)
+    /// </summary>
+    [EnumMember(Value = "175")]
+    [Description("Mayotte (YT/MYT)")]
+    Mayotte = 175,
+
+    /// <summary>
+    /// Congo (CG/COG)
+    /// </summary>
+    [EnumMember(Value = "178")]
+    [Description("Congo (CG/COG)")]
+    Congo = 178,
+
+    /// <summary>
+    /// Congo, the Democratic Republic of the (CD/COD)
+    /// </summary>
+    [EnumMember(Value = "180")]
+    [Description("Congo, the Democratic Republic of the (CD/COD)")]
+    CongoTheDemocraticRepublicOfThe = 180,
+
+    /// <summary>
+    /// Cook Islands (CK/COK)
+    /// </summary>
+    [EnumMember(Value = "184")]
+    [Description("Cook Islands (CK/COK)")]
+    CookIslands = 184,
+
+    /// <summary>
+    /// Costa Rica (CR/CRI)
+    /// </summary>
+    [EnumMember(Value = "188")]
+    [Description("Costa Rica (CR/CRI)")]
+    CostaRica = 188,
+
+    /// <summary>
+    /// Croatia (HR/HRV)
+    /// </summary>
+    [EnumMember(Value = "191")]
+    [Description("Croatia (HR/HRV)")]
+    Croatia = 191,
+
+    /// <summary>
+    /// Cuba (CU/CUB)
+    /// </summary>
+    [EnumMember(Value = "192")]
+    [Description("Cuba (CU/CUB)")]
+    Cuba = 192,
+
+    /// <summary>
+    /// Cyprus (CY/CYP)
+    /// </summary>
+    [EnumMember(Value = "196")]
+    [Description("Cyprus (CY/CYP)")]
+    Cyprus = 196,
+
+    /// <summary>
+    /// Czech Republic (CZ/CZE)
+    /// </summary>
+    [EnumMember(Value = "203")]
+    [Description("Czech Republic (CZ/CZE)")]
+    CzechRepublic = 203,
+
+    /// <summary>
+    /// Benin (BJ/BEN)
+    /// </summary>
+    [EnumMember(Value = "204")]
+    [Description("Benin (BJ/BEN)")]
+    Benin = 204,
+
+    /// <summary>
+    /// Denmark (DK/DNK)
+    /// </summary>
+    [EnumMember(Value = "208")]
+    [Description("Denmark (DK/DNK)")]
+    Denmark = 208,
+
+    /// <summary>
+    /// Dominica (DM/DMA)
+    /// </summary>
+    [EnumMember(Value = "212")]
+    [Description("Dominica (DM/DMA)")]
+    Dominica = 212,
+
+    /// <summary>
+    /// Dominican Republic (DO/DOM)
+    /// </summary>
+    [EnumMember(Value = "214")]
+    [Description("Dominican Republic (DO/DOM)")]
+    DominicanRepublic = 214,
+
+    /// <summary>
+    /// Ecuador (EC/ECU)
+    /// </summary>
+    [EnumMember(Value = "218")]
+    [Description("Ecuador (EC/ECU)")]
+    Ecuador = 218,
+
+    /// <summary>
+    /// El Salvador (SV/SLV)
+    /// </summary>
+    [EnumMember(Value = "222")]
+    [Description("El Salvador (SV/SLV)")]
+    ElSalvador = 222,
+
+    /// <summary>
+    /// Equatorial Guinea (GQ/GNQ)
+    /// </summary>
+    [EnumMember(Value = "226")]
+    [Description("Equatorial Guinea (GQ/GNQ)")]
+    EquatorialGuinea = 226,
+
+    /// <summary>
+    /// Ethiopia (ET/ETH)
+    /// </summary>
+    [EnumMember(Value = "231")]
+    [Description("Ethiopia (ET/ETH)")]
+    Ethiopia = 231,
+
+    /// <summary>
+    /// Eritrea (ER/ERI)
+    /// </summary>
+    [EnumMember(Value = "232")]
+    [Description("Eritrea (ER/ERI)")]
+    Eritrea = 232,
+
+    /// <summary>
+    /// Estonia (EE/EST)
+    /// </summary>
+    [EnumMember(Value = "233")]
+    [Description("Estonia (EE/EST)")]
+    Estonia = 233,
+
+    /// <summary>
+    /// Faroe Islands (FO/FRO)
+    /// </summary>
+    [EnumMember(Value = "234")]
+    [Description("Faroe Islands (FO/FRO)")]
+    FaroeIslands = 234,
+
+    /// <summary>
+    /// Falkland Islands (Malvinas) (FK/FLK)
+    /// </summary>
+    [EnumMember(Value = "238")]
+    [Description("Falkland Islands (Malvinas) (FK/FLK)")]
+    FalklandIslands = 238,
+
+    /// <summary>
+    /// South Georgia and the South Sandwich Islands (GS/SGS)
+    /// </summary>
+    [EnumMember(Value = "239")]
+    [Description("South Georgia and the South Sandwich Islands (GS/SGS)")]
+    SouthGeorgiaAndTheSouthSandwichIslands = 239,
+
+    /// <summary>
+    /// Fiji (FJ/FJI)
+    /// </summary>
+    [EnumMember(Value = "242")]
+    [Description("Fiji (FJ/FJI)")]
+    Fiji = 242,
+
+    /// <summary>
+    /// Finland (FI/FIN)
+    /// </summary>
+    [EnumMember(Value = "246")]
+    [Description("Finland (FI/FIN)")]
+    Finland = 246,
+
+    /// <summary>
+    /// Åland Islands (AX/ALA)
+    /// </summary>
+    [EnumMember(Value = "248")]
+    [Description("Åland Islands (AX/ALA)")]
+    AlandIslands = 248,
+
+    /// <summary>
+    /// France (FR/FRA)
+    /// </summary>
+    [EnumMember(Value = "250")]
+    [Description("France (FR/FRA)")]
+    France = 250,
+
+    /// <summary>
+    /// French Guiana (GF/GUF)
+    /// </summary>
+    [EnumMember(Value = "254")]
+    [Description("French Guiana (GF/GUF)")]
+    FrenchGuiana = 254,
+
+    /// <summary>
+    /// French Polynesia (PF/PYF)
+    /// </summary>
+    [EnumMember(Value = "258")]
+    [Description("French Polynesia (PF/PYF)")]
+    FrenchPolynesia = 258,
+
+    /// <summary>
+    /// French Southern Territories (TF/ATF)
+    /// </summary>
+    [EnumMember(Value = "260")]
+    [Description("French Southern Territories (TF/ATF)")]
+    FrenchSouthernTerritories = 260,
+
+    /// <summary>
+    /// Djibouti (DJ/DJI)
+    /// </summary>
+    [EnumMember(Value = "262")]
+    [Description("Djibouti (DJ/DJI)")]
+    Djibouti = 262,
+
+    /// <summary>
+    /// Gabon (GA/GAB)
+    /// </summary>
+    [EnumMember(Value = "266")]
+    [Description("Gabon (GA/GAB)")]
+    Gabon = 266,
+
+    /// <summary>
+    /// Georgia (GE/GEO)
+    /// </summary>
+    [EnumMember(Value = "268")]
+    [Description("Georgia (GE/GEO)")]
+    Georgia = 268,
+
+    /// <summary>
+    /// Gambia (GM/GMB)
+    /// </summary>
+    [EnumMember(Value = "270")]
+    [Description("Gambia (GM/GMB)")]
+    Gambia = 270,
+
+    /// <summary>
+    /// Palestine (PS/PSE)
+    /// </summary>
+    [EnumMember(Value = "275")]
+    [Description("Palestine (PS/PSE)")]
+    Palestine = 275,
+
+    /// <summary>
+    /// Germany (DE/DEU)
+    /// </summary>
+    [EnumMember(Value = "276")]
+    [Description("Germany (DE/DEU)")]
+    Germany = 276,
+
+    /// <summary>
+    /// Ghana (GH/GHA)
+    /// </summary>
+    [EnumMember(Value = "288")]
+    [Description("Ghana (GH/GHA)")]
+    Ghana = 288,
+
+    /// <summary>
+    /// Gibraltar (GI/GIB)
+    /// </summary>
+    [EnumMember(Value = "292")]
+    [Description("Gibraltar (GI/GIB)")]
+    Gibraltar = 292,
+
+    /// <summary>
+    /// Kiribati (KI/KIR)
+    /// </summary>
+    [EnumMember(Value = "296")]
+    [Description("Kiribati (KI/KIR)")]
+    Kiribati = 296,
+
+    /// <summary>
+    /// Greece (GR/GRC)
+    /// </summary>
+    [EnumMember(Value = "300")]
+    [Description("Greece (GR/GRC)")]
+    Greece = 300,
+
+    /// <summary>
+    /// Greenland (GL/GRL)
+    /// </summary>
+    [EnumMember(Value = "304")]
+    [Description("Greenland (GL/GRL)")]
+    Greenland = 304,
+
+    /// <summary>
+    /// Grenada (GD/GRD)
+    /// </summary>
+    [EnumMember(Value = "308")]
+    [Description("Grenada (GD/GRD)")]
+    Grenada = 308,
+
+    /// <summary>
+    /// Guadeloupe (GP/GLP)
+    /// </summary>
+    [EnumMember(Value = "312")]
+    [Description("Guadeloupe (GP/GLP)")]
+    Guadeloupe = 312,
+
+    /// <summary>
+    /// Guam (GU/GUM)
+    /// </summary>
+    [EnumMember(Value = "316")]
+    [Description("Guam (GU/GUM)")]
+    Guam = 316,
+
+    /// <summary>
+    /// Guatemala (GT/GTM)
+    /// </summary>
+    [EnumMember(Value = "320")]
+    [Description("Guatemala (GT/GTM)")]
+    Guatemala = 320,
+
+    /// <summary>
+    /// Guinea (GN/GIN)
+    /// </summary>
+    [EnumMember(Value = "324")]
+    [Description("Guinea (GN/GIN)")]
+    Guinea = 324,
+
+    /// <summary>
+    /// Guyana (GY/GUY)
+    /// </summary>
+    [EnumMember(Value = "328")]
+    [Description("Guyana (GY/GUY)")]
+    Guyana = 328,
+
+    /// <summary>
+    /// Haiti (HT/HTI)
+    /// </summary>
+    [EnumMember(Value = "332")]
+    [Description("Haiti (HT/HTI)")]
+    Haiti = 332,
+
+    /// <summary>
+    /// Heard Island and McDonald Islands (HM/HMD)
+    /// </summary>
+    [EnumMember(Value = "334")]
+    [Description("Heard Island and McDonald Islands (HM/HMD)")]
+    HeardIslandAndMcDonaldIslands = 334,
+
+    /// <summary>
+    /// Holy See (Vatican City State) (VA/VAT)
+    /// </summary>
+    [EnumMember(Value = "336")]
+    [Description("Holy See (Vatican City State) (VA/VAT)")]
+    HolySee = 336,
+
+    /// <summary>
+    /// Honduras (HN/HND)
+    /// </summary>
+    [EnumMember(Value = "340")]
+    [Description("Honduras (HN/HND)")]
+    Honduras = 340,
+
+    /// <summary>
+    /// Hong Kong (HK/HKG)
+    /// </summary>
+    [EnumMember(Value = "344")]
+    [Description("Hong Kong (HK/HKG)")]
+    HongKong = 344,
+
+    /// <summary>
+    /// Hungary (HU/HUN)
+    /// </summary>
+    [EnumMember(Value = "348")]
+    [Description("Hungary (HU/HUN)")]
+    Hungary = 348,
+
+    /// <summary>
+    /// Iceland (IS/ISL)
+    /// </summary>
+    [EnumMember(Value = "352")]
+    [Description("Iceland (IS/ISL)")]
+    Iceland = 352,
+
+    /// <summary>
+    /// India (IN/IND)
+    /// </summary>
+    [EnumMember(Value = "356")]
+    [Description("India (IN/IND)")]
+    India = 356,
+
+    /// <summary>
+    /// Indonesia (ID/IDN)
+    /// </summary>
+    [EnumMember(Value = "360")]
+    [Description("Indonesia (ID/IDN)")]
+    Indonesia = 360,
+
+    /// <summary>
+    /// Iran, Islamic Republic of (IR/IRN)
+    /// </summary>
+    [EnumMember(Value = "364")]
+    [Description("Iran, Islamic Republic of (IR/IRN)")]
+    IranIslamicRepublicOf = 364,
+
+    /// <summary>
+    /// Iraq (IQ/IRQ)
+    /// </summary>
+    [EnumMember(Value = "368")]
+    [Description("Iraq (IQ/IRQ)")]
+    Iraq = 368,
+
+    /// <summary>
+    /// Ireland (IE/IRL)
+    /// </summary>
+    [EnumMember(Value = "372")]
+    [Description("Ireland (IE/IRL)")]
+    Ireland = 372,
+
+    /// <summary>
+    /// Israel (IL/ISR)
+    /// </summary>
+    [EnumMember(Value = "376")]
+    [Description("Israel (IL/ISR)")]
+    Israel = 376,
+
+    /// <summary>
+    /// Italy (IT/ITA)
+    /// </summary>
+    [EnumMember(Value = "380")]
+    [Description("Italy (IT/ITA)")]
+    Italy = 380,
+
+    /// <summary>
+    /// Côte d'Ivoire (CI/CIV)
+    /// </summary>
+    [EnumMember(Value = "384")]
+    [Description("Côte d'Ivoire (CI/CIV)")]
+    CoteDIvoire = 384,
+
+    /// <summary>
+    /// Jamaica (JM/JAM)
+    /// </summary>
+    [EnumMember(Value = "388")]
+    [Description("Jamaica (JM/JAM)")]
+    Jamaica = 388,
+
+    /// <summary>
+    /// Japan (JP/JPN)
+    /// </summary>
+    [EnumMember(Value = "392")]
+    [Description("Japan (JP/JPN)")]
+    Japan = 392,
+
+    /// <summary>
+    /// Kazakhstan (KZ/KAZ)
+    /// </summary>
+    [EnumMember(Value = "398")]
+    [Description("Kazakhstan (KZ/KAZ)")]
+    Kazakhstan = 398,
+
+    /// <summary>
+    /// Jordan (JO/JOR)
+    /// </summary>
+    [EnumMember(Value = "400")]
+    [Description("Jordan (JO/JOR)")]
+    Jordan = 400,
+
+    /// <summary>
+    /// Kenya (KE/KEN)
+    /// </summary>
+    [EnumMember(Value = "404")]
+    [Description("Kenya (KE/KEN)")]
+    Kenya = 404,
+
+    /// <summary>
+    /// Korea, Democratic People's Republic of (KP/PRK)
+    /// </summary>
+    [EnumMember(Value = "408")]
+    [Description("Korea, Democratic People's Republic of (KP/PRK)")]
+    KoreaDemocraticPeoplesRepublicOf = 408,
+
+    /// <summary>
+    /// Korea, Republic of (KR/KOR)
+    /// </summary>
+    [EnumMember(Value = "410")]
+    [Description("Korea, Republic of (KR/KOR)")]
+    KoreaRepublicOf = 410,
+
+    /// <summary>
+    /// Kuwait (KW/KWT)
+    /// </summary>
+    [EnumMember(Value = "414")]
+    [Description("Kuwait (KW/KWT)")]
+    Kuwait = 414,
+
+    /// <summary>
+    /// Kyrgyzstan (KG/KGZ)
+    /// </summary>
+    [EnumMember(Value = "417")]
+    [Description("Kyrgyzstan (KG/KGZ)")]
+    Kyrgyzstan = 417,
+
+    /// <summary>
+    /// Lao People's Democratic Republic (LA/LAO)
+    /// </summary>
+    [EnumMember(Value = "418")]
+    [Description("Lao People's Democratic Republic (LA/LAO)")]
+    LaoPeoplesDemocraticRepublic = 418,
+
+    /// <summary>
+    /// Lebanon (LB/LBN)
+    /// </summary>
+    [EnumMember(Value = "422")]
+    [Description("Lebanon (LB/LBN)")]
+    Lebanon = 422,
+
+    /// <summary>
+    /// Lesotho (LS/LSO)
+    /// </summary>
+    [EnumMember(Value = "426")]
+    [Description("Lesotho (LS/LSO)")]
+    Lesotho = 426,
+
+    /// <summary>
+    /// Latvia (LV/LVA)
+    /// </summary>
+    [EnumMember(Value = "428")]
+    [Description("Latvia (LV/LVA)")]
+    Latvia = 428,
+
+    /// <summary>
+    /// Liberia (LR/LBR)
+    /// </summary>
+    [EnumMember(Value = "430")]
+    [Description("Liberia (LR/LBR)")]
+    Liberia = 430,
+
+    /// <summary>
+    /// Libya (LY/LBY)
+    /// </summary>
+    [EnumMember(Value = "434")]
+    [Description("Libya (LY/LBY)")]
+    Libya = 434,
+
+    /// <summary>
+    /// Liechtenstein (LI/LIE)
+    /// </summary>
+    [EnumMember(Value = "438")]
+    [Description("Liechtenstein (LI/LIE)")]
+    Liechtenstein = 438,
+
+    /// <summary>
+    /// Lithuania (LT/LTU)
+    /// </summary>
+    [EnumMember(Value = "440")]
+    [Description("Lithuania (LT/LTU)")]
+    Lithuania = 440,
+
+    /// <summary>
+    /// Luxembourg (LU/LUX)
+    /// </summary>
+    [EnumMember(Value = "442")]
+    [Description("Luxembourg (LU/LUX)")]
+    Luxembourg = 442,
+
+    /// <summary>
+    /// Macao (MO/MAC)
+    /// </summary>
+    [EnumMember(Value = "446")]
+    [Description("Macao (MO/MAC)")]
+    Macao = 446,
+
+    /// <summary>
+    /// Madagascar (MG/MDG)
+    /// </summary>
+    [EnumMember(Value = "450")]
+    [Description("Madagascar (MG/MDG)")]
+    Madagascar = 450,
+
+    /// <summary>
+    /// Malawi (MW/MWI)
+    /// </summary>
+    [EnumMember(Value = "454")]
+    [Description("Malawi (MW/MWI)")]
+    Malawi = 454,
+
+    /// <summary>
+    /// Malaysia (MY/MYS)
+    /// </summary>
+    [EnumMember(Value = "458")]
+    [Description("Malaysia (MY/MYS)")]
+    Malaysia = 458,
+
+    /// <summary>
+    /// Maldives (MV/MDV)
+    /// </summary>
+    [EnumMember(Value = "462")]
+    [Description("Maldives (MV/MDV)")]
+    Maldives = 462,
+
+    /// <summary>
+    /// Mali (ML/MLI)
+    /// </summary>
+    [EnumMember(Value = "466")]
+    [Description("Mali (ML/MLI)")]
+    Mali = 466,
+
+    /// <summary>
+    /// Malta (MT/MLT)
+    /// </summary>
+    [EnumMember(Value = "470")]
+    [Description("Malta (MT/MLT)")]
+    Malta = 470,
+
+    /// <summary>
+    /// Martinique (MQ/MTQ)
+    /// </summary>
+    [EnumMember(Value = "474")]
+    [Description("Martinique (MQ/MTQ)")]
+    Martinique = 474,
+
+    /// <summary>
+    /// Mauritania (MR/MRT)
+    /// </summary>
+    [EnumMember(Value = "478")]
+    [Description("Mauritania (MR/MRT)")]
+    Mauritania = 478,
+
+    /// <summary>
+    /// Mauritius (MU/MUS)
+    /// </summary>
+    [EnumMember(Value = "480")]
+    [Description("Mauritius (MU/MUS)")]
+    Mauritius = 480,
+
+    /// <summary>
+    /// Mexico (MX/MEX)
+    /// </summary>
+    [EnumMember(Value = "484")]
+    [Description("Mexico (MX/MEX)")]
+    Mexico = 484,
+
+    /// <summary>
+    /// Monaco (MC/MCO)
+    /// </summary>
+    [EnumMember(Value = "492")]
+    [Description("Monaco (MC/MCO)")]
+    Monaco = 492,
+
+    /// <summary>
+    /// Mongolia (MN/MNG)
+    /// </summary>
+    [EnumMember(Value = "496")]
+    [Description("Mongolia (MN/MNG)")]
+    Mongolia = 496,
+
+    /// <summary>
+    /// Moldova, Republic of (MD/MDA)
+    /// </summary>
+    [EnumMember(Value = "498")]
+    [Description("Moldova, Republic of (MD/MDA)")]
+    MoldovaRepublicOf = 498,
+
+    /// <summary>
+    /// Montenegro (ME/MNE)
+    /// </summary>
+    [EnumMember(Value = "499")]
+    [Description("Montenegro (ME/MNE)")]
+    Montenegro = 499,
+
+    /// <summary>
+    /// Montserrat (MS/MSR)
+    /// </summary>
+    [EnumMember(Value = "500")]
+    [Description("Montserrat (MS/MSR)")]
+    Montserrat = 500,
+
+    /// <summary>
+    /// Morocco (MA/MAR)
+    /// </summary>
+    [EnumMember(Value = "504")]
+    [Description("Morocco (MA/MAR)")]
+    Morocco = 504,
+
+    /// <summary>
+    /// Mozambique (MZ/MOZ)
+    /// </summary>
+    [EnumMember(Value = "508")]
+    [Description("Mozambique (MZ/MOZ)")]
+    Mozambique = 508,
+
+    /// <summary>
+    /// Oman (OM/OMN)
+    /// </summary>
+    [EnumMember(Value = "512")]
+    [Description("Oman (OM/OMN)")]
+    Oman = 512,
+
+    /// <summary>
+    /// Namibia (NA/NAM)
+    /// </summary>
+    [EnumMember(Value = "516")]
+    [Description("Namibia (NA/NAM)")]
+    Namibia = 516,
+
+    /// <summary>
+    /// Nauru (NR/NRU)
+    /// </summary>
+    [EnumMember(Value = "520")]
+    [Description("Nauru (NR/NRU)")]
+    Nauru = 520,
+
+    /// <summary>
+    /// Nepal (NP/NPL)
+    /// </summary>
+    [EnumMember(Value = "524")]
+    [Description("Nepal (NP/NPL)")]
+    Nepal = 524,
+
+    /// <summary>
+    /// Netherlands (NL/NLD)
+    /// </summary>
+    [EnumMember(Value = "528")]
+    [Description("Netherlands (NL/NLD)")]
+    Netherlands = 528,
+
+    /// <summary>
+    /// Curaçao (CW/CUW)
+    /// </summary>
+    [EnumMember(Value = "531")]
+    [Description("Curaçao (CW/CUW)")]
+    Curacao = 531,
+
+    /// <summary>
+    /// Aruba (AW/ABW)
+    /// </summary>
+    [EnumMember(Value = "533")]
+    [Description("Aruba (AW/ABW)")]
+    Aruba = 533,
+
+    /// <summary>
+    /// Sint Maarten (Dutch part) (SX/SXM)
+    /// </summary>
+    [EnumMember(Value = "534")]
+    [Description("Sint Maarten (Dutch part) (SX/SXM)")]
+    SintMaarten = 534,
+
+    /// <summary>
+    /// Bonaire, Sint Eustatius and Saba (BQ/BES)
+    /// </summary>
+    [EnumMember(Value = "535")]
+    [Description("Bonaire, Sint Eustatius and Saba (BQ/BES)")]
+    BonaireSintEustatiusAndSaba = 535,
+
+    /// <summary>
+    /// New Caledonia (NC/NCL)
+    /// </summary>
+    [EnumMember(Value = "540")]
+    [Description("New Caledonia (NC/NCL)")]
+    NewCaledonia = 540,
+
+    /// <summary>
+    /// Vanuatu (VU/VUT)
+    /// </summary>
+    [EnumMember(Value = "548")]
+    [Description("Vanuatu (VU/VUT)")]
+    Vanuatu = 548,
+
+    /// <summary>
+    /// New Zealand (NZ/NZL)
+    /// </summary>
+    [EnumMember(Value = "554")]
+    [Description("New Zealand (NZ/NZL)")]
+    NewZealand = 554,
+
+    /// <summary>
+    /// Nicaragua (NI/NIC)
+    /// </summary>
+    [EnumMember(Value = "558")]
+    [Description("Nicaragua (NI/NIC)")]
+    Nicaragua = 558,
+
+    /// <summary>
+    /// Niger (NE/NER)
+    /// </summary>
+    [EnumMember(Value = "562")]
+    [Description("Niger (NE/NER)")]
+    Niger = 562,
+
+    /// <summary>
+    /// Nigeria (NG/NGA)
+    /// </summary>
+    [EnumMember(Value = "566")]
+    [Description("Nigeria (NG/NGA)")]
+    Nigeria = 566,
+
+    /// <summary>
+    /// Niue (NU/NIU)
+    /// </summary>
+    [EnumMember(Value = "570")]
+    [Description("Niue (NU/NIU)")]
+    Niue = 570,
+
+    /// <summary>
+    /// Norfolk Island (NF/NFK)
+    /// </summary>
+    [EnumMember(Value = "574")]
+    [Description("Norfolk Island (NF/NFK)")]
+    NorfolkIsland = 574,
+
+    /// <summary>
+    /// Norway (NO/NOR)
+    /// </summary>
+    [EnumMember(Value = "578")]
+    [Description("Norway (NO/NOR)")]
+    Norway = 578,
+
+    /// <summary>
+    /// Northern Mariana Islands (MP/MNP)
+    /// </summary>
+    [EnumMember(Value = "580")]
+    [Description("Northern Mariana Islands (MP/MNP)")]
+    NorthernMarianaIslands = 580,
+
+    /// <summary>
+    /// United States Minor Outlying Islands (UM/UMI)
+    /// </summary>
+    [EnumMember(Value = "581")]
+    [Description("United States Minor Outlying Islands (UM/UMI)")]
+    UnitedStatesMinorOutlyingIslands = 581,
+
+    /// <summary>
+    /// Micronesia, Federated States of (FM/FSM)
+    /// </summary>
+    [EnumMember(Value = "583")]
+    [Description("Micronesia, Federated States of (FM/FSM)")]
+    MicronesiaFederatedStatesOf = 583,
+
+    /// <summary>
+    /// Marshall Islands (MH/MHL)
+    /// </summary>
+    [EnumMember(Value = "584")]
+    [Description("Marshall Islands (MH/MHL)")]
+    MarshallIslands = 584,
+
+    /// <summary>
+    /// Palau (PW/PLW)
+    /// </summary>
+    [EnumMember(Value = "585")]
+    [Description("Palau (PW/PLW)")]
+    Palau = 585,
+
+    /// <summary>
+    /// Pakistan (PK/PAK)
+    /// </summary>
+    [EnumMember(Value = "586")]
+    [Description("Pakistan (PK/PAK)")]
+    Pakistan = 586,
+
+    /// <summary>
+    /// Panama (PA/PAN)
+    /// </summary>
+    [EnumMember(Value = "591")]
+    [Description("Panama (PA/PAN)")]
+    Panama = 591,
+
+    /// <summary>
+    /// Papua New Guinea (PG/PNG)
+    /// </summary>
+    [EnumMember(Value = "598")]
+    [Description("Papua New Guinea (PG/PNG)")]
+    PapuaNewGuinea = 598,
+
+    /// <summary>
+    /// Paraguay (PY/PRY)
+    /// </summary>
+    [EnumMember(Value = "600")]
+    [Description("Paraguay (PY/PRY)")]
+    Paraguay = 600,
+
+    /// <summary>
+    /// Peru (PE/PER)
+    /// </summary>
+    [EnumMember(Value = "604")]
+    [Description("Peru (PE/PER)")]
+    Peru = 604,
+
+    /// <summary>
+    /// Philippines (PH/PHL)
+    /// </summary>
+    [EnumMember(Value = "608")]
+    [Description("Philippines (PH/PHL)")]
+    Philippines = 608,
+
+    /// <summary>
+    /// Pitcairn (PN/PCN)
+    /// </summary>
+    [EnumMember(Value = "612")]
+    [Description("Pitcairn (PN/PCN)")]
+    Pitcairn = 612,
+
+    /// <summary>
+    /// Poland (PL/POL)
+    /// </summary>
+    [EnumMember(Value = "616")]
+    [Description("Poland (PL/POL)")]
+    Poland = 616,
+
+    /// <summary>
+    /// Portugal (PT/PRT)
+    /// </summary>
+    [EnumMember(Value = "620")]
+    [Description("Portugal (PT/PRT)")]
+    Portugal = 620,
+
+    /// <summary>
+    /// Guinea-Bissau (GW/GNB)
+    /// </summary>
+    [EnumMember(Value = "624")]
+    [Description("Guinea-Bissau (GW/GNB)")]
+    GuineaBissau = 624,
+
+    /// <summary>
+    /// Timor-Leste (TL/TLS)
+    /// </summary>
+    [EnumMember(Value = "626")]
+    [Description("Timor-Leste (TL/TLS)")]
+    TimorLeste = 626,
+
+    /// <summary>
+    /// Puerto Rico (PR/PRI)
+    /// </summary>
+    [EnumMember(Value = "630")]
+    [Description("Puerto Rico (PR/PRI)")]
+    PuertoRico = 630,
+
+    /// <summary>
+    /// Qatar (QA/QAT)
+    /// </summary>
+    [EnumMember(Value = "634")]
+    [Description("Qatar (QA/QAT)")]
+    Qatar = 634,
+
+    /// <summary>
+    /// Réunion (RE/REU)
+    /// </summary>
+    [EnumMember(Value = "638")]
+    [Description("Réunion (RE/REU)")]
+    Reunion = 638,
+
+    /// <summary>
+    /// Romania (RO/ROU)
+    /// </summary>
+    [EnumMember(Value = "642")]
+    [Description("Romania (RO/ROU)")]
+    Romania = 642,
+
+    /// <summary>
+    /// Russian Federation (RU/RUS)
+    /// </summary>
+    [EnumMember(Value = "643")]
+    [Description("Russian Federation (RU/RUS)")]
+    RussianFederation = 643,
+
+    /// <summary>
+    /// Rwanda (RW/RWA)
+    /// </summary>
+    [EnumMember(Value = "646")]
+    [Description("Rwanda (RW/RWA)")]
+    Rwanda = 646,
+
+    /// <summary>
+    /// Saint Barthélemy (BL/BLM)
+    /// </summary>
+    [EnumMember(Value = "652")]
+    [Description("Saint Barthélemy (BL/BLM)")]
+    SaintBarthelemy = 652,
+
+    /// <summary>
+    /// Saint Helena, Ascension and Tristan da Cunha (SH/SHN)
+    /// </summary>
+    [EnumMember(Value = "654")]
+    [Description("Saint Helena, Ascension and Tristan da Cunha (SH/SHN)")]
+    SaintHelenaAscensionAndTristanDaCunha = 654,
+
+    /// <summary>
+    /// Saint Kitts and Nevis (KN/KNA)
+    /// </summary>
+    [EnumMember(Value = "659")]
+    [Description("Saint Kitts and Nevis (KN/KNA)")]
+    SaintKittsAndNevis = 659,
+
+    /// <summary>
+    /// Anguilla (AI/AIA)
+    /// </summary>
+    [EnumMember(Value = "660")]
+    [Description("Anguilla (AI/AIA)")]
+    Anguilla = 660,
+
+    /// <summary>
+    /// Saint Lucia (LC/LCA)
+    /// </summary>
+    [EnumMember(Value = "662")]
+    [Description("Saint Lucia (LC/LCA)")]
+    SaintLucia = 662,
+
+    /// <summary>
+    /// Saint Martin (French part) (MF/MAF)
+    /// </summary>
+    [EnumMember(Value = "663")]
+    [Description("Saint Martin (French part) (MF/MAF)")]
+    SaintMartin = 663,
+
+    /// <summary>
+    /// Saint Pierre and Miquelon (PM/SPM)
+    /// </summary>
+    [EnumMember(Value = "666")]
+    [Description("Saint Pierre and Miquelon (PM/SPM)")]
+    SaintPierreAndMiquelon = 666,
+
+    /// <summary>
+    /// Saint Vincent and the Grenadines (VC/VCT)
+    /// </summary>
+    [EnumMember(Value = "670")]
+    [Description("Saint Vincent and the Grenadines (VC/VCT)")]
+    SaintVincentAndTheGrenadines = 670,
+
+    /// <summary>
+    /// San Marino (SM/SMR)
+    /// </summary>
+    [EnumMember(Value = "674")]
+    [Description("San Marino (SM/SMR)")]
+    SanMarino = 674,
+
+    /// <summary>
+    /// Sao Tome and Principe (ST/STP)
+    /// </summary>
+    [EnumMember(Value = "678")]
+    [Description("Sao Tome and Principe (ST/STP)")]
+    SaoTomeAndPrincipe = 678,
+
+    /// <summary>
+    /// Saudi Arabia (SA/SAU)
+    /// </summary>
+    [EnumMember(Value = "682")]
+    [Description("Saudi Arabia (SA/SAU)")]
+    SaudiArabia = 682,
+
+    /// <summary>
+    /// Senegal (SN/SEN)
+    /// </summary>
+    [EnumMember(Value = "686")]
+    [Description("Senegal (SN/SEN)")]
+    Senegal = 686,
+
+    /// <summary>
+    /// Serbia (RS/SRB)
+    /// </summary>
+    [EnumMember(Value = "688")]
+    [Description("Serbia (RS/SRB)")]
+    Serbia = 688,
+
+    /// <summary>
+    /// Seychelles (SC/SYC)
+    /// </summary>
+    [EnumMember(Value = "690")]
+    [Description("Seychelles (SC/SYC)")]
+    Seychelles = 690,
+
+    /// <summary>
+    /// Sierra Leone (SL/SLE)
+    /// </summary>
+    [EnumMember(Value = "694")]
+    [Description("Sierra Leone (SL/SLE)")]
+    SierraLeone = 694,
+
+    /// <summary>
+    /// Singapore (SG/SGP)
+    /// </summary>
+    [EnumMember(Value = "702")]
+    [Description("Singapore (SG/SGP)")]
+    Singapore = 702,
+
+    /// <summary>
+    /// Slovakia (SK/SVK)
+    /// </summary>
+    [EnumMember(Value = "703")]
+    [Description("Slovakia (SK/SVK)")]
+    Slovakia = 703,
+
+    /// <summary>
+    /// Viet Nam (VN/VNM)
+    /// </summary>
+    [EnumMember(Value = "704")]
+    [Description("Viet Nam (VN/VNM)")]
+    VietNam = 704,
+
+    /// <summary>
+    /// Slovenia (SI/SVN)
+    /// </summary>
+    [EnumMember(Value = "705")]
+    [Description("Slovenia (SI/SVN)")]
+    Slovenia = 705,
+
+    /// <summary>
+    /// Somalia (SO/SOM)
+    /// </summary>
+    [EnumMember(Value = "706")]
+    [Description("Somalia (SO/SOM)")]
+    Somalia = 706,
+
+    /// <summary>
+    /// South Africa (ZA/ZAF)
+    /// </summary>
+    [EnumMember(Value = "710")]
+    [Description("South Africa (ZA/ZAF)")]
+    SouthAfrica = 710,
+
+    /// <summary>
+    /// Zimbabwe (ZW/ZWE)
+    /// </summary>
+    [EnumMember(Value = "716")]
+    [Description("Zimbabwe (ZW/ZWE)")]
+    Zimbabwe = 716,
+
+    /// <summary>
+    /// Spain (ES/ESP)
+    /// </summary>
+    [EnumMember(Value = "724")]
+    [Description("Spain (ES/ESP)")]
+    Spain = 724,
+
+    /// <summary>
+    /// South Sudan (SS/SSD)
+    /// </summary>
+    [EnumMember(Value = "728")]
+    [Description("South Sudan (SS/SSD)")]
+    SouthSudan = 728,
+
+    /// <summary>
+    /// Sudan (SD/SDN)
+    /// </summary>
+    [EnumMember(Value = "729")]
+    [Description("Sudan (SD/SDN)")]
+    Sudan = 729,
+
+    /// <summary>
+    /// Western Sahara (EH/ESH)
+    /// </summary>
+    [EnumMember(Value = "732")]
+    [Description("Western Sahara (EH/ESH)")]
+    WesternSahara = 732,
+
+    /// <summary>
+    /// Suriname (SR/SUR)
+    /// </summary>
+    [EnumMember(Value = "740")]
+    [Description("Suriname (SR/SUR)")]
+    Suriname = 740,
+
+    /// <summary>
+    /// Svalbard and Jan Mayen (SJ/SJM)
+    /// </summary>
+    [EnumMember(Value = "744")]
+    [Description("Svalbard and Jan Mayen (SJ/SJM)")]
+    SvalbardAndJanMayen = 744,
+
+    /// <summary>
+    /// Swaziland (SZ/SWZ)
+    /// </summary>
+    [EnumMember(Value = "748")]
+    [Description("Swaziland (SZ/SWZ)")]
+    Swaziland = 748,
+
+    /// <summary>
+    /// Sweden (SE/SWE)
+    /// </summary>
+    [EnumMember(Value = "752")]
+    [Description("Sweden (SE/SWE)")]
+    Sweden = 752,
+
+    /// <summary>
+    /// Switzerland (CH/CHE)
+    /// </summary>
+    [EnumMember(Value = "756")]
+    [Description("Switzerland (CH/CHE)")]
+    Switzerland = 756,
+
+    /// <summary>
+    /// Syrian Arab Republic (SY/SYR)
+    /// </summary>
+    [EnumMember(Value = "760")]
+    [Description("Syrian Arab Republic (SY/SYR)")]
+    SyrianArabRepublic = 760,
+
+    /// <summary>
+    /// Tajikistan (TJ/TJK)
+    /// </summary>
+    [EnumMember(Value = "762")]
+    [Description("Tajikistan (TJ/TJK)")]
+    Tajikistan = 762,
+
+    /// <summary>
+    /// Thailand (TH/THA)
+    /// </summary>
+    [EnumMember(Value = "764")]
+    [Description("Thailand (TH/THA)")]
+    Thailand = 764,
+
+    /// <summary>
+    /// Togo (TG/TGO)
+    /// </summary>
+    [EnumMember(Value = "768")]
+    [Description("Togo (TG/TGO)")]
+    Togo = 768,
+
+    /// <summary>
+    /// Tokelau (TK/TKL)
+    /// </summary>
+    [EnumMember(Value = "772")]
+    [Description("Tokelau (TK/TKL)")]
+    Tokelau = 772,
+
+    /// <summary>
+    /// Tonga (TO/TON)
+    /// </summary>
+    [EnumMember(Value = "776")]
+    [Description("Tonga (TO/TON)")]
+    Tonga = 776,
+
+    /// <summary>
+    /// Trinidad and Tobago (TT/TTO)
+    /// </summary>
+    [EnumMember(Value = "780")]
+    [Description("Trinidad and Tobago (TT/TTO)")]
+    TrinidadAndTobago = 780,
+
+    /// <summary>
+    /// United Arab Emirates (AE/ARE)
+    /// </summary>
+    [EnumMember(Value = "784")]
+    [Description("United Arab Emirates (AE/ARE)")]
+    UnitedArabEmirates = 784,
+
+    /// <summary>
+    /// Tunisia (TN/TUN)
+    /// </summary>
+    [EnumMember(Value = "788")]
+    [Description("Tunisia (TN/TUN)")]
+    Tunisia = 788,
+
+    /// <summary>
+    /// Turkey (TR/TUR)
+    /// </summary>
+    [EnumMember(Value = "792")]
+    [Description("Turkey (TR/TUR)")]
+    Turkey = 792,
+
+    /// <summary>
+    /// Turkmenistan (TM/TKM)
+    /// </summary>
+    [EnumMember(Value = "795")]
+    [Description("Turkmenistan (TM/TKM)")]
+    Turkmenistan = 795,
+
+    /// <summary>
+    /// Turks and Caicos Islands (TC/TCA)
+    /// </summary>
+    [EnumMember(Value = "796")]
+    [Description("Turks and Caicos Islands (TC/TCA)")]
+    TurksAndCaicosIslands = 796,
+
+    /// <summary>
+    /// Tuvalu (TV/TUV)
+    /// </summary>
+    [EnumMember(Value = "798")]
+    [Description("Tuvalu (TV/TUV)")]
+    Tuvalu = 798,
+
+    /// <summary>
+    /// Uganda (UG/UGA)
+    /// </summary>
+    [EnumMember(Value = "800")]
+    [Description("Uganda (UG/UGA)")]
+    Uganda = 800,
+
+    /// <summary>
+    /// Ukraine (UA/UKR)
+    /// </summary>
+    [EnumMember(Value = "804")]
+    [Description("Ukraine (UA/UKR)")]
+    Ukraine = 804,
+
+    /// <summary>
+    /// Macedonia, the former Yugoslav Republic of (MK/MKD)
+    /// </summary>
+    [EnumMember(Value = "807")]
+    [Description("Macedonia, the former Yugoslav Republic of (MK/MKD)")]
+    MacedoniaTheFormerYugoslavRepublicOf = 807,
+
+    /// <summary>
+    /// Egypt (EG/EGY)
+    /// </summary>
+    [EnumMember(Value = "818")]
+    [Description("Egypt (EG/EGY)")]
+    Egypt = 818,
+
+    /// <summary>
+    /// United Kingdom (GB/GBR)
+    /// </summary>
+    [EnumMember(Value = "826")]
+    [Description("United Kingdom (GB/GBR)")]
+    UnitedKingdom = 826,
+
+    /// <summary>
+    /// Guernsey (GG/GGY)
+    /// </summary>
+    [EnumMember(Value = "831")]
+    [Description("Guernsey (GG/GGY)")]
+    Guernsey = 831,
+
+    /// <summary>
+    /// Jersey (JE/JEY)
+    /// </summary>
+    [EnumMember(Value = "832")]
+    [Description("Jersey (JE/JEY)")]
+    Jersey = 832,
+
+    /// <summary>
+    /// Isle of Man (IM/IMN)
+    /// </summary>
+    [EnumMember(Value = "833")]
+    [Description("Isle of Man (IM/IMN)")]
+    IsleOfMan = 833,
+
+    /// <summary>
+    /// Tanzania, United Republic of (TZ/TZA)
+    /// </summary>
+    [EnumMember(Value = "834")]
+    [Description("Tanzania, United Republic of (TZ/TZA)")]
+    TanzaniaUnitedRepublicOf = 834,
+
+    /// <summary>
+    /// United States (US/USA)
+    /// </summary>
+    [EnumMember(Value = "840")]
+    [Description("United States (US/USA)")]
+    UnitedStates = 840,
+
+    /// <summary>
+    /// Virgin Islands, U.S. (VI/VIR)
+    /// </summary>
+    [EnumMember(Value = "850")]
+    [Description("Virgin Islands, U.S. (VI/VIR)")]
+    VirginIslandsUS = 850,
+
+    /// <summary>
+    /// Burkina Faso (BF/BFA)
+    /// </summary>
+    [EnumMember(Value = "854")]
+    [Description("Burkina Faso (BF/BFA)")]
+    BurkinaFaso = 854,
+
+    /// <summary>
+    /// Uruguay (UY/URY)
+    /// </summary>
+    [EnumMember(Value = "858")]
+    [Description("Uruguay (UY/URY)")]
+    Uruguay = 858,
+
+    /// <summary>
+    /// Uzbekistan (UZ/UZB)
+    /// </summary>
+    [EnumMember(Value = "860")]
+    [Description("Uzbekistan (UZ/UZB)")]
+    Uzbekistan = 860,
+
+    /// <summary>
+    /// Venezuela, Bolivarian Republic of (VE/VEN)
+    /// </summary>
+    [EnumMember(Value = "862")]
+    [Description("Venezuela, Bolivarian Republic of (VE/VEN)")]
+    VenezuelaBolivarianRepublicOf = 862,
+
+    /// <summary>
+    /// Wallis and Futuna (WF/WLF)
+    /// </summary>
+    [EnumMember(Value = "876")]
+    [Description("Wallis and Futuna (WF/WLF)")]
+    WallisAndFutuna = 876,
+
+    /// <summary>
+    /// Samoa (WS/WSM)
+    /// </summary>
+    [EnumMember(Value = "882")]
+    [Description("Samoa (WS/WSM)")]
+    Samoa = 882,
+
+    /// <summary>
+    /// Yemen (YE/YEM)
+    /// </summary>
+    [EnumMember(Value = "887")]
+    [Description("Yemen (YE/YEM)")]
+    Yemen = 887,
+
+    /// <summary>
+    /// Zambia (ZM/ZMB)
+    /// </summary>
+    [EnumMember(Value = "894")]
+    [Description("Zambia (ZM/ZMB)")]
+    Zambia = 894
 }

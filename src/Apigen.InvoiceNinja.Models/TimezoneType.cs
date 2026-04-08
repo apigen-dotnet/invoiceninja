@@ -12,9 +12,8 @@
 // </auto-generated>
 //
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
+using System.ComponentModel;
+using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 #nullable enable
@@ -22,9 +21,812 @@ using System.Text.Json.Serialization;
 namespace Apigen.InvoiceNinja.Models;
 
 /// <summary>
-/// TimezoneType from OpenAPI schema.
-/// Schema path: #/components/schemas/TimezoneType
+/// Timezone Types
 /// </summary>
-public class TimezoneType
+public enum TimezoneType
 {
+    /// <summary>
+    /// Unknown or unrecognized value
+    /// </summary>
+    [EnumMember(Value = "unknown")]
+    [Description("Unknown")]
+    Unknown = -1,
+
+    /// <summary>
+    /// Pacific/Midway
+    /// </summary>
+    [EnumMember(Value = "1")]
+    [Description("Pacific/Midway")]
+    PacificMidway = 1,
+
+    /// <summary>
+    /// Pacific/Pago_Pago
+    /// </summary>
+    [EnumMember(Value = "2")]
+    [Description("Pacific/Pago_Pago")]
+    PacificPagoPago = 2,
+
+    /// <summary>
+    /// Pacific/Honolulu
+    /// </summary>
+    [EnumMember(Value = "3")]
+    [Description("Pacific/Honolulu")]
+    PacificHonolulu = 3,
+
+    /// <summary>
+    /// America/Anchorage
+    /// </summary>
+    [EnumMember(Value = "4")]
+    [Description("America/Anchorage")]
+    AmericaAnchorage = 4,
+
+    /// <summary>
+    /// America/Los_Angeles
+    /// </summary>
+    [EnumMember(Value = "5")]
+    [Description("America/Los_Angeles")]
+    AmericaLosAngeles = 5,
+
+    /// <summary>
+    /// America/Tijuana
+    /// </summary>
+    [EnumMember(Value = "6")]
+    [Description("America/Tijuana")]
+    AmericaTijuana = 6,
+
+    /// <summary>
+    /// America/Phoenix
+    /// </summary>
+    [EnumMember(Value = "7")]
+    [Description("America/Phoenix")]
+    AmericaPhoenix = 7,
+
+    /// <summary>
+    /// America/Denver
+    /// </summary>
+    [EnumMember(Value = "8")]
+    [Description("America/Denver")]
+    AmericaDenver = 8,
+
+    /// <summary>
+    /// America/Chihuahua
+    /// </summary>
+    [EnumMember(Value = "9")]
+    [Description("America/Chihuahua")]
+    AmericaChihuahua = 9,
+
+    /// <summary>
+    /// America/Mazatlan
+    /// </summary>
+    [EnumMember(Value = "10")]
+    [Description("America/Mazatlan")]
+    AmericaMazatlan = 10,
+
+    /// <summary>
+    /// America/Mexico_City
+    /// </summary>
+    [EnumMember(Value = "11")]
+    [Description("America/Mexico_City")]
+    AmericaMexicoCity = 11,
+
+    /// <summary>
+    /// America/Monterrey
+    /// </summary>
+    [EnumMember(Value = "12")]
+    [Description("America/Monterrey")]
+    AmericaMonterrey = 12,
+
+    /// <summary>
+    /// America/Regina
+    /// </summary>
+    [EnumMember(Value = "13")]
+    [Description("America/Regina")]
+    AmericaRegina = 13,
+
+    /// <summary>
+    /// America/Chicago
+    /// </summary>
+    [EnumMember(Value = "14")]
+    [Description("America/Chicago")]
+    AmericaChicago = 14,
+
+    /// <summary>
+    /// America/New_York
+    /// </summary>
+    [EnumMember(Value = "15")]
+    [Description("America/New_York")]
+    AmericaNewYork = 15,
+
+    /// <summary>
+    /// America/Indiana/Indianapolis
+    /// </summary>
+    [EnumMember(Value = "16")]
+    [Description("America/Indiana/Indianapolis")]
+    AmericaIndianaIndianapolis = 16,
+
+    /// <summary>
+    /// America/Bogota
+    /// </summary>
+    [EnumMember(Value = "17")]
+    [Description("America/Bogota")]
+    AmericaBogota = 17,
+
+    /// <summary>
+    /// America/Lima
+    /// </summary>
+    [EnumMember(Value = "18")]
+    [Description("America/Lima")]
+    AmericaLima = 18,
+
+    /// <summary>
+    /// America/Caracas
+    /// </summary>
+    [EnumMember(Value = "19")]
+    [Description("America/Caracas")]
+    AmericaCaracas = 19,
+
+    /// <summary>
+    /// America/Halifax
+    /// </summary>
+    [EnumMember(Value = "20")]
+    [Description("America/Halifax")]
+    AmericaHalifax = 20,
+
+    /// <summary>
+    /// America/La_Paz
+    /// </summary>
+    [EnumMember(Value = "21")]
+    [Description("America/La_Paz")]
+    AmericaLaPaz = 21,
+
+    /// <summary>
+    /// America/Santiago
+    /// </summary>
+    [EnumMember(Value = "22")]
+    [Description("America/Santiago")]
+    AmericaSantiago = 22,
+
+    /// <summary>
+    /// America/St_Johns
+    /// </summary>
+    [EnumMember(Value = "23")]
+    [Description("America/St_Johns")]
+    AmericaStJohns = 23,
+
+    /// <summary>
+    /// America/Argentina/Buenos_Aires
+    /// </summary>
+    [EnumMember(Value = "24")]
+    [Description("America/Argentina/Buenos_Aires")]
+    AmericaArgentinaBuenosAires = 24,
+
+    /// <summary>
+    /// America/Godthab
+    /// </summary>
+    [EnumMember(Value = "25")]
+    [Description("America/Godthab")]
+    AmericaGodthab = 25,
+
+    /// <summary>
+    /// America/Sao_Paulo
+    /// </summary>
+    [EnumMember(Value = "26")]
+    [Description("America/Sao_Paulo")]
+    AmericaSaoPaulo = 26,
+
+    /// <summary>
+    /// Atlantic/Stanley
+    /// </summary>
+    [EnumMember(Value = "27")]
+    [Description("Atlantic/Stanley")]
+    AtlanticStanley = 27,
+
+    /// <summary>
+    /// Atlantic/Azores
+    /// </summary>
+    [EnumMember(Value = "28")]
+    [Description("Atlantic/Azores")]
+    AtlanticAzores = 28,
+
+    /// <summary>
+    /// Atlantic/Cape_Verde
+    /// </summary>
+    [EnumMember(Value = "29")]
+    [Description("Atlantic/Cape_Verde")]
+    AtlanticCapeVerde = 29,
+
+    /// <summary>
+    /// Africa/Casablanca
+    /// </summary>
+    [EnumMember(Value = "30")]
+    [Description("Africa/Casablanca")]
+    AfricaCasablanca = 30,
+
+    /// <summary>
+    /// Europe/Dublin
+    /// </summary>
+    [EnumMember(Value = "31")]
+    [Description("Europe/Dublin")]
+    EuropeDublin = 31,
+
+    /// <summary>
+    /// Europe/Lisbon
+    /// </summary>
+    [EnumMember(Value = "32")]
+    [Description("Europe/Lisbon")]
+    EuropeLisbon = 32,
+
+    /// <summary>
+    /// Europe/London
+    /// </summary>
+    [EnumMember(Value = "33")]
+    [Description("Europe/London")]
+    EuropeLondon = 33,
+
+    /// <summary>
+    /// Africa/Monrovia
+    /// </summary>
+    [EnumMember(Value = "34")]
+    [Description("Africa/Monrovia")]
+    AfricaMonrovia = 34,
+
+    /// <summary>
+    /// Europe/Amsterdam
+    /// </summary>
+    [EnumMember(Value = "35")]
+    [Description("Europe/Amsterdam")]
+    EuropeAmsterdam = 35,
+
+    /// <summary>
+    /// Europe/Belgrade
+    /// </summary>
+    [EnumMember(Value = "36")]
+    [Description("Europe/Belgrade")]
+    EuropeBelgrade = 36,
+
+    /// <summary>
+    /// Europe/Berlin
+    /// </summary>
+    [EnumMember(Value = "37")]
+    [Description("Europe/Berlin")]
+    EuropeBerlin = 37,
+
+    /// <summary>
+    /// Europe/Bratislava
+    /// </summary>
+    [EnumMember(Value = "38")]
+    [Description("Europe/Bratislava")]
+    EuropeBratislava = 38,
+
+    /// <summary>
+    /// Europe/Brussels
+    /// </summary>
+    [EnumMember(Value = "39")]
+    [Description("Europe/Brussels")]
+    EuropeBrussels = 39,
+
+    /// <summary>
+    /// Europe/Budapest
+    /// </summary>
+    [EnumMember(Value = "40")]
+    [Description("Europe/Budapest")]
+    EuropeBudapest = 40,
+
+    /// <summary>
+    /// Europe/Copenhagen
+    /// </summary>
+    [EnumMember(Value = "41")]
+    [Description("Europe/Copenhagen")]
+    EuropeCopenhagen = 41,
+
+    /// <summary>
+    /// Europe/Ljubljana
+    /// </summary>
+    [EnumMember(Value = "42")]
+    [Description("Europe/Ljubljana")]
+    EuropeLjubljana = 42,
+
+    /// <summary>
+    /// Europe/Madrid
+    /// </summary>
+    [EnumMember(Value = "43")]
+    [Description("Europe/Madrid")]
+    EuropeMadrid = 43,
+
+    /// <summary>
+    /// Europe/Paris
+    /// </summary>
+    [EnumMember(Value = "44")]
+    [Description("Europe/Paris")]
+    EuropeParis = 44,
+
+    /// <summary>
+    /// Europe/Prague
+    /// </summary>
+    [EnumMember(Value = "45")]
+    [Description("Europe/Prague")]
+    EuropePrague = 45,
+
+    /// <summary>
+    /// Europe/Rome
+    /// </summary>
+    [EnumMember(Value = "46")]
+    [Description("Europe/Rome")]
+    EuropeRome = 46,
+
+    /// <summary>
+    /// Europe/Sarajevo
+    /// </summary>
+    [EnumMember(Value = "47")]
+    [Description("Europe/Sarajevo")]
+    EuropeSarajevo = 47,
+
+    /// <summary>
+    /// Europe/Skopje
+    /// </summary>
+    [EnumMember(Value = "48")]
+    [Description("Europe/Skopje")]
+    EuropeSkopje = 48,
+
+    /// <summary>
+    /// Europe/Stockholm
+    /// </summary>
+    [EnumMember(Value = "49")]
+    [Description("Europe/Stockholm")]
+    EuropeStockholm = 49,
+
+    /// <summary>
+    /// Europe/Vienna
+    /// </summary>
+    [EnumMember(Value = "50")]
+    [Description("Europe/Vienna")]
+    EuropeVienna = 50,
+
+    /// <summary>
+    /// Europe/Warsaw
+    /// </summary>
+    [EnumMember(Value = "51")]
+    [Description("Europe/Warsaw")]
+    EuropeWarsaw = 51,
+
+    /// <summary>
+    /// Europe/Zagreb
+    /// </summary>
+    [EnumMember(Value = "52")]
+    [Description("Europe/Zagreb")]
+    EuropeZagreb = 52,
+
+    /// <summary>
+    /// Europe/Athens
+    /// </summary>
+    [EnumMember(Value = "53")]
+    [Description("Europe/Athens")]
+    EuropeAthens = 53,
+
+    /// <summary>
+    /// Europe/Bucharest
+    /// </summary>
+    [EnumMember(Value = "54")]
+    [Description("Europe/Bucharest")]
+    EuropeBucharest = 54,
+
+    /// <summary>
+    /// Africa/Cairo
+    /// </summary>
+    [EnumMember(Value = "55")]
+    [Description("Africa/Cairo")]
+    AfricaCairo = 55,
+
+    /// <summary>
+    /// Africa/Harare
+    /// </summary>
+    [EnumMember(Value = "56")]
+    [Description("Africa/Harare")]
+    AfricaHarare = 56,
+
+    /// <summary>
+    /// Europe/Helsinki
+    /// </summary>
+    [EnumMember(Value = "57")]
+    [Description("Europe/Helsinki")]
+    EuropeHelsinki = 57,
+
+    /// <summary>
+    /// Asia/Jerusalem
+    /// </summary>
+    [EnumMember(Value = "58")]
+    [Description("Asia/Jerusalem")]
+    AsiaJerusalem = 58,
+
+    /// <summary>
+    /// Europe/Kyiv
+    /// </summary>
+    [EnumMember(Value = "59")]
+    [Description("Europe/Kyiv")]
+    EuropeKyiv = 59,
+
+    /// <summary>
+    /// Europe/Minsk
+    /// </summary>
+    [EnumMember(Value = "60")]
+    [Description("Europe/Minsk")]
+    EuropeMinsk = 60,
+
+    /// <summary>
+    /// Europe/Riga
+    /// </summary>
+    [EnumMember(Value = "61")]
+    [Description("Europe/Riga")]
+    EuropeRiga = 61,
+
+    /// <summary>
+    /// Europe/Sofia
+    /// </summary>
+    [EnumMember(Value = "62")]
+    [Description("Europe/Sofia")]
+    EuropeSofia = 62,
+
+    /// <summary>
+    /// Europe/Tallinn
+    /// </summary>
+    [EnumMember(Value = "63")]
+    [Description("Europe/Tallinn")]
+    EuropeTallinn = 63,
+
+    /// <summary>
+    /// Europe/Vilnius
+    /// </summary>
+    [EnumMember(Value = "64")]
+    [Description("Europe/Vilnius")]
+    EuropeVilnius = 64,
+
+    /// <summary>
+    /// Europe/Istanbul
+    /// </summary>
+    [EnumMember(Value = "65")]
+    [Description("Europe/Istanbul")]
+    EuropeIstanbul = 65,
+
+    /// <summary>
+    /// Asia/Baghdad
+    /// </summary>
+    [EnumMember(Value = "66")]
+    [Description("Asia/Baghdad")]
+    AsiaBaghdad = 66,
+
+    /// <summary>
+    /// Asia/Kuwait
+    /// </summary>
+    [EnumMember(Value = "67")]
+    [Description("Asia/Kuwait")]
+    AsiaKuwait = 67,
+
+    /// <summary>
+    /// Africa/Nairobi
+    /// </summary>
+    [EnumMember(Value = "68")]
+    [Description("Africa/Nairobi")]
+    AfricaNairobi = 68,
+
+    /// <summary>
+    /// Asia/Riyadh
+    /// </summary>
+    [EnumMember(Value = "69")]
+    [Description("Asia/Riyadh")]
+    AsiaRiyadh = 69,
+
+    /// <summary>
+    /// Asia/Tehran
+    /// </summary>
+    [EnumMember(Value = "70")]
+    [Description("Asia/Tehran")]
+    AsiaTehran = 70,
+
+    /// <summary>
+    /// Europe/Moscow
+    /// </summary>
+    [EnumMember(Value = "71")]
+    [Description("Europe/Moscow")]
+    EuropeMoscow = 71,
+
+    /// <summary>
+    /// Asia/Baku
+    /// </summary>
+    [EnumMember(Value = "72")]
+    [Description("Asia/Baku")]
+    AsiaBaku = 72,
+
+    /// <summary>
+    /// Europe/Volgograd
+    /// </summary>
+    [EnumMember(Value = "73")]
+    [Description("Europe/Volgograd")]
+    EuropeVolgograd = 73,
+
+    /// <summary>
+    /// Asia/Muscat
+    /// </summary>
+    [EnumMember(Value = "74")]
+    [Description("Asia/Muscat")]
+    AsiaMuscat = 74,
+
+    /// <summary>
+    /// Asia/Tbilisi
+    /// </summary>
+    [EnumMember(Value = "75")]
+    [Description("Asia/Tbilisi")]
+    AsiaTbilisi = 75,
+
+    /// <summary>
+    /// Asia/Yerevan
+    /// </summary>
+    [EnumMember(Value = "76")]
+    [Description("Asia/Yerevan")]
+    AsiaYerevan = 76,
+
+    /// <summary>
+    /// Asia/Kabul
+    /// </summary>
+    [EnumMember(Value = "77")]
+    [Description("Asia/Kabul")]
+    AsiaKabul = 77,
+
+    /// <summary>
+    /// Asia/Karachi
+    /// </summary>
+    [EnumMember(Value = "78")]
+    [Description("Asia/Karachi")]
+    AsiaKarachi = 78,
+
+    /// <summary>
+    /// Asia/Tashkent
+    /// </summary>
+    [EnumMember(Value = "79")]
+    [Description("Asia/Tashkent")]
+    AsiaTashkent = 79,
+
+    /// <summary>
+    /// Asia/Kolkata
+    /// </summary>
+    [EnumMember(Value = "80")]
+    [Description("Asia/Kolkata")]
+    AsiaKolkata = 80,
+
+    /// <summary>
+    /// Asia/Kathmandu
+    /// </summary>
+    [EnumMember(Value = "81")]
+    [Description("Asia/Kathmandu")]
+    AsiaKathmandu = 81,
+
+    /// <summary>
+    /// Asia/Yekaterinburg
+    /// </summary>
+    [EnumMember(Value = "82")]
+    [Description("Asia/Yekaterinburg")]
+    AsiaYekaterinburg = 82,
+
+    /// <summary>
+    /// Asia/Almaty
+    /// </summary>
+    [EnumMember(Value = "83")]
+    [Description("Asia/Almaty")]
+    AsiaAlmaty = 83,
+
+    /// <summary>
+    /// Asia/Dhaka
+    /// </summary>
+    [EnumMember(Value = "84")]
+    [Description("Asia/Dhaka")]
+    AsiaDhaka = 84,
+
+    /// <summary>
+    /// Asia/Novosibirsk
+    /// </summary>
+    [EnumMember(Value = "85")]
+    [Description("Asia/Novosibirsk")]
+    AsiaNovosibirsk = 85,
+
+    /// <summary>
+    /// Asia/Bangkok
+    /// </summary>
+    [EnumMember(Value = "86")]
+    [Description("Asia/Bangkok")]
+    AsiaBangkok = 86,
+
+    /// <summary>
+    /// Asia/Ho_Chi_Minh
+    /// </summary>
+    [EnumMember(Value = "87")]
+    [Description("Asia/Ho_Chi_Minh")]
+    AsiaHoChiMinh = 87,
+
+    /// <summary>
+    /// Asia/Jakarta
+    /// </summary>
+    [EnumMember(Value = "88")]
+    [Description("Asia/Jakarta")]
+    AsiaJakarta = 88,
+
+    /// <summary>
+    /// Asia/Krasnoyarsk
+    /// </summary>
+    [EnumMember(Value = "89")]
+    [Description("Asia/Krasnoyarsk")]
+    AsiaKrasnoyarsk = 89,
+
+    /// <summary>
+    /// Asia/Chongqing
+    /// </summary>
+    [EnumMember(Value = "90")]
+    [Description("Asia/Chongqing")]
+    AsiaChongqing = 90,
+
+    /// <summary>
+    /// Asia/Hong_Kong
+    /// </summary>
+    [EnumMember(Value = "91")]
+    [Description("Asia/Hong_Kong")]
+    AsiaHongKong = 91,
+
+    /// <summary>
+    /// Asia/Kuala_Lumpur
+    /// </summary>
+    [EnumMember(Value = "92")]
+    [Description("Asia/Kuala_Lumpur")]
+    AsiaKualaLumpur = 92,
+
+    /// <summary>
+    /// Australia/Perth
+    /// </summary>
+    [EnumMember(Value = "93")]
+    [Description("Australia/Perth")]
+    AustraliaPerth = 93,
+
+    /// <summary>
+    /// Asia/Singapore
+    /// </summary>
+    [EnumMember(Value = "94")]
+    [Description("Asia/Singapore")]
+    AsiaSingapore = 94,
+
+    /// <summary>
+    /// Asia/Taipei
+    /// </summary>
+    [EnumMember(Value = "95")]
+    [Description("Asia/Taipei")]
+    AsiaTaipei = 95,
+
+    /// <summary>
+    /// Asia/Ulaanbaatar
+    /// </summary>
+    [EnumMember(Value = "96")]
+    [Description("Asia/Ulaanbaatar")]
+    AsiaUlaanbaatar = 96,
+
+    /// <summary>
+    /// Asia/Urumqi
+    /// </summary>
+    [EnumMember(Value = "97")]
+    [Description("Asia/Urumqi")]
+    AsiaUrumqi = 97,
+
+    /// <summary>
+    /// Asia/Irkutsk
+    /// </summary>
+    [EnumMember(Value = "98")]
+    [Description("Asia/Irkutsk")]
+    AsiaIrkutsk = 98,
+
+    /// <summary>
+    /// Asia/Seoul
+    /// </summary>
+    [EnumMember(Value = "99")]
+    [Description("Asia/Seoul")]
+    AsiaSeoul = 99,
+
+    /// <summary>
+    /// Asia/Tokyo
+    /// </summary>
+    [EnumMember(Value = "100")]
+    [Description("Asia/Tokyo")]
+    AsiaTokyo = 100,
+
+    /// <summary>
+    /// Australia/Adelaide
+    /// </summary>
+    [EnumMember(Value = "101")]
+    [Description("Australia/Adelaide")]
+    AustraliaAdelaide = 101,
+
+    /// <summary>
+    /// Australia/Darwin
+    /// </summary>
+    [EnumMember(Value = "102")]
+    [Description("Australia/Darwin")]
+    AustraliaDarwin = 102,
+
+    /// <summary>
+    /// Asia/Yakutsk
+    /// </summary>
+    [EnumMember(Value = "103")]
+    [Description("Asia/Yakutsk")]
+    AsiaYakutsk = 103,
+
+    /// <summary>
+    /// Australia/Brisbane
+    /// </summary>
+    [EnumMember(Value = "104")]
+    [Description("Australia/Brisbane")]
+    AustraliaBrisbane = 104,
+
+    /// <summary>
+    /// Pacific/Guam
+    /// </summary>
+    [EnumMember(Value = "106")]
+    [Description("Pacific/Guam")]
+    PacificGuam = 106,
+
+    /// <summary>
+    /// Australia/Hobart
+    /// </summary>
+    [EnumMember(Value = "107")]
+    [Description("Australia/Hobart")]
+    AustraliaHobart = 107,
+
+    /// <summary>
+    /// Australia/Melbourne
+    /// </summary>
+    [EnumMember(Value = "108")]
+    [Description("Australia/Melbourne")]
+    AustraliaMelbourne = 108,
+
+    /// <summary>
+    /// Pacific/Port_Moresby
+    /// </summary>
+    [EnumMember(Value = "109")]
+    [Description("Pacific/Port_Moresby")]
+    PacificPortMoresby = 109,
+
+    /// <summary>
+    /// Australia/Sydney
+    /// </summary>
+    [EnumMember(Value = "110")]
+    [Description("Australia/Sydney")]
+    AustraliaSydney = 110,
+
+    /// <summary>
+    /// Asia/Vladivostok
+    /// </summary>
+    [EnumMember(Value = "111")]
+    [Description("Asia/Vladivostok")]
+    AsiaVladivostok = 111,
+
+    /// <summary>
+    /// Asia/Magadan
+    /// </summary>
+    [EnumMember(Value = "112")]
+    [Description("Asia/Magadan")]
+    AsiaMagadan = 112,
+
+    /// <summary>
+    /// Pacific/Auckland
+    /// </summary>
+    [EnumMember(Value = "113")]
+    [Description("Pacific/Auckland")]
+    PacificAuckland = 113,
+
+    /// <summary>
+    /// Pacific/Fiji
+    /// </summary>
+    [EnumMember(Value = "114")]
+    [Description("Pacific/Fiji")]
+    PacificFiji = 114,
+
+    /// <summary>
+    /// Asia/Dubai
+    /// </summary>
+    [EnumMember(Value = "115")]
+    [Description("Asia/Dubai")]
+    AsiaDubai = 115
 }

@@ -12,9 +12,8 @@
 // </auto-generated>
 //
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
+using System.ComponentModel;
+using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 #nullable enable
@@ -22,9 +21,308 @@ using System.Text.Json.Serialization;
 namespace Apigen.InvoiceNinja.Models;
 
 /// <summary>
-/// LanguageType from OpenAPI schema.
-/// Schema path: #/components/schemas/LanguageType
+/// Language Types
 /// </summary>
-public class LanguageType
+public enum LanguageType
 {
+    /// <summary>
+    /// Unknown or unrecognized value
+    /// </summary>
+    [EnumMember(Value = "unknown")]
+    [Description("Unknown")]
+    Unknown = -1,
+
+    /// <summary>
+    /// English - United States
+    /// </summary>
+    [EnumMember(Value = "1")]
+    [Description("English - United States")]
+    EnglishUnitedStates = 1,
+
+    /// <summary>
+    /// Italian
+    /// </summary>
+    [EnumMember(Value = "2")]
+    [Description("Italian")]
+    Italian = 2,
+
+    /// <summary>
+    /// German
+    /// </summary>
+    [EnumMember(Value = "3")]
+    [Description("German")]
+    German = 3,
+
+    /// <summary>
+    /// French
+    /// </summary>
+    [EnumMember(Value = "4")]
+    [Description("French")]
+    French = 4,
+
+    /// <summary>
+    /// Portuguese - Brazilian
+    /// </summary>
+    [EnumMember(Value = "5")]
+    [Description("Portuguese - Brazilian")]
+    PortugueseBrazilian = 5,
+
+    /// <summary>
+    /// Dutch
+    /// </summary>
+    [EnumMember(Value = "6")]
+    [Description("Dutch")]
+    Dutch = 6,
+
+    /// <summary>
+    /// Spanish
+    /// </summary>
+    [EnumMember(Value = "7")]
+    [Description("Spanish")]
+    Spanish = 7,
+
+    /// <summary>
+    /// Norwegian
+    /// </summary>
+    [EnumMember(Value = "8")]
+    [Description("Norwegian")]
+    Norwegian = 8,
+
+    /// <summary>
+    /// Danish
+    /// </summary>
+    [EnumMember(Value = "9")]
+    [Description("Danish")]
+    Danish = 9,
+
+    /// <summary>
+    /// Japanese
+    /// </summary>
+    [EnumMember(Value = "10")]
+    [Description("Japanese")]
+    Japanese = 10,
+
+    /// <summary>
+    /// Swedish
+    /// </summary>
+    [EnumMember(Value = "11")]
+    [Description("Swedish")]
+    Swedish = 11,
+
+    /// <summary>
+    /// Spanish - Spain
+    /// </summary>
+    [EnumMember(Value = "12")]
+    [Description("Spanish - Spain")]
+    SpanishSpain = 12,
+
+    /// <summary>
+    /// French - Canada
+    /// </summary>
+    [EnumMember(Value = "13")]
+    [Description("French - Canada")]
+    FrenchCanada = 13,
+
+    /// <summary>
+    /// Lithuanian
+    /// </summary>
+    [EnumMember(Value = "14")]
+    [Description("Lithuanian")]
+    Lithuanian = 14,
+
+    /// <summary>
+    /// Polish
+    /// </summary>
+    [EnumMember(Value = "15")]
+    [Description("Polish")]
+    Polish = 15,
+
+    /// <summary>
+    /// Czech
+    /// </summary>
+    [EnumMember(Value = "16")]
+    [Description("Czech")]
+    Czech = 16,
+
+    /// <summary>
+    /// Croatian
+    /// </summary>
+    [EnumMember(Value = "17")]
+    [Description("Croatian")]
+    Croatian = 17,
+
+    /// <summary>
+    /// Albanian
+    /// </summary>
+    [EnumMember(Value = "18")]
+    [Description("Albanian")]
+    Albanian = 18,
+
+    /// <summary>
+    /// Greek
+    /// </summary>
+    [EnumMember(Value = "19")]
+    [Description("Greek")]
+    Greek = 19,
+
+    /// <summary>
+    /// English - United Kingdom
+    /// </summary>
+    [EnumMember(Value = "20")]
+    [Description("English - United Kingdom")]
+    EnglishUnitedKingdom = 20,
+
+    /// <summary>
+    /// Portuguese - Portugal
+    /// </summary>
+    [EnumMember(Value = "21")]
+    [Description("Portuguese - Portugal")]
+    PortuguesePortugal = 21,
+
+    /// <summary>
+    /// Slovenian
+    /// </summary>
+    [EnumMember(Value = "22")]
+    [Description("Slovenian")]
+    Slovenian = 22,
+
+    /// <summary>
+    /// Finnish
+    /// </summary>
+    [EnumMember(Value = "23")]
+    [Description("Finnish")]
+    Finnish = 23,
+
+    /// <summary>
+    /// Romanian
+    /// </summary>
+    [EnumMember(Value = "24")]
+    [Description("Romanian")]
+    Romanian = 24,
+
+    /// <summary>
+    /// Turkish - Turkey
+    /// </summary>
+    [EnumMember(Value = "25")]
+    [Description("Turkish - Turkey")]
+    TurkishTurkey = 25,
+
+    /// <summary>
+    /// Thai
+    /// </summary>
+    [EnumMember(Value = "26")]
+    [Description("Thai")]
+    Thai = 26,
+
+    /// <summary>
+    /// Macedonian
+    /// </summary>
+    [EnumMember(Value = "27")]
+    [Description("Macedonian")]
+    Macedonian = 27,
+
+    /// <summary>
+    /// Chinese - Taiwan
+    /// </summary>
+    [EnumMember(Value = "28")]
+    [Description("Chinese - Taiwan")]
+    ChineseTaiwan = 28,
+
+    /// <summary>
+    /// Russian (Russia)
+    /// </summary>
+    [EnumMember(Value = "29")]
+    [Description("Russian (Russia)")]
+    Russian = 29,
+
+    /// <summary>
+    /// Arabic
+    /// </summary>
+    [EnumMember(Value = "30")]
+    [Description("Arabic")]
+    Arabic = 30,
+
+    /// <summary>
+    /// Persian
+    /// </summary>
+    [EnumMember(Value = "31")]
+    [Description("Persian")]
+    Persian = 31,
+
+    /// <summary>
+    /// Latvian
+    /// </summary>
+    [EnumMember(Value = "32")]
+    [Description("Latvian")]
+    Latvian = 32,
+
+    /// <summary>
+    /// Serbian
+    /// </summary>
+    [EnumMember(Value = "33")]
+    [Description("Serbian")]
+    Serbian = 33,
+
+    /// <summary>
+    /// Slovak
+    /// </summary>
+    [EnumMember(Value = "34")]
+    [Description("Slovak")]
+    Slovak = 34,
+
+    /// <summary>
+    /// Estonian
+    /// </summary>
+    [EnumMember(Value = "35")]
+    [Description("Estonian")]
+    Estonian = 35,
+
+    /// <summary>
+    /// Bulgarian
+    /// </summary>
+    [EnumMember(Value = "36")]
+    [Description("Bulgarian")]
+    Bulgarian = 36,
+
+    /// <summary>
+    /// Hebrew
+    /// </summary>
+    [EnumMember(Value = "37")]
+    [Description("Hebrew")]
+    Hebrew = 37,
+
+    /// <summary>
+    /// Khmer
+    /// </summary>
+    [EnumMember(Value = "38")]
+    [Description("Khmer")]
+    Khmer = 38,
+
+    /// <summary>
+    /// Hungarian
+    /// </summary>
+    [EnumMember(Value = "39")]
+    [Description("Hungarian")]
+    Hungarian = 39,
+
+    /// <summary>
+    /// French - Swiss
+    /// </summary>
+    [EnumMember(Value = "40")]
+    [Description("French - Swiss")]
+    FrenchSwiss = 40,
+
+    /// <summary>
+    /// Lao
+    /// </summary>
+    [EnumMember(Value = "41")]
+    [Description("Lao")]
+    Lao = 41,
+
+    /// <summary>
+    /// Vietnamese
+    /// </summary>
+    [EnumMember(Value = "42")]
+    [Description("Vietnamese")]
+    Vietnamese = 42
 }

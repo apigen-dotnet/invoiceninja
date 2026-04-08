@@ -12,9 +12,8 @@
 // </auto-generated>
 //
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
+using System.ComponentModel;
+using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 #nullable enable
@@ -22,9 +21,1008 @@ using System.Text.Json.Serialization;
 namespace Apigen.InvoiceNinja.Models;
 
 /// <summary>
-/// CurrencyType from OpenAPI schema.
-/// Schema path: #/components/schemas/CurrencyType
+/// Currency Types
 /// </summary>
-public class CurrencyType
+public enum CurrencyType
 {
+    /// <summary>
+    /// Unknown or unrecognized value
+    /// </summary>
+    [EnumMember(Value = "unknown")]
+    [Description("Unknown")]
+    Unknown = -1,
+
+    /// <summary>
+    /// US Dollar
+    /// </summary>
+    [EnumMember(Value = "1")]
+    [Description("US Dollar")]
+    USDollar = 1,
+
+    /// <summary>
+    /// British Pound
+    /// </summary>
+    [EnumMember(Value = "2")]
+    [Description("British Pound")]
+    BritishPound = 2,
+
+    /// <summary>
+    /// Euro
+    /// </summary>
+    [EnumMember(Value = "3")]
+    [Description("Euro")]
+    Euro = 3,
+
+    /// <summary>
+    /// South African Rand
+    /// </summary>
+    [EnumMember(Value = "4")]
+    [Description("South African Rand")]
+    SouthAfricanRand = 4,
+
+    /// <summary>
+    /// Danish Krone
+    /// </summary>
+    [EnumMember(Value = "5")]
+    [Description("Danish Krone")]
+    DanishKrone = 5,
+
+    /// <summary>
+    /// Israeli Shekel
+    /// </summary>
+    [EnumMember(Value = "6")]
+    [Description("Israeli Shekel")]
+    IsraeliShekel = 6,
+
+    /// <summary>
+    /// Swedish Krona
+    /// </summary>
+    [EnumMember(Value = "7")]
+    [Description("Swedish Krona")]
+    SwedishKrona = 7,
+
+    /// <summary>
+    /// Kenyan Shilling
+    /// </summary>
+    [EnumMember(Value = "8")]
+    [Description("Kenyan Shilling")]
+    KenyanShilling = 8,
+
+    /// <summary>
+    /// Canadian Dollar
+    /// </summary>
+    [EnumMember(Value = "9")]
+    [Description("Canadian Dollar")]
+    CanadianDollar = 9,
+
+    /// <summary>
+    /// Philippine Peso
+    /// </summary>
+    [EnumMember(Value = "10")]
+    [Description("Philippine Peso")]
+    PhilippinePeso = 10,
+
+    /// <summary>
+    /// Indian Rupee
+    /// </summary>
+    [EnumMember(Value = "11")]
+    [Description("Indian Rupee")]
+    IndianRupee = 11,
+
+    /// <summary>
+    /// Australian Dollar
+    /// </summary>
+    [EnumMember(Value = "12")]
+    [Description("Australian Dollar")]
+    AustralianDollar = 12,
+
+    /// <summary>
+    /// Singapore Dollar
+    /// </summary>
+    [EnumMember(Value = "13")]
+    [Description("Singapore Dollar")]
+    SingaporeDollar = 13,
+
+    /// <summary>
+    /// Norske Kroner
+    /// </summary>
+    [EnumMember(Value = "14")]
+    [Description("Norske Kroner")]
+    NorskeKroner = 14,
+
+    /// <summary>
+    /// New Zealand Dollar
+    /// </summary>
+    [EnumMember(Value = "15")]
+    [Description("New Zealand Dollar")]
+    NewZealandDollar = 15,
+
+    /// <summary>
+    /// Vietnamese Dong
+    /// </summary>
+    [EnumMember(Value = "16")]
+    [Description("Vietnamese Dong")]
+    VietnameseDong = 16,
+
+    /// <summary>
+    /// Swiss Franc
+    /// </summary>
+    [EnumMember(Value = "17")]
+    [Description("Swiss Franc")]
+    SwissFranc = 17,
+
+    /// <summary>
+    /// Guatemalan Quetzal
+    /// </summary>
+    [EnumMember(Value = "18")]
+    [Description("Guatemalan Quetzal")]
+    GuatemalanQuetzal = 18,
+
+    /// <summary>
+    /// Malaysian Ringgit
+    /// </summary>
+    [EnumMember(Value = "19")]
+    [Description("Malaysian Ringgit")]
+    MalaysianRinggit = 19,
+
+    /// <summary>
+    /// Brazilian Real
+    /// </summary>
+    [EnumMember(Value = "20")]
+    [Description("Brazilian Real")]
+    BrazilianReal = 20,
+
+    /// <summary>
+    /// Thai Baht
+    /// </summary>
+    [EnumMember(Value = "21")]
+    [Description("Thai Baht")]
+    ThaiBaht = 21,
+
+    /// <summary>
+    /// Nigerian Naira
+    /// </summary>
+    [EnumMember(Value = "22")]
+    [Description("Nigerian Naira")]
+    NigerianNaira = 22,
+
+    /// <summary>
+    /// Argentine Peso
+    /// </summary>
+    [EnumMember(Value = "23")]
+    [Description("Argentine Peso")]
+    ArgentinePeso = 23,
+
+    /// <summary>
+    /// Bangladeshi Taka
+    /// </summary>
+    [EnumMember(Value = "24")]
+    [Description("Bangladeshi Taka")]
+    BangladeshiTaka = 24,
+
+    /// <summary>
+    /// United Arab Emirates Dirham
+    /// </summary>
+    [EnumMember(Value = "25")]
+    [Description("United Arab Emirates Dirham")]
+    UnitedArabEmiratesDirham = 25,
+
+    /// <summary>
+    /// Hong Kong Dollar
+    /// </summary>
+    [EnumMember(Value = "26")]
+    [Description("Hong Kong Dollar")]
+    HongKongDollar = 26,
+
+    /// <summary>
+    /// Indonesian Rupiah
+    /// </summary>
+    [EnumMember(Value = "27")]
+    [Description("Indonesian Rupiah")]
+    IndonesianRupiah = 27,
+
+    /// <summary>
+    /// Mexican Peso
+    /// </summary>
+    [EnumMember(Value = "28")]
+    [Description("Mexican Peso")]
+    MexicanPeso = 28,
+
+    /// <summary>
+    /// Egyptian Pound
+    /// </summary>
+    [EnumMember(Value = "29")]
+    [Description("Egyptian Pound")]
+    EgyptianPound = 29,
+
+    /// <summary>
+    /// Colombian Peso
+    /// </summary>
+    [EnumMember(Value = "30")]
+    [Description("Colombian Peso")]
+    ColombianPeso = 30,
+
+    /// <summary>
+    /// West African Franc
+    /// </summary>
+    [EnumMember(Value = "31")]
+    [Description("West African Franc")]
+    WestAfricanFranc = 31,
+
+    /// <summary>
+    /// Chinese Renminbi
+    /// </summary>
+    [EnumMember(Value = "32")]
+    [Description("Chinese Renminbi")]
+    ChineseRenminbi = 32,
+
+    /// <summary>
+    /// Rwandan Franc
+    /// </summary>
+    [EnumMember(Value = "33")]
+    [Description("Rwandan Franc")]
+    RwandanFranc = 33,
+
+    /// <summary>
+    /// Tanzanian Shilling
+    /// </summary>
+    [EnumMember(Value = "34")]
+    [Description("Tanzanian Shilling")]
+    TanzanianShilling = 34,
+
+    /// <summary>
+    /// Netherlands Antillean Guilder
+    /// </summary>
+    [EnumMember(Value = "35")]
+    [Description("Netherlands Antillean Guilder")]
+    NetherlandsAntilleanGuilder = 35,
+
+    /// <summary>
+    /// Trinidad and Tobago Dollar
+    /// </summary>
+    [EnumMember(Value = "36")]
+    [Description("Trinidad and Tobago Dollar")]
+    TrinidadAndTobagoDollar = 36,
+
+    /// <summary>
+    /// East Caribbean Dollar
+    /// </summary>
+    [EnumMember(Value = "37")]
+    [Description("East Caribbean Dollar")]
+    EastCaribbeanDollar = 37,
+
+    /// <summary>
+    /// Ghanaian Cedi
+    /// </summary>
+    [EnumMember(Value = "38")]
+    [Description("Ghanaian Cedi")]
+    GhanaianCedi = 38,
+
+    /// <summary>
+    /// Bulgarian Lev
+    /// </summary>
+    [EnumMember(Value = "39")]
+    [Description("Bulgarian Lev")]
+    BulgarianLev = 39,
+
+    /// <summary>
+    /// Aruban Florin
+    /// </summary>
+    [EnumMember(Value = "40")]
+    [Description("Aruban Florin")]
+    ArubanFlorin = 40,
+
+    /// <summary>
+    /// Turkish Lira
+    /// </summary>
+    [EnumMember(Value = "41")]
+    [Description("Turkish Lira")]
+    TurkishLira = 41,
+
+    /// <summary>
+    /// Romanian New Leu
+    /// </summary>
+    [EnumMember(Value = "42")]
+    [Description("Romanian New Leu")]
+    RomanianNewLeu = 42,
+
+    /// <summary>
+    /// Croatian Kuna
+    /// </summary>
+    [EnumMember(Value = "43")]
+    [Description("Croatian Kuna")]
+    CroatianKuna = 43,
+
+    /// <summary>
+    /// Saudi Riyal
+    /// </summary>
+    [EnumMember(Value = "44")]
+    [Description("Saudi Riyal")]
+    SaudiRiyal = 44,
+
+    /// <summary>
+    /// Japanese Yen
+    /// </summary>
+    [EnumMember(Value = "45")]
+    [Description("Japanese Yen")]
+    JapaneseYen = 45,
+
+    /// <summary>
+    /// Maldivian Rufiyaa
+    /// </summary>
+    [EnumMember(Value = "46")]
+    [Description("Maldivian Rufiyaa")]
+    MaldivianRufiyaa = 46,
+
+    /// <summary>
+    /// Costa Rican Colón
+    /// </summary>
+    [EnumMember(Value = "47")]
+    [Description("Costa Rican Colón")]
+    CostaRicanColon = 47,
+
+    /// <summary>
+    /// Pakistani Rupee
+    /// </summary>
+    [EnumMember(Value = "48")]
+    [Description("Pakistani Rupee")]
+    PakistaniRupee = 48,
+
+    /// <summary>
+    /// Polish Zloty
+    /// </summary>
+    [EnumMember(Value = "49")]
+    [Description("Polish Zloty")]
+    PolishZloty = 49,
+
+    /// <summary>
+    /// Sri Lankan Rupee
+    /// </summary>
+    [EnumMember(Value = "50")]
+    [Description("Sri Lankan Rupee")]
+    SriLankanRupee = 50,
+
+    /// <summary>
+    /// Czech Koruna
+    /// </summary>
+    [EnumMember(Value = "51")]
+    [Description("Czech Koruna")]
+    CzechKoruna = 51,
+
+    /// <summary>
+    /// Uruguayan Peso
+    /// </summary>
+    [EnumMember(Value = "52")]
+    [Description("Uruguayan Peso")]
+    UruguayanPeso = 52,
+
+    /// <summary>
+    /// Namibian Dollar
+    /// </summary>
+    [EnumMember(Value = "53")]
+    [Description("Namibian Dollar")]
+    NamibianDollar = 53,
+
+    /// <summary>
+    /// Tunisian Dinar
+    /// </summary>
+    [EnumMember(Value = "54")]
+    [Description("Tunisian Dinar")]
+    TunisianDinar = 54,
+
+    /// <summary>
+    /// Russian Ruble
+    /// </summary>
+    [EnumMember(Value = "55")]
+    [Description("Russian Ruble")]
+    RussianRuble = 55,
+
+    /// <summary>
+    /// Mozambican Metical
+    /// </summary>
+    [EnumMember(Value = "56")]
+    [Description("Mozambican Metical")]
+    MozambicanMetical = 56,
+
+    /// <summary>
+    /// Omani Rial
+    /// </summary>
+    [EnumMember(Value = "57")]
+    [Description("Omani Rial")]
+    OmaniRial = 57,
+
+    /// <summary>
+    /// Ukrainian Hryvnia
+    /// </summary>
+    [EnumMember(Value = "58")]
+    [Description("Ukrainian Hryvnia")]
+    UkrainianHryvnia = 58,
+
+    /// <summary>
+    /// Macanese Pataca
+    /// </summary>
+    [EnumMember(Value = "59")]
+    [Description("Macanese Pataca")]
+    MacanesePataca = 59,
+
+    /// <summary>
+    /// Taiwan New Dollar
+    /// </summary>
+    [EnumMember(Value = "60")]
+    [Description("Taiwan New Dollar")]
+    TaiwanNewDollar = 60,
+
+    /// <summary>
+    /// Dominican Peso
+    /// </summary>
+    [EnumMember(Value = "61")]
+    [Description("Dominican Peso")]
+    DominicanPeso = 61,
+
+    /// <summary>
+    /// Chilean Peso
+    /// </summary>
+    [EnumMember(Value = "62")]
+    [Description("Chilean Peso")]
+    ChileanPeso = 62,
+
+    /// <summary>
+    /// Icelandic Króna
+    /// </summary>
+    [EnumMember(Value = "63")]
+    [Description("Icelandic Króna")]
+    IcelandicKrona = 63,
+
+    /// <summary>
+    /// Papua New Guinean Kina
+    /// </summary>
+    [EnumMember(Value = "64")]
+    [Description("Papua New Guinean Kina")]
+    PapuaNewGuineanKina = 64,
+
+    /// <summary>
+    /// Jordanian Dinar
+    /// </summary>
+    [EnumMember(Value = "65")]
+    [Description("Jordanian Dinar")]
+    JordanianDinar = 65,
+
+    /// <summary>
+    /// Myanmar Kyat
+    /// </summary>
+    [EnumMember(Value = "66")]
+    [Description("Myanmar Kyat")]
+    MyanmarKyat = 66,
+
+    /// <summary>
+    /// Peruvian Sol
+    /// </summary>
+    [EnumMember(Value = "67")]
+    [Description("Peruvian Sol")]
+    PeruvianSol = 67,
+
+    /// <summary>
+    /// Botswana Pula
+    /// </summary>
+    [EnumMember(Value = "68")]
+    [Description("Botswana Pula")]
+    BotswanaPula = 68,
+
+    /// <summary>
+    /// Hungarian Forint
+    /// </summary>
+    [EnumMember(Value = "69")]
+    [Description("Hungarian Forint")]
+    HungarianForint = 69,
+
+    /// <summary>
+    /// Ugandan Shilling
+    /// </summary>
+    [EnumMember(Value = "70")]
+    [Description("Ugandan Shilling")]
+    UgandanShilling = 70,
+
+    /// <summary>
+    /// Barbadian Dollar
+    /// </summary>
+    [EnumMember(Value = "71")]
+    [Description("Barbadian Dollar")]
+    BarbadianDollar = 71,
+
+    /// <summary>
+    /// Brunei Dollar
+    /// </summary>
+    [EnumMember(Value = "72")]
+    [Description("Brunei Dollar")]
+    BruneiDollar = 72,
+
+    /// <summary>
+    /// Georgian Lari
+    /// </summary>
+    [EnumMember(Value = "73")]
+    [Description("Georgian Lari")]
+    GeorgianLari = 73,
+
+    /// <summary>
+    /// Qatari Riyal
+    /// </summary>
+    [EnumMember(Value = "74")]
+    [Description("Qatari Riyal")]
+    QatariRiyal = 74,
+
+    /// <summary>
+    /// Honduran Lempira
+    /// </summary>
+    [EnumMember(Value = "75")]
+    [Description("Honduran Lempira")]
+    HonduranLempira = 75,
+
+    /// <summary>
+    /// Surinamese Dollar
+    /// </summary>
+    [EnumMember(Value = "76")]
+    [Description("Surinamese Dollar")]
+    SurinameseDollar = 76,
+
+    /// <summary>
+    /// Bahraini Dinar
+    /// </summary>
+    [EnumMember(Value = "77")]
+    [Description("Bahraini Dinar")]
+    BahrainiDinar = 77,
+
+    /// <summary>
+    /// Venezuelan Bolivars
+    /// </summary>
+    [EnumMember(Value = "78")]
+    [Description("Venezuelan Bolivars")]
+    VenezuelanBolivars = 78,
+
+    /// <summary>
+    /// South Korean Won
+    /// </summary>
+    [EnumMember(Value = "79")]
+    [Description("South Korean Won")]
+    SouthKoreanWon = 79,
+
+    /// <summary>
+    /// Moroccan Dirham
+    /// </summary>
+    [EnumMember(Value = "80")]
+    [Description("Moroccan Dirham")]
+    MoroccanDirham = 80,
+
+    /// <summary>
+    /// Jamaican Dollar
+    /// </summary>
+    [EnumMember(Value = "81")]
+    [Description("Jamaican Dollar")]
+    JamaicanDollar = 81,
+
+    /// <summary>
+    /// Angolan Kwanza
+    /// </summary>
+    [EnumMember(Value = "82")]
+    [Description("Angolan Kwanza")]
+    AngolanKwanza = 82,
+
+    /// <summary>
+    /// Haitian Gourde
+    /// </summary>
+    [EnumMember(Value = "83")]
+    [Description("Haitian Gourde")]
+    HaitianGourde = 83,
+
+    /// <summary>
+    /// Zambian Kwacha
+    /// </summary>
+    [EnumMember(Value = "84")]
+    [Description("Zambian Kwacha")]
+    ZambianKwacha = 84,
+
+    /// <summary>
+    /// Nepalese Rupee
+    /// </summary>
+    [EnumMember(Value = "85")]
+    [Description("Nepalese Rupee")]
+    NepaleseRupee = 85,
+
+    /// <summary>
+    /// CFP Franc
+    /// </summary>
+    [EnumMember(Value = "86")]
+    [Description("CFP Franc")]
+    CfpFranc = 86,
+
+    /// <summary>
+    /// Mauritian Rupee
+    /// </summary>
+    [EnumMember(Value = "87")]
+    [Description("Mauritian Rupee")]
+    MauritianRupee = 87,
+
+    /// <summary>
+    /// Cape Verdean Escudo
+    /// </summary>
+    [EnumMember(Value = "88")]
+    [Description("Cape Verdean Escudo")]
+    CapeVerdeanEscudo = 88,
+
+    /// <summary>
+    /// Kuwaiti Dinar
+    /// </summary>
+    [EnumMember(Value = "89")]
+    [Description("Kuwaiti Dinar")]
+    KuwaitiDinar = 89,
+
+    /// <summary>
+    /// Algerian Dinar
+    /// </summary>
+    [EnumMember(Value = "90")]
+    [Description("Algerian Dinar")]
+    AlgerianDinar = 90,
+
+    /// <summary>
+    /// Macedonian Denar
+    /// </summary>
+    [EnumMember(Value = "91")]
+    [Description("Macedonian Denar")]
+    MacedonianDenar = 91,
+
+    /// <summary>
+    /// Fijian Dollar
+    /// </summary>
+    [EnumMember(Value = "92")]
+    [Description("Fijian Dollar")]
+    FijianDollar = 92,
+
+    /// <summary>
+    /// Bolivian Boliviano
+    /// </summary>
+    [EnumMember(Value = "93")]
+    [Description("Bolivian Boliviano")]
+    BolivianBoliviano = 93,
+
+    /// <summary>
+    /// Albanian Lek
+    /// </summary>
+    [EnumMember(Value = "94")]
+    [Description("Albanian Lek")]
+    AlbanianLek = 94,
+
+    /// <summary>
+    /// Serbian Dinar
+    /// </summary>
+    [EnumMember(Value = "95")]
+    [Description("Serbian Dinar")]
+    SerbianDinar = 95,
+
+    /// <summary>
+    /// Lebanese Pound
+    /// </summary>
+    [EnumMember(Value = "96")]
+    [Description("Lebanese Pound")]
+    LebanesePound = 96,
+
+    /// <summary>
+    /// Armenian Dram
+    /// </summary>
+    [EnumMember(Value = "97")]
+    [Description("Armenian Dram")]
+    ArmenianDram = 97,
+
+    /// <summary>
+    /// Azerbaijan Manat
+    /// </summary>
+    [EnumMember(Value = "98")]
+    [Description("Azerbaijan Manat")]
+    AzerbaijanManat = 98,
+
+    /// <summary>
+    /// Bosnia and Herzegovina Convertible Mark
+    /// </summary>
+    [EnumMember(Value = "99")]
+    [Description("Bosnia and Herzegovina Convertible Mark")]
+    BosniaAndHerzegovinaConvertibleMark = 99,
+
+    /// <summary>
+    /// Belarusian Ruble
+    /// </summary>
+    [EnumMember(Value = "100")]
+    [Description("Belarusian Ruble")]
+    BelarusianRuble = 100,
+
+    /// <summary>
+    /// Gibraltar Pound
+    /// </summary>
+    [EnumMember(Value = "101")]
+    [Description("Gibraltar Pound")]
+    GibraltarPound = 101,
+
+    /// <summary>
+    /// Moldovan Leu
+    /// </summary>
+    [EnumMember(Value = "102")]
+    [Description("Moldovan Leu")]
+    MoldovanLeu = 102,
+
+    /// <summary>
+    /// Kazakhstani Tenge
+    /// </summary>
+    [EnumMember(Value = "103")]
+    [Description("Kazakhstani Tenge")]
+    KazakhstaniTenge = 103,
+
+    /// <summary>
+    /// Ethiopian Birr
+    /// </summary>
+    [EnumMember(Value = "104")]
+    [Description("Ethiopian Birr")]
+    EthiopianBirr = 104,
+
+    /// <summary>
+    /// Gambia Dalasi
+    /// </summary>
+    [EnumMember(Value = "105")]
+    [Description("Gambia Dalasi")]
+    GambiaDalasi = 105,
+
+    /// <summary>
+    /// Paraguayan Guarani
+    /// </summary>
+    [EnumMember(Value = "106")]
+    [Description("Paraguayan Guarani")]
+    ParaguayanGuarani = 106,
+
+    /// <summary>
+    /// Malawi Kwacha
+    /// </summary>
+    [EnumMember(Value = "107")]
+    [Description("Malawi Kwacha")]
+    MalawiKwacha = 107,
+
+    /// <summary>
+    /// Zimbabwean Dollar
+    /// </summary>
+    [EnumMember(Value = "108")]
+    [Description("Zimbabwean Dollar")]
+    ZimbabweanDollar = 108,
+
+    /// <summary>
+    /// Cambodian Riel
+    /// </summary>
+    [EnumMember(Value = "109")]
+    [Description("Cambodian Riel")]
+    CambodianRiel = 109,
+
+    /// <summary>
+    /// Vanuatu Vatu
+    /// </summary>
+    [EnumMember(Value = "110")]
+    [Description("Vanuatu Vatu")]
+    VanuatuVatu = 110,
+
+    /// <summary>
+    /// Cuban Peso
+    /// </summary>
+    [EnumMember(Value = "111")]
+    [Description("Cuban Peso")]
+    CubanPeso = 111,
+
+    /// <summary>
+    /// Cayman Island Dollar
+    /// </summary>
+    [EnumMember(Value = "112")]
+    [Description("Cayman Island Dollar")]
+    CaymanIslandDollar = 112,
+
+    /// <summary>
+    /// Swazi lilangeni
+    /// </summary>
+    [EnumMember(Value = "113")]
+    [Description("Swazi lilangeni")]
+    SwaziLilangeni = 113,
+
+    /// <summary>
+    /// BZ Dollar
+    /// </summary>
+    [EnumMember(Value = "114")]
+    [Description("BZ Dollar")]
+    BZDollar = 114,
+
+    /// <summary>
+    /// Libyan Dinar
+    /// </summary>
+    [EnumMember(Value = "115")]
+    [Description("Libyan Dinar")]
+    LibyanDinar = 115,
+
+    /// <summary>
+    /// Silver Troy Ounce
+    /// </summary>
+    [EnumMember(Value = "116")]
+    [Description("Silver Troy Ounce")]
+    SilverTroyOunce = 116,
+
+    /// <summary>
+    /// Gold Troy Ounce
+    /// </summary>
+    [EnumMember(Value = "117")]
+    [Description("Gold Troy Ounce")]
+    GoldTroyOunce = 117,
+
+    /// <summary>
+    /// Nicaraguan Córdoba
+    /// </summary>
+    [EnumMember(Value = "118")]
+    [Description("Nicaraguan Córdoba")]
+    NicaraguanCordoba = 118,
+
+    /// <summary>
+    /// Malagasy ariary
+    /// </summary>
+    [EnumMember(Value = "119")]
+    [Description("Malagasy ariary")]
+    MalagasyAriary = 119,
+
+    /// <summary>
+    /// Tongan Pa anga
+    /// </summary>
+    [EnumMember(Value = "120")]
+    [Description("Tongan Pa anga")]
+    TonganPaAnga = 120,
+
+    /// <summary>
+    /// Lao kip
+    /// </summary>
+    [EnumMember(Value = "121")]
+    [Description("Lao kip")]
+    LaoKip = 121,
+
+    /// <summary>
+    /// Bhutan Ngultrum
+    /// </summary>
+    [EnumMember(Value = "122")]
+    [Description("Bhutan Ngultrum")]
+    BhutanNgultrum = 122,
+
+    /// <summary>
+    /// Mauritanian Ouguiya
+    /// </summary>
+    [EnumMember(Value = "123")]
+    [Description("Mauritanian Ouguiya")]
+    MauritanianOuguiya = 123,
+
+    /// <summary>
+    /// Bermudian Dollar
+    /// </summary>
+    [EnumMember(Value = "124")]
+    [Description("Bermudian Dollar")]
+    BermudianDollar = 124,
+
+    /// <summary>
+    /// Central African CFA Franc
+    /// </summary>
+    [EnumMember(Value = "125")]
+    [Description("Central African CFA Franc")]
+    CentralAfricanCfaFranc = 125,
+
+    /// <summary>
+    /// Congolese Franc
+    /// </summary>
+    [EnumMember(Value = "126")]
+    [Description("Congolese Franc")]
+    CongoleseFranc = 126,
+
+    /// <summary>
+    /// Djiboutian Franc
+    /// </summary>
+    [EnumMember(Value = "127")]
+    [Description("Djiboutian Franc")]
+    DjiboutianFranc = 127,
+
+    /// <summary>
+    /// Eritrean Nakfa
+    /// </summary>
+    [EnumMember(Value = "128")]
+    [Description("Eritrean Nakfa")]
+    EritreanNakfa = 128,
+
+    /// <summary>
+    /// Falkland Islands Pound
+    /// </summary>
+    [EnumMember(Value = "129")]
+    [Description("Falkland Islands Pound")]
+    FalklandIslandsPound = 129,
+
+    /// <summary>
+    /// Guinean Franc
+    /// </summary>
+    [EnumMember(Value = "130")]
+    [Description("Guinean Franc")]
+    GuineanFranc = 130,
+
+    /// <summary>
+    /// Iraqi Dinar
+    /// </summary>
+    [EnumMember(Value = "131")]
+    [Description("Iraqi Dinar")]
+    IraqiDinar = 131,
+
+    /// <summary>
+    /// Lesotho Loti
+    /// </summary>
+    [EnumMember(Value = "132")]
+    [Description("Lesotho Loti")]
+    LesothoLoti = 132,
+
+    /// <summary>
+    /// Mongolian Tugrik
+    /// </summary>
+    [EnumMember(Value = "133")]
+    [Description("Mongolian Tugrik")]
+    MongolianTugrik = 133,
+
+    /// <summary>
+    /// Seychellois Rupee
+    /// </summary>
+    [EnumMember(Value = "134")]
+    [Description("Seychellois Rupee")]
+    SeychelloisRupee = 134,
+
+    /// <summary>
+    /// Solomon Islands Dollar
+    /// </summary>
+    [EnumMember(Value = "135")]
+    [Description("Solomon Islands Dollar")]
+    SolomonIslandsDollar = 135,
+
+    /// <summary>
+    /// Somali Shilling
+    /// </summary>
+    [EnumMember(Value = "136")]
+    [Description("Somali Shilling")]
+    SomaliShilling = 136,
+
+    /// <summary>
+    /// South Sudanese Pound
+    /// </summary>
+    [EnumMember(Value = "137")]
+    [Description("South Sudanese Pound")]
+    SouthSudanesePound = 137,
+
+    /// <summary>
+    /// Sudanese Pound
+    /// </summary>
+    [EnumMember(Value = "138")]
+    [Description("Sudanese Pound")]
+    SudanesePound = 138,
+
+    /// <summary>
+    /// Tajikistani Somoni
+    /// </summary>
+    [EnumMember(Value = "139")]
+    [Description("Tajikistani Somoni")]
+    TajikistaniSomoni = 139,
+
+    /// <summary>
+    /// Turkmenistani Manat
+    /// </summary>
+    [EnumMember(Value = "140")]
+    [Description("Turkmenistani Manat")]
+    TurkmenistaniManat = 140,
+
+    /// <summary>
+    /// Uzbekistani Som
+    /// </summary>
+    [EnumMember(Value = "141")]
+    [Description("Uzbekistani Som")]
+    UzbekistaniSom = 141,
+
+    /// <summary>
+    /// Samoan Tala
+    /// </summary>
+    [EnumMember(Value = "142")]
+    [Description("Samoan Tala")]
+    SamoanTala = 142
 }

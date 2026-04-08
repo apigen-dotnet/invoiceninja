@@ -122,6 +122,7 @@ public class Client
   [System.Text.Json.Serialization.JsonPropertyName("phone")]
   public string? Phone { get; set; }
 
+  [JsonConverter(typeof(EmptyStringToNullableEnumConverter<CountryType>))]
   [System.Text.Json.Serialization.JsonPropertyName("country_id")]
   public CountryType? CountryId { get; set; }
 

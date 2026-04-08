@@ -126,8 +126,9 @@ public class Vendor
   /// <summary>
   /// The country id of the vendor. This is a unique identifier for the country.
   /// </summary>
+  [JsonConverter(typeof(EmptyStringToNullableEnumConverter<CountryType>))]
   [System.Text.Json.Serialization.JsonPropertyName("country_id")]
-  public string? CountryId { get; set; }
+  public CountryType? CountryId { get; set; }
 
   /// <summary>
   /// The currency id of the vendor. This is a unique identifier for the currency.

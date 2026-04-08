@@ -73,9 +73,10 @@ public class VendorRequest
   /// <summary>
   /// Country ID
   /// </summary>
+  [JsonConverter(typeof(EmptyStringToNullableEnumConverter<CountryType>))]
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
   [System.Text.Json.Serialization.JsonPropertyName("country_id")]
-  public string? CountryId { get; set; }
+  public CountryType? CountryId { get; set; }
 
   /// <summary>
   /// Phone number
