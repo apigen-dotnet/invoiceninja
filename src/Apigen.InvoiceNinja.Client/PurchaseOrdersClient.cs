@@ -380,7 +380,7 @@ public class PurchaseOrdersClient
   /// Download a purchase order PDF
   /// Operation: GET /api/v1/purchase_order/{invitation_key}/download
   /// </summary>
-  public async Task DownloadPurchaseOrderAsync(string invitationKey, DownloadPurchaseOrderRequest? request = null)
+  public async Task<Stream> DownloadPurchaseOrderAsync(string invitationKey, DownloadPurchaseOrderRequest? request = null)
   {
     Dictionary<string, object> pathParams = new()
     {
@@ -400,10 +400,11 @@ public class PurchaseOrdersClient
     }
     catch (HttpRequestException ex)
     {
-      string responseContent = await response.Content.ReadAsStringAsync();
-      HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "GET", url, responseContent, ex);
+      string errorContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "GET", url, errorContent, ex);
       throw;
     }
+    return await response.Content.ReadAsStreamAsync();
   }
 
 

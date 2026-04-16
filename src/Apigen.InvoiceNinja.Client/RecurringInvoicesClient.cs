@@ -347,7 +347,7 @@ public class RecurringInvoicesClient
   /// Download recurring invoice PDF
   /// Operation: GET /api/v1/recurring_invoice/{invitation_key}/download
   /// </summary>
-  public async Task DownloadRecurringInvoiceAsync(string invitationKey, DownloadRecurringInvoiceRequest? request = null)
+  public async Task<Stream> DownloadRecurringInvoiceAsync(string invitationKey, DownloadRecurringInvoiceRequest? request = null)
   {
     Dictionary<string, object> pathParams = new()
     {
@@ -367,10 +367,11 @@ public class RecurringInvoicesClient
     }
     catch (HttpRequestException ex)
     {
-      string responseContent = await response.Content.ReadAsStringAsync();
-      HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "GET", url, responseContent, ex);
+      string errorContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "GET", url, errorContent, ex);
       throw;
     }
+    return await response.Content.ReadAsStreamAsync();
   }
 
 

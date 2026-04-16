@@ -350,7 +350,7 @@ public class QuotesClient
   /// Download quote PDF
   /// Operation: GET /api/v1/quote/{invitation_key}/download
   /// </summary>
-  public async Task DownloadQuoteAsync(string invitationKey, DownloadQuoteRequest? request = null)
+  public async Task<Stream> DownloadQuoteAsync(string invitationKey, DownloadQuoteRequest? request = null)
   {
     Dictionary<string, object> pathParams = new()
     {
@@ -370,10 +370,11 @@ public class QuotesClient
     }
     catch (HttpRequestException ex)
     {
-      string responseContent = await response.Content.ReadAsStringAsync();
-      HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "GET", url, responseContent, ex);
+      string errorContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "GET", url, errorContent, ex);
       throw;
     }
+    return await response.Content.ReadAsStreamAsync();
   }
 
 
@@ -420,7 +421,7 @@ public class QuotesClient
   /// Download quote PDF
   /// Operation: GET /api/v1/credit/{invitation_key}/download
   /// </summary>
-  public async Task DownloadCreditAsync(string invitationKey, DownloadCreditRequest? request = null)
+  public async Task<Stream> DownloadCreditAsync(string invitationKey, DownloadCreditRequest? request = null)
   {
     Dictionary<string, object> pathParams = new()
     {
@@ -440,10 +441,11 @@ public class QuotesClient
     }
     catch (HttpRequestException ex)
     {
-      string responseContent = await response.Content.ReadAsStringAsync();
-      HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "GET", url, responseContent, ex);
+      string errorContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "GET", url, errorContent, ex);
       throw;
     }
+    return await response.Content.ReadAsStreamAsync();
   }
 
 

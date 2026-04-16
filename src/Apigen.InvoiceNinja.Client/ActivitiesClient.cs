@@ -62,7 +62,7 @@ public class ActivitiesClient
   /// Returns a PDF for the given activity
   /// Operation: GET /api/v1/activities/download_entity/{activity_id}
   /// </summary>
-  public async Task GetAsync(string activityId, GetActivityHistoricalEntityPdfRequest? request = null)
+  public async Task<Stream> GetAsync(string activityId, GetActivityHistoricalEntityPdfRequest? request = null)
   {
     Dictionary<string, object> pathParams = new()
     {
@@ -82,10 +82,11 @@ public class ActivitiesClient
     }
     catch (HttpRequestException ex)
     {
-      string responseContent = await response.Content.ReadAsStringAsync();
-      HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "GET", url, responseContent, ex);
+      string errorContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "GET", url, errorContent, ex);
       throw;
     }
+    return await response.Content.ReadAsStreamAsync();
   }
 
 

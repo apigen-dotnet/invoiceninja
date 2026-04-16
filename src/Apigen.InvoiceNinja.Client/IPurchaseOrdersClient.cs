@@ -75,6 +75,6 @@ public interface IPurchaseOrdersClient
   /// Download a purchase order PDF
   /// Operation: GET /api/v1/purchase_order/{invitation_key}/download
   /// </summary>
-  Task DownloadPurchaseOrderAsync(string invitationKey, DownloadPurchaseOrderRequest? request = null);
+  Task<Stream> DownloadPurchaseOrderAsync(string invitationKey, DownloadPurchaseOrderRequest? request = null);
 
 }

@@ -69,7 +69,7 @@ public interface IRecurringInvoicesClient
   /// Download recurring invoice PDF
   /// Operation: GET /api/v1/recurring_invoice/{invitation_key}/download
   /// </summary>
-  Task DownloadRecurringInvoiceAsync(string invitationKey, DownloadRecurringInvoiceRequest? request = null);
+  Task<Stream> DownloadRecurringInvoiceAsync(string invitationKey, DownloadRecurringInvoiceRequest? request = null);
 
   /// <summary>
   /// Add recurring invoice document

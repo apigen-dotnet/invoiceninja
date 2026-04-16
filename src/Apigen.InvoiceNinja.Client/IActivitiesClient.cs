@@ -21,7 +21,7 @@ public interface IActivitiesClient
   /// Returns a PDF for the given activity
   /// Operation: GET /api/v1/activities/download_entity/{activity_id}
   /// </summary>
-  Task GetAsync(string activityId, GetActivityHistoricalEntityPdfRequest? request = null);
+  Task<Stream> GetAsync(string activityId, GetActivityHistoricalEntityPdfRequest? request = null);
 
   /// <summary>
   /// Entity activity

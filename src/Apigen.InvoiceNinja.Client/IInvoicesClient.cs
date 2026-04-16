@@ -69,13 +69,13 @@ public interface IInvoicesClient
   /// Download invoice PDF
   /// Operation: GET /api/v1/invoice/{invitation_key}/download
   /// </summary>
-  Task DownloadInvoiceByInvitationAsync(string invitationKey, DownloadInvoiceByInvitationRequest? request = null);
+  Task<Stream> DownloadInvoiceByInvitationAsync(string invitationKey, DownloadInvoiceByInvitationRequest? request = null);
 
   /// <summary>
   /// Download delivery note
   /// Operation: GET /api/v1/invoices/{id}/delivery_note
   /// </summary>
-  Task GetInvoiceDeliveryNoteAsync(string id, GetInvoiceDeliveryNoteRequest? request = null);
+  Task<Stream> GetInvoiceDeliveryNoteAsync(string id, GetInvoiceDeliveryNoteRequest? request = null);
 
   /// <summary>
   /// Add invoice document

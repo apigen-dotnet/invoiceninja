@@ -69,7 +69,7 @@ public interface IQuotesClient
   /// Download quote PDF
   /// Operation: GET /api/v1/quote/{invitation_key}/download
   /// </summary>
-  Task DownloadQuoteAsync(string invitationKey, DownloadQuoteRequest? request = null);
+  Task<Stream> DownloadQuoteAsync(string invitationKey, DownloadQuoteRequest? request = null);
 
   /// <summary>
   /// Upload a quote document
@@ -81,6 +81,6 @@ public interface IQuotesClient
   /// Download quote PDF
   /// Operation: GET /api/v1/credit/{invitation_key}/download
   /// </summary>
-  Task DownloadCreditAsync(string invitationKey, DownloadCreditRequest? request = null);
+  Task<Stream> DownloadCreditAsync(string invitationKey, DownloadCreditRequest? request = null);
 
 }

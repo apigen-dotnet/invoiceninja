@@ -341,7 +341,7 @@ public class InvoicesClient
   /// Download invoice PDF
   /// Operation: GET /api/v1/invoice/{invitation_key}/download
   /// </summary>
-  public async Task DownloadInvoiceByInvitationAsync(string invitationKey, DownloadInvoiceByInvitationRequest? request = null)
+  public async Task<Stream> DownloadInvoiceByInvitationAsync(string invitationKey, DownloadInvoiceByInvitationRequest? request = null)
   {
     Dictionary<string, object> pathParams = new()
     {
@@ -361,10 +361,11 @@ public class InvoicesClient
     }
     catch (HttpRequestException ex)
     {
-      string responseContent = await response.Content.ReadAsStringAsync();
-      HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "GET", url, responseContent, ex);
+      string errorContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "GET", url, errorContent, ex);
       throw;
     }
+    return await response.Content.ReadAsStreamAsync();
   }
 
 
@@ -372,7 +373,7 @@ public class InvoicesClient
   /// Download delivery note
   /// Operation: GET /api/v1/invoices/{id}/delivery_note
   /// </summary>
-  public async Task GetInvoiceDeliveryNoteAsync(string id, GetInvoiceDeliveryNoteRequest? request = null)
+  public async Task<Stream> GetInvoiceDeliveryNoteAsync(string id, GetInvoiceDeliveryNoteRequest? request = null)
   {
     Dictionary<string, object> pathParams = new()
     {
@@ -392,10 +393,11 @@ public class InvoicesClient
     }
     catch (HttpRequestException ex)
     {
-      string responseContent = await response.Content.ReadAsStringAsync();
-      HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "GET", url, responseContent, ex);
+      string errorContent = await response.Content.ReadAsStringAsync();
+      HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "GET", url, errorContent, ex);
       throw;
     }
+    return await response.Content.ReadAsStreamAsync();
   }
 
 
