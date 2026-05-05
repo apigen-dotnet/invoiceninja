@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// InvoiceItem from OpenAPI schema.
 /// Schema path: #/components/schemas/InvoiceItem
 /// </summary>
-public class InvoiceItem
+public partial class InvoiceItem
 {
   /// <summary>
   /// The quantity of the product offered for this line item

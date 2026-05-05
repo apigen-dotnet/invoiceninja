@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Deletes a GroupSetting
 /// Operation: DELETE /api/v1/group_settings/{id}
 /// </summary>
-public class DeleteGroupSettingRequest : BaseRequest
+public partial class DeleteGroupSettingRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for one_time_token operations
 /// </summary>
-public interface IOneTimeTokenClient
+public partial interface IOneTimeTokenClient
 {
   /// <summary>
   /// Attempts to create a one time token

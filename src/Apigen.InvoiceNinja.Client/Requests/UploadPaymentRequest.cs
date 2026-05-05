@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Upload a payment document
 /// Operation: POST /api/v1/payments/{id}/upload
 /// </summary>
-public class UploadPaymentRequest : BaseRequest
+public partial class UploadPaymentRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

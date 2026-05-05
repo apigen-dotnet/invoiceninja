@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// Task from OpenAPI schema.
 /// Schema path: #/components/schemas/Task
 /// </summary>
-public class TaskItem
+public partial class TaskItem
 {
   /// <summary>
   /// The hashed id of the task

@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// RateLimiterError from OpenAPI schema.
 /// Schema path: #/components/schemas/RateLimiterError
 /// </summary>
-public class RateLimiterError
+public partial class RateLimiterError
 {
   /// <summary>
   /// Rate limit exceeded.

@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for ping operations
 /// </summary>
-public interface IPingClient
+public partial interface IPingClient
 {
   /// <summary>
   /// Attempts to ping the API

@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Merge client
 /// Operation: POST /api/v1/clients/{id}/{mergeable_client_hashed_id}/merge
 /// </summary>
-public class MergeClientRequest : BaseRequest
+public partial class MergeClientRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

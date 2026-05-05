@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Edit Client
 /// Operation: GET /api/v1/clients/{id}/edit
 /// </summary>
-public class EditClientRequest : BaseRequest
+public partial class EditClientRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for payment_termss operations
 /// </summary>
-public interface IPaymentTermssClient
+public partial interface IPaymentTermssClient
 {
   /// <summary>
   /// Deletes a Payment Term

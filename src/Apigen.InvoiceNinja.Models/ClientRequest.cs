@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// ClientRequest from OpenAPI schema.
 /// Schema path: #/components/schemas/ClientRequest
 /// </summary>
-public class ClientRequest
+public partial class ClientRequest
 {
   /// <summary>
   /// The unique identifier of the client

@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Performs bulk actions on an array of task_schedulers
 /// Operation: POST /api/v1/task_schedulers/bulk
 /// </summary>
-public class BulkTaskSchedulerActionsRequest : BaseRequest
+public partial class BulkTaskSchedulerActionsRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

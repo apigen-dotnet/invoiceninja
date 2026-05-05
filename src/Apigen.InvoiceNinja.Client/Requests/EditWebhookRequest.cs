@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Shows a Webhook for editting
 /// Operation: GET /api/v1/webhooks/{id}/edit
 /// </summary>
-public class EditWebhookRequest : BaseRequest
+public partial class EditWebhookRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

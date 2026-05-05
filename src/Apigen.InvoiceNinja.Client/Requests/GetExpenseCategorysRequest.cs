@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Gets a list of expense_categories
 /// Operation: GET /api/v1/expense_categories
 /// </summary>
-public class GetExpenseCategorysRequest : BaseRequest
+public partial class GetExpenseCategorysRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

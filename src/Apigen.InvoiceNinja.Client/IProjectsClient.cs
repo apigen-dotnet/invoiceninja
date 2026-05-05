@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for projects operations
 /// </summary>
-public interface IProjectsClient
+public partial interface IProjectsClient
 {
   /// <summary>
   /// List projects

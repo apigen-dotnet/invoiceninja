@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Returns a PDF for the given activity
 /// Operation: GET /api/v1/activities/download_entity/{activity_id}
 /// </summary>
-public class GetActivityHistoricalEntityPdfRequest : BaseRequest
+public partial class GetActivityHistoricalEntityPdfRequest : BaseRequest
 {
   /// <summary>
   /// Include child relations of the Activity object, format is comma separated. **Note** it is possible to chain multiple includes together, ie. include=account,token

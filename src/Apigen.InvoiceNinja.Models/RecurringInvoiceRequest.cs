@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// RecurringInvoiceRequest from OpenAPI schema.
 /// Schema path: #/components/schemas/RecurringInvoiceRequest
 /// </summary>
-public class RecurringInvoiceRequest
+public partial class RecurringInvoiceRequest
 {
   /// <summary>
   /// The hashed ID of the client

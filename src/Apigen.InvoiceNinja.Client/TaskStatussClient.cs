@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for task_statuss operations
 /// </summary>
-public class TaskStatussClient
+public partial class TaskStatussClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

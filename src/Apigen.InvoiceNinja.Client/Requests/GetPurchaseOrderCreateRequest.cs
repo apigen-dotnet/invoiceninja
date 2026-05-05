@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Blank purchase order
 /// Operation: GET /api/v1/purchase_orders/create
 /// </summary>
-public class GetPurchaseOrderCreateRequest : BaseRequest
+public partial class GetPurchaseOrderCreateRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

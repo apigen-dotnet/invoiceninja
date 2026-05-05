@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for locations operations
 /// </summary>
-public interface ILocationsClient
+public partial interface ILocationsClient
 {
   /// <summary>
   /// List locations

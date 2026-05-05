@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for emails operations
 /// </summary>
-public interface IEmailsClient
+public partial interface IEmailsClient
 {
   /// <summary>
   /// Sends an email for an entity

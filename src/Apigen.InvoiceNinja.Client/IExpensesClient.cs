@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for expenses operations
 /// </summary>
-public interface IExpensesClient
+public partial interface IExpensesClient
 {
   /// <summary>
   /// Gets a list of expenses

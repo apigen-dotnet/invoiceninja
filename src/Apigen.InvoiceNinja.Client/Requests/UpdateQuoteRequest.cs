@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Update quote
 /// Operation: PUT /api/v1/quotes/{id}
 /// </summary>
-public class UpdateQuoteRequest : BaseRequest
+public partial class UpdateQuoteRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

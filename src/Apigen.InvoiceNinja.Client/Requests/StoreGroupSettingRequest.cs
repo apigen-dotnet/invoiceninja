@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Adds a GroupSetting
 /// Operation: POST /api/v1/group_settings
 /// </summary>
-public class StoreGroupSettingRequest : BaseRequest
+public partial class StoreGroupSettingRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

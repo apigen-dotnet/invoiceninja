@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Detach an existing user to a company
 /// Operation: DELETE /api/v1/users/{user}/detach_from_company
 /// </summary>
-public class DetachUserRequest : BaseRequest
+public partial class DetachUserRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

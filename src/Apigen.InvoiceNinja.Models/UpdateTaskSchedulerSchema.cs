@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// UpdateTaskSchedulerSchema from OpenAPI schema.
 /// Schema path: #/components/schemas/UpdateTaskSchedulerSchema
 /// </summary>
-public class UpdateTaskSchedulerSchema
+public partial class UpdateTaskSchedulerSchema
 {
   /// <summary>
   /// The scheduler paused state

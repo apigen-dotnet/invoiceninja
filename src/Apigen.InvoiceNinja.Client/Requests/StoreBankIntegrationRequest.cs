@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Adds a bank_integration
 /// Operation: POST /api/v1/bank_integrations
 /// </summary>
-public class StoreBankIntegrationRequest : BaseRequest
+public partial class StoreBankIntegrationRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

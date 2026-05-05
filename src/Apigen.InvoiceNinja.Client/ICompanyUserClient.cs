@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for company_user operations
 /// </summary>
-public interface ICompanyUserClient
+public partial interface ICompanyUserClient
 {
   /// <summary>
   /// Update a company user record

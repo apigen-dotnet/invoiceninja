@@ -22,10 +22,10 @@ using System.Text.Json.Serialization;
 namespace Apigen.InvoiceNinja.Models;
 
 /// <summary>
-/// BulkInvoicesRequest from OpenAPI schema.
-/// Schema path: #/components/schemas/BulkInvoicesRequest
+/// BulkInvoicesRequest (generated from inline request body).
+/// Source: POST /api/v1/invoices/bulk (requestBody)
 /// </summary>
-public class BulkInvoicesRequest
+public partial class BulkInvoicesRequest
 {
   /// <summary>
   /// The email type to be sent, when bulk emailing invoices options include:

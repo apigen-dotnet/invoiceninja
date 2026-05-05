@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Add product document
 /// Operation: POST /api/v1/products/{id}/upload
 /// </summary>
-public class UploadProductRequest : BaseRequest
+public partial class UploadProductRequest : BaseRequest
 {
   /// <summary>
   /// Include child relationships of the Client Object. ie ?include=documents,system_logs

@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for one_time_token operations
 /// </summary>
-public class OneTimeTokenClient
+public partial class OneTimeTokenClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

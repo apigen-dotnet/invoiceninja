@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Processing event webhooks from Apple for in purchase / subscription status update
 /// Operation: POST /api/v1/apple/process_webhook
 /// </summary>
-public class ProcessAppleWebhookRequest : BaseRequest
+public partial class ProcessAppleWebhookRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

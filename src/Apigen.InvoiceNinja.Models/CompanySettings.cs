@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// CompanySettings from OpenAPI schema.
 /// Schema path: #/components/schemas/CompanySettings
 /// </summary>
-public class CompanySettings
+public partial class CompanySettings
 {
   /// <summary>
   /// The default currency id

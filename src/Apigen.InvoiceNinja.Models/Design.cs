@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// Design from OpenAPI schema.
 /// Schema path: #/components/schemas/Design
 /// </summary>
-public class Design
+public partial class Design
 {
   /// <summary>
   /// The design hashed id

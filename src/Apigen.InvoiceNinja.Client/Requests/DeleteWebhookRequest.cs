@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Deletes a Webhook
 /// Operation: DELETE /api/v1/webhooks/{id}
 /// </summary>
-public class DeleteWebhookRequest : BaseRequest
+public partial class DeleteWebhookRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

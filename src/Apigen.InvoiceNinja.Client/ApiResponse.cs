@@ -7,7 +7,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Standard API response wrapper
 /// </summary>
-public class ApiResponse<T>
+public partial class ApiResponse<T>
 {
   [JsonPropertyName("data")]
   public T Data { get; set; } = default!;

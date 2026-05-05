@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// PaymentTerm from OpenAPI schema.
 /// Schema path: #/components/schemas/PaymentTerm
 /// </summary>
-public class PaymentTerm
+public partial class PaymentTerm
 {
   /// <summary>
   /// The payment term length in days

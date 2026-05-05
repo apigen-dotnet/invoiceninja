@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for health_check operations
 /// </summary>
-public interface IHealthCheckClient
+public partial interface IHealthCheckClient
 {
   /// <summary>
   /// Attempts to get a health check from the API

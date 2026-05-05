@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for locations operations
 /// </summary>
-public class LocationsClient
+public partial class LocationsClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

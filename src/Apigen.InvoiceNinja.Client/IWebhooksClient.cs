@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for webhooks operations
 /// </summary>
-public interface IWebhooksClient
+public partial interface IWebhooksClient
 {
   /// <summary>
   /// Gets a list of Webhooks

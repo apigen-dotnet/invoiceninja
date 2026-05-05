@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Performs bulk actions on an array of task statuses
 /// Operation: POST /api/v1/task_statuses/bulk
 /// </summary>
-public class BulkTaskStatussRequest : BaseRequest
+public partial class BulkTaskStatussRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

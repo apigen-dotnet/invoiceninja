@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Refresh data by timestamp
 /// Operation: POST /api/v1/refresh
 /// </summary>
-public class PostRefreshRequest : BaseRequest
+public partial class PostRefreshRequest : BaseRequest
 {
   /// <summary>
   /// The unix timestamp from which the refreshed data should be sent from, if no value is passed the system will assume you require all data.

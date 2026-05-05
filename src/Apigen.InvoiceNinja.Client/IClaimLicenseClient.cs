@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for claim_license operations
 /// </summary>
-public interface IClaimLicenseClient
+public partial interface IClaimLicenseClient
 {
   /// <summary>
   /// Attempts to claim a white label license

@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Performs a custom action on an RecurringQuote
 /// Operation: GET /api/v1/recurring_quotes/{id}/{action}
 /// </summary>
-public class ActionRecurringQuoteRequest : BaseRequest
+public partial class ActionRecurringQuoteRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

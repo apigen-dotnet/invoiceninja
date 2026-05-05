@@ -22,10 +22,10 @@ using System.Text.Json.Serialization;
 namespace Apigen.InvoiceNinja.Models;
 
 /// <summary>
-/// PreimportRequest from OpenAPI schema.
-/// Schema path: #/components/schemas/PreimportRequest
+/// PreimportRequest (generated from inline request body).
+/// Source: POST /api/v1/preimport (requestBody)
 /// </summary>
-public class PreImportRequest
+public partial class PreImportRequest
 {
   /// <summary>
   /// The type of import being performed

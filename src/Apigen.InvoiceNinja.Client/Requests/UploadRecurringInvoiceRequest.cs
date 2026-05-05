@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Add recurring invoice document
 /// Operation: POST /api/v1/recurring_invoices/{id}/upload
 /// </summary>
-public class UploadRecurringInvoiceRequest : BaseRequest
+public partial class UploadRecurringInvoiceRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Pre Import CSV data
 /// Operation: POST /api/v1/preimport
 /// </summary>
-public class PreimportRequest : BaseRequest
+public partial class PreimportRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

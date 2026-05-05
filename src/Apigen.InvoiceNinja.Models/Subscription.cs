@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// Subscription from OpenAPI schema.
 /// Schema path: #/components/schemas/Subscription
 /// </summary>
-public class Subscription
+public partial class Subscription
 {
   /// <summary>
   /// Unique identifier for the subscription

@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Shows a token
 /// Operation: GET /api/v1/tokens/{id}
 /// </summary>
-public class ShowTokenRequest : BaseRequest
+public partial class ShowTokenRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

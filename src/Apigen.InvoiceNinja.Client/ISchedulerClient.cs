@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for scheduler operations
 /// </summary>
-public interface ISchedulerClient
+public partial interface ISchedulerClient
 {
   /// <summary>
   /// Get scheduler status

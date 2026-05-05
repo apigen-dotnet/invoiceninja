@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Updates a expense
 /// Operation: PUT /api/v1/expenses/{id}
 /// </summary>
-public class UpdateExpenseRequest : BaseRequest
+public partial class UpdateExpenseRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

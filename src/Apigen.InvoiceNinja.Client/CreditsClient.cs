@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for credits operations
 /// </summary>
-public class CreditsClient
+public partial class CreditsClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

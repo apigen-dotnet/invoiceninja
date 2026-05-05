@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// UpdateJobForASchedulerSchema from OpenAPI schema.
 /// Schema path: #/components/schemas/UpdateJobForASchedulerSchema
 /// </summary>
-public class UpdateJobForASchedulerSchema
+public partial class UpdateJobForASchedulerSchema
 {
   /// <summary>
   /// Set action name, action names can be found in Scheduler Model

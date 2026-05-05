@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// AuthorizationError from OpenAPI schema.
 /// Schema path: #/components/schemas/AuthorizationError
 /// </summary>
-public class AuthorizationError
+public partial class AuthorizationError
 {
   /// <summary>
   /// Insufficient permissions for this resource.

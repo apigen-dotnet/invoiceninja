@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// CompanyLedger from OpenAPI schema.
 /// Schema path: #/components/schemas/CompanyLedger
 /// </summary>
-public class CompanyLedger
+public partial class CompanyLedger
 {
   /// <summary>
   /// This field will reference one of the following entity hashed ID payment_id, invoice_id or credit_id

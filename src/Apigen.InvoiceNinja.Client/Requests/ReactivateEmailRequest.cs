@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Removes email suppression of a user in the system
 /// Operation: POST /api/v1/reactivate_email/{bounce_id}
 /// </summary>
-public class ReactivateEmailRequest : BaseRequest
+public partial class ReactivateEmailRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Gets a new blank bank_transaction rule object
 /// Operation: GET /api/v1/bank_transaction_rules/create
 /// </summary>
-public class GetBankTransactionRulesCreateRequest : BaseRequest
+public partial class GetBankTransactionRulesCreateRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

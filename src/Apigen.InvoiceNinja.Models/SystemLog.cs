@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// SystemLog from OpenAPI schema.
 /// Schema path: #/components/schemas/SystemLog
 /// </summary>
-public class SystemLog
+public partial class SystemLog
 {
   /// <summary>
   /// The account hashed id

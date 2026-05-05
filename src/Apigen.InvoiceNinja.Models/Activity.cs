@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// Activity from OpenAPI schema.
 /// Schema path: #/components/schemas/Activity
 /// </summary>
-public class Activity
+public partial class Activity
 {
   /// <summary>
   /// The id field of the activity

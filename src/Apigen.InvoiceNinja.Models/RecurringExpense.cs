@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// RecurringExpense from OpenAPI schema.
 /// Schema path: #/components/schemas/RecurringExpense
 /// </summary>
-public class RecurringExpense
+public partial class RecurringExpense
 {
   /// <summary>
   /// The hashed id of the recurring expense

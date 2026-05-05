@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Client statement PDF
 /// Operation: POST /api/v1/client_statement
 /// </summary>
-public class ClientStatementRequest : BaseRequest
+public partial class ClientStatementRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

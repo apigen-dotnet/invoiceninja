@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Performs a custom action on an Quote
 /// Operation: GET /api/v1/quotes/{id}/{action}
 /// </summary>
-public class ActionQuoteRequest : BaseRequest
+public partial class ActionQuoteRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// Location from OpenAPI schema.
 /// Schema path: #/components/schemas/Location
 /// </summary>
-public class Location
+public partial class Location
 {
   /// <summary>
   /// The location hashed id

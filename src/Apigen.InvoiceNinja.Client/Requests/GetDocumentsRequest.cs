@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Gets a list of documents
 /// Operation: GET /api/v1/documents
 /// </summary>
-public class GetDocumentsRequest : BaseRequest
+public partial class GetDocumentsRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

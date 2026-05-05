@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Update location
 /// Operation: PUT /api/v1/locations/{id}
 /// </summary>
-public class UpdateLocationRequest : BaseRequest
+public partial class UpdateLocationRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

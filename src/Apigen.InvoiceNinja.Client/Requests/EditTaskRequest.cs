@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Edit task
 /// Operation: GET /api/v1/tasks/{id}/edit
 /// </summary>
-public class EditTaskRequest : BaseRequest
+public partial class EditTaskRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

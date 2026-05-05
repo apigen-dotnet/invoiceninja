@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Adds a expense category
 /// Operation: POST /api/v1/expense_categories
 /// </summary>
-public class StoreExpenseCategoryRequest : BaseRequest
+public partial class StoreExpenseCategoryRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

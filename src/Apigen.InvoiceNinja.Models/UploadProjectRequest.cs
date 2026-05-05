@@ -22,10 +22,10 @@ using System.Text.Json.Serialization;
 namespace Apigen.InvoiceNinja.Models;
 
 /// <summary>
-/// UploadProjectRequest from OpenAPI schema.
-/// Schema path: #/components/schemas/UploadProjectRequest
+/// UploadProjectRequest (generated from inline request body).
+/// Source: POST /api/v1/projects/{id}/upload (requestBody)
 /// </summary>
-public class UploadProjectRequest
+public partial class UploadProjectRequest
 {
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
   [System.Text.Json.Serialization.JsonPropertyName("_method")]

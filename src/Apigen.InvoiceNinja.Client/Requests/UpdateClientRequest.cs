@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Update client
 /// Operation: PUT /api/v1/clients/{id}
 /// </summary>
-public class UpdateClientRequest : BaseRequest
+public partial class UpdateClientRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

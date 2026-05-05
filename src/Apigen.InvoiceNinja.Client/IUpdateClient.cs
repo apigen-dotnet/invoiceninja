@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for update operations
 /// </summary>
-public interface IUpdateClient
+public partial interface IUpdateClient
 {
   /// <summary>
   /// Performs a system update

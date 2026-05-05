@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for recurring_expenses operations
 /// </summary>
-public class RecurringExpensesClient
+public partial class RecurringExpensesClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

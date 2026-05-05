@@ -22,10 +22,10 @@ using System.Text.Json.Serialization;
 namespace Apigen.InvoiceNinja.Models;
 
 /// <summary>
-/// ClientStatementRequest from OpenAPI schema.
-/// Schema path: #/components/schemas/ClientStatementRequest
+/// ClientStatementRequest (generated from inline request body).
+/// Source: POST /api/v1/client_statement (requestBody)
 /// </summary>
-public class ClientStatementRequest
+public partial class ClientStatementRequest
 {
   /// <summary>
   /// The start date of the statement period - format Y-m-d

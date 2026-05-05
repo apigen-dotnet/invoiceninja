@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Deletes a TaskStatus Term
 /// Operation: DELETE /api/v1/task_statuses/{id}
 /// </summary>
-public class DeleteTaskStatusRequest : BaseRequest
+public partial class DeleteTaskStatusRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Gets a new blank GroupSetting object
 /// Operation: GET /api/v1/group_settings/create
 /// </summary>
-public class GetGroupSettingsCreateRequest : BaseRequest
+public partial class GetGroupSettingsCreateRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

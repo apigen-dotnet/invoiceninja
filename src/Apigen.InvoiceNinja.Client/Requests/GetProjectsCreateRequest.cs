@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Blank project
 /// Operation: GET /api/v1/projects/create
 /// </summary>
-public class GetProjectsCreateRequest : BaseRequest
+public partial class GetProjectsCreateRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

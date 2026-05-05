@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for refresh operations
 /// </summary>
-public class RefreshClient
+public partial class RefreshClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

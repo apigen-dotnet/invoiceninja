@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// Template from OpenAPI schema.
 /// Schema path: #/components/schemas/Template
 /// </summary>
-public class Template
+public partial class Template
 {
   /// <summary>
   /// The template HTML

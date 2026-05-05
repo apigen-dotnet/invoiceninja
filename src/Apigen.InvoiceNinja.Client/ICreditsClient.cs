@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for credits operations
 /// </summary>
-public interface ICreditsClient
+public partial interface ICreditsClient
 {
   /// <summary>
   /// List credits

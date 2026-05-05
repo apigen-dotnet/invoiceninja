@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Adds a User
 /// Operation: POST /api/v1/users
 /// </summary>
-public class StoreUserRequest : BaseRequest
+public partial class StoreUserRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

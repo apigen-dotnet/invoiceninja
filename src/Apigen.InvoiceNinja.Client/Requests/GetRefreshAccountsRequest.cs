@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Gets the list of accounts from the remote server
 /// Operation: POST /api/v1/bank_integrations/refresh_accounts
 /// </summary>
-public class GetRefreshAccountsRequest : BaseRequest
+public partial class GetRefreshAccountsRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

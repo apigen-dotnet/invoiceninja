@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// ProjectRequest from OpenAPI schema.
 /// Schema path: #/components/schemas/ProjectRequest
 /// </summary>
-public class ProjectRequest
+public partial class ProjectRequest
 {
   /// <summary>
   /// Project name

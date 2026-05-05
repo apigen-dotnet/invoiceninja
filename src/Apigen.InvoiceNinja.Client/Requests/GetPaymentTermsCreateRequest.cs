@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Gets a new blank PaymentTerm object
 /// Operation: GET /api/v1/payment_terms/create
 /// </summary>
-public class GetPaymentTermsCreateRequest : BaseRequest
+public partial class GetPaymentTermsCreateRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

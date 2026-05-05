@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Reconfirm an existing user to a company
 /// Operation: POST /api/v1/users/{user}/reconfirm
 /// </summary>
-public class InviteUserReconfirmRequest : BaseRequest
+public partial class InviteUserReconfirmRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

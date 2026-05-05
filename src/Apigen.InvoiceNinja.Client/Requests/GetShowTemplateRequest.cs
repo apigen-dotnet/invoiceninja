@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Returns a entity template with the template variables replaced with the Entities
 /// Operation: POST /api/v1/templates
 /// </summary>
-public class GetShowTemplateRequest : BaseRequest
+public partial class GetShowTemplateRequest : BaseRequest
 {
   /// <summary>
   /// The number of records to return for each request, default is 20

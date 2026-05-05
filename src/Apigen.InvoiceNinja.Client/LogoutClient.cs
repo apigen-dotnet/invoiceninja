@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for logout operations
 /// </summary>
-public class LogoutClient
+public partial class LogoutClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

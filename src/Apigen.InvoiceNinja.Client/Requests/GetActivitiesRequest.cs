@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Returns a list of activities
 /// Operation: GET /api/v1/activities
 /// </summary>
-public class GetActivitiesRequest : BaseRequest
+public partial class GetActivitiesRequest : BaseRequest
 {
   /// <summary>
   /// Include child relations of the Activity object, format is comma separated. **Note** it is possible to chain multiple includes together, ie. include=account,token

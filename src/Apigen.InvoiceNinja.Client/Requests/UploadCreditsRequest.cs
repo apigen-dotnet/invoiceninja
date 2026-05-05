@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Upload a credit document
 /// Operation: POST /api/v1/credits/{id}/upload
 /// </summary>
-public class UploadCreditsRequest : BaseRequest
+public partial class UploadCreditsRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for Purchase Orders operations
 /// </summary>
-public interface IPurchaseOrdersClient
+public partial interface IPurchaseOrdersClient
 {
   /// <summary>
   /// List purchase orders

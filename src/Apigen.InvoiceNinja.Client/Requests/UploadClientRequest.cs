@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Add client document
 /// Operation: POST /api/v1/clients/{id}/upload
 /// </summary>
-public class UploadClientRequest : BaseRequest
+public partial class UploadClientRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

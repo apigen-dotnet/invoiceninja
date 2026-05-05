@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for postmark operations
 /// </summary>
-public interface IPostmarkClient
+public partial interface IPostmarkClient
 {
   /// <summary>
   /// Processing webhooks from Apple for in app purchases

@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// ClientContact from OpenAPI schema.
 /// Schema path: #/components/schemas/ClientContact
 /// </summary>
-public class ClientContact
+public partial class ClientContact
 {
   /// <summary>
   /// The hashed if of the contact

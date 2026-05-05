@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// ValidationError from OpenAPI schema.
 /// Schema path: #/components/schemas/ValidationError
 /// </summary>
-public class ValidationError
+public partial class ValidationError
 {
   /// <summary>
   /// The error message

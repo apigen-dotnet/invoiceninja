@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for refresh operations
 /// </summary>
-public interface IRefreshClient
+public partial interface IRefreshClient
 {
   /// <summary>
   /// Refresh data by timestamp

@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Uploads a vendor document
 /// Operation: POST /api/v1/vendors/{id}/upload
 /// </summary>
-public class UploadVendorRequest : BaseRequest
+public partial class UploadVendorRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

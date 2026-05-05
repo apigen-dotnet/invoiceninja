@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// LocationRequest from OpenAPI schema.
 /// Schema path: #/components/schemas/LocationRequest
 /// </summary>
-public class LocationRequest
+public partial class LocationRequest
 {
   /// <summary>
   /// The location name

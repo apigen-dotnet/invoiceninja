@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Processing webhooks from PostMark
 /// Operation: POST /api/v1/postmark_webhook
 /// </summary>
-public class PostmarkWebhookRequest : BaseRequest
+public partial class PostmarkWebhookRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

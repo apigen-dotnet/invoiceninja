@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Deletes a recurring expense
 /// Operation: DELETE /api/v1/recurring_expenses/{id}
 /// </summary>
-public class DeleteRecurringExpenseRequest : BaseRequest
+public partial class DeleteRecurringExpenseRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

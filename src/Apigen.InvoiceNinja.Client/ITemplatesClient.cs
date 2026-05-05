@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for templates operations
 /// </summary>
-public interface ITemplatesClient
+public partial interface ITemplatesClient
 {
   /// <summary>
   /// Returns a entity template with the template variables replaced with the Entities

@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// ClientContactRequest from OpenAPI schema.
 /// Schema path: #/components/schemas/ClientContactRequest
 /// </summary>
-public class ClientContactRequest
+public partial class ClientContactRequest
 {
   /// <summary>
   /// The first name of the contact

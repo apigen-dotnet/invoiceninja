@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for postmark operations
 /// </summary>
-public class PostmarkClient
+public partial class PostmarkClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

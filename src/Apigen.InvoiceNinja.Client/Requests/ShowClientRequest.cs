@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Show client
 /// Operation: GET /api/v1/clients/{id}
 /// </summary>
-public class ShowClientRequest : BaseRequest
+public partial class ShowClientRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

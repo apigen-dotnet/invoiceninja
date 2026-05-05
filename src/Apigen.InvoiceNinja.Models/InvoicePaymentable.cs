@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// InvoicePaymentable from OpenAPI schema.
 /// Schema path: #/components/schemas/InvoicePaymentable
 /// </summary>
-public class InvoicePaymentable
+public partial class InvoicePaymentable
 {
   /// <summary>
   /// ______

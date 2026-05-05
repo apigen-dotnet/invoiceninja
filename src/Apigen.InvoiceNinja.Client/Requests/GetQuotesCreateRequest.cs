@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Blank quote
 /// Operation: GET /api/v1/quotes/create
 /// </summary>
-public class GetQuotesCreateRequest : BaseRequest
+public partial class GetQuotesCreateRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

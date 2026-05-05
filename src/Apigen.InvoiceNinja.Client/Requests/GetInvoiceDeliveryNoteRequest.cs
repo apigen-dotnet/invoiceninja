@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Download delivery note
 /// Operation: GET /api/v1/invoices/{id}/delivery_note
 /// </summary>
-public class GetInvoiceDeliveryNoteRequest : BaseRequest
+public partial class GetInvoiceDeliveryNoteRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

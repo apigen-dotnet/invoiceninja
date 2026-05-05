@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// RecurringQuote from OpenAPI schema.
 /// Schema path: #/components/schemas/RecurringQuote
 /// </summary>
-public class RecurringQuote
+public partial class RecurringQuote
 {
   /// <summary>
   /// The hashed id of the recurring quote

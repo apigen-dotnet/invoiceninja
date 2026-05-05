@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// VendorContact from OpenAPI schema.
 /// Schema path: #/components/schemas/VendorContact
 /// </summary>
-public class VendorContact
+public partial class VendorContact
 {
   /// <summary>
   /// The hashed id of the vendor contact

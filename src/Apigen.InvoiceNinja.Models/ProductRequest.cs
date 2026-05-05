@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// ProductRequest from OpenAPI schema.
 /// Schema path: #/components/schemas/ProductRequest
 /// </summary>
-public class ProductRequest
+public partial class ProductRequest
 {
   /// <summary>
   /// The hashed ID of the user assigned to this product.

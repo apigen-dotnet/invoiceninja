@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// Expense from OpenAPI schema.
 /// Schema path: #/components/schemas/Expense
 /// </summary>
-public class Expense
+public partial class Expense
 {
   /// <summary>
   /// The expense hashed id

@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for quotes operations
 /// </summary>
-public class QuotesClient
+public partial class QuotesClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

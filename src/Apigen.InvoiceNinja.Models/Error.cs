@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// Error from OpenAPI schema.
 /// Schema path: #/components/schemas/Error
 /// </summary>
-public class Error
+public partial class Error
 {
   /// <summary>
   /// Something terrible went wrong

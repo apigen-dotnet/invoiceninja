@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// TaxRate from OpenAPI schema.
 /// Schema path: #/components/schemas/TaxRate
 /// </summary>
-public class TaxRate
+public partial class TaxRate
 {
   /// <summary>
   /// Thie hashed id of the tax

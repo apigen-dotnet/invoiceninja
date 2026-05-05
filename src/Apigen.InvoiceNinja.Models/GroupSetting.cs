@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// GroupSetting from OpenAPI schema.
 /// Schema path: #/components/schemas/GroupSetting
 /// </summary>
-public class GroupSetting
+public partial class GroupSetting
 {
   /// <summary>
   /// The group setting hashed id

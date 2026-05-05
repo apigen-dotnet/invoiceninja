@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for system_logs operations
 /// </summary>
-public interface ISystemLogsClient
+public partial interface ISystemLogsClient
 {
   /// <summary>
   /// Gets a list of system logs

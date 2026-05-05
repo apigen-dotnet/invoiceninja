@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for statics operations
 /// </summary>
-public interface IStaticsClient
+public partial interface IStaticsClient
 {
   /// <summary>
   /// Gets a list of statics

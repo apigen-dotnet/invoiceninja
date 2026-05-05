@@ -24,7 +24,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// <summary>
 /// Response model for TaskItemStatus
 /// </summary>
-public class TaskItemStatus
+public partial class TaskItemStatus
 {
   /// <summary>
   /// The task status hashed id

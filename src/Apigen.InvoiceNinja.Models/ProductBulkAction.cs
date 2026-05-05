@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// ProductBulkAction from OpenAPI schema.
 /// Schema path: #/components/schemas/ProductBulkAction
 /// </summary>
-public class ProductBulkAction
+public partial class ProductBulkAction
 {
   /// <summary>
   /// The action to perform ie. archive / restore / delete / set_tax_id

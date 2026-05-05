@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Update tax data
 /// Operation: POST /api/v1/clients/{client}/updateTaxData
 /// </summary>
-public class UpdateClientTaxDataRequest : BaseRequest
+public partial class UpdateClientTaxDataRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for expense operations
 /// </summary>
-public interface IExpenseClient
+public partial interface IExpenseClient
 {
   /// <summary>
   /// Uploads a document to a expense

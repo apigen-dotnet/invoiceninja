@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for List of client payment tokens
 /// Operation: GET /api/v1/client_gateway_tokens
 /// </summary>
-public class GetClientGatewayTokensRequest : BaseRequest
+public partial class GetClientGatewayTokensRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

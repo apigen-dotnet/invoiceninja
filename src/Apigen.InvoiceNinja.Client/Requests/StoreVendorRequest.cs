@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Create vendor
 /// Operation: POST /api/v1/vendors
 /// </summary>
-public class StoreVendorRequest : BaseRequest
+public partial class StoreVendorRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

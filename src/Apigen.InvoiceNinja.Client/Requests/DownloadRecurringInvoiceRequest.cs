@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Download recurring invoice PDF
 /// Operation: GET /api/v1/recurring_invoice/{invitation_key}/download
 /// </summary>
-public class DownloadRecurringInvoiceRequest : BaseRequest
+public partial class DownloadRecurringInvoiceRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

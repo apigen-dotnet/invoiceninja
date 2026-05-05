@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for company_gateways operations
 /// </summary>
-public interface ICompanyGatewaysClient
+public partial interface ICompanyGatewaysClient
 {
   /// <summary>
   /// Gets a list of company_gateways

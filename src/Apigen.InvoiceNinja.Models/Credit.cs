@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// Credit from OpenAPI schema.
 /// Schema path: #/components/schemas/Credit
 /// </summary>
-public class Credit
+public partial class Credit
 {
   /// <summary>
   /// The unique hashed ID of the credit

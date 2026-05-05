@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// PurchaseOrder from OpenAPI schema.
 /// Schema path: #/components/schemas/PurchaseOrder
 /// </summary>
-public class PurchaseOrder
+public partial class PurchaseOrder
 {
   /// <summary>
   /// The unique hashed identifier for the purchase order

@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// CompanyToken from OpenAPI schema.
 /// Schema path: #/components/schemas/CompanyToken
 /// </summary>
-public class CompanyToken
+public partial class CompanyToken
 {
   /// <summary>
   /// The token name

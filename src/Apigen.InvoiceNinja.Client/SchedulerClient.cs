@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for scheduler operations
 /// </summary>
-public class SchedulerClient
+public partial class SchedulerClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

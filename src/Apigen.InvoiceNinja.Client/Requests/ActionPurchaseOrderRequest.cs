@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Custom purchase order actions
 /// Operation: GET /api/v1/purchase_orders/{id}/{action}
 /// </summary>
-public class ActionPurchaseOrderRequest : BaseRequest
+public partial class ActionPurchaseOrderRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Adds a recurring expense
 /// Operation: POST /api/v1/recurring_expenses
 /// </summary>
-public class StoreRecurringExpenseRequest : BaseRequest
+public partial class StoreRecurringExpenseRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

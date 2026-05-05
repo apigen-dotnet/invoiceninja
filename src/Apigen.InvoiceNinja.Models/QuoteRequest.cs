@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// QuoteRequest from OpenAPI schema.
 /// Schema path: #/components/schemas/QuoteRequest
 /// </summary>
-public class QuoteRequest
+public partial class QuoteRequest
 {
   /// <summary>
   /// The hashed ID of the client

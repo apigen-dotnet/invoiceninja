@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// FeesAndLimits from OpenAPI schema.
 /// Schema path: #/components/schemas/FeesAndLimits
 /// </summary>
-public class FeesAndLimits
+public partial class FeesAndLimits
 {
   /// <summary>
   /// The minimum amount accepted for this gateway

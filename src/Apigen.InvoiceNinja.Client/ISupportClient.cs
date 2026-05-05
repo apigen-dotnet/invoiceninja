@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for support operations
 /// </summary>
-public interface ISupportClient
+public partial interface ISupportClient
 {
   /// <summary>
   /// Sends a support message to Invoice Ninja team

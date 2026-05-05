@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Gets a new blank company object
 /// Operation: GET /api/v1/companies/create
 /// </summary>
-public class GetCompaniesCreateRequest : BaseRequest
+public partial class GetCompaniesCreateRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

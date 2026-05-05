@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// Vendor from OpenAPI schema.
 /// Schema path: #/components/schemas/Vendor
 /// </summary>
-public class Vendor
+public partial class Vendor
 {
   /// <summary>
   /// The hashed id of the vendor. This is a unique identifier for the vendor.

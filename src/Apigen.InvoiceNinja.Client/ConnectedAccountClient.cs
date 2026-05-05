@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for connected_account operations
 /// </summary>
-public class ConnectedAccountClient
+public partial class ConnectedAccountClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

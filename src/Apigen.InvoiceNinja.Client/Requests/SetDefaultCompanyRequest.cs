@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Sets the company as the default company.
 /// Operation: POST /api/v1/companies/{company}/default
 /// </summary>
-public class SetDefaultCompanyRequest : BaseRequest
+public partial class SetDefaultCompanyRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

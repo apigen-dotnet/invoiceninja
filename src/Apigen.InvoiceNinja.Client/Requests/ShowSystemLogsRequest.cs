@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Shows a system_logs
 /// Operation: GET /api/v1/system_logs/{id}
 /// </summary>
-public class ShowSystemLogsRequest : BaseRequest
+public partial class ShowSystemLogsRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

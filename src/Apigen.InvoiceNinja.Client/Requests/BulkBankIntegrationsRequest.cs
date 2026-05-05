@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Performs bulk actions on an array of bank_integrations
 /// Operation: POST /api/v1/bank_integrations/bulk
 /// </summary>
-public class BulkBankIntegrationsRequest : BaseRequest
+public partial class BulkBankIntegrationsRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

@@ -24,7 +24,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// <summary>
 /// Response model for Payment
 /// </summary>
-public class Payment
+public partial class Payment
 {
   /// <summary>
   /// The payment hashed id

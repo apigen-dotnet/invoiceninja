@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// Document from OpenAPI schema.
 /// Schema path: #/components/schemas/Document
 /// </summary>
-public class Document
+public partial class Document
 {
   /// <summary>
   /// The document hashed id

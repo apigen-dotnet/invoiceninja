@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Logs the user out of their current session
 /// Operation: POST /api/v1/logout
 /// </summary>
-public class GetLogoutRequest : BaseRequest
+public partial class GetLogoutRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

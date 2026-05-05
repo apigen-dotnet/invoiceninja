@@ -22,10 +22,10 @@ using System.Text.Json.Serialization;
 namespace Apigen.InvoiceNinja.Models;
 
 /// <summary>
-/// UploadCreditsRequest from OpenAPI schema.
-/// Schema path: #/components/schemas/UploadCreditsRequest
+/// UploadCreditsRequest (generated from inline request body).
+/// Source: POST /api/v1/credits/{id}/upload (requestBody)
 /// </summary>
-public class UploadCreditsRequest
+public partial class UploadCreditsRequest
 {
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
   [System.Text.Json.Serialization.JsonPropertyName("_method")]

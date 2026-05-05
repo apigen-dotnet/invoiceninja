@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Adds a RecurringQuote
 /// Operation: POST /api/v1/recurring_quotes
 /// </summary>
-public class StoreRecurringQuoteRequest : BaseRequest
+public partial class StoreRecurringQuoteRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

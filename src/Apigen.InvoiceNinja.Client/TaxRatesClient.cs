@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for tax_rates operations
 /// </summary>
-public class TaxRatesClient
+public partial class TaxRatesClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

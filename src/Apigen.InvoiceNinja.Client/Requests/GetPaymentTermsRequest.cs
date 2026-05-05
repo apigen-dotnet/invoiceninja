@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Gets a list of payment terms
 /// Operation: GET /api/v1/payment_terms
 /// </summary>
-public class GetPaymentTermsRequest : BaseRequest
+public partial class GetPaymentTermsRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

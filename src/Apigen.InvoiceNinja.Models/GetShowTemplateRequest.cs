@@ -22,10 +22,10 @@ using System.Text.Json.Serialization;
 namespace Apigen.InvoiceNinja.Models;
 
 /// <summary>
-/// GetShowTemplateRequest from OpenAPI schema.
-/// Schema path: #/components/schemas/GetShowTemplateRequest
+/// GetShowTemplateRequest (generated from inline request body).
+/// Source: POST /api/v1/templates (requestBody)
 /// </summary>
-public class GetShowTemplateRequest
+public partial class GetShowTemplateRequest
 {
   /// <summary>
   /// The email template subject

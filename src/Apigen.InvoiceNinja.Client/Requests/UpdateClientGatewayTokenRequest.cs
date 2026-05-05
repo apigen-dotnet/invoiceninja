@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Updates a client payment token
 /// Operation: PUT /api/v1/client_gateway_tokens/{id}
 /// </summary>
-public class UpdateClientGatewayTokenRequest : BaseRequest
+public partial class UpdateClientGatewayTokenRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Performs bulk actions on an array of Webhooks
 /// Operation: POST /api/v1/webhooks/bulk
 /// </summary>
-public class BulkWebhooksRequest : BaseRequest
+public partial class BulkWebhooksRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

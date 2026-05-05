@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Uploads a document to a group setting
 /// Operation: POST /api/v1/group_settings/{id}/upload
 /// </summary>
-public class UploadGroupSettingRequest : BaseRequest
+public partial class UploadGroupSettingRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

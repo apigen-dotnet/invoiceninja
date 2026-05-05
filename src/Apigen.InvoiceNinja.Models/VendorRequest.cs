@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// VendorRequest from OpenAPI schema.
 /// Schema path: #/components/schemas/VendorRequest
 /// </summary>
-public class VendorRequest
+public partial class VendorRequest
 {
   /// <summary>
   /// Vendor name

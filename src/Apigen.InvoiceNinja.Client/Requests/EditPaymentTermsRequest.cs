@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Shows an Payment Term for editting
 /// Operation: GET /api/v1/payment_terms/{id}/edit
 /// </summary>
-public class EditPaymentTermsRequest : BaseRequest
+public partial class EditPaymentTermsRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

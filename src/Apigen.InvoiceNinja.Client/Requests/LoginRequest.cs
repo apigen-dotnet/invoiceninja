@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Login
 /// Operation: POST /api/v1/login
 /// </summary>
-public class LoginRequest : BaseRequest
+public partial class LoginRequest : BaseRequest
 {
   /// <summary>
   /// Include child relations of the CompanyUser object, format is comma separated.    

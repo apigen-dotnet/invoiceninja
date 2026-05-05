@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// BankTransaction from OpenAPI schema.
 /// Schema path: #/components/schemas/BankTransaction
 /// </summary>
-public class BankTransaction
+public partial class BankTransaction
 {
   /// <summary>
   /// The bank integration hashed id

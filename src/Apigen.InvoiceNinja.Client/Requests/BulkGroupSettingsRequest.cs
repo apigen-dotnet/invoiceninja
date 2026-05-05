@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Performs bulk actions on an array of group_settings
 /// Operation: POST /api/v1/group_settings/bulk
 /// </summary>
-public class BulkGroupSettingsRequest : BaseRequest
+public partial class BulkGroupSettingsRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

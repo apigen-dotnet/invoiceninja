@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// CompanyUser from OpenAPI schema.
 /// Schema path: #/components/schemas/CompanyUser
 /// </summary>
-public class CompanyUser
+public partial class CompanyUser
 {
   /// <summary>
   /// The user permissions for this company in a comma separated list

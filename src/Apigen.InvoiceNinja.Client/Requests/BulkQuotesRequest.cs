@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Bulk quote actions
 /// Operation: POST /api/v1/quotes/bulk
 /// </summary>
-public class BulkQuotesRequest : BaseRequest
+public partial class BulkQuotesRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

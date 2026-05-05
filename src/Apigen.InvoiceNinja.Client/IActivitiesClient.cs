@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for activities operations
 /// </summary>
-public interface IActivitiesClient
+public partial interface IActivitiesClient
 {
   /// <summary>
   /// Returns a list of activities

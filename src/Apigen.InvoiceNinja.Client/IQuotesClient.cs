@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for quotes operations
 /// </summary>
-public interface IQuotesClient
+public partial interface IQuotesClient
 {
   /// <summary>
   /// List quotes

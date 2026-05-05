@@ -22,10 +22,10 @@ using System.Text.Json.Serialization;
 namespace Apigen.InvoiceNinja.Models;
 
 /// <summary>
-/// SendEmailTemplateRequest from OpenAPI schema.
-/// Schema path: #/components/schemas/SendEmailTemplateRequest
+/// SendEmailTemplateRequest (generated from inline request body).
+/// Source: POST /api/v1/emails (requestBody)
 /// </summary>
-public class SendEmailTemplateRequest
+public partial class SendEmailTemplateRequest
 {
   /// <summary>
   /// The email subject

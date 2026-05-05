@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for settings operations
 /// </summary>
-public interface ISettingsClient
+public partial interface ISettingsClient
 {
   /// <summary>
   /// List passkeys

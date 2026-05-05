@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Processing webhooks from Apple for in app purchases
 /// Operation: POST /api/v1/apple/confirm_purchase
 /// </summary>
-public class ConfirmApplePurchaseRequest : BaseRequest
+public partial class ConfirmApplePurchaseRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

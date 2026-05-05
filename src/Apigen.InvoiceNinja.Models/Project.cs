@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// Project from OpenAPI schema.
 /// Schema path: #/components/schemas/Project
 /// </summary>
-public class Project
+public partial class Project
 {
   /// <summary>
   /// The project hashed id

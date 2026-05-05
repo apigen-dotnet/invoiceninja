@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for List vendors
 /// Operation: GET /api/v1/vendors
 /// </summary>
-public class GetVendorsRequest : BaseRequest
+public partial class GetVendorsRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

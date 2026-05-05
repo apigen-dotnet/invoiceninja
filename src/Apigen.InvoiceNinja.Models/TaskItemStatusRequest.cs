@@ -24,7 +24,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// <summary>
 /// Request model for TaskItemStatus
 /// </summary>
-public class TaskItemStatusRequest
+public partial class TaskItemStatusRequest
 {
   /// <summary>
   /// The task status name

@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Bulk location actions
 /// Operation: POST /api/v1/locations/bulk
 /// </summary>
-public class BulkLocationsRequest : BaseRequest
+public partial class BulkLocationsRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

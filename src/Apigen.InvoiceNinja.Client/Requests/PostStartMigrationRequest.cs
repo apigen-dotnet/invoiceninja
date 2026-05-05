@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Starts the migration from previous version of Invoice Ninja
 /// Operation: POST /api/v1/migration/start
 /// </summary>
-public class PostStartMigrationRequest : BaseRequest
+public partial class PostStartMigrationRequest : BaseRequest
 {
   /// <summary>
   /// The migraton file

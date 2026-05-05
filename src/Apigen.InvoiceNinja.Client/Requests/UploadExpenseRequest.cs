@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Uploads a document to a expense
 /// Operation: POST /api/v1/expenses/{id}/upload
 /// </summary>
-public class UploadExpenseRequest : BaseRequest
+public partial class UploadExpenseRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

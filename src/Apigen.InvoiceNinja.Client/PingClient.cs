@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for ping operations
 /// </summary>
-public class PingClient
+public partial class PingClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

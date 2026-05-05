@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Quote reports
 /// Operation: POST /api/v1/reports/quotes
 /// </summary>
-public class GetQuoteReportRequest : BaseRequest
+public partial class GetQuoteReportRequest : BaseRequest
 {
   /// <summary>
   /// The number of records to return for each request, default is 20

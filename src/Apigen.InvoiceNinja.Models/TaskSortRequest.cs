@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// TaskSortRequest from OpenAPI schema.
 /// Schema path: #/components/schemas/TaskSortRequest
 /// </summary>
-public class TaskSortRequest
+public partial class TaskSortRequest
 {
   /// <summary>
   /// Array of task IDs to be sorted

@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// PurchaseOrderRequest from OpenAPI schema.
 /// Schema path: #/components/schemas/PurchaseOrderRequest
 /// </summary>
-public class PurchaseOrderRequest
+public partial class PurchaseOrderRequest
 {
   /// <summary>
   /// The hashed ID of the vendor

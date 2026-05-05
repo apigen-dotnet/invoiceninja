@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Connect an oauth user to an existing user
 /// Operation: POST /api/v1/connected_account
 /// </summary>
-public class PostConnectedAccountRequest : BaseRequest
+public partial class PostConnectedAccountRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

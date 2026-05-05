@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// Account from OpenAPI schema.
 /// Schema path: #/components/schemas/Account
 /// </summary>
-public class Account
+public partial class Account
 {
   /// <summary>
   /// The account hashed id

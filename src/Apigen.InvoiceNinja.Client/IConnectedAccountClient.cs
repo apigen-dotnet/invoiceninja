@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for connected_account operations
 /// </summary>
-public interface IConnectedAccountClient
+public partial interface IConnectedAccountClient
 {
   /// <summary>
   /// Connect an oauth user to an existing user

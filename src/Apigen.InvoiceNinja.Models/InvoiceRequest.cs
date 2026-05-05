@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// InvoiceRequest from OpenAPI schema.
 /// Schema path: #/components/schemas/InvoiceRequest
 /// </summary>
-public class InvoiceRequest
+public partial class InvoiceRequest
 {
   /// <summary>
   /// The user hashed id

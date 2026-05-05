@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Performs bulk actions on an array of TaxRates
 /// Operation: POST /api/v1/tax_rates/bulk
 /// </summary>
-public class BulkTaxRatesRequest : BaseRequest
+public partial class BulkTaxRatesRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

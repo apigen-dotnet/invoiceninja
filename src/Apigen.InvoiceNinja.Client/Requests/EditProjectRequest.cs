@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Edit project
 /// Operation: GET /api/v1/projects/{id}/edit
 /// </summary>
-public class EditProjectRequest : BaseRequest
+public partial class EditProjectRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

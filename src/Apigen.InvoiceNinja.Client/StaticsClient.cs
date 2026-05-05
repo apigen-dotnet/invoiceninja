@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for statics operations
 /// </summary>
-public class StaticsClient
+public partial class StaticsClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

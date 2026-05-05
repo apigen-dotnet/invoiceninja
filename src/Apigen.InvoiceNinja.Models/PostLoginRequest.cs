@@ -22,10 +22,10 @@ using System.Text.Json.Serialization;
 namespace Apigen.InvoiceNinja.Models;
 
 /// <summary>
-/// PostLoginRequest from OpenAPI schema.
-/// Schema path: #/components/schemas/PostLoginRequest
+/// PostLoginRequest (generated from inline request body).
+/// Source: POST /api/v1/login (requestBody)
 /// </summary>
-public class PostLoginRequest
+public partial class PostLoginRequest
 {
   /// <summary>
   /// The users email address.

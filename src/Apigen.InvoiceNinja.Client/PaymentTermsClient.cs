@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for payment_terms operations
 /// </summary>
-public class PaymentTermsClient
+public partial class PaymentTermsClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

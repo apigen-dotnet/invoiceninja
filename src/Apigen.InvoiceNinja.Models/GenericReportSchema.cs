@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// GenericReportSchema from OpenAPI schema.
 /// Schema path: #/components/schemas/GenericReportSchema
 /// </summary>
-public class GenericReportSchema
+public partial class GenericReportSchema
 {
   /// <summary>
   /// The string representation of the date range of data to be returned

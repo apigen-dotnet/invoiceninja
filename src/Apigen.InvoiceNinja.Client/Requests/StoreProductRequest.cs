@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Create Product
 /// Operation: POST /api/v1/products
 /// </summary>
-public class StoreProductRequest : BaseRequest
+public partial class StoreProductRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

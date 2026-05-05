@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Delete invoice
 /// Operation: DELETE /api/v1/invoices/{id}
 /// </summary>
-public class DeleteInvoiceRequest : BaseRequest
+public partial class DeleteInvoiceRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

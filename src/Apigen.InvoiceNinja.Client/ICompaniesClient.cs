@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for companies operations
 /// </summary>
-public interface ICompaniesClient
+public partial interface ICompaniesClient
 {
   /// <summary>
   /// Gets a list of companies

@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Create client
 /// Operation: POST /api/v1/clients
 /// </summary>
-public class StoreClientRequest : BaseRequest
+public partial class StoreClientRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for client_gateway_tokens operations
 /// </summary>
-public interface IClientGatewayTokensClient
+public partial interface IClientGatewayTokensClient
 {
   /// <summary>
   /// List of client payment tokens

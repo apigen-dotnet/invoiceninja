@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Refund payment
 /// Operation: POST /api/v1/payments/refund
 /// </summary>
-public class StoreRefundRequest : BaseRequest
+public partial class StoreRefundRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

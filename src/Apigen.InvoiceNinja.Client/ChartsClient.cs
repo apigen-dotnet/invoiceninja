@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for charts operations
 /// </summary>
-public class ChartsClient
+public partial class ChartsClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

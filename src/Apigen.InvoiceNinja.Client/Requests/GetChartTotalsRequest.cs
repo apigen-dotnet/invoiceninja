@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Get chart data
 /// Operation: POST /api/v1/charts/totals
 /// </summary>
-public class GetChartTotalsRequest : BaseRequest
+public partial class GetChartTotalsRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

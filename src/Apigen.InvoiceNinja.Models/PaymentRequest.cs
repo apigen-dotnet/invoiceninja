@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// PaymentRequest from OpenAPI schema.
 /// Schema path: #/components/schemas/PaymentRequest
 /// </summary>
-public class PaymentRequest
+public partial class PaymentRequest
 {
   /// <summary>
   /// The client hashed id

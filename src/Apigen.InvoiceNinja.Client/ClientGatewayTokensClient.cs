@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for client_gateway_tokens operations
 /// </summary>
-public class ClientGatewayTokensClient
+public partial class ClientGatewayTokensClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

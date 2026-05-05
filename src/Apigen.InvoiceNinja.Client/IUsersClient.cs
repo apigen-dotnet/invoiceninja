@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for users operations
 /// </summary>
-public interface IUsersClient
+public partial interface IUsersClient
 {
   /// <summary>
   /// Gets a list of users

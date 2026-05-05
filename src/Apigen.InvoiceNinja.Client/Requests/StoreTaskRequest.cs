@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Create task
 /// Operation: POST /api/v1/tasks
 /// </summary>
-public class StoreTaskRequest : BaseRequest
+public partial class StoreTaskRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

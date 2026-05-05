@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for tokens operations
 /// </summary>
-public interface ITokensClient
+public partial interface ITokensClient
 {
   /// <summary>
   /// Gets a list of company tokens

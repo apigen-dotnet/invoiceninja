@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Performs a system update
 /// Operation: POST /api/v1/self-update
 /// </summary>
-public class SelfUpdateRequest : BaseRequest
+public partial class SelfUpdateRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

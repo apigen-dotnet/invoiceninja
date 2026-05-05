@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// Meta from OpenAPI schema.
 /// Schema path: #/components/schemas/Meta
 /// </summary>
-public class Meta
+public partial class Meta
 {
   [System.Text.Json.Serialization.JsonPropertyName("pagination")]
   public Pagination? Pagination { get; set; }

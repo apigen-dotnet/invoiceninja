@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Uploads a document to a recurring_expense
 /// Operation: POST /api/v1/recurring_expenses/{id}/upload
 /// </summary>
-public class UploadRecurringExpenseRequest : BaseRequest
+public partial class UploadRecurringExpenseRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

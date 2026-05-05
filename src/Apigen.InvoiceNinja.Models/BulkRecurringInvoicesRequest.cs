@@ -22,10 +22,10 @@ using System.Text.Json.Serialization;
 namespace Apigen.InvoiceNinja.Models;
 
 /// <summary>
-/// BulkRecurringInvoicesRequest from OpenAPI schema.
-/// Schema path: #/components/schemas/BulkRecurringInvoicesRequest
+/// BulkRecurringInvoicesRequest (generated from inline request body).
+/// Source: POST /api/v1/recurring_invoices/bulk (requestBody)
 /// </summary>
-public class BulkRecurringInvoicesRequest
+public partial class BulkRecurringInvoicesRequest
 {
   /// <summary>
   /// The action to be performed, options include:

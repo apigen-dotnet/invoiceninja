@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for task_statuss operations
 /// </summary>
-public interface ITaskStatussClient
+public partial interface ITaskStatussClient
 {
   /// <summary>
   /// Deletes a TaskStatus Term

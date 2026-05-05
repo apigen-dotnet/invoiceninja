@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// ClientGatewayToken from OpenAPI schema.
 /// Schema path: #/components/schemas/ClientGatewayToken
 /// </summary>
-public class ClientGatewayToken
+public partial class ClientGatewayToken
 {
   /// <summary>
   /// The hashed id of the client gateway token

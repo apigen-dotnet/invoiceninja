@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// AuthenticationError from OpenAPI schema.
 /// Schema path: #/components/schemas/AuthenticationError
 /// </summary>
-public class AuthenticationError
+public partial class AuthenticationError
 {
   /// <summary>
   /// These credentials do not match our records / Invalid Token

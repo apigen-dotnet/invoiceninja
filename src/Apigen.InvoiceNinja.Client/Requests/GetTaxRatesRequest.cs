@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Gets a list of tax_rates
 /// Operation: GET /api/v1/tax_rates
 /// </summary>
-public class GetTaxRatesRequest : BaseRequest
+public partial class GetTaxRatesRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

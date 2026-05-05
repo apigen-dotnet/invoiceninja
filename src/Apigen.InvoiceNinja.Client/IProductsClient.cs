@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for products operations
 /// </summary>
-public interface IProductsClient
+public partial interface IProductsClient
 {
   /// <summary>
   /// List products

@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Performs bulk actions on an array of recurring_quotes
 /// Operation: POST /api/v1/recurring_quotes/bulk
 /// </summary>
-public class BulkRecurringQuotesRequest : BaseRequest
+public partial class BulkRecurringQuotesRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// Pagination from OpenAPI schema.
 /// Schema path: #/components/schemas/Pagination
 /// </summary>
-public class Pagination
+public partial class Pagination
 {
   /// <summary>
   /// The total number of items

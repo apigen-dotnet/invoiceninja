@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Delete client
 /// Operation: DELETE /api/v1/clients/{id}
 /// </summary>
-public class DeleteClientRequest : BaseRequest
+public partial class DeleteClientRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

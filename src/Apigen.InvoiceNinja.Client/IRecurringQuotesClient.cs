@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for recurring_quotes operations
 /// </summary>
-public interface IRecurringQuotesClient
+public partial interface IRecurringQuotesClient
 {
   /// <summary>
   /// Gets a list of recurring_quotes

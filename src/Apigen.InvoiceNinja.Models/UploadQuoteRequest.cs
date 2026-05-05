@@ -22,10 +22,10 @@ using System.Text.Json.Serialization;
 namespace Apigen.InvoiceNinja.Models;
 
 /// <summary>
-/// UploadQuoteRequest from OpenAPI schema.
-/// Schema path: #/components/schemas/UploadQuoteRequest
+/// UploadQuoteRequest (generated from inline request body).
+/// Source: POST /api/v1/quotes/{id}/upload (requestBody)
 /// </summary>
-public class UploadQuoteRequest
+public partial class UploadQuoteRequest
 {
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
   [System.Text.Json.Serialization.JsonPropertyName("_method")]

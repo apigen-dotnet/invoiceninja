@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Performs bulk actions on an array of company_gateways
 /// Operation: POST /api/v1/company_gateways/bulk
 /// </summary>
-public class BulkCompanyGatewaysRequest : BaseRequest
+public partial class BulkCompanyGatewaysRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

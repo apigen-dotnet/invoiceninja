@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Attempts to claim a white label license
 /// Operation: GET /api/v1/claim_license
 /// </summary>
-public class GetClaimLicenseRequest : BaseRequest
+public partial class GetClaimLicenseRequest : BaseRequest
 {
   /// <summary>
   /// The license hash

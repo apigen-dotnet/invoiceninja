@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Gets a new blank Webhook object
 /// Operation: GET /api/v1/webhooks/create
 /// </summary>
-public class GetWebhooksCreateRequest : BaseRequest
+public partial class GetWebhooksCreateRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

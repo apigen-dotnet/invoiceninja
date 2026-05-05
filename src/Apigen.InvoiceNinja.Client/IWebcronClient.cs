@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for webcron operations
 /// </summary>
-public interface IWebcronClient
+public partial interface IWebcronClient
 {
   /// <summary>
   /// Executes the task scheduler via a webcron service

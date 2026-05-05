@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// CreditPaymentable from OpenAPI schema.
 /// Schema path: #/components/schemas/CreditPaymentable
 /// </summary>
-public class CreditPaymentable
+public partial class CreditPaymentable
 {
   /// <summary>
   /// The credit hashed id

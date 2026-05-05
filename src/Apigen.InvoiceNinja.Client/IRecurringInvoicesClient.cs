@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for Recurring Invoices operations
 /// </summary>
-public interface IRecurringInvoicesClient
+public partial interface IRecurringInvoicesClient
 {
   /// <summary>
   /// List recurring invoices

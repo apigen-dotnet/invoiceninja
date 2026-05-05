@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// FillableInvoice from OpenAPI schema.
 /// Schema path: #/components/schemas/FillableInvoice
 /// </summary>
-public class FillableInvoice
+public partial class FillableInvoice
 {
   /// <summary>
   /// The assigned user&apos;s hashed ID

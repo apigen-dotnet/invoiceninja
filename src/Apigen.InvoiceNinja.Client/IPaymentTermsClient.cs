@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for payment_terms operations
 /// </summary>
-public interface IPaymentTermsClient
+public partial interface IPaymentTermsClient
 {
   /// <summary>
   /// Gets a list of payment terms

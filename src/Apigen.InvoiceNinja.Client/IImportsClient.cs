@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for imports operations
 /// </summary>
-public interface IImportsClient
+public partial interface IImportsClient
 {
   /// <summary>
   /// Pre Import CSV data

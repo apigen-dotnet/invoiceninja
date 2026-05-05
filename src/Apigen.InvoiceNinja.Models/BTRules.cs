@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// BTRules from OpenAPI schema.
 /// Schema path: #/components/schemas/BTRules
 /// </summary>
-public class BTRules
+public partial class BTRules
 {
   /// <summary>
   /// The key to search

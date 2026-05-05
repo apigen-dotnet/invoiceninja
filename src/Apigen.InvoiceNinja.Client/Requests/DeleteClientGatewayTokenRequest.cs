@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Deletes a client
 /// Operation: DELETE /api/v1/client_gateway_tokens/{id}
 /// </summary>
-public class DeleteClientGatewayTokenRequest : BaseRequest
+public partial class DeleteClientGatewayTokenRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

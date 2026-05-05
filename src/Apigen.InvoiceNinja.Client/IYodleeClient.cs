@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for yodlee operations
 /// </summary>
-public interface IYodleeClient
+public partial interface IYodleeClient
 {
   /// <summary>
   /// Yodlee Webhook

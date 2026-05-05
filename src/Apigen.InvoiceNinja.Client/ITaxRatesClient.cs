@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for tax_rates operations
 /// </summary>
-public interface ITaxRatesClient
+public partial interface ITaxRatesClient
 {
   /// <summary>
   /// Gets a list of tax_rates

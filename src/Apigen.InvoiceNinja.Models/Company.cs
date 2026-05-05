@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// Company from OpenAPI schema.
 /// Schema path: #/components/schemas/Company
 /// </summary>
-public class Company
+public partial class Company
 {
   /// <summary>
   /// The unique hashed identifier for the company

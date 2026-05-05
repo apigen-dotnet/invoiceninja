@@ -22,10 +22,10 @@ using System.Text.Json.Serialization;
 namespace Apigen.InvoiceNinja.Models;
 
 /// <summary>
-/// SupportMessageRequest from OpenAPI schema.
-/// Schema path: #/components/schemas/SupportMessageRequest
+/// SupportMessageRequest (generated from inline request body).
+/// Source: POST /api/v1/support/messages/send (requestBody)
 /// </summary>
-public class SupportMessageRequest
+public partial class SupportMessageRequest
 {
   /// <summary>
   /// The support message

@@ -22,10 +22,10 @@ using System.Text.Json.Serialization;
 namespace Apigen.InvoiceNinja.Models;
 
 /// <summary>
-/// UploadRecurringExpenseRequest from OpenAPI schema.
-/// Schema path: #/components/schemas/UploadRecurringExpenseRequest
+/// UploadRecurringExpenseRequest (generated from inline request body).
+/// Source: POST /api/v1/recurring_expenses/{id}/upload (requestBody)
 /// </summary>
-public class UploadRecurringExpenseRequest
+public partial class UploadRecurringExpenseRequest
 {
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
   [System.Text.Json.Serialization.JsonPropertyName("_method")]

@@ -22,10 +22,10 @@ using System.Text.Json.Serialization;
 namespace Apigen.InvoiceNinja.Models;
 
 /// <summary>
-/// BulkQuotesRequest from OpenAPI schema.
-/// Schema path: #/components/schemas/BulkQuotesRequest
+/// BulkQuotesRequest (generated from inline request body).
+/// Source: POST /api/v1/quotes/bulk (requestBody)
 /// </summary>
-public class BulkQuotesRequest
+public partial class BulkQuotesRequest
 {
   /// <summary>
   /// The action to be performed, options include:

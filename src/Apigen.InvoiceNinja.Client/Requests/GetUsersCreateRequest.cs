@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Gets a new blank User object
 /// Operation: GET /api/v1/users/create
 /// </summary>
-public class GetUsersCreateRequest : BaseRequest
+public partial class GetUsersCreateRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

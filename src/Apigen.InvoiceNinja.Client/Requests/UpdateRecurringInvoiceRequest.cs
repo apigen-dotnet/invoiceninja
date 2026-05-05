@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Update recurring invoice
 /// Operation: PUT /api/v1/recurring_invoices/{id}
 /// </summary>
-public class UpdateRecurringInvoiceRequest : BaseRequest
+public partial class UpdateRecurringInvoiceRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

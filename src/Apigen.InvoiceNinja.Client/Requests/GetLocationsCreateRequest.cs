@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Blank Location
 /// Operation: GET /api/v1/locations/create
 /// </summary>
-public class GetLocationsCreateRequest : BaseRequest
+public partial class GetLocationsCreateRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

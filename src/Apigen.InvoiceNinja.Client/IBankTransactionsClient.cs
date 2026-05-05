@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for bank_transactions operations
 /// </summary>
-public interface IBankTransactionsClient
+public partial interface IBankTransactionsClient
 {
   /// <summary>
   /// Gets a list of bank_transactions

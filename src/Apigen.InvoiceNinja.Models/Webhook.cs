@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// Webhook from OpenAPI schema.
 /// Schema path: #/components/schemas/Webhook
 /// </summary>
-public class Webhook
+public partial class Webhook
 {
   /// <summary>
   /// The subscription hashed id

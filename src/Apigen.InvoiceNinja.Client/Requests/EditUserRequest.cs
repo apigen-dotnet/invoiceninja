@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Shows an User for editting
 /// Operation: GET /api/v1/users/{id}/edit
 /// </summary>
-public class EditUserRequest : BaseRequest
+public partial class EditUserRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

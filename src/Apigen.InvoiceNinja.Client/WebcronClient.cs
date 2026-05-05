@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for webcron operations
 /// </summary>
-public class WebcronClient
+public partial class WebcronClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

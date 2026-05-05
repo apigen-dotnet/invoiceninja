@@ -22,10 +22,10 @@ using System.Text.Json.Serialization;
 namespace Apigen.InvoiceNinja.Models;
 
 /// <summary>
-/// PostSettingsPasskeysRequest from OpenAPI schema.
-/// Schema path: #/components/schemas/PostSettingsPasskeysRequest
+/// PostSettingsPasskeysRequest (generated from inline request body).
+/// Source: POST /api/v1/settings/passkeys (requestBody)
 /// </summary>
-public class PostSettingsPasskeysRequest
+public partial class PostSettingsPasskeysRequest
 {
   [Required]
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.Never)]

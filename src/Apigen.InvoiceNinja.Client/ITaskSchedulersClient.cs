@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for task_schedulers operations
 /// </summary>
-public interface ITaskSchedulersClient
+public partial interface ITaskSchedulersClient
 {
   /// <summary>
   /// Task Scheduler Index

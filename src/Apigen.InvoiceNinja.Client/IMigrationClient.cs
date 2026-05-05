@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for migration operations
 /// </summary>
-public interface IMigrationClient
+public partial interface IMigrationClient
 {
   /// <summary>
   /// Attempts to purge a company record and all its child records

@@ -12,7 +12,7 @@ namespace Apigen.InvoiceNinja.Client;
 
 /// Operation: GET /api/v1/clients
 /// </summary>
-public class GetClientsRequest : BaseRequest
+public partial class GetClientsRequest : BaseRequest
 {
   /// <summary>
   /// Include child relationships of the Client Object. ie ?include=documents,system_logs

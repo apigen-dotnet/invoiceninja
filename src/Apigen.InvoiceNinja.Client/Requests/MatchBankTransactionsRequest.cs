@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Match transactions
 /// Operation: POST /api/v1/bank_transactions/match
 /// </summary>
-public class MatchBankTransactionsRequest : BaseRequest
+public partial class MatchBankTransactionsRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for auth operations
 /// </summary>
-public interface IAuthClient
+public partial interface IAuthClient
 {
   /// <summary>
   /// Passkey login options

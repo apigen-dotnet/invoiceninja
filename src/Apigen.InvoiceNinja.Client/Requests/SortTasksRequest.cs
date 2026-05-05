@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Sort tasks on KanBan
 /// Operation: POST /api/v1/tasks/sort
 /// </summary>
-public class SortTasksRequest : BaseRequest
+public partial class SortTasksRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

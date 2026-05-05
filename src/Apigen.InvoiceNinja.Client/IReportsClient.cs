@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for reports operations
 /// </summary>
-public interface IReportsClient
+public partial interface IReportsClient
 {
   /// <summary>
   /// Contact reports

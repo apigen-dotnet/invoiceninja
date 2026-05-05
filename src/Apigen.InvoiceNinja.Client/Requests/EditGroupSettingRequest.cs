@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Shows an GroupSetting for editting
 /// Operation: GET /api/v1/group_settings/{id}/edit
 /// </summary>
-public class EditGroupSettingRequest : BaseRequest
+public partial class EditGroupSettingRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

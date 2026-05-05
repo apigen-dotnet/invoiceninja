@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// InvoiceInvitation from OpenAPI schema.
 /// Schema path: #/components/schemas/InvoiceInvitation
 /// </summary>
-public class InvoiceInvitation
+public partial class InvoiceInvitation
 {
   /// <summary>
   /// The entity invitation hashed id

@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for yodlee operations
 /// </summary>
-public class YodleeClient
+public partial class YodleeClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

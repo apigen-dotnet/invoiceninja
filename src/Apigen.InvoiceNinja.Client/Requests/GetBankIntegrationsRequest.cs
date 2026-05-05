@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Returns a list of Bank Integrations
 /// Operation: GET /api/v1/bank_integrations
 /// </summary>
-public class GetBankIntegrationsRequest : BaseRequest
+public partial class GetBankIntegrationsRequest : BaseRequest
 {
   /// <summary>
   /// Include child relations of the BankIntegration object. Format is comma separated.

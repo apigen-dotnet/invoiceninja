@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Gets a list of company_gateways
 /// Operation: GET /api/v1/company_gateways
 /// </summary>
-public class GetCompanyGatewaysRequest : BaseRequest
+public partial class GetCompanyGatewaysRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

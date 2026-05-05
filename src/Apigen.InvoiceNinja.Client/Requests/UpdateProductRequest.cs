@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Update product
 /// Operation: PUT /api/v1/products/{id}
 /// </summary>
-public class UpdateProductRequest : BaseRequest
+public partial class UpdateProductRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

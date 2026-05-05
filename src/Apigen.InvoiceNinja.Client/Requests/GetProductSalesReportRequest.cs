@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Product Salesreports
 /// Operation: POST /api/v1/reports/product_sales
 /// </summary>
-public class GetProductSalesReportRequest : BaseRequest
+public partial class GetProductSalesReportRequest : BaseRequest
 {
   /// <summary>
   /// The number of records to return for each request, default is 20

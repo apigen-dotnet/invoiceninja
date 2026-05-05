@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Shows a expense
 /// Operation: GET /api/v1/expenses/{id}
 /// </summary>
-public class ShowExpenseRequest : BaseRequest
+public partial class ShowExpenseRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

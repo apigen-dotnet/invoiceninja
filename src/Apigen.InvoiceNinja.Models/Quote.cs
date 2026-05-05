@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// Quote from OpenAPI schema.
 /// Schema path: #/components/schemas/Quote
 /// </summary>
-public class Quote
+public partial class Quote
 {
   /// <summary>
   /// The unique hashed identifier for the quote

@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Download invoice PDF
 /// Operation: GET /api/v1/invoice/{invitation_key}/download
 /// </summary>
-public class DownloadInvoiceByInvitationRequest : BaseRequest
+public partial class DownloadInvoiceByInvitationRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for logout operations
 /// </summary>
-public interface ILogoutClient
+public partial interface ILogoutClient
 {
   /// <summary>
   /// Logs the user out of their current session

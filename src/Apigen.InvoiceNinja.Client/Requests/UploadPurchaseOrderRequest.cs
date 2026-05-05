@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Uploads a purchase order document
 /// Operation: POST /api/v1/purchase_orders/{id}/upload
 /// </summary>
-public class UploadPurchaseOrderRequest : BaseRequest
+public partial class UploadPurchaseOrderRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

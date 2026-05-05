@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for task_status operations
 /// </summary>
-public interface ITaskItemStatusClient
+public partial interface ITaskItemStatusClient
 {
   /// <summary>
   /// Gets a list of task statuses

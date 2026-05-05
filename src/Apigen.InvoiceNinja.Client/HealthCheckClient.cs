@@ -14,7 +14,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Client for health_check operations
 /// </summary>
-public class HealthCheckClient
+public partial class HealthCheckClient
 {
   private readonly HttpClient _httpClient;
   private readonly ILogger? _logger;

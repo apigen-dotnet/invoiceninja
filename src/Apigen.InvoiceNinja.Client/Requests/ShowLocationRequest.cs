@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Show location
 /// Operation: GET /api/v1/locations/{id}
 /// </summary>
-public class ShowLocationRequest : BaseRequest
+public partial class ShowLocationRequest : BaseRequest
 {
   /// <summary>
   /// Replaces the default response index from data to a user specific string

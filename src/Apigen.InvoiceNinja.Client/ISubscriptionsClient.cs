@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for subscriptions operations
 /// </summary>
-public interface ISubscriptionsClient
+public partial interface ISubscriptionsClient
 {
   /// <summary>
   /// Gets a list of subscriptions

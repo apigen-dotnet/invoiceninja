@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for import operations
 /// </summary>
-public interface IImportClient
+public partial interface IImportClient
 {
   /// <summary>
   /// Import data from the system

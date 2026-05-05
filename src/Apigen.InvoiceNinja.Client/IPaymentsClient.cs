@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for payments operations
 /// </summary>
-public interface IPaymentsClient
+public partial interface IPaymentsClient
 {
   /// <summary>
   /// List payments

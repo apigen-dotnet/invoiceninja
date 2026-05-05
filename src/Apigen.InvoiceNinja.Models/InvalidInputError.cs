@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// InvalidInputError from OpenAPI schema.
 /// Schema path: #/components/schemas/InvalidInputError
 /// </summary>
-public class InvalidInputError
+public partial class InvalidInputError
 {
   /// <summary>
   /// Invalid input

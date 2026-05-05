@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Gets a new blank recurring expense object
 /// Operation: GET /api/v1/recurring_expenses/create
 /// </summary>
-public class GetRecurringExpensesCreateRequest : BaseRequest
+public partial class GetRecurringExpensesCreateRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

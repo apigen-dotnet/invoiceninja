@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for group_settings operations
 /// </summary>
-public interface IGroupSettingsClient
+public partial interface IGroupSettingsClient
 {
   /// <summary>
   /// Gets a list of group_settings

@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Adds a bank_transaction rule
 /// Operation: POST /api/v1/bank_transaction_rules
 /// </summary>
-public class StoreBankTransactionRuleRequest : BaseRequest
+public partial class StoreBankTransactionRuleRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes

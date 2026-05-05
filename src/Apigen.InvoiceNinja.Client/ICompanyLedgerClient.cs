@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for company_ledger operations
 /// </summary>
-public interface ICompanyLedgerClient
+public partial interface ICompanyLedgerClient
 {
   /// <summary>
   /// Gets a list of company_ledger

@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// TaskRequest from OpenAPI schema.
 /// Schema path: #/components/schemas/TaskRequest
 /// </summary>
-public class TaskRequest
+public partial class TaskRequest
 {
   /// <summary>
   /// Task description

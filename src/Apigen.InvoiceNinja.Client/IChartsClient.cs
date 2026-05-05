@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for charts operations
 /// </summary>
-public interface IChartsClient
+public partial interface IChartsClient
 {
   /// <summary>
   /// Get chart data

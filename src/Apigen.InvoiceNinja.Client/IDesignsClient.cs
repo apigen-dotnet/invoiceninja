@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for designs operations
 /// </summary>
-public interface IDesignsClient
+public partial interface IDesignsClient
 {
   /// <summary>
   /// Gets a list of designs

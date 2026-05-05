@@ -9,7 +9,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// <summary>
 /// Interface for preview operations
 /// </summary>
-public interface IPreviewClient
+public partial interface IPreviewClient
 {
   /// <summary>
   /// Returns a pdf preview

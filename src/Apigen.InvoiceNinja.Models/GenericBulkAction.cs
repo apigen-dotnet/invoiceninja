@@ -25,7 +25,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// GenericBulkAction from OpenAPI schema.
 /// Schema path: #/components/schemas/GenericBulkAction
 /// </summary>
-public class GenericBulkAction
+public partial class GenericBulkAction
 {
   /// <summary>
   /// The action to perform ie. archive / restore / delete

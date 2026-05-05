@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Profit loss reports
 /// Operation: POST /api/v1/reports/profitloss
 /// </summary>
-public class GetProfitLossReportRequest : BaseRequest
+public partial class GetProfitLossReportRequest : BaseRequest
 {
   /// <summary>
   /// The number of records to return for each request, default is 20

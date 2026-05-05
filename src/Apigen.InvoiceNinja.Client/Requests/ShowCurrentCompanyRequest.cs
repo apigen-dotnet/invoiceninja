@@ -11,7 +11,7 @@ namespace Apigen.InvoiceNinja.Client;
 /// Request parameters for Returns the current comapny
 /// Operation: POST /api/v1/companies/current
 /// </summary>
-public class ShowCurrentCompanyRequest : BaseRequest
+public partial class ShowCurrentCompanyRequest : BaseRequest
 {
   /// <summary>
   /// Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes
