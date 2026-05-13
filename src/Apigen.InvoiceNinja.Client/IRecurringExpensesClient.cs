@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,48 +16,48 @@ public partial interface IRecurringExpensesClient
   /// Gets a list of recurring_expenses
   /// Operation: GET /api/v1/recurring_expenses
   /// </summary>
-  Task<ApiResponse<RecurringExpense[]>> ListAsync(GetRecurringExpensesRequest? request = null);
+  Task<ApiResponse<RecurringExpense[]>> ListAsync(GetRecurringExpensesRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Adds a recurring expense
   /// Operation: POST /api/v1/recurring_expenses
   /// </summary>
-  Task<ApiResponse<RecurringExpense>> CreateAsync(StoreRecurringExpenseRequest? request = null);
+  Task<ApiResponse<RecurringExpense>> CreateAsync(StoreRecurringExpenseRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Shows a recurring expense
   /// Operation: GET /api/v1/recurring_expenses/{id}
   /// </summary>
-  Task<ApiResponse<RecurringExpense>> GetAsync(string id, ShowRecurringExpenseRequest? request = null);
+  Task<ApiResponse<RecurringExpense>> GetAsync(string id, ShowRecurringExpenseRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Updates a recurring expense
   /// Operation: PUT /api/v1/recurring_expenses/{id}
   /// </summary>
-  Task<ApiResponse<RecurringExpense>> UpdateAsync(string id, UpdateRecurringExpenseRequest? request = null);
+  Task<ApiResponse<RecurringExpense>> UpdateAsync(string id, UpdateRecurringExpenseRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Deletes a recurring expense
   /// Operation: DELETE /api/v1/recurring_expenses/{id}
   /// </summary>
-  Task DeleteAsync(string id, DeleteRecurringExpenseRequest? request = null);
+  Task DeleteAsync(string id, DeleteRecurringExpenseRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Shows a recurring expense for editting
   /// Operation: GET /api/v1/recurring_expenses/{id}/edit
   /// </summary>
-  Task<ApiResponse<RecurringExpense>> EditRecurringExpenseAsync(string id, EditRecurringExpenseRequest? request = null);
+  Task<ApiResponse<RecurringExpense>> EditRecurringExpenseAsync(string id, EditRecurringExpenseRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Gets a new blank recurring expense object
   /// Operation: GET /api/v1/recurring_expenses/create
   /// </summary>
-  Task<ApiResponse<RecurringExpense>> GetRecurringExpensesCreateAsync(GetRecurringExpensesCreateRequest? request = null);
+  Task<ApiResponse<RecurringExpense>> GetRecurringExpensesCreateAsync(GetRecurringExpensesCreateRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Performs bulk actions on an array of recurring_expenses
   /// Operation: POST /api/v1/recurring_expenses/bulk
   /// </summary>
-  Task<ApiResponse<RecurringExpense>> BulkAsync(BulkRecurringExpensesRequest? request = null);
+  Task<ApiResponse<RecurringExpense>> BulkAsync(BulkRecurringExpensesRequest? request = null, CancellationToken cancellationToken = default);
 
 }

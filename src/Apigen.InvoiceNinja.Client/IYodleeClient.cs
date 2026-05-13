@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,6 +16,6 @@ public partial interface IYodleeClient
   /// Yodlee Webhook
   /// Operation: POST /api/v1/yodlee/refresh
   /// </summary>
-  Task<ApiResponse<Credit>> YodleeRefreshWebhookAsync();
+  Task<ApiResponse<Credit>> YodleeRefreshWebhookAsync(CancellationToken cancellationToken = default);
 
 }

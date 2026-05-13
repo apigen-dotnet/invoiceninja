@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,6 +16,6 @@ public partial interface ITaskStatussClient
   /// Deletes a TaskStatus Term
   /// Operation: DELETE /api/v1/task_statuses/{id}
   /// </summary>
-  Task DeleteAsync(string id, DeleteTaskStatusRequest? request = null);
+  Task DeleteAsync(string id, DeleteTaskStatusRequest? request = null, CancellationToken cancellationToken = default);
 
 }

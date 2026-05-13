@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,12 +16,12 @@ public partial interface IAuthClient
   /// Passkey login options
   /// Operation: POST /api/v1/passkeys/login/options
   /// </summary>
-  Task PostPasskeyLoginOptionsAsync(Apigen.InvoiceNinja.Models.PostPasskeyLoginOptionsRequest postPasskeyLoginOptionsRequest);
+  Task PostPasskeyLoginOptionsAsync(Apigen.InvoiceNinja.Models.PostPasskeyLoginOptionsRequest postPasskeyLoginOptionsRequest, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Login
   /// Operation: POST /api/v1/login
   /// </summary>
-  Task<ApiResponse<CompanyUser[]>> loginAsync(Apigen.InvoiceNinja.Models.PostLoginRequest postLoginRequest, LoginRequest? request = null);
+  Task<ApiResponse<CompanyUser[]>> loginAsync(Apigen.InvoiceNinja.Models.PostLoginRequest postLoginRequest, LoginRequest? request = null, CancellationToken cancellationToken = default);
 
 }

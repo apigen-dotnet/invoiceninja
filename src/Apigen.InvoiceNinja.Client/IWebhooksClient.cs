@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,42 +16,42 @@ public partial interface IWebhooksClient
   /// Gets a list of Webhooks
   /// Operation: GET /api/v1/webhooks
   /// </summary>
-  Task<ApiResponse<Webhook[]>> ListAsync(GetWebhooksRequest? request = null);
+  Task<ApiResponse<Webhook[]>> ListAsync(GetWebhooksRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Adds a Webhook
   /// Operation: POST /api/v1/webhooks
   /// </summary>
-  Task<ApiResponse<Webhook>> CreateAsync(StoreWebhookRequest? request = null);
+  Task<ApiResponse<Webhook>> CreateAsync(StoreWebhookRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Shows a Webhook
   /// Operation: GET /api/v1/webhooks/{id}
   /// </summary>
-  Task<ApiResponse<Webhook>> GetAsync(string id, ShowWebhookRequest? request = null);
+  Task<ApiResponse<Webhook>> GetAsync(string id, ShowWebhookRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Updates a Webhook
   /// Operation: PUT /api/v1/webhooks/{id}
   /// </summary>
-  Task<ApiResponse<Webhook>> UpdateAsync(string id, UpdateWebhookRequest? request = null);
+  Task<ApiResponse<Webhook>> UpdateAsync(string id, UpdateWebhookRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Shows a Webhook for editting
   /// Operation: GET /api/v1/webhooks/{id}/edit
   /// </summary>
-  Task<ApiResponse<Webhook>> EditWebhookAsync(string id, EditWebhookRequest? request = null);
+  Task<ApiResponse<Webhook>> EditWebhookAsync(string id, EditWebhookRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Gets a new blank Webhook object
   /// Operation: GET /api/v1/webhooks/create
   /// </summary>
-  Task<ApiResponse<Webhook>> GetWebhooksCreateAsync(GetWebhooksCreateRequest? request = null);
+  Task<ApiResponse<Webhook>> GetWebhooksCreateAsync(GetWebhooksCreateRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Performs bulk actions on an array of Webhooks
   /// Operation: POST /api/v1/webhooks/bulk
   /// </summary>
-  Task<ApiResponse<Webhook>> BulkAsync(BulkWebhooksRequest? request = null);
+  Task<ApiResponse<Webhook>> BulkAsync(BulkWebhooksRequest? request = null, CancellationToken cancellationToken = default);
 
 }

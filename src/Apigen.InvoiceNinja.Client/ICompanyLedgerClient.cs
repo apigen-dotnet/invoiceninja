@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,6 +16,6 @@ public partial interface ICompanyLedgerClient
   /// Gets a list of company_ledger
   /// Operation: GET /api/v1/company_ledger
   /// </summary>
-  Task<ApiResponse<CompanyLedger[]>> ListAsync(GetCompanyLedgerRequest? request = null);
+  Task<ApiResponse<CompanyLedger[]>> ListAsync(GetCompanyLedgerRequest? request = null, CancellationToken cancellationToken = default);
 
 }

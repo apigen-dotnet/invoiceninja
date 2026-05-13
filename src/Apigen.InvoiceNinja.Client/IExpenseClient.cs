@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,6 +16,6 @@ public partial interface IExpenseClient
   /// Uploads a document to a expense
   /// Operation: POST /api/v1/expenses/{id}/upload
   /// </summary>
-  Task<ApiResponse<Expense>> UploadExpenseAsync(string id, Apigen.InvoiceNinja.Models.UploadExpenseRequest uploadExpenseRequest, UploadExpenseRequest? request = null);
+  Task<ApiResponse<Expense>> UploadExpenseAsync(string id, Apigen.InvoiceNinja.Models.UploadExpenseRequest uploadExpenseRequest, UploadExpenseRequest? request = null, CancellationToken cancellationToken = default);
 
 }

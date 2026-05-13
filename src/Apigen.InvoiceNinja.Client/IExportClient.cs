@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,6 +16,6 @@ public partial interface IExportClient
   /// Export data from the system
   /// Operation: POST /api/v1/export
   /// </summary>
-  Task CreateAsync();
+  Task CreateAsync(CancellationToken cancellationToken = default);
 
 }

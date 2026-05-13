@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,6 +16,6 @@ public partial interface ISupportClient
   /// Sends a support message to Invoice Ninja team
   /// Operation: POST /api/v1/support/messages/send
   /// </summary>
-  Task<ApiResponse<JsonElement>> SupportMessageAsync(Apigen.InvoiceNinja.Models.SupportMessageRequest supportMessageRequest);
+  Task<ApiResponse<JsonElement>> SupportMessageAsync(Apigen.InvoiceNinja.Models.SupportMessageRequest supportMessageRequest, CancellationToken cancellationToken = default);
 
 }

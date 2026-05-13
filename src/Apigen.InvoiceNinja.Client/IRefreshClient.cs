@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,6 +16,6 @@ public partial interface IRefreshClient
   /// Refresh data by timestamp
   /// Operation: POST /api/v1/refresh
   /// </summary>
-  Task<ApiResponse<CompanyUser>> CreateAsync(PostRefreshRequest? request = null);
+  Task<ApiResponse<CompanyUser>> CreateAsync(PostRefreshRequest? request = null, CancellationToken cancellationToken = default);
 
 }

@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,18 +16,18 @@ public partial interface IPostmarkClient
   /// Processing webhooks from Apple for in app purchases
   /// Operation: POST /api/v1/apple/confirm_purchase
   /// </summary>
-  Task ConfirmApplePurchaseAsync(ConfirmApplePurchaseRequest? request = null);
+  Task ConfirmApplePurchaseAsync(ConfirmApplePurchaseRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Processing event webhooks from Apple for in purchase / subscription status update
   /// Operation: POST /api/v1/apple/process_webhook
   /// </summary>
-  Task ProcessAppleWebhookAsync(ProcessAppleWebhookRequest? request = null);
+  Task ProcessAppleWebhookAsync(ProcessAppleWebhookRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Processing webhooks from PostMark
   /// Operation: POST /api/v1/postmark_webhook
   /// </summary>
-  Task<ApiResponse<Credit>> PostmarkWebhookAsync(PostmarkWebhookRequest? request = null);
+  Task<ApiResponse<Credit>> PostmarkWebhookAsync(PostmarkWebhookRequest? request = null, CancellationToken cancellationToken = default);
 
 }

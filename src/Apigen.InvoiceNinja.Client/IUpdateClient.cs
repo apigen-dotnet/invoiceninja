@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,12 +16,12 @@ public partial interface IUpdateClient
   /// Performs a system update
   /// Operation: POST /api/v1/self-update
   /// </summary>
-  Task SelfUpdateAsync(SelfUpdateRequest? request = null);
+  Task SelfUpdateAsync(SelfUpdateRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Check for available update
   /// Operation: POST /api/v1/self-update/check_version
   /// </summary>
-  Task SelfUpdateCheckVersionAsync();
+  Task SelfUpdateCheckVersionAsync(CancellationToken cancellationToken = default);
 
 }

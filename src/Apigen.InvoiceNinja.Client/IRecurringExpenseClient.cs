@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,6 +16,6 @@ public partial interface IRecurringExpenseClient
   /// Uploads a document to a recurring_expense
   /// Operation: POST /api/v1/recurring_expenses/{id}/upload
   /// </summary>
-  Task<ApiResponse<RecurringExpense>> UploadRecurringExpenseAsync(string id, Apigen.InvoiceNinja.Models.UploadRecurringExpenseRequest uploadRecurringExpenseRequest, UploadRecurringExpenseRequest? request = null);
+  Task<ApiResponse<RecurringExpense>> UploadRecurringExpenseAsync(string id, Apigen.InvoiceNinja.Models.UploadRecurringExpenseRequest uploadRecurringExpenseRequest, UploadRecurringExpenseRequest? request = null, CancellationToken cancellationToken = default);
 
 }

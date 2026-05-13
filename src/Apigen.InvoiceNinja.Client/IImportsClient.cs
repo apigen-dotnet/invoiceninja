@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,12 +16,12 @@ public partial interface IImportsClient
   /// Pre Import CSV data
   /// Operation: POST /api/v1/preimport
   /// </summary>
-  Task<ApiResponse<JsonElement>> PreimportAsync(Apigen.InvoiceNinja.Models.PreImportRequest preImportRequest, PreimportRequest? request = null);
+  Task<ApiResponse<JsonElement>> PreimportAsync(Apigen.InvoiceNinja.Models.PreImportRequest preImportRequest, PreimportRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Import CSV data
   /// Operation: POST /api/v1/import
   /// </summary>
-  Task<ApiResponse<JsonElement>> PostAsync(Apigen.InvoiceNinja.Models.PostImportRequest postImportRequest, PostImportRequest? request = null);
+  Task<ApiResponse<JsonElement>> PostAsync(Apigen.InvoiceNinja.Models.PostImportRequest postImportRequest, PostImportRequest? request = null, CancellationToken cancellationToken = default);
 
 }

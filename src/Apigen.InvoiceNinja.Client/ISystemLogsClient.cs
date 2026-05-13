@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,12 +16,12 @@ public partial interface ISystemLogsClient
   /// Gets a list of system logs
   /// Operation: GET /api/v1/system_logs
   /// </summary>
-  Task<ApiResponse<SystemLog[]>> ListAsync(GetSystemLogsRequest? request = null);
+  Task<ApiResponse<SystemLog[]>> ListAsync(GetSystemLogsRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Shows a system_logs
   /// Operation: GET /api/v1/system_logs/{id}
   /// </summary>
-  Task<ApiResponse<SystemLog>> GetAsync(string id, ShowSystemLogsRequest? request = null);
+  Task<ApiResponse<SystemLog>> GetAsync(string id, ShowSystemLogsRequest? request = null, CancellationToken cancellationToken = default);
 
 }

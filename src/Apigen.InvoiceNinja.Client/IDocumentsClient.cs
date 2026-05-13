@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,6 +16,6 @@ public partial interface IDocumentsClient
   /// Gets a list of documents
   /// Operation: GET /api/v1/documents
   /// </summary>
-  Task<ApiResponse<Document[]>> ListAsync(GetDocumentsRequest? request = null);
+  Task<ApiResponse<Document[]>> ListAsync(GetDocumentsRequest? request = null, CancellationToken cancellationToken = default);
 
 }

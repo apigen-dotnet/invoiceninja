@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,6 +16,6 @@ public partial interface ICompanyUserClient
   /// Update a company user record
   /// Operation: POST /api/v1/company_users
   /// </summary>
-  Task<ApiResponse<CompanyUser>> UpdateCompanyUserAsync();
+  Task<ApiResponse<CompanyUser>> UpdateCompanyUserAsync(CancellationToken cancellationToken = default);
 
 }

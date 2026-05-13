@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,6 +16,6 @@ public partial interface IStaticsClient
   /// Gets a list of statics
   /// Operation: GET /api/v1/statics
   /// </summary>
-  Task ListAsync(GetStaticsRequest? request = null);
+  Task ListAsync(GetStaticsRequest? request = null, CancellationToken cancellationToken = default);
 
 }

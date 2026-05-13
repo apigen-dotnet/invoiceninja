@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -16,84 +17,84 @@ public partial interface IClientsClient
   /// 
   /// Operation: GET /api/v1/clients
   /// </summary>
-  Task<ApiResponse<Apigen.InvoiceNinja.Models.Client[]>> ListAsync(GetClientsRequest? request = null);
+  Task<ApiResponse<Apigen.InvoiceNinja.Models.Client[]>> ListAsync(GetClientsRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Create client
   /// Operation: POST /api/v1/clients
   /// </summary>
-  Task<ApiResponse<Apigen.InvoiceNinja.Models.Client>> CreateAsync(Apigen.InvoiceNinja.Models.ClientRequest clientRequest, StoreClientRequest? request = null);
+  Task<ApiResponse<Apigen.InvoiceNinja.Models.Client>> CreateAsync(Apigen.InvoiceNinja.Models.ClientRequest clientRequest, StoreClientRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Show client
   /// Operation: GET /api/v1/clients/{id}
   /// </summary>
-  Task<ApiResponse<Apigen.InvoiceNinja.Models.Client>> GetAsync(string id, ShowClientRequest? request = null);
+  Task<ApiResponse<Apigen.InvoiceNinja.Models.Client>> GetAsync(string id, ShowClientRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Update client
   /// Operation: PUT /api/v1/clients/{id}
   /// </summary>
-  Task<ApiResponse<Apigen.InvoiceNinja.Models.Client>> UpdateAsync(string id, Apigen.InvoiceNinja.Models.ClientRequest clientRequest, UpdateClientRequest? request = null);
+  Task<ApiResponse<Apigen.InvoiceNinja.Models.Client>> UpdateAsync(string id, Apigen.InvoiceNinja.Models.ClientRequest clientRequest, UpdateClientRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Delete client
   /// Operation: DELETE /api/v1/clients/{id}
   /// </summary>
-  Task DeleteAsync(string id, DeleteClientRequest? request = null);
+  Task DeleteAsync(string id, DeleteClientRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Edit Client
   /// Operation: GET /api/v1/clients/{id}/edit
   /// </summary>
-  Task<ApiResponse<Apigen.InvoiceNinja.Models.Client>> EditClientAsync(string id, EditClientRequest? request = null);
+  Task<ApiResponse<Apigen.InvoiceNinja.Models.Client>> EditClientAsync(string id, EditClientRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Blank Client
   /// Operation: GET /api/v1/clients/create
   /// </summary>
-  Task<ApiResponse<Apigen.InvoiceNinja.Models.Client>> GetClientsCreateAsync(GetClientsCreateRequest? request = null);
+  Task<ApiResponse<Apigen.InvoiceNinja.Models.Client>> GetClientsCreateAsync(GetClientsCreateRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Bulk client actions
   /// Operation: POST /api/v1/clients/bulk
   /// </summary>
-  Task<ApiResponse<Apigen.InvoiceNinja.Models.Client>> BulkAsync(Apigen.InvoiceNinja.Models.GenericBulkAction genericBulkAction, BulkClientsRequest? request = null);
+  Task<ApiResponse<Apigen.InvoiceNinja.Models.Client>> BulkAsync(Apigen.InvoiceNinja.Models.GenericBulkAction genericBulkAction, BulkClientsRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Add client document
   /// Operation: POST /api/v1/clients/{id}/upload
   /// </summary>
-  Task<ApiResponse<Apigen.InvoiceNinja.Models.Client>> UploadClientAsync(string id, Apigen.InvoiceNinja.Models.UploadClientRequest uploadClientRequest, UploadClientRequest? request = null);
+  Task<ApiResponse<Apigen.InvoiceNinja.Models.Client>> UploadClientAsync(string id, Apigen.InvoiceNinja.Models.UploadClientRequest uploadClientRequest, UploadClientRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Purge client
   /// Operation: POST /api/v1/clients/{id}/purge
   /// </summary>
-  Task PurgeClientAsync(string id);
+  Task PurgeClientAsync(string id, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Merge client
   /// Operation: POST /api/v1/clients/{id}/{mergeable_client_hashed_id}/merge
   /// </summary>
-  Task MergeClientAsync(string id, string mergeableClientHashedId, MergeClientRequest? request = null);
+  Task MergeClientAsync(string id, string mergeableClientHashedId, MergeClientRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Client statement PDF
   /// Operation: POST /api/v1/client_statement
   /// </summary>
-  Task<ApiResponse<Apigen.InvoiceNinja.Models.Client>> ClientStatementAsync(Apigen.InvoiceNinja.Models.ClientStatementRequest clientStatementRequest, ClientStatementRequest? request = null);
+  Task<ApiResponse<Apigen.InvoiceNinja.Models.Client>> ClientStatementAsync(Apigen.InvoiceNinja.Models.ClientStatementRequest clientStatementRequest, ClientStatementRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Removes email suppression of a user in the system
   /// Operation: POST /api/v1/reactivate_email/{bounce_id}
   /// </summary>
-  Task ReactivateEmailAsync(string bounceId, ReactivateEmailRequest? request = null);
+  Task ReactivateEmailAsync(string bounceId, ReactivateEmailRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Update tax data
   /// Operation: POST /api/v1/clients/{client}/updateTaxData
   /// </summary>
-  Task UpdateClientTaxDataAsync(string client, UpdateClientTaxDataRequest? request = null);
+  Task UpdateClientTaxDataAsync(string client, UpdateClientTaxDataRequest? request = null, CancellationToken cancellationToken = default);
 
 }

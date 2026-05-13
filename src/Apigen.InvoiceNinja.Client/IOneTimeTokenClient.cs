@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,6 +16,6 @@ public partial interface IOneTimeTokenClient
   /// Attempts to create a one time token
   /// Operation: POST /api/v1/one_time_token
   /// </summary>
-  Task CreateAsync();
+  Task CreateAsync(CancellationToken cancellationToken = default);
 
 }

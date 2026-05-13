@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,72 +16,72 @@ public partial interface IInvoicesClient
   /// List invoices
   /// Operation: GET /api/v1/invoices
   /// </summary>
-  Task<ApiResponse<Invoice[]>> ListAsync(GetInvoicesRequest? request = null);
+  Task<ApiResponse<Invoice[]>> ListAsync(GetInvoicesRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Create invoice
   /// Operation: POST /api/v1/invoices
   /// </summary>
-  Task<ApiResponse<Invoice>> CreateAsync(Apigen.InvoiceNinja.Models.InvoiceRequest invoiceRequest, StoreInvoiceRequest? request = null);
+  Task<ApiResponse<Invoice>> CreateAsync(Apigen.InvoiceNinja.Models.InvoiceRequest invoiceRequest, StoreInvoiceRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Show invoice
   /// Operation: GET /api/v1/invoices/{id}
   /// </summary>
-  Task<ApiResponse<Invoice>> GetAsync(string id, ShowInvoiceRequest? request = null);
+  Task<ApiResponse<Invoice>> GetAsync(string id, ShowInvoiceRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Update invoice
   /// Operation: PUT /api/v1/invoices/{id}
   /// </summary>
-  Task<ApiResponse<Invoice>> UpdateAsync(string id, UpdateInvoiceRequest? request = null);
+  Task<ApiResponse<Invoice>> UpdateAsync(string id, UpdateInvoiceRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Delete invoice
   /// Operation: DELETE /api/v1/invoices/{id}
   /// </summary>
-  Task DeleteAsync(string id, DeleteInvoiceRequest? request = null);
+  Task DeleteAsync(string id, DeleteInvoiceRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Edit invoice
   /// Operation: GET /api/v1/invoices/{id}/edit
   /// </summary>
-  Task<ApiResponse<Invoice>> EditInvoiceAsync(string id, EditInvoiceRequest? request = null);
+  Task<ApiResponse<Invoice>> EditInvoiceAsync(string id, EditInvoiceRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Blank invoice
   /// Operation: GET /api/v1/invoices/create
   /// </summary>
-  Task<ApiResponse<Invoice>> GetInvoiceCreateAsync();
+  Task<ApiResponse<Invoice>> GetInvoiceCreateAsync(CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Bulk invoice actions
   /// Operation: POST /api/v1/invoices/bulk
   /// </summary>
-  Task BulkAsync(Apigen.InvoiceNinja.Models.BulkInvoicesRequest bulkInvoicesRequest, BulkInvoicesRequest? request = null);
+  Task BulkAsync(Apigen.InvoiceNinja.Models.BulkInvoicesRequest bulkInvoicesRequest, BulkInvoicesRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Custom invoice action
   /// Operation: GET /api/v1/invoices/{id}/{action}
   /// </summary>
-  Task<ApiResponse<Invoice>> GetAsync(string id, string action, ActionInvoiceRequest? request = null);
+  Task<ApiResponse<Invoice>> GetAsync(string id, string action, ActionInvoiceRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Download invoice PDF
   /// Operation: GET /api/v1/invoice/{invitation_key}/download
   /// </summary>
-  Task<Stream> DownloadInvoiceByInvitationAsync(string invitationKey, DownloadInvoiceByInvitationRequest? request = null);
+  Task<Stream> DownloadInvoiceByInvitationAsync(string invitationKey, DownloadInvoiceByInvitationRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Download delivery note
   /// Operation: GET /api/v1/invoices/{id}/delivery_note
   /// </summary>
-  Task<Stream> GetInvoiceDeliveryNoteAsync(string id, GetInvoiceDeliveryNoteRequest? request = null);
+  Task<Stream> GetInvoiceDeliveryNoteAsync(string id, GetInvoiceDeliveryNoteRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Add invoice document
   /// Operation: POST /api/v1/invoices/{id}/upload
   /// </summary>
-  Task<ApiResponse<Invoice>> UploadInvoiceDocumentAsync(string id, Apigen.InvoiceNinja.Models.UploadInvoiceDocumentRequest uploadInvoiceDocumentRequest, UploadInvoiceDocumentRequest? request = null);
+  Task<ApiResponse<Invoice>> UploadInvoiceDocumentAsync(string id, Apigen.InvoiceNinja.Models.UploadInvoiceDocumentRequest uploadInvoiceDocumentRequest, UploadInvoiceDocumentRequest? request = null, CancellationToken cancellationToken = default);
 
 }

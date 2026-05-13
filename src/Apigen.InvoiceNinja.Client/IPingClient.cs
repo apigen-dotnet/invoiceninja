@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,12 +16,12 @@ public partial interface IPingClient
   /// Attempts to ping the API
   /// Operation: GET /api/v1/ping
   /// </summary>
-  Task ListAsync();
+  Task ListAsync(CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Returns the last error
   /// Operation: GET /api/v1/last_error
   /// </summary>
-  Task GetLastErrorAsync();
+  Task GetLastErrorAsync(CancellationToken cancellationToken = default);
 
 }

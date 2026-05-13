@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,54 +16,54 @@ public partial interface IBankTransactionsClient
   /// Gets a list of bank_transactions
   /// Operation: GET /api/v1/bank_transactions
   /// </summary>
-  Task<ApiResponse<BankTransaction[]>> ListAsync(GetBankTransactionsRequest? request = null);
+  Task<ApiResponse<BankTransaction[]>> ListAsync(GetBankTransactionsRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Adds a bank_transaction
   /// Operation: POST /api/v1/bank_transactions
   /// </summary>
-  Task<ApiResponse<BankTransaction>> CreateAsync(StoreBankTransactionRequest? request = null);
+  Task<ApiResponse<BankTransaction>> CreateAsync(StoreBankTransactionRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Shows a bank_transaction
   /// Operation: GET /api/v1/bank_transactions/{id}
   /// </summary>
-  Task<ApiResponse<BankTransaction>> GetAsync(string id, ShowBankTransactionRequest? request = null);
+  Task<ApiResponse<BankTransaction>> GetAsync(string id, ShowBankTransactionRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Updates a bank_transaction
   /// Operation: PUT /api/v1/bank_transactions/{id}
   /// </summary>
-  Task<ApiResponse<BankTransaction>> UpdateAsync(string id, UpdateBankTransactionRequest? request = null);
+  Task<ApiResponse<BankTransaction>> UpdateAsync(string id, UpdateBankTransactionRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Deletes a bank_transaction
   /// Operation: DELETE /api/v1/bank_transactions/{id}
   /// </summary>
-  Task DeleteAsync(string id, DeleteBankTransactionRequest? request = null);
+  Task DeleteAsync(string id, DeleteBankTransactionRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Shows a bank_transaction for editing
   /// Operation: GET /api/v1/bank_transactions/{id}/edit
   /// </summary>
-  Task<ApiResponse<BankTransaction>> EditBankTransactionAsync(string id, EditBankTransactionRequest? request = null);
+  Task<ApiResponse<BankTransaction>> EditBankTransactionAsync(string id, EditBankTransactionRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Gets a new blank bank_transaction object
   /// Operation: GET /api/v1/bank_transactions/create
   /// </summary>
-  Task<ApiResponse<BankTransaction>> GetBankTransactionsCreateAsync(GetBankTransactionsCreateRequest? request = null);
+  Task<ApiResponse<BankTransaction>> GetBankTransactionsCreateAsync(GetBankTransactionsCreateRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Bulk actions
   /// Operation: POST /api/v1/bank_transactions/bulk
   /// </summary>
-  Task BulkAsync(BulkBankTransactionsRequest? request = null);
+  Task BulkAsync(BulkBankTransactionsRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Match transactions
   /// Operation: POST /api/v1/bank_transactions/match
   /// </summary>
-  Task MatchBankTransactionsAsync(MatchBankTransactionsRequest? request = null);
+  Task MatchBankTransactionsAsync(MatchBankTransactionsRequest? request = null, CancellationToken cancellationToken = default);
 
 }

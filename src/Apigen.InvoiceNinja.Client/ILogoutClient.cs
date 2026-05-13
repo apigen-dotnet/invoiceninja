@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,6 +16,6 @@ public partial interface ILogoutClient
   /// Logs the user out of their current session
   /// Operation: POST /api/v1/logout
   /// </summary>
-  Task CreateAsync(GetLogoutRequest? request = null);
+  Task CreateAsync(GetLogoutRequest? request = null, CancellationToken cancellationToken = default);
 
 }

@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,6 +16,6 @@ public partial interface IHealthCheckClient
   /// Attempts to get a health check from the API
   /// Operation: GET /api/v1/health_check
   /// </summary>
-  Task ListAsync();
+  Task ListAsync(CancellationToken cancellationToken = default);
 
 }

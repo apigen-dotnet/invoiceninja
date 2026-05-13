@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 using Microsoft.Extensions.Logging;
@@ -29,7 +30,7 @@ public partial class RecurringExpenseClient
   /// Uploads a document to a recurring_expense
   /// Operation: POST /api/v1/recurring_expenses/{id}/upload
   /// </summary>
-  public async Task<ApiResponse<RecurringExpense>> UploadRecurringExpenseAsync(string id, Apigen.InvoiceNinja.Models.UploadRecurringExpenseRequest uploadRecurringExpenseRequest, UploadRecurringExpenseRequest? request = null)
+  public async Task<ApiResponse<RecurringExpense>> UploadRecurringExpenseAsync(string id, Apigen.InvoiceNinja.Models.UploadRecurringExpenseRequest uploadRecurringExpenseRequest, UploadRecurringExpenseRequest? request = null, CancellationToken cancellationToken = default)
   {
     Dictionary<string, object> pathParams = new()
     {
@@ -37,30 +38,43 @@ public partial class RecurringExpenseClient
     };
     string url = "recurring_expenses/{id}/upload".BuildUrl(pathParams, request);
 
-    long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
-    HttpClientLog.LogDebugRequestStarted(_logger, "POST", url);
-    MultipartFormDataContent content = uploadRecurringExpenseRequest.ToMultipartContent();
-    HttpClientLog.LogTraceRequestBody(_logger, "POST", "multipart/form-data", "[binary content]");
-    HttpResponseMessage response = await _httpClient.PostAsync(url, content);
-    long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
-    HttpClientLog.LogDebugRequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
-
-    string responseContent;
     try
     {
-      response.EnsureSuccessStatusCode();
-      responseContent = await response.Content.ReadAsStringAsync();
+      long startTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+      HttpClientLog.LogDebugRequestStarted(_logger, "POST", url);
+      MultipartFormDataContent content = uploadRecurringExpenseRequest.ToMultipartContent();
+      HttpClientLog.LogTraceRequestBody(_logger, "POST", "multipart/form-data", "[binary content]");
+      HttpResponseMessage response = await _httpClient.PostAsync(url, content, cancellationToken);
+      long durationMs = (long)System.Diagnostics.Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+      HttpClientLog.LogDebugRequestCompleted(_logger, (int)response.StatusCode, "POST", url, durationMs);
+
+      if (!response.IsSuccessStatusCode)
+      {
+        string errorBody = await response.Content.ReadAsStringAsync(cancellationToken);
+        HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "POST", url, errorBody, null);
+        throw new ApiException(response.StatusCode, "POST", url, errorBody, response.Headers, response.Content.Headers);
+      }
+
+      string responseContent = await response.Content.ReadAsStringAsync(cancellationToken);
+      HttpClientLog.LogTraceResponseBody(_logger, url, responseContent);
+      ApiResponse<RecurringExpense>? apiResponse = JsonSerializer.Deserialize<ApiResponse<RecurringExpense>>(responseContent, JsonConfig.Default);
+      return apiResponse ?? new ApiResponse<RecurringExpense>();
     }
-    catch (HttpRequestException ex)
+    catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
     {
-      responseContent = await response.Content.ReadAsStringAsync();
-      HttpClientLog.LogErrorRequestFailed(_logger, (int)response.StatusCode, "POST", url, responseContent, ex);
+      HttpClientLog.LogDebugRequestCancelled(_logger, "POST", url);
       throw;
     }
-
-    HttpClientLog.LogTraceResponseBody(_logger, url, responseContent);
-    ApiResponse<RecurringExpense>? apiResponse = JsonSerializer.Deserialize<ApiResponse<RecurringExpense>>(responseContent, JsonConfig.Default);
-    return apiResponse ?? new ApiResponse<RecurringExpense>();
+    catch (OperationCanceledException ex)
+    {
+      HttpClientLog.LogErrorRequestTimeout(_logger, "POST", url, ex);
+      throw;
+    }
+    catch (HttpRequestException ex) when (ex is not ApiException)
+    {
+      HttpClientLog.LogErrorTransportFailure(_logger, "POST", url, ex);
+      throw;
+    }
   }
 
 

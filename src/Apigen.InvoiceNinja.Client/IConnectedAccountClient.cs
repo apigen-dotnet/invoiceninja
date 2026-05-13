@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,6 +16,6 @@ public partial interface IConnectedAccountClient
   /// Connect an oauth user to an existing user
   /// Operation: POST /api/v1/connected_account
   /// </summary>
-  Task<ApiResponse<User>> CreateAsync(PostConnectedAccountRequest? request = null);
+  Task<ApiResponse<User>> CreateAsync(PostConnectedAccountRequest? request = null, CancellationToken cancellationToken = default);
 
 }

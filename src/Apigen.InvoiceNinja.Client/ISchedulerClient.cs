@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,6 +16,6 @@ public partial interface ISchedulerClient
   /// Get scheduler status
   /// Operation: GET /api/v1/scheduler
   /// </summary>
-  Task ListAsync();
+  Task ListAsync(CancellationToken cancellationToken = default);
 
 }

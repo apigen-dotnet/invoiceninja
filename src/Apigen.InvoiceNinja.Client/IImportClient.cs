@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,6 +16,6 @@ public partial interface IImportClient
   /// Import data from the system
   /// Operation: POST /api/v1/import_json
   /// </summary>
-  Task GetImportJsonAsync();
+  Task GetImportJsonAsync(CancellationToken cancellationToken = default);
 
 }

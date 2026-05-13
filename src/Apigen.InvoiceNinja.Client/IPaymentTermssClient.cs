@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,6 +16,6 @@ public partial interface IPaymentTermssClient
   /// Deletes a Payment Term
   /// Operation: DELETE /api/v1/payment_terms/{id}
   /// </summary>
-  Task DeleteAsync(string id, DeletePaymentTermRequest? request = null);
+  Task DeleteAsync(string id, DeletePaymentTermRequest? request = null, CancellationToken cancellationToken = default);
 
 }

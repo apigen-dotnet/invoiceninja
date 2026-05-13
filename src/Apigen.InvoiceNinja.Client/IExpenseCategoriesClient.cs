@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,48 +16,48 @@ public partial interface IExpenseCategoriesClient
   /// Gets a list of expense_categories
   /// Operation: GET /api/v1/expense_categories
   /// </summary>
-  Task<ApiResponse<ExpenseCategory[]>> ListAsync(GetExpenseCategorysRequest? request = null);
+  Task<ApiResponse<ExpenseCategory[]>> ListAsync(GetExpenseCategorysRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Adds a expense category
   /// Operation: POST /api/v1/expense_categories
   /// </summary>
-  Task<ApiResponse<ExpenseCategory>> CreateAsync(StoreExpenseCategoryRequest? request = null);
+  Task<ApiResponse<ExpenseCategory>> CreateAsync(StoreExpenseCategoryRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Gets a new blank Expens Category object
   /// Operation: GET /api/v1/expense_categories/create
   /// </summary>
-  Task<ApiResponse<ExpenseCategory>> GetExpenseCategoryCreateAsync();
+  Task<ApiResponse<ExpenseCategory>> GetExpenseCategoryCreateAsync(CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Shows a Expens Category
   /// Operation: GET /api/v1/expense_categories/{id}
   /// </summary>
-  Task<ApiResponse<ExpenseCategory>> GetAsync(string id);
+  Task<ApiResponse<ExpenseCategory>> GetAsync(string id, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Updates a tax rate
   /// Operation: PUT /api/v1/expense_categories/{id}
   /// </summary>
-  Task<ApiResponse<ExpenseCategory>> UpdateAsync(string id);
+  Task<ApiResponse<ExpenseCategory>> UpdateAsync(string id, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Deletes a ExpenseCategory
   /// Operation: DELETE /api/v1/expense_categories/{id}
   /// </summary>
-  Task DeleteAsync(string id);
+  Task DeleteAsync(string id, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Shows a Expens Category for editting
   /// Operation: GET /api/v1/expense_categories/{id}/edit
   /// </summary>
-  Task<ApiResponse<ExpenseCategory>> EditExpenseCategoryAsync(string id);
+  Task<ApiResponse<ExpenseCategory>> EditExpenseCategoryAsync(string id, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Performs bulk actions on an array of ExpenseCategorys
   /// Operation: POST /api/v1/expense_categories/bulk
   /// </summary>
-  Task<ApiResponse<Webhook>> BulkAsync(BulkExpenseCategorysRequest? request = null);
+  Task<ApiResponse<Webhook>> BulkAsync(BulkExpenseCategorysRequest? request = null, CancellationToken cancellationToken = default);
 
 }

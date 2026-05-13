@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,6 +16,6 @@ public partial interface IClaimLicenseClient
   /// Attempts to claim a white label license
   /// Operation: GET /api/v1/claim_license
   /// </summary>
-  Task ListAsync(GetClaimLicenseRequest? request = null);
+  Task ListAsync(GetClaimLicenseRequest? request = null, CancellationToken cancellationToken = default);
 
 }

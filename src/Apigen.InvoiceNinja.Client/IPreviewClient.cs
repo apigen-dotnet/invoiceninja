@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,12 +16,12 @@ public partial interface IPreviewClient
   /// Returns a pdf preview
   /// Operation: POST /api/v1/preview
   /// </summary>
-  Task CreateAsync();
+  Task CreateAsync(CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Returns a pdf preview for purchase order
   /// Operation: POST /api/v1/preview/purchase_order
   /// </summary>
-  Task GetPreviewPurchaseOrderAsync();
+  Task GetPreviewPurchaseOrderAsync(CancellationToken cancellationToken = default);
 
 }

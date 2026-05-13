@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,24 +16,24 @@ public partial interface IActivitiesClient
   /// Returns a list of activities
   /// Operation: GET /api/v1/activities
   /// </summary>
-  Task<ApiResponse<Activity[]>> ListAsync(GetActivitiesRequest? request = null);
+  Task<ApiResponse<Activity[]>> ListAsync(GetActivitiesRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Returns a PDF for the given activity
   /// Operation: GET /api/v1/activities/download_entity/{activity_id}
   /// </summary>
-  Task<Stream> GetAsync(string activityId, GetActivityHistoricalEntityPdfRequest? request = null);
+  Task<Stream> GetAsync(string activityId, GetActivityHistoricalEntityPdfRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Entity activity
   /// Operation: POST /api/v1/activities/entity
   /// </summary>
-  Task PostActivitiesEntityAsync();
+  Task PostActivitiesEntityAsync(CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Activity note
   /// Operation: POST /api/v1/activities/notes
   /// </summary>
-  Task PostActivitiesNotesAsync();
+  Task PostActivitiesNotesAsync(CancellationToken cancellationToken = default);
 
 }

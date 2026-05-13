@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Apigen.InvoiceNinja.Models;
 
@@ -15,42 +16,42 @@ public partial interface IPaymentTermsClient
   /// Gets a list of payment terms
   /// Operation: GET /api/v1/payment_terms
   /// </summary>
-  Task<ApiResponse<PaymentTerm[]>> ListAsync(GetPaymentTermsRequest? request = null);
+  Task<ApiResponse<PaymentTerm[]>> ListAsync(GetPaymentTermsRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Adds a Payment
   /// Operation: POST /api/v1/payment_terms
   /// </summary>
-  Task<ApiResponse<PaymentTerm>> CreateAsync(Apigen.InvoiceNinja.Models.PaymentTerm paymentTerm, StorePaymentTermRequest? request = null);
+  Task<ApiResponse<PaymentTerm>> CreateAsync(Apigen.InvoiceNinja.Models.PaymentTerm paymentTerm, StorePaymentTermRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Gets a new blank PaymentTerm object
   /// Operation: GET /api/v1/payment_terms/create
   /// </summary>
-  Task<ApiResponse<Payment>> GetPaymentTermsCreateAsync(GetPaymentTermsCreateRequest? request = null);
+  Task<ApiResponse<Payment>> GetPaymentTermsCreateAsync(GetPaymentTermsCreateRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Shows a Payment Term
   /// Operation: GET /api/v1/payment_terms/{id}
   /// </summary>
-  Task<ApiResponse<PaymentTerm>> GetAsync(string id, ShowPaymentTermRequest? request = null);
+  Task<ApiResponse<PaymentTerm>> GetAsync(string id, ShowPaymentTermRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Updates a Payment Term
   /// Operation: PUT /api/v1/payment_terms/{id}
   /// </summary>
-  Task<ApiResponse<PaymentTerm>> UpdateAsync(string id, UpdatePaymentTermRequest? request = null);
+  Task<ApiResponse<PaymentTerm>> UpdateAsync(string id, UpdatePaymentTermRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Shows an Payment Term for editting
   /// Operation: GET /api/v1/payment_terms/{id}/edit
   /// </summary>
-  Task<ApiResponse<PaymentTerm>> EditPaymentTermsAsync(string id, EditPaymentTermsRequest? request = null);
+  Task<ApiResponse<PaymentTerm>> EditPaymentTermsAsync(string id, EditPaymentTermsRequest? request = null, CancellationToken cancellationToken = default);
 
   /// <summary>
   /// Performs bulk actions on an array of payment terms
   /// Operation: POST /api/v1/payment_terms/bulk
   /// </summary>
-  Task<ApiResponse<PaymentTerm>> BulkAsync(BulkPaymentTermsRequest? request = null);
+  Task<ApiResponse<PaymentTerm>> BulkAsync(BulkPaymentTermsRequest? request = null, CancellationToken cancellationToken = default);
 
 }
