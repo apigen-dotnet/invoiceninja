@@ -22,8 +22,7 @@ using System.Text.Json.Serialization;
 namespace Apigen.InvoiceNinja.Models;
 
 /// <summary>
-/// PaymentRequest from OpenAPI schema.
-/// Schema path: #/components/schemas/PaymentRequest
+/// Request model for Payment
 /// </summary>
 public partial class PaymentRequest
 {
@@ -31,21 +30,28 @@ public partial class PaymentRequest
   /// The client hashed id
   /// </summary>
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
-  [System.Text.Json.Serialization.JsonPropertyName("client_id")]
+  [JsonPropertyName("client_id")]
   public string? ClientId { get; set; }
+
+  /// <summary>
+  /// The invitation hashed id
+  /// </summary>
+  [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+  [JsonPropertyName("invitation_id")]
+  public string? InvitationId { get; set; }
 
   /// <summary>
   /// The client contact hashed id
   /// </summary>
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
-  [System.Text.Json.Serialization.JsonPropertyName("client_contact_id")]
+  [JsonPropertyName("client_contact_id")]
   public string? ClientContactId { get; set; }
 
   /// <summary>
   /// The user hashed id
   /// </summary>
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
-  [System.Text.Json.Serialization.JsonPropertyName("user_id")]
+  [JsonPropertyName("user_id")]
   public string? UserId { get; set; }
 
   /// <summary>
@@ -53,57 +59,156 @@ public partial class PaymentRequest
   /// </summary>
   [JsonConverter(typeof(EmptyStringToNullableEnumConverter<PaymentType>))]
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
-  [System.Text.Json.Serialization.JsonPropertyName("type_id")]
+  [JsonPropertyName("type_id")]
   public PaymentType? TypeId { get; set; }
 
   /// <summary>
   /// The Payment date
   /// </summary>
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
-  [System.Text.Json.Serialization.JsonPropertyName("date")]
-  public DateOnly? Date { get; set; }
+  [JsonPropertyName("date")]
+  public string? Date { get; set; }
 
   /// <summary>
   /// The transaction reference as defined by the payment gateway
   /// </summary>
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
-  [System.Text.Json.Serialization.JsonPropertyName("transaction_reference")]
+  [JsonPropertyName("transaction_reference")]
   public string? TransactionReference { get; set; }
 
   /// <summary>
   /// The assigned user hashed id
   /// </summary>
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
-  [System.Text.Json.Serialization.JsonPropertyName("assigned_user_id")]
+  [JsonPropertyName("assigned_user_id")]
   public string? AssignedUserId { get; set; }
 
   /// <summary>
   /// The private notes of the payment
   /// </summary>
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
-  [System.Text.Json.Serialization.JsonPropertyName("private_notes")]
+  [JsonPropertyName("private_notes")]
   public string? PrivateNotes { get; set; }
+
+  /// <summary>
+  /// Flags whether the payment was made manually or processed via a gateway
+  /// </summary>
+  [JsonPropertyName("is_manual")]
+  public bool? IsManual { get; set; }
+
+  /// <summary>
+  /// Defines if the payment has been deleted
+  /// </summary>
+  [JsonPropertyName("is_deleted")]
+  public bool? IsDeleted { get; set; }
 
   /// <summary>
   /// The amount of this payment
   /// </summary>
   [JsonConverter(typeof(EmptyStringToNullableDecimalConverter))]
-  [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
-  [System.Text.Json.Serialization.JsonPropertyName("amount")]
+  [JsonPropertyName("amount")]
   public decimal? Amount { get; set; }
 
+  /// <summary>
+  /// The refunded amount of this payment
+  /// </summary>
+  [JsonPropertyName("refunded")]
+  public decimal? Refunded { get; set; }
+
+  /// <summary>
+  /// Timestamp
+  /// </summary>
+  [JsonConverter(typeof(UnixTimestampConverter))]
+  [JsonPropertyName("updated_at")]
+  public DateTimeOffset? UpdatedAt { get; set; }
+
+  /// <summary>
+  /// Timestamp
+  /// </summary>
+  [JsonConverter(typeof(UnixTimestampConverter))]
+  [JsonPropertyName("archived_at")]
+  public DateTimeOffset? ArchivedAt { get; set; }
+
+  /// <summary>
+  /// The company gateway id
+  /// </summary>
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
-  [System.Text.Json.Serialization.JsonPropertyName("invoices")]
+  [JsonPropertyName("company_gateway_id")]
+  public string? CompanyGatewayId { get; set; }
+
+  [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+  [JsonPropertyName("paymentables")]
+  public Paymentable[]? Paymentables { get; set; }
+
+  [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+  [JsonPropertyName("invoices")]
   public List<InvoicePaymentable>? Invoices { get; set; }
 
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
-  [System.Text.Json.Serialization.JsonPropertyName("credits")]
+  [JsonPropertyName("credits")]
   public List<CreditPaymentable>? Credits { get; set; }
 
   /// <summary>
   /// The payment number - is a unique alpha numeric number per payment per company
   /// </summary>
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
-  [System.Text.Json.Serialization.JsonPropertyName("number")]
+  [JsonPropertyName("number")]
   public string? Number { get; set; }
+
+  /// <summary>
+  /// The unique identifier of the payment category
+  /// </summary>
+  [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+  [JsonPropertyName("category_id")]
+  public string? CategoryId { get; set; }
+
+  /// <summary>
+  /// Custom field for storing additional information
+  /// </summary>
+  [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+  [JsonPropertyName("custom_value1")]
+  public string? CustomValue1 { get; set; }
+
+  /// <summary>
+  /// Custom field for storing additional information
+  /// </summary>
+  [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+  [JsonPropertyName("custom_value2")]
+  public string? CustomValue2 { get; set; }
+
+  /// <summary>
+  /// Custom field for storing additional information
+  /// </summary>
+  [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+  [JsonPropertyName("custom_value3")]
+  public string? CustomValue3 { get; set; }
+
+  /// <summary>
+  /// Custom field for storing additional information
+  /// </summary>
+  [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+  [JsonPropertyName("custom_value4")]
+  public string? CustomValue4 { get; set; }
+
+  /// <summary>
+  /// The unique identifier of the exchange currency
+  /// </summary>
+  [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+  [JsonPropertyName("exchange_currency_id")]
+  public string? ExchangeCurrencyId { get; set; }
+
+  /// <summary>
+  /// The exchange rate used for currency conversion
+  /// </summary>
+  [JsonConverter(typeof(EmptyStringToNullableDecimalConverter))]
+  [JsonPropertyName("exchange_rate")]
+  public decimal? ExchangeRate { get; set; }
+
+  /// <summary>
+  /// Unique key to ensure idempotent payment processing
+  /// </summary>
+  [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+  [JsonPropertyName("idempotency_key")]
+  public string? IdempotencyKey { get; set; }
+
 }

@@ -97,4 +97,10 @@ public partial class InvoiceInvitation
   /// </summary>
   [System.Text.Json.Serialization.JsonPropertyName("email_status")]
   public string? EmailStatus { get; set; }
+
+  /// <summary>
+  /// Indicates whether the recipient contact may electronically sign this invitation. Mirrors the can_sign flag on the linked client contact at the time the invitation was issued.
+  /// </summary>
+  [System.Text.Json.Serialization.JsonPropertyName("can_sign")]
+  public bool? CanSign { get; set; }
 }

@@ -56,5 +56,5 @@ public partial class PostImportRequest
   [Required]
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.Never)]
   [System.Text.Json.Serialization.JsonPropertyName("column_map")]
-  public Dictionary<string, object?>? ColumnMap { get; set; }
+  public Dictionary<string, PostImportRequestColumnMap>? ColumnMap { get; set; }
 }

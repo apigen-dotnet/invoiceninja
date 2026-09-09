@@ -220,4 +220,11 @@ public partial class ProductRequest
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
   [System.Text.Json.Serialization.JsonPropertyName("tax_id")]
   public string? TaxId { get; set; }
+
+  /// <summary>
+  /// The accounting income account identifier this product maps to (used by external accounting integrations such as QuickBooks).
+  /// </summary>
+  [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+  [System.Text.Json.Serialization.JsonPropertyName("income_account_id")]
+  public string? IncomeAccountId { get; set; }
 }

@@ -23,6 +23,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// <summary>
 /// Timezone Types
 /// </summary>
+[JsonConverter(typeof(JsonNumberEnumConverter<TimezoneType>))]
 public enum TimezoneType
 {
     /// <summary>

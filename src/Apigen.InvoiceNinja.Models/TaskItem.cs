@@ -214,4 +214,10 @@ public partial class TaskItem
   [JsonConverter(typeof(StringToIntegerConverter))]
   [System.Text.Json.Serialization.JsonPropertyName("status_sort_order")]
   public int? StatusSortOrder { get; set; }
+
+  /// <summary>
+  /// Tags assigned to the task
+  /// </summary>
+  [System.Text.Json.Serialization.JsonPropertyName("tags")]
+  public List<TagAssignment>? Tags { get; set; }
 }

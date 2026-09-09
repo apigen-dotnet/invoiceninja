@@ -34,5 +34,5 @@ public partial class InvalidInputError
   public string? Message { get; set; }
 
   [System.Text.Json.Serialization.JsonPropertyName("errors")]
-  public object? Errors { get; set; }
+  public ValidationErrorErrors? Errors { get; set; }
 }

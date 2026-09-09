@@ -55,19 +55,19 @@ public partial class CreditInvitation
   /// The invitation sent date
   /// </summary>
   [System.Text.Json.Serialization.JsonPropertyName("sent_date")]
-  public DateTime? SentDate { get; set; }
+  public DateTimeOffset? SentDate { get; set; }
 
   /// <summary>
   /// The invitation viewed date
   /// </summary>
   [System.Text.Json.Serialization.JsonPropertyName("viewed_date")]
-  public DateTime? ViewedDate { get; set; }
+  public DateTimeOffset? ViewedDate { get; set; }
 
   /// <summary>
   /// The invitation opened date
   /// </summary>
   [System.Text.Json.Serialization.JsonPropertyName("opened_date")]
-  public DateTime? OpenedDate { get; set; }
+  public DateTimeOffset? OpenedDate { get; set; }
 
   /// <summary>
   /// Timestamp
@@ -94,4 +94,10 @@ public partial class CreditInvitation
   /// </summary>
   [System.Text.Json.Serialization.JsonPropertyName("email_status")]
   public string? EmailStatus { get; set; }
+
+  /// <summary>
+  /// Indicates whether the recipient contact may electronically sign this invitation. Mirrors the can_sign flag on the linked client contact at the time the invitation was issued.
+  /// </summary>
+  [System.Text.Json.Serialization.JsonPropertyName("can_sign")]
+  public bool? CanSign { get; set; }
 }

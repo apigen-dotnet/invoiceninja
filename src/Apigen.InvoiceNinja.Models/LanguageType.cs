@@ -23,6 +23,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// <summary>
 /// Language Types
 /// </summary>
+[JsonConverter(typeof(JsonNumberEnumConverter<LanguageType>))]
 public enum LanguageType
 {
     /// <summary>

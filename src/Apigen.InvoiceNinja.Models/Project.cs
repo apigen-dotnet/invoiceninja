@@ -157,4 +157,10 @@ public partial class Project
   [Required]
   [System.Text.Json.Serialization.JsonPropertyName("color")]
   public string? Color { get; set; }
+
+  /// <summary>
+  /// Tags assigned to the project
+  /// </summary>
+  [System.Text.Json.Serialization.JsonPropertyName("tags")]
+  public List<TagAssignment>? Tags { get; set; }
 }

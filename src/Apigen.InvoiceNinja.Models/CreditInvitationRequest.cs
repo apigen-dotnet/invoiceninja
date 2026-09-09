@@ -61,21 +61,21 @@ public partial class CreditInvitationRequest
   /// </summary>
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
   [System.Text.Json.Serialization.JsonPropertyName("sent_date")]
-  public DateTime? SentDate { get; set; }
+  public DateTimeOffset? SentDate { get; set; }
 
   /// <summary>
   /// The invitation viewed date
   /// </summary>
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
   [System.Text.Json.Serialization.JsonPropertyName("viewed_date")]
-  public DateTime? ViewedDate { get; set; }
+  public DateTimeOffset? ViewedDate { get; set; }
 
   /// <summary>
   /// The invitation opened date
   /// </summary>
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
   [System.Text.Json.Serialization.JsonPropertyName("opened_date")]
-  public DateTime? OpenedDate { get; set; }
+  public DateTimeOffset? OpenedDate { get; set; }
 
   /// <summary>
   /// Timestamp

@@ -48,6 +48,12 @@ public partial class InvoiceItem
   public string? ProductKey { get; set; }
 
   /// <summary>
+  /// A comma-separated snapshot of the product tag names for this line item
+  /// </summary>
+  [System.Text.Json.Serialization.JsonPropertyName("tags")]
+  public string? Tags { get; set; }
+
+  /// <summary>
   /// The cost of the product offered for this line item (Referred to as Cost in the product tab)
   /// </summary>
   [JsonConverter(typeof(EmptyStringToNullableDecimalConverter))]

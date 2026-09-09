@@ -1,5 +1,5 @@
 enabled = true
 
 [[sources]]
-url = "https://raw.githubusercontent.com/invoiceninja/invoiceninja/v5-stable/openapi/api-docs.yaml"
+url = "https://raw.githubusercontent.com/invoiceninja/invoiceninja/v5.13.37/openapi/api-docs.yaml"
 target = "specs/invoiceninja.yaml"

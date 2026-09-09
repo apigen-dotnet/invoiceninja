@@ -121,4 +121,11 @@ public partial class ProjectRequest
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
   [System.Text.Json.Serialization.JsonPropertyName("color")]
   public string? Color { get; set; }
+
+  /// <summary>
+  /// Full sync array of hashed tag IDs. Omit to leave existing tags unchanged; send [] to detach all tags.
+  /// </summary>
+  [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+  [System.Text.Json.Serialization.JsonPropertyName("tags")]
+  public List<string?>? Tags { get; set; }
 }

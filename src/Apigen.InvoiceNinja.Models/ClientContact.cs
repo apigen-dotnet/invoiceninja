@@ -148,6 +148,18 @@ public partial class ClientContact
   public bool? SendEmail { get; set; }
 
   /// <summary>
+  /// When true this contact is only included as a CC recipient on outgoing emails and is not addressed directly.
+  /// </summary>
+  [System.Text.Json.Serialization.JsonPropertyName("cc_only")]
+  public bool? CcOnly { get; set; }
+
+  /// <summary>
+  /// When true this contact is permitted to electronically sign invitations (invoices, quotes, credits, purchase orders, recurring invoices).
+  /// </summary>
+  [System.Text.Json.Serialization.JsonPropertyName("can_sign")]
+  public bool? CanSign { get; set; }
+
+  /// <summary>
   /// The number of failed logins the contact has had
   /// </summary>
   [System.Text.Json.Serialization.JsonPropertyName("failed_logins")]

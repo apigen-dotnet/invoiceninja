@@ -150,4 +150,16 @@ public partial class VendorContact
   /// </summary>
   [System.Text.Json.Serialization.JsonPropertyName("send_email")]
   public bool? SendEmail { get; set; }
+
+  /// <summary>
+  /// When true this contact is only included as a CC recipient on outgoing emails and is not addressed directly.
+  /// </summary>
+  [System.Text.Json.Serialization.JsonPropertyName("cc_only")]
+  public bool? CcOnly { get; set; }
+
+  /// <summary>
+  /// When true this contact is permitted to electronically sign purchase order invitations.
+  /// </summary>
+  [System.Text.Json.Serialization.JsonPropertyName("can_sign")]
+  public bool? CanSign { get; set; }
 }

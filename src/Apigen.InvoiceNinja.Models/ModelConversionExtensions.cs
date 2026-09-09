@@ -46,7 +46,6 @@ public static class ModelConversionExtensions
       ClientContactId = source.ClientContactId,
       UserId = source.UserId,
       TypeId = source.TypeId,
-      Date = source.Date,
       TransactionReference = source.TransactionReference,
       AssignedUserId = source.AssignedUserId,
       PrivateNotes = source.PrivateNotes,

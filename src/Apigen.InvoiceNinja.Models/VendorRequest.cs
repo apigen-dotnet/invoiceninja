@@ -149,5 +149,5 @@ public partial class VendorRequest
   /// </summary>
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
   [System.Text.Json.Serialization.JsonPropertyName("contacts")]
-  public List<object?>? Contacts { get; set; }
+  public List<VendorRequestContacts>? Contacts { get; set; }
 }

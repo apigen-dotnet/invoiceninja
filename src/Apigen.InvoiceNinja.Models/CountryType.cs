@@ -23,6 +23,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// <summary>
 /// Country Types
 /// </summary>
+[JsonConverter(typeof(JsonNumberEnumConverter<CountryType>))]
 public enum CountryType
 {
     /// <summary>

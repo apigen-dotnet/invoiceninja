@@ -1,3 +1,4 @@
+prune = true
 # ApiGenerator Configuration File
 # This file configures how C# models and API clients are generated from OpenAPI specifications
 

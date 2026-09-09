@@ -96,5 +96,5 @@ public partial class PurchaseOrderRequest
   /// </summary>
   [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
   [System.Text.Json.Serialization.JsonPropertyName("line_items")]
-  public List<object?>? LineItems { get; set; }
+  public List<PurchaseOrderRequestLineItems>? LineItems { get; set; }
 }

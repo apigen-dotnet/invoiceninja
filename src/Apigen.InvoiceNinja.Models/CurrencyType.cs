@@ -23,6 +23,7 @@ namespace Apigen.InvoiceNinja.Models;
 /// <summary>
 /// Currency Types
 /// </summary>
+[JsonConverter(typeof(JsonNumberEnumConverter<CurrencyType>))]
 public enum CurrencyType
 {
     /// <summary>
